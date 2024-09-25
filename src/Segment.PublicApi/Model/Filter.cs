@@ -50,7 +50,9 @@ namespace Segment.PublicApi.Model
         /// <param name="drop">Whether the event is dropped..</param>
         /// <param name="dropProperties">Describes the properties to be dropped on events that match the \&quot;if\&quot; statement..</param>
         /// <param name="allowProperties">Describes the properties allowed on events that match the \&quot;if\&quot; statement..</param>
-        public Filter(string id = default(string), string workspaceId = default(string), string integrationId = default(string), bool enabled = default(bool), string name = default(string), string description = default(string), string varIf = default(string), bool drop = default(bool), List<string> dropProperties = default(List<string>), List<string> allowProperties = default(List<string>))
+        /// <param name="createdAt">The timestamp of this filter&#39;s creation. (required).</param>
+        /// <param name="updatedAt">The timestamp of this filter&#39;s last change. (required).</param>
+        public Filter(string id = default(string), string workspaceId = default(string), string integrationId = default(string), bool enabled = default(bool), string name = default(string), string description = default(string), string varIf = default(string), bool drop = default(bool), List<string> dropProperties = default(List<string>), List<string> allowProperties = default(List<string>), string createdAt = default(string), string updatedAt = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -70,6 +72,18 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("integrationId is a required property for Filter and cannot be null");
             }
             this.IntegrationId = integrationId;
+            // to ensure "createdAt" is required (not null)
+            if (createdAt == null)
+            {
+                throw new ArgumentNullException("createdAt is a required property for Filter and cannot be null");
+            }
+            this.CreatedAt = createdAt;
+            // to ensure "updatedAt" is required (not null)
+            if (updatedAt == null)
+            {
+                throw new ArgumentNullException("updatedAt is a required property for Filter and cannot be null");
+            }
+            this.UpdatedAt = updatedAt;
             this.Enabled = enabled;
             this.Name = name;
             this.Description = description;
@@ -150,6 +164,20 @@ namespace Segment.PublicApi.Model
         public List<string> AllowProperties { get; set; }
 
         /// <summary>
+        /// The timestamp of this filter&#39;s creation.
+        /// </summary>
+        /// <value>The timestamp of this filter&#39;s creation.</value>
+        [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
+        public string CreatedAt { get; set; }
+
+        /// <summary>
+        /// The timestamp of this filter&#39;s last change.
+        /// </summary>
+        /// <value>The timestamp of this filter&#39;s last change.</value>
+        [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
+        public string UpdatedAt { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -167,6 +195,8 @@ namespace Segment.PublicApi.Model
             sb.Append("  Drop: ").Append(Drop).Append("\n");
             sb.Append("  DropProperties: ").Append(DropProperties).Append("\n");
             sb.Append("  AllowProperties: ").Append(AllowProperties).Append("\n");
+            sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -251,6 +281,16 @@ namespace Segment.PublicApi.Model
                     this.AllowProperties != null &&
                     input.AllowProperties != null &&
                     this.AllowProperties.SequenceEqual(input.AllowProperties)
+                ) && 
+                (
+                    this.CreatedAt == input.CreatedAt ||
+                    (this.CreatedAt != null &&
+                    this.CreatedAt.Equals(input.CreatedAt))
+                ) && 
+                (
+                    this.UpdatedAt == input.UpdatedAt ||
+                    (this.UpdatedAt != null &&
+                    this.UpdatedAt.Equals(input.UpdatedAt))
                 );
         }
 
@@ -296,6 +336,14 @@ namespace Segment.PublicApi.Model
                 if (this.AllowProperties != null)
                 {
                     hashCode = (hashCode * 59) + this.AllowProperties.GetHashCode();
+                }
+                if (this.CreatedAt != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();
+                }
+                if (this.UpdatedAt != null)
+                {
+                    hashCode = (hashCode * 59) + this.UpdatedAt.GetHashCode();
                 }
                 return hashCode;
             }

@@ -40,7 +40,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFilterForSpaceInput" /> class.
         /// </summary>
-        /// <param name="integrationId">The Space id to filer on. (required).</param>
+        /// <param name="integrationId">The Space id to filter on. (required).</param>
         /// <param name="enabled">Whether the filter is enabled..</param>
         /// <param name="name">The name of the filter. (required).</param>
         /// <param name="description">The description of the filter..</param>
@@ -76,9 +76,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// The Space id to filer on.
+        /// The Space id to filter on.
         /// </summary>
-        /// <value>The Space id to filer on.</value>
+        /// <value>The Space id to filter on.</value>
         [DataMember(Name = "integrationId", IsRequired = true, EmitDefaultValue = true)]
         public string IntegrationId { get; set; }
 
