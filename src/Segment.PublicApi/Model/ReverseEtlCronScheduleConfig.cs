@@ -27,35 +27,50 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Output for UpdateDestinationFilterV1.
+    /// ReverseEtlCronScheduleConfig
     /// </summary>
-    [DataContract(Name = "UpdateFilterForDestinationV1Output")]
-    public partial class UpdateFilterForDestinationV1Output : IEquatable<UpdateFilterForDestinationV1Output>, IValidatableObject
+    [DataContract(Name = "ReverseEtlCronScheduleConfig")]
+    public partial class ReverseEtlCronScheduleConfig : IEquatable<ReverseEtlCronScheduleConfig>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateFilterForDestinationV1Output" /> class.
+        /// Initializes a new instance of the <see cref="ReverseEtlCronScheduleConfig" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected UpdateFilterForDestinationV1Output() { }
+        protected ReverseEtlCronScheduleConfig() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateFilterForDestinationV1Output" /> class.
+        /// Initializes a new instance of the <see cref="ReverseEtlCronScheduleConfig" /> class.
         /// </summary>
-        /// <param name="filter">filter (required).</param>
-        public UpdateFilterForDestinationV1Output(DestinationFilterV1 filter = default(DestinationFilterV1))
+        /// <param name="spec">5 field cron string expression. The cron expression must be larger than 15 minutes. (required).</param>
+        /// <param name="timezone">Timezone for the specified times. (required).</param>
+        public ReverseEtlCronScheduleConfig(string spec = default(string), string timezone = default(string))
         {
-            // to ensure "filter" is required (not null)
-            if (filter == null)
+            // to ensure "spec" is required (not null)
+            if (spec == null)
             {
-                throw new ArgumentNullException("filter is a required property for UpdateFilterForDestinationV1Output and cannot be null");
+                throw new ArgumentNullException("spec is a required property for ReverseEtlCronScheduleConfig and cannot be null");
             }
-            this.Filter = filter;
+            this.Spec = spec;
+            // to ensure "timezone" is required (not null)
+            if (timezone == null)
+            {
+                throw new ArgumentNullException("timezone is a required property for ReverseEtlCronScheduleConfig and cannot be null");
+            }
+            this.Timezone = timezone;
         }
 
         /// <summary>
-        /// Gets or Sets Filter
+        /// 5 field cron string expression. The cron expression must be larger than 15 minutes.
         /// </summary>
-        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = true)]
-        public DestinationFilterV1 Filter { get; set; }
+        /// <value>5 field cron string expression. The cron expression must be larger than 15 minutes.</value>
+        [DataMember(Name = "spec", IsRequired = true, EmitDefaultValue = true)]
+        public string Spec { get; set; }
+
+        /// <summary>
+        /// Timezone for the specified times.
+        /// </summary>
+        /// <value>Timezone for the specified times.</value>
+        [DataMember(Name = "timezone", IsRequired = true, EmitDefaultValue = true)]
+        public string Timezone { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +79,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateFilterForDestinationV1Output {\n");
-            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("class ReverseEtlCronScheduleConfig {\n");
+            sb.Append("  Spec: ").Append(Spec).Append("\n");
+            sb.Append("  Timezone: ").Append(Timezone).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +102,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateFilterForDestinationV1Output);
+            return this.Equals(input as ReverseEtlCronScheduleConfig);
         }
 
         /// <summary>
-        /// Returns true if UpdateFilterForDestinationV1Output instances are equal
+        /// Returns true if ReverseEtlCronScheduleConfig instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateFilterForDestinationV1Output to be compared</param>
+        /// <param name="input">Instance of ReverseEtlCronScheduleConfig to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateFilterForDestinationV1Output input)
+        public bool Equals(ReverseEtlCronScheduleConfig input)
         {
             if (input == null)
             {
@@ -102,9 +118,14 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Filter == input.Filter ||
-                    (this.Filter != null &&
-                    this.Filter.Equals(input.Filter))
+                    this.Spec == input.Spec ||
+                    (this.Spec != null &&
+                    this.Spec.Equals(input.Spec))
+                ) && 
+                (
+                    this.Timezone == input.Timezone ||
+                    (this.Timezone != null &&
+                    this.Timezone.Equals(input.Timezone))
                 );
         }
 
@@ -117,9 +138,13 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Filter != null)
+                if (this.Spec != null)
                 {
-                    hashCode = (hashCode * 59) + this.Filter.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Spec.GetHashCode();
+                }
+                if (this.Timezone != null)
+                {
+                    hashCode = (hashCode * 59) + this.Timezone.GetHashCode();
                 }
                 return hashCode;
             }
