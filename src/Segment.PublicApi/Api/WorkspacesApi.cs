@@ -31,7 +31,7 @@ namespace Segment.PublicApi.Api
         /// Get Workspace
         /// </summary>
         /// <remarks>
-        /// Returns the Workspace associated with the token used to access this resource.
+        /// Returns the Workspace associated with the token used to access this resource.   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -42,7 +42,7 @@ namespace Segment.PublicApi.Api
         /// Get Workspace
         /// </summary>
         /// <remarks>
-        /// Returns the Workspace associated with the token used to access this resource.
+        /// Returns the Workspace associated with the token used to access this resource.   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -61,7 +61,7 @@ namespace Segment.PublicApi.Api
         /// Get Workspace
         /// </summary>
         /// <remarks>
-        /// Returns the Workspace associated with the token used to access this resource.
+        /// Returns the Workspace associated with the token used to access this resource.   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -73,7 +73,7 @@ namespace Segment.PublicApi.Api
         /// Get Workspace
         /// </summary>
         /// <remarks>
-        /// Returns the Workspace associated with the token used to access this resource.
+        /// Returns the Workspace associated with the token used to access this resource.   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -201,7 +201,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Workspace Returns the Workspace associated with the token used to access this resource.
+        /// Get Workspace Returns the Workspace associated with the token used to access this resource.   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -213,7 +213,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Workspace Returns the Workspace associated with the token used to access this resource.
+        /// Get Workspace Returns the Workspace associated with the token used to access this resource.   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -271,7 +271,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Workspace Returns the Workspace associated with the token used to access this resource.
+        /// Get Workspace Returns the Workspace associated with the token used to access this resource.   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -284,7 +284,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Workspace Returns the Workspace associated with the token used to access this resource.
+        /// Get Workspace Returns the Workspace associated with the token used to access this resource.   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
