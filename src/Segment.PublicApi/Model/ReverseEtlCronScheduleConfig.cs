@@ -41,7 +41,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="ReverseEtlCronScheduleConfig" /> class.
         /// </summary>
         /// <param name="spec">5 field cron string expression. The cron expression must be larger than 15 minutes. (required).</param>
-        /// <param name="timezone">Timezone for the specified times. (required).</param>
+        /// <param name="timezone">Timezone respected by the cron string. Format must be in IANA Timezone Identifier. Example: &#39;America/Los_Angeles&#39;. (required).</param>
         public ReverseEtlCronScheduleConfig(string spec = default(string), string timezone = default(string))
         {
             // to ensure "spec" is required (not null)
@@ -66,9 +66,9 @@ namespace Segment.PublicApi.Model
         public string Spec { get; set; }
 
         /// <summary>
-        /// Timezone for the specified times.
+        /// Timezone respected by the cron string. Format must be in IANA Timezone Identifier. Example: &#39;America/Los_Angeles&#39;.
         /// </summary>
-        /// <value>Timezone for the specified times.</value>
+        /// <value>Timezone respected by the cron string. Format must be in IANA Timezone Identifier. Example: &#39;America/Los_Angeles&#39;.</value>
         [DataMember(Name = "timezone", IsRequired = true, EmitDefaultValue = true)]
         public string Timezone { get; set; }
 

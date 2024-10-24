@@ -33,36 +33,42 @@ namespace Segment.PublicApi.Model
     public partial class ReverseEtlScheduleDefinition : IEquatable<ReverseEtlScheduleDefinition>, IValidatableObject
     {
         /// <summary>
-        /// Strategy supports three modes: Periodic, Specific Days, or Manual.
+        /// Strategy supports: Periodic, Specific Days, Manual, CRON.
         /// </summary>
-        /// <value>Strategy supports three modes: Periodic, Specific Days, or Manual.</value>
+        /// <value>Strategy supports: Periodic, Specific Days, Manual, CRON.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StrategyEnum
         {
             /// <summary>
+            /// Enum CRON for value: CRON
+            /// </summary>
+            [EnumMember(Value = "CRON")]
+            CRON = 1,
+
+            /// <summary>
             /// Enum MANUAL for value: MANUAL
             /// </summary>
             [EnumMember(Value = "MANUAL")]
-            MANUAL = 1,
+            MANUAL = 2,
 
             /// <summary>
             /// Enum PERIODIC for value: PERIODIC
             /// </summary>
             [EnumMember(Value = "PERIODIC")]
-            PERIODIC = 2,
+            PERIODIC = 3,
 
             /// <summary>
             /// Enum SPECIFICDAYS for value: SPECIFIC_DAYS
             /// </summary>
             [EnumMember(Value = "SPECIFIC_DAYS")]
-            SPECIFICDAYS = 3
+            SPECIFICDAYS = 4
         }
 
 
         /// <summary>
-        /// Strategy supports three modes: Periodic, Specific Days, or Manual.
+        /// Strategy supports: Periodic, Specific Days, Manual, CRON.
         /// </summary>
-        /// <value>Strategy supports three modes: Periodic, Specific Days, or Manual.</value>
+        /// <value>Strategy supports: Periodic, Specific Days, Manual, CRON.</value>
         [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
         public StrategyEnum Strategy { get; set; }
         /// <summary>
@@ -73,7 +79,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ReverseEtlScheduleDefinition" /> class.
         /// </summary>
-        /// <param name="strategy">Strategy supports three modes: Periodic, Specific Days, or Manual. (required).</param>
+        /// <param name="strategy">Strategy supports: Periodic, Specific Days, Manual, CRON. (required).</param>
         /// <param name="config">config.</param>
         public ReverseEtlScheduleDefinition(StrategyEnum strategy = default(StrategyEnum), Config config = default(Config))
         {
