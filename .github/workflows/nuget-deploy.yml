@@ -9,7 +9,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Push
+    - name: Pack nuget package
+      working-directory: src/Segment.PublicApi
+      run: dotnet pack -c Release
+    - name: Push nuget package
+      working-directory: src/Segment.PublicApi
       run: dotnet nuget push bin/Release/Segment.PublicApi.*.nupkg -k ${NUGET_API_KEY} --source https://api.nuget.org/v3/index.json --skip-duplicate 
       env:
         GITHUB_TOKEN: ${{ secrets.NUGET_API_KEY }}
