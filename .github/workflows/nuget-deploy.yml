@@ -16,4 +16,4 @@ jobs:
       working-directory: ./src/Segment.PublicApi
       run: dotnet nuget push bin/Release/Segment.PublicApi.*.nupkg -k ${NUGET_API_KEY} --source https://api.nuget.org/v3/index.json --skip-duplicate 
       env:
-        GITHUB_TOKEN: ${{ secrets.NUGET_API_KEY }}
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
