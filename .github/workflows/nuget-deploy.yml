@@ -5,9 +5,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Set VERSION variable from tag
-      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Push
+      run: dotnet nuget push bin/Release/Segment.PublicApi.*.nupkg -k ${NUGET_API_KEY} --source https://api.nuget.org/v3/index.json --skip-duplicate 
+      env:
+        GITHUB_TOKEN: ${{ secrets.NUGET_API_KEY }}
