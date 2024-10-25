@@ -6,19 +6,22 @@
     <AssemblyName>Segment.PublicApi</AssemblyName>
     <PackageId>Segment.PublicApi</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
-    <Company>OpenAPI</Company>
+    <Authors>Segment</Authors>
+    <Company>Segment</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
-    <Copyright>No Copyright</Copyright>
+    <Description>Segment Public API SDK</Description>
+    <Copyright>2024 Twilio, Inc.</Copyright>
     <RootNamespace>Segment.PublicApi</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version> 55.1.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Segment.PublicApi.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/segmentio/public-api-sdk-csharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageTags>Segment, Public API, SDK, Twilio</PackageTags>
     <Nullable>annotations</Nullable>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://segment.com/docs/api/public-api/</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +29,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RestSharp" Version="112.0.0" />
     <PackageReference Include="Polly" Version="8.1.0" />
+    <None Include="README.md" Pack="true" PackagePath=""/>
+    <None Include="LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
 
   <ItemGroup>
