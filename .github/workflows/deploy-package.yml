@@ -1,0 +1,20 @@
+name: Public package to NuGet
+on:
+  push:
+    branches: [main, APICS-2724/nuget-workflow]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Update Nuget Package
+    timeout-minutes: 10
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Pack nuget package
+      working-directory: ./src/Segment.PublicApi
+      run: dotnet pack -c Release
+    - name: Push nuget package
+      working-directory: ./src/Segment.PublicApi
+      run: dotnet nuget push bin/Release/Segment.PublicApi.*.nupkg --api-key ${NUGET_API_KEY} --source https://api.nuget.org/v3/index.json --skip-duplicate 
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
