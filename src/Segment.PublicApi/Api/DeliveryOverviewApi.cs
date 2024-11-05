@@ -76,8 +76,8 @@ namespace Segment.PublicApi.Api
         /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested time frame, inclusive.  This parameter exists in beta.</param>
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
-        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;appVersion&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discard Reason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discardReason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
@@ -95,8 +95,8 @@ namespace Segment.PublicApi.Api
         /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested time frame, inclusive.  This parameter exists in beta.</param>
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
-        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;appVersion&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discard Reason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discardReason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
@@ -114,7 +114,7 @@ namespace Segment.PublicApi.Api
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
         /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
@@ -133,7 +133,7 @@ namespace Segment.PublicApi.Api
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
         /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
@@ -243,6 +243,43 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
         ApiResponse<GetEgressFailedMetricsFromDeliveryOverview200Response> GetIngressSuccessMetricsFromDeliveryOverviewWithHttpInfo(string sourceId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewSuccessfullyReceivedFilterBy? filter = default(DeliveryOverviewSuccessfullyReceivedFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0);
+        /// <summary>
+        /// Get Linked Audience Success Metrics from Delivery Overview
+        /// </summary>
+        /// <remarks>
+        /// Get events successfully delivered for Linked Audiences.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">The sourceId for the Workspace.  This parameter exists in beta.</param>
+        /// <param name="destinationConfigId">The id tied to a Workspace Destination.  This parameter exists in beta.</param>
+        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested timeframe, inclusive.  This parameter exists in beta.</param>
+        /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested timeframe, noninclusive.  This parameter exists in beta.</param>
+        /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
+        GetEgressFailedMetricsFromDeliveryOverview200Response GetLinkedAudienceSuccessMetricsFromDeliveryOverview(string sourceId, string destinationConfigId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewAudienceFilterBy? filter = default(DeliveryOverviewAudienceFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0);
+
+        /// <summary>
+        /// Get Linked Audience Success Metrics from Delivery Overview
+        /// </summary>
+        /// <remarks>
+        /// Get events successfully delivered for Linked Audiences.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">The sourceId for the Workspace.  This parameter exists in beta.</param>
+        /// <param name="destinationConfigId">The id tied to a Workspace Destination.  This parameter exists in beta.</param>
+        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested timeframe, inclusive.  This parameter exists in beta.</param>
+        /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested timeframe, noninclusive.  This parameter exists in beta.</param>
+        /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
+        ApiResponse<GetEgressFailedMetricsFromDeliveryOverview200Response> GetLinkedAudienceSuccessMetricsFromDeliveryOverviewWithHttpInfo(string sourceId, string destinationConfigId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewAudienceFilterBy? filter = default(DeliveryOverviewAudienceFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -303,8 +340,8 @@ namespace Segment.PublicApi.Api
         /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested time frame, inclusive.  This parameter exists in beta.</param>
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
-        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;appVersion&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discard Reason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discardReason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -323,8 +360,8 @@ namespace Segment.PublicApi.Api
         /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested time frame, inclusive.  This parameter exists in beta.</param>
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
-        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;appVersion&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discard Reason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discardReason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -343,7 +380,7 @@ namespace Segment.PublicApi.Api
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
         /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -363,7 +400,7 @@ namespace Segment.PublicApi.Api
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
         /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -480,6 +517,45 @@ namespace Segment.PublicApi.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetEgressFailedMetricsFromDeliveryOverview200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetEgressFailedMetricsFromDeliveryOverview200Response>> GetIngressSuccessMetricsFromDeliveryOverviewWithHttpInfoAsync(string sourceId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewSuccessfullyReceivedFilterBy? filter = default(DeliveryOverviewSuccessfullyReceivedFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get Linked Audience Success Metrics from Delivery Overview
+        /// </summary>
+        /// <remarks>
+        /// Get events successfully delivered for Linked Audiences.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">The sourceId for the Workspace.  This parameter exists in beta.</param>
+        /// <param name="destinationConfigId">The id tied to a Workspace Destination.  This parameter exists in beta.</param>
+        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested timeframe, inclusive.  This parameter exists in beta.</param>
+        /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested timeframe, noninclusive.  This parameter exists in beta.</param>
+        /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
+        System.Threading.Tasks.Task<GetEgressFailedMetricsFromDeliveryOverview200Response> GetLinkedAudienceSuccessMetricsFromDeliveryOverviewAsync(string sourceId, string destinationConfigId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewAudienceFilterBy? filter = default(DeliveryOverviewAudienceFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get Linked Audience Success Metrics from Delivery Overview
+        /// </summary>
+        /// <remarks>
+        /// Get events successfully delivered for Linked Audiences.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">The sourceId for the Workspace.  This parameter exists in beta.</param>
+        /// <param name="destinationConfigId">The id tied to a Workspace Destination.  This parameter exists in beta.</param>
+        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested timeframe, inclusive.  This parameter exists in beta.</param>
+        /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested timeframe, noninclusive.  This parameter exists in beta.</param>
+        /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetEgressFailedMetricsFromDeliveryOverview200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetEgressFailedMetricsFromDeliveryOverview200Response>> GetLinkedAudienceSuccessMetricsFromDeliveryOverviewWithHttpInfoAsync(string sourceId, string destinationConfigId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewAudienceFilterBy? filter = default(DeliveryOverviewAudienceFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -875,8 +951,8 @@ namespace Segment.PublicApi.Api
         /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested time frame, inclusive.  This parameter exists in beta.</param>
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
-        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;appVersion&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discard Reason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discardReason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
@@ -895,8 +971,8 @@ namespace Segment.PublicApi.Api
         /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested time frame, inclusive.  This parameter exists in beta.</param>
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
-        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;appVersion&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discard Reason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discardReason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
@@ -1006,8 +1082,8 @@ namespace Segment.PublicApi.Api
         /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested time frame, inclusive.  This parameter exists in beta.</param>
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
-        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;appVersion&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discard Reason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discardReason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1027,8 +1103,8 @@ namespace Segment.PublicApi.Api
         /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested time frame, inclusive.  This parameter exists in beta.</param>
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
-        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;appVersion&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discard Reason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;. If you would like to view retry attempts for a successful delivery, you can filter &#x60;discardReason&#x60; from &#x60;successes.attempt.1&#x60; through &#x60;successes.attempt.10&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1142,7 +1218,7 @@ namespace Segment.PublicApi.Api
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
         /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
@@ -1162,7 +1238,7 @@ namespace Segment.PublicApi.Api
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
         /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
@@ -1273,7 +1349,7 @@ namespace Segment.PublicApi.Api
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
         /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1294,7 +1370,7 @@ namespace Segment.PublicApi.Api
         /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested time frame, noninclusive.  This parameter exists in beta.</param>
         /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
         /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
-        /// <param name="filter">An optional filter for &#x60;event Name&#x60;, &#x60;event Type&#x60;, &#x60;discard Reason&#x60;, &#x60;app Version&#x60;, &#x60;subscription Id&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;group By&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;discardReason&#x60;, &#x60;appVersion&#x60;, &#x60;subscriptionId&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
         /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -2133,6 +2209,272 @@ namespace Segment.PublicApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetIngressSuccessMetricsFromDeliveryOverview", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Linked Audience Success Metrics from Delivery Overview Get events successfully delivered for Linked Audiences.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">The sourceId for the Workspace.  This parameter exists in beta.</param>
+        /// <param name="destinationConfigId">The id tied to a Workspace Destination.  This parameter exists in beta.</param>
+        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested timeframe, inclusive.  This parameter exists in beta.</param>
+        /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested timeframe, noninclusive.  This parameter exists in beta.</param>
+        /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
+        public GetEgressFailedMetricsFromDeliveryOverview200Response GetLinkedAudienceSuccessMetricsFromDeliveryOverview(string sourceId, string destinationConfigId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewAudienceFilterBy? filter = default(DeliveryOverviewAudienceFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0)
+        {
+            Segment.PublicApi.Client.ApiResponse<GetEgressFailedMetricsFromDeliveryOverview200Response> localVarResponse = GetLinkedAudienceSuccessMetricsFromDeliveryOverviewWithHttpInfo(sourceId, destinationConfigId, startTime, endTime, granularity, groupBy, filter, pagination);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Linked Audience Success Metrics from Delivery Overview Get events successfully delivered for Linked Audiences.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">The sourceId for the Workspace.  This parameter exists in beta.</param>
+        /// <param name="destinationConfigId">The id tied to a Workspace Destination.  This parameter exists in beta.</param>
+        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested timeframe, inclusive.  This parameter exists in beta.</param>
+        /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested timeframe, noninclusive.  This parameter exists in beta.</param>
+        /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
+        public Segment.PublicApi.Client.ApiResponse<GetEgressFailedMetricsFromDeliveryOverview200Response> GetLinkedAudienceSuccessMetricsFromDeliveryOverviewWithHttpInfo(string sourceId, string destinationConfigId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewAudienceFilterBy? filter = default(DeliveryOverviewAudienceFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0)
+        {
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'sourceId' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            // verify the required parameter 'destinationConfigId' is set
+            if (destinationConfigId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'destinationConfigId' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            // verify the required parameter 'startTime' is set
+            if (startTime == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'startTime' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            // verify the required parameter 'endTime' is set
+            if (endTime == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'endTime' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            // verify the required parameter 'granularity' is set
+            if (granularity == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'granularity' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1beta+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "sourceId", sourceId));
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "destinationConfigId", destinationConfigId));
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "startTime", startTime));
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "endTime", endTime));
+            if (groupBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("multi", "groupBy", groupBy));
+            }
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "granularity", granularity));
+            if (filter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (pagination != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "pagination", pagination));
+            }
+
+            localVarRequestOptions.Operation = "DeliveryOverviewApi.GetLinkedAudienceSuccessMetricsFromDeliveryOverview";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetEgressFailedMetricsFromDeliveryOverview200Response>("/delivery-overview/audience/success", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLinkedAudienceSuccessMetricsFromDeliveryOverview", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Linked Audience Success Metrics from Delivery Overview Get events successfully delivered for Linked Audiences.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">The sourceId for the Workspace.  This parameter exists in beta.</param>
+        /// <param name="destinationConfigId">The id tied to a Workspace Destination.  This parameter exists in beta.</param>
+        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested timeframe, inclusive.  This parameter exists in beta.</param>
+        /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested timeframe, noninclusive.  This parameter exists in beta.</param>
+        /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetEgressFailedMetricsFromDeliveryOverview200Response</returns>
+        public async System.Threading.Tasks.Task<GetEgressFailedMetricsFromDeliveryOverview200Response> GetLinkedAudienceSuccessMetricsFromDeliveryOverviewAsync(string sourceId, string destinationConfigId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewAudienceFilterBy? filter = default(DeliveryOverviewAudienceFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Segment.PublicApi.Client.ApiResponse<GetEgressFailedMetricsFromDeliveryOverview200Response> localVarResponse = await GetLinkedAudienceSuccessMetricsFromDeliveryOverviewWithHttpInfoAsync(sourceId, destinationConfigId, startTime, endTime, granularity, groupBy, filter, pagination, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Linked Audience Success Metrics from Delivery Overview Get events successfully delivered for Linked Audiences.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="sourceId">The sourceId for the Workspace.  This parameter exists in beta.</param>
+        /// <param name="destinationConfigId">The id tied to a Workspace Destination.  This parameter exists in beta.</param>
+        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the requested timeframe, inclusive.  This parameter exists in beta.</param>
+        /// <param name="endTime">The ISO8601 formatted timestamp corresponding to the end of the requested timeframe, noninclusive.  This parameter exists in beta.</param>
+        /// <param name="granularity">The size of each bucket in the requested window.  Based on the granularity chosen, there are restrictions on the time range you can query:  **Minute**: - Max time range: 4 hours - Oldest possible start time: 48 hours in the past  **Hour**: - Max Time range: 14 days - Oldest possible start time: 30 days in the past  **Day**: - Max time range: 30 days - Oldest possible start time: 30 days in the past  This parameter exists in beta.</param>
+        /// <param name="groupBy">A comma-delimited list of strings representing one or more dimensions to group the result by.  Valid options are: &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and &#x60;spaceId&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="filter">An optional filter for &#x60;eventName&#x60;, &#x60;eventType&#x60;, &#x60;activationId&#x60;, &#x60;audienceId&#x60;, and/or &#x60;spaceId&#x60; that can be applied in addition to a &#x60;groupBy&#x60;.  This parameter exists in beta. (optional)</param>
+        /// <param name="pagination">Params to specify the page cursor and count.  This parameter exists in beta. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetEgressFailedMetricsFromDeliveryOverview200Response)</returns>
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<GetEgressFailedMetricsFromDeliveryOverview200Response>> GetLinkedAudienceSuccessMetricsFromDeliveryOverviewWithHttpInfoAsync(string sourceId, string destinationConfigId, string startTime, string endTime, string granularity, List<string>? groupBy = default(List<string>?), DeliveryOverviewAudienceFilterBy? filter = default(DeliveryOverviewAudienceFilterBy?), PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'sourceId' is set
+            if (sourceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'sourceId' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            // verify the required parameter 'destinationConfigId' is set
+            if (destinationConfigId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'destinationConfigId' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            // verify the required parameter 'startTime' is set
+            if (startTime == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'startTime' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            // verify the required parameter 'endTime' is set
+            if (endTime == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'endTime' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+            // verify the required parameter 'granularity' is set
+            if (granularity == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'granularity' when calling DeliveryOverviewApi->GetLinkedAudienceSuccessMetricsFromDeliveryOverview");
+            }
+
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1beta+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "sourceId", sourceId));
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "destinationConfigId", destinationConfigId));
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "startTime", startTime));
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "endTime", endTime));
+            if (groupBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("multi", "groupBy", groupBy));
+            }
+            localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "granularity", granularity));
+            if (filter != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+            }
+            if (pagination != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "pagination", pagination));
+            }
+
+            localVarRequestOptions.Operation = "DeliveryOverviewApi.GetLinkedAudienceSuccessMetricsFromDeliveryOverview";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetEgressFailedMetricsFromDeliveryOverview200Response>("/delivery-overview/audience/success", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLinkedAudienceSuccessMetricsFromDeliveryOverview", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

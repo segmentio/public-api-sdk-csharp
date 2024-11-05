@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Output of the Delivery Overview public API endpoints.
+    /// Output of the Delivery Overview public api endpoints.
     /// </summary>
     [DataContract(Name = "GetDeliveryOverviewMetricsBetaOutput")]
     public partial class GetDeliveryOverviewMetricsBetaOutput : IEquatable<GetDeliveryOverviewMetricsBetaOutput>, IValidatableObject

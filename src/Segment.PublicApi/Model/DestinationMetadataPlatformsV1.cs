@@ -40,13 +40,15 @@ namespace Segment.PublicApi.Model
         /// <param name="mobile">Whether this Destination supports mobile events..</param>
         /// <param name="warehouse">Whether this Destination supports Warehouse events..</param>
         /// <param name="cloudAppObject">Whether this Destination supports cloud app object events..</param>
-        public DestinationMetadataPlatformsV1(bool browser = default(bool), bool server = default(bool), bool mobile = default(bool), bool warehouse = default(bool), bool cloudAppObject = default(bool))
+        /// <param name="linkedAudiences">Whether this Destination supports linked audiences..</param>
+        public DestinationMetadataPlatformsV1(bool browser = default(bool), bool server = default(bool), bool mobile = default(bool), bool warehouse = default(bool), bool cloudAppObject = default(bool), bool linkedAudiences = default(bool))
         {
             this.Browser = browser;
             this.Server = server;
             this.Mobile = mobile;
             this.Warehouse = warehouse;
             this.CloudAppObject = cloudAppObject;
+            this.LinkedAudiences = linkedAudiences;
         }
 
         /// <summary>
@@ -85,6 +87,13 @@ namespace Segment.PublicApi.Model
         public bool CloudAppObject { get; set; }
 
         /// <summary>
+        /// Whether this Destination supports linked audiences.
+        /// </summary>
+        /// <value>Whether this Destination supports linked audiences.</value>
+        [DataMember(Name = "linkedAudiences", EmitDefaultValue = true)]
+        public bool LinkedAudiences { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +106,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  Mobile: ").Append(Mobile).Append("\n");
             sb.Append("  Warehouse: ").Append(Warehouse).Append("\n");
             sb.Append("  CloudAppObject: ").Append(CloudAppObject).Append("\n");
+            sb.Append("  LinkedAudiences: ").Append(LinkedAudiences).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +161,10 @@ namespace Segment.PublicApi.Model
                 (
                     this.CloudAppObject == input.CloudAppObject ||
                     this.CloudAppObject.Equals(input.CloudAppObject)
+                ) && 
+                (
+                    this.LinkedAudiences == input.LinkedAudiences ||
+                    this.LinkedAudiences.Equals(input.LinkedAudiences)
                 );
         }
 
@@ -168,6 +182,7 @@ namespace Segment.PublicApi.Model
                 hashCode = (hashCode * 59) + this.Mobile.GetHashCode();
                 hashCode = (hashCode * 59) + this.Warehouse.GetHashCode();
                 hashCode = (hashCode * 59) + this.CloudAppObject.GetHashCode();
+                hashCode = (hashCode * 59) + this.LinkedAudiences.GetHashCode();
                 return hashCode;
             }
         }

@@ -27,40 +27,27 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// The &#x60;DeliveryOverviewDestinationFilterBy&#x60; object is a map of the filterable fields and their values.
+    /// The &#x60;DeliveryOverviewAudienceFilterBy&#x60; object is a map of the filterable fields and their values.
     /// </summary>
-    [DataContract(Name = "DeliveryOverviewDestinationFilterBy")]
-    public partial class DeliveryOverviewDestinationFilterBy : IEquatable<DeliveryOverviewDestinationFilterBy>, IValidatableObject
+    [DataContract(Name = "DeliveryOverviewAudienceFilterBy")]
+    public partial class DeliveryOverviewAudienceFilterBy : IEquatable<DeliveryOverviewAudienceFilterBy>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeliveryOverviewDestinationFilterBy" /> class.
+        /// Initializes a new instance of the <see cref="DeliveryOverviewAudienceFilterBy" /> class.
         /// </summary>
-        /// <param name="discardReason">A list of strings of discard reasons.  See [Discard Record Documentation](https://segment.com/docs/connections/delivery-overview/#troubleshooting) for valid error codes..</param>
         /// <param name="eventName">A list of strings of event names..</param>
         /// <param name="eventType">A list of strings of event types. Valid options are: &#x60;alias&#x60;, &#x60;group&#x60;, &#x60;identify&#x60;, &#x60;page&#x60;, &#x60;screen&#x60;, and &#x60;track&#x60;..</param>
-        /// <param name="appVersion">A list of strings of app versions..</param>
-        /// <param name="subscriptionId">A list of strings of subscription IDs for Actions Destinations..</param>
         /// <param name="activationId">A list of strings of event context IDs from a Linked Audience mapping/activation..</param>
-        /// <param name="audienceId">A list of strings of audienceIDs for a Linked Audience..</param>
-        /// <param name="spaceId">A list of strings of spaceIDs for a Linked Audience..</param>
-        public DeliveryOverviewDestinationFilterBy(List<string> discardReason = default(List<string>), List<string> eventName = default(List<string>), List<string> eventType = default(List<string>), List<string> appVersion = default(List<string>), List<string> subscriptionId = default(List<string>), List<string> activationId = default(List<string>), List<string> audienceId = default(List<string>), List<string> spaceId = default(List<string>))
+        /// <param name="audienceId">A list of strings of audience IDs for a Linked Audience..</param>
+        /// <param name="spaceId">A list of strings of space IDs for a Linked Audience..</param>
+        public DeliveryOverviewAudienceFilterBy(List<string> eventName = default(List<string>), List<string> eventType = default(List<string>), List<string> activationId = default(List<string>), List<string> audienceId = default(List<string>), List<string> spaceId = default(List<string>))
         {
-            this.DiscardReason = discardReason;
             this.EventName = eventName;
             this.EventType = eventType;
-            this.AppVersion = appVersion;
-            this.SubscriptionId = subscriptionId;
             this.ActivationId = activationId;
             this.AudienceId = audienceId;
             this.SpaceId = spaceId;
         }
-
-        /// <summary>
-        /// A list of strings of discard reasons.  See [Discard Record Documentation](https://segment.com/docs/connections/delivery-overview/#troubleshooting) for valid error codes.
-        /// </summary>
-        /// <value>A list of strings of discard reasons.  See [Discard Record Documentation](https://segment.com/docs/connections/delivery-overview/#troubleshooting) for valid error codes.</value>
-        [DataMember(Name = "discardReason", EmitDefaultValue = false)]
-        public List<string> DiscardReason { get; set; }
 
         /// <summary>
         /// A list of strings of event names.
@@ -77,20 +64,6 @@ namespace Segment.PublicApi.Model
         public List<string> EventType { get; set; }
 
         /// <summary>
-        /// A list of strings of app versions.
-        /// </summary>
-        /// <value>A list of strings of app versions.</value>
-        [DataMember(Name = "appVersion", EmitDefaultValue = false)]
-        public List<string> AppVersion { get; set; }
-
-        /// <summary>
-        /// A list of strings of subscription IDs for Actions Destinations.
-        /// </summary>
-        /// <value>A list of strings of subscription IDs for Actions Destinations.</value>
-        [DataMember(Name = "subscriptionId", EmitDefaultValue = false)]
-        public List<string> SubscriptionId { get; set; }
-
-        /// <summary>
         /// A list of strings of event context IDs from a Linked Audience mapping/activation.
         /// </summary>
         /// <value>A list of strings of event context IDs from a Linked Audience mapping/activation.</value>
@@ -98,16 +71,16 @@ namespace Segment.PublicApi.Model
         public List<string> ActivationId { get; set; }
 
         /// <summary>
-        /// A list of strings of audienceIDs for a Linked Audience.
+        /// A list of strings of audience IDs for a Linked Audience.
         /// </summary>
-        /// <value>A list of strings of audienceIDs for a Linked Audience.</value>
+        /// <value>A list of strings of audience IDs for a Linked Audience.</value>
         [DataMember(Name = "audienceId", EmitDefaultValue = false)]
         public List<string> AudienceId { get; set; }
 
         /// <summary>
-        /// A list of strings of spaceIDs for a Linked Audience.
+        /// A list of strings of space IDs for a Linked Audience.
         /// </summary>
-        /// <value>A list of strings of spaceIDs for a Linked Audience.</value>
+        /// <value>A list of strings of space IDs for a Linked Audience.</value>
         [DataMember(Name = "spaceId", EmitDefaultValue = false)]
         public List<string> SpaceId { get; set; }
 
@@ -118,12 +91,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DeliveryOverviewDestinationFilterBy {\n");
-            sb.Append("  DiscardReason: ").Append(DiscardReason).Append("\n");
+            sb.Append("class DeliveryOverviewAudienceFilterBy {\n");
             sb.Append("  EventName: ").Append(EventName).Append("\n");
             sb.Append("  EventType: ").Append(EventType).Append("\n");
-            sb.Append("  AppVersion: ").Append(AppVersion).Append("\n");
-            sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
             sb.Append("  ActivationId: ").Append(ActivationId).Append("\n");
             sb.Append("  AudienceId: ").Append(AudienceId).Append("\n");
             sb.Append("  SpaceId: ").Append(SpaceId).Append("\n");
@@ -147,27 +117,21 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeliveryOverviewDestinationFilterBy);
+            return this.Equals(input as DeliveryOverviewAudienceFilterBy);
         }
 
         /// <summary>
-        /// Returns true if DeliveryOverviewDestinationFilterBy instances are equal
+        /// Returns true if DeliveryOverviewAudienceFilterBy instances are equal
         /// </summary>
-        /// <param name="input">Instance of DeliveryOverviewDestinationFilterBy to be compared</param>
+        /// <param name="input">Instance of DeliveryOverviewAudienceFilterBy to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DeliveryOverviewDestinationFilterBy input)
+        public bool Equals(DeliveryOverviewAudienceFilterBy input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
-                (
-                    this.DiscardReason == input.DiscardReason ||
-                    this.DiscardReason != null &&
-                    input.DiscardReason != null &&
-                    this.DiscardReason.SequenceEqual(input.DiscardReason)
-                ) && 
                 (
                     this.EventName == input.EventName ||
                     this.EventName != null &&
@@ -179,18 +143,6 @@ namespace Segment.PublicApi.Model
                     this.EventType != null &&
                     input.EventType != null &&
                     this.EventType.SequenceEqual(input.EventType)
-                ) && 
-                (
-                    this.AppVersion == input.AppVersion ||
-                    this.AppVersion != null &&
-                    input.AppVersion != null &&
-                    this.AppVersion.SequenceEqual(input.AppVersion)
-                ) && 
-                (
-                    this.SubscriptionId == input.SubscriptionId ||
-                    this.SubscriptionId != null &&
-                    input.SubscriptionId != null &&
-                    this.SubscriptionId.SequenceEqual(input.SubscriptionId)
                 ) && 
                 (
                     this.ActivationId == input.ActivationId ||
@@ -221,10 +173,6 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DiscardReason != null)
-                {
-                    hashCode = (hashCode * 59) + this.DiscardReason.GetHashCode();
-                }
                 if (this.EventName != null)
                 {
                     hashCode = (hashCode * 59) + this.EventName.GetHashCode();
@@ -232,14 +180,6 @@ namespace Segment.PublicApi.Model
                 if (this.EventType != null)
                 {
                     hashCode = (hashCode * 59) + this.EventType.GetHashCode();
-                }
-                if (this.AppVersion != null)
-                {
-                    hashCode = (hashCode * 59) + this.AppVersion.GetHashCode();
-                }
-                if (this.SubscriptionId != null)
-                {
-                    hashCode = (hashCode * 59) + this.SubscriptionId.GetHashCode();
                 }
                 if (this.ActivationId != null)
                 {
