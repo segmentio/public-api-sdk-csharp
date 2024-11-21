@@ -28,6 +28,33 @@ namespace Segment.PublicApi.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Cancel Reverse ETL Sync for Model
+        /// </summary>
+        /// <remarks>
+        /// Cancels a sync for a Reverse ETL Connection. It might take a few seconds to completely cancel the sync.   Will return an error if the sync is already completed or cancelled.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="modelId"></param>
+        /// <param name="syncId"></param>
+        /// <param name="cancelReverseETLSyncForModelInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CancelReverseETLSyncForModel200Response</returns>
+        CancelReverseETLSyncForModel200Response CancelReverseETLSyncForModel(string modelId, string syncId, CancelReverseETLSyncForModelInput cancelReverseETLSyncForModelInput, int operationIndex = 0);
+
+        /// <summary>
+        /// Cancel Reverse ETL Sync for Model
+        /// </summary>
+        /// <remarks>
+        /// Cancels a sync for a Reverse ETL Connection. It might take a few seconds to completely cancel the sync.   Will return an error if the sync is already completed or cancelled.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="modelId"></param>
+        /// <param name="syncId"></param>
+        /// <param name="cancelReverseETLSyncForModelInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CancelReverseETLSyncForModel200Response</returns>
+        ApiResponse<CancelReverseETLSyncForModel200Response> CancelReverseETLSyncForModelWithHttpInfo(string modelId, string syncId, CancelReverseETLSyncForModelInput cancelReverseETLSyncForModelInput, int operationIndex = 0);
+        /// <summary>
         /// Create Reverse ETL Manual Sync
         /// </summary>
         /// <remarks>
@@ -230,6 +257,35 @@ namespace Segment.PublicApi.Api
     public interface IReverseETLApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Cancel Reverse ETL Sync for Model
+        /// </summary>
+        /// <remarks>
+        /// Cancels a sync for a Reverse ETL Connection. It might take a few seconds to completely cancel the sync.   Will return an error if the sync is already completed or cancelled.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="modelId"></param>
+        /// <param name="syncId"></param>
+        /// <param name="cancelReverseETLSyncForModelInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CancelReverseETLSyncForModel200Response</returns>
+        System.Threading.Tasks.Task<CancelReverseETLSyncForModel200Response> CancelReverseETLSyncForModelAsync(string modelId, string syncId, CancelReverseETLSyncForModelInput cancelReverseETLSyncForModelInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Cancel Reverse ETL Sync for Model
+        /// </summary>
+        /// <remarks>
+        /// Cancels a sync for a Reverse ETL Connection. It might take a few seconds to completely cancel the sync.   Will return an error if the sync is already completed or cancelled.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="modelId"></param>
+        /// <param name="syncId"></param>
+        /// <param name="cancelReverseETLSyncForModelInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CancelReverseETLSyncForModel200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CancelReverseETLSyncForModel200Response>> CancelReverseETLSyncForModelWithHttpInfoAsync(string modelId, string syncId, CancelReverseETLSyncForModelInput cancelReverseETLSyncForModelInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Reverse ETL Manual Sync
         /// </summary>
@@ -558,6 +614,202 @@ namespace Segment.PublicApi.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Cancel Reverse ETL Sync for Model Cancels a sync for a Reverse ETL Connection. It might take a few seconds to completely cancel the sync.   Will return an error if the sync is already completed or cancelled.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="modelId"></param>
+        /// <param name="syncId"></param>
+        /// <param name="cancelReverseETLSyncForModelInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CancelReverseETLSyncForModel200Response</returns>
+        public CancelReverseETLSyncForModel200Response CancelReverseETLSyncForModel(string modelId, string syncId, CancelReverseETLSyncForModelInput cancelReverseETLSyncForModelInput, int operationIndex = 0)
+        {
+            Segment.PublicApi.Client.ApiResponse<CancelReverseETLSyncForModel200Response> localVarResponse = CancelReverseETLSyncForModelWithHttpInfo(modelId, syncId, cancelReverseETLSyncForModelInput);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Cancel Reverse ETL Sync for Model Cancels a sync for a Reverse ETL Connection. It might take a few seconds to completely cancel the sync.   Will return an error if the sync is already completed or cancelled.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="modelId"></param>
+        /// <param name="syncId"></param>
+        /// <param name="cancelReverseETLSyncForModelInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CancelReverseETLSyncForModel200Response</returns>
+        public Segment.PublicApi.Client.ApiResponse<CancelReverseETLSyncForModel200Response> CancelReverseETLSyncForModelWithHttpInfo(string modelId, string syncId, CancelReverseETLSyncForModelInput cancelReverseETLSyncForModelInput, int operationIndex = 0)
+        {
+            // verify the required parameter 'modelId' is set
+            if (modelId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'modelId' when calling ReverseETLApi->CancelReverseETLSyncForModel");
+            }
+
+            // verify the required parameter 'syncId' is set
+            if (syncId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'syncId' when calling ReverseETLApi->CancelReverseETLSyncForModel");
+            }
+
+            // verify the required parameter 'cancelReverseETLSyncForModelInput' is set
+            if (cancelReverseETLSyncForModelInput == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'cancelReverseETLSyncForModelInput' when calling ReverseETLApi->CancelReverseETLSyncForModel");
+            }
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1alpha+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("modelId", Segment.PublicApi.Client.ClientUtils.ParameterToString(modelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("syncId", Segment.PublicApi.Client.ClientUtils.ParameterToString(syncId)); // path parameter
+            localVarRequestOptions.Data = cancelReverseETLSyncForModelInput;
+
+            localVarRequestOptions.Operation = "ReverseETLApi.CancelReverseETLSyncForModel";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CancelReverseETLSyncForModel200Response>("/reverse-etl-models/{modelId}/syncs/{syncId}/cancel", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelReverseETLSyncForModel", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Cancel Reverse ETL Sync for Model Cancels a sync for a Reverse ETL Connection. It might take a few seconds to completely cancel the sync.   Will return an error if the sync is already completed or cancelled.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="modelId"></param>
+        /// <param name="syncId"></param>
+        /// <param name="cancelReverseETLSyncForModelInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CancelReverseETLSyncForModel200Response</returns>
+        public async System.Threading.Tasks.Task<CancelReverseETLSyncForModel200Response> CancelReverseETLSyncForModelAsync(string modelId, string syncId, CancelReverseETLSyncForModelInput cancelReverseETLSyncForModelInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Segment.PublicApi.Client.ApiResponse<CancelReverseETLSyncForModel200Response> localVarResponse = await CancelReverseETLSyncForModelWithHttpInfoAsync(modelId, syncId, cancelReverseETLSyncForModelInput, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Cancel Reverse ETL Sync for Model Cancels a sync for a Reverse ETL Connection. It might take a few seconds to completely cancel the sync.   Will return an error if the sync is already completed or cancelled.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="modelId"></param>
+        /// <param name="syncId"></param>
+        /// <param name="cancelReverseETLSyncForModelInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CancelReverseETLSyncForModel200Response)</returns>
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<CancelReverseETLSyncForModel200Response>> CancelReverseETLSyncForModelWithHttpInfoAsync(string modelId, string syncId, CancelReverseETLSyncForModelInput cancelReverseETLSyncForModelInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'modelId' is set
+            if (modelId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'modelId' when calling ReverseETLApi->CancelReverseETLSyncForModel");
+            }
+
+            // verify the required parameter 'syncId' is set
+            if (syncId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'syncId' when calling ReverseETLApi->CancelReverseETLSyncForModel");
+            }
+
+            // verify the required parameter 'cancelReverseETLSyncForModelInput' is set
+            if (cancelReverseETLSyncForModelInput == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'cancelReverseETLSyncForModelInput' when calling ReverseETLApi->CancelReverseETLSyncForModel");
+            }
+
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1alpha+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("modelId", Segment.PublicApi.Client.ClientUtils.ParameterToString(modelId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("syncId", Segment.PublicApi.Client.ClientUtils.ParameterToString(syncId)); // path parameter
+            localVarRequestOptions.Data = cancelReverseETLSyncForModelInput;
+
+            localVarRequestOptions.Operation = "ReverseETLApi.CancelReverseETLSyncForModel";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CancelReverseETLSyncForModel200Response>("/reverse-etl-models/{modelId}/syncs/{syncId}/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CancelReverseETLSyncForModel", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
