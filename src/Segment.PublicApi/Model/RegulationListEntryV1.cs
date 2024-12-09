@@ -97,40 +97,46 @@ namespace Segment.PublicApi.Model
         public enum RegulationTypeEnum
         {
             /// <summary>
+            /// Enum DELETEARCHIVEONLY for value: DELETE_ARCHIVE_ONLY
+            /// </summary>
+            [EnumMember(Value = "DELETE_ARCHIVE_ONLY")]
+            DELETEARCHIVEONLY = 1,
+
+            /// <summary>
             /// Enum DELETEINTERNAL for value: DELETE_INTERNAL
             /// </summary>
             [EnumMember(Value = "DELETE_INTERNAL")]
-            DELETEINTERNAL = 1,
+            DELETEINTERNAL = 2,
 
             /// <summary>
             /// Enum DELETEONLY for value: DELETE_ONLY
             /// </summary>
             [EnumMember(Value = "DELETE_ONLY")]
-            DELETEONLY = 2,
+            DELETEONLY = 3,
 
             /// <summary>
             /// Enum SUPPRESSONLY for value: SUPPRESS_ONLY
             /// </summary>
             [EnumMember(Value = "SUPPRESS_ONLY")]
-            SUPPRESSONLY = 3,
+            SUPPRESSONLY = 4,
 
             /// <summary>
             /// Enum SUPPRESSWITHDELETE for value: SUPPRESS_WITH_DELETE
             /// </summary>
             [EnumMember(Value = "SUPPRESS_WITH_DELETE")]
-            SUPPRESSWITHDELETE = 4,
+            SUPPRESSWITHDELETE = 5,
 
             /// <summary>
             /// Enum SUPPRESSWITHDELETEINTERNAL for value: SUPPRESS_WITH_DELETE_INTERNAL
             /// </summary>
             [EnumMember(Value = "SUPPRESS_WITH_DELETE_INTERNAL")]
-            SUPPRESSWITHDELETEINTERNAL = 5,
+            SUPPRESSWITHDELETEINTERNAL = 6,
 
             /// <summary>
             /// Enum UNSUPPRESS for value: UNSUPPRESS
             /// </summary>
             [EnumMember(Value = "UNSUPPRESS")]
-            UNSUPPRESS = 6
+            UNSUPPRESS = 7
         }
 
 
