@@ -33,9 +33,9 @@ namespace Segment.PublicApi.Model
     public partial class ReverseEtlScheduleDefinition : IEquatable<ReverseEtlScheduleDefinition>, IValidatableObject
     {
         /// <summary>
-        /// Strategy supports: Periodic, Specific Days, Manual, CRON.
+        /// Strategy supports: Periodic, Specific Days, Manual, CRON and DBT_CLOUD.
         /// </summary>
-        /// <value>Strategy supports: Periodic, Specific Days, Manual, CRON.</value>
+        /// <value>Strategy supports: Periodic, Specific Days, Manual, CRON and DBT_CLOUD.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StrategyEnum
         {
@@ -46,29 +46,35 @@ namespace Segment.PublicApi.Model
             CRON = 1,
 
             /// <summary>
+            /// Enum DBTCLOUD for value: DBT_CLOUD
+            /// </summary>
+            [EnumMember(Value = "DBT_CLOUD")]
+            DBTCLOUD = 2,
+
+            /// <summary>
             /// Enum MANUAL for value: MANUAL
             /// </summary>
             [EnumMember(Value = "MANUAL")]
-            MANUAL = 2,
+            MANUAL = 3,
 
             /// <summary>
             /// Enum PERIODIC for value: PERIODIC
             /// </summary>
             [EnumMember(Value = "PERIODIC")]
-            PERIODIC = 3,
+            PERIODIC = 4,
 
             /// <summary>
             /// Enum SPECIFICDAYS for value: SPECIFIC_DAYS
             /// </summary>
             [EnumMember(Value = "SPECIFIC_DAYS")]
-            SPECIFICDAYS = 4
+            SPECIFICDAYS = 5
         }
 
 
         /// <summary>
-        /// Strategy supports: Periodic, Specific Days, Manual, CRON.
+        /// Strategy supports: Periodic, Specific Days, Manual, CRON and DBT_CLOUD.
         /// </summary>
-        /// <value>Strategy supports: Periodic, Specific Days, Manual, CRON.</value>
+        /// <value>Strategy supports: Periodic, Specific Days, Manual, CRON and DBT_CLOUD.</value>
         [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
         public StrategyEnum Strategy { get; set; }
         /// <summary>
@@ -79,7 +85,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ReverseEtlScheduleDefinition" /> class.
         /// </summary>
-        /// <param name="strategy">Strategy supports: Periodic, Specific Days, Manual, CRON. (required).</param>
+        /// <param name="strategy">Strategy supports: Periodic, Specific Days, Manual, CRON and DBT_CLOUD. (required).</param>
         /// <param name="config">config.</param>
         public ReverseEtlScheduleDefinition(StrategyEnum strategy = default(StrategyEnum), Config config = default(Config))
         {

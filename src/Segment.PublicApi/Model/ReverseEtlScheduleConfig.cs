@@ -70,6 +70,18 @@ namespace Segment.PublicApi.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReverseEtlScheduleConfig" /> class
+        /// with the <see cref="ReverseEtlDbtCloudScheduleConfig" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of ReverseEtlDbtCloudScheduleConfig.</param>
+        public ReverseEtlScheduleConfig(ReverseEtlDbtCloudScheduleConfig actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "anyOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -88,6 +100,10 @@ namespace Segment.PublicApi.Model
                 {
                     this._actualInstance = value;
                 }
+                else if (value.GetType() == typeof(ReverseEtlDbtCloudScheduleConfig))
+                {
+                    this._actualInstance = value;
+                }
                 else if (value.GetType() == typeof(ReverseEtlPeriodicScheduleConfig))
                 {
                     this._actualInstance = value;
@@ -98,7 +114,7 @@ namespace Segment.PublicApi.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: ReverseEtlCronScheduleConfig, ReverseEtlPeriodicScheduleConfig, ReverseEtlSpecificTimeScheduleConfig");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: ReverseEtlCronScheduleConfig, ReverseEtlDbtCloudScheduleConfig, ReverseEtlPeriodicScheduleConfig, ReverseEtlSpecificTimeScheduleConfig");
                 }
             }
         }
@@ -131,6 +147,16 @@ namespace Segment.PublicApi.Model
         public ReverseEtlCronScheduleConfig GetReverseEtlCronScheduleConfig()
         {
             return (ReverseEtlCronScheduleConfig)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `ReverseEtlDbtCloudScheduleConfig`. If the actual instance is not `ReverseEtlDbtCloudScheduleConfig`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of ReverseEtlDbtCloudScheduleConfig</returns>
+        public ReverseEtlDbtCloudScheduleConfig GetReverseEtlDbtCloudScheduleConfig()
+        {
+            return (ReverseEtlDbtCloudScheduleConfig)this.ActualInstance;
         }
 
         /// <summary>
@@ -179,6 +205,18 @@ namespace Segment.PublicApi.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into ReverseEtlCronScheduleConfig: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                newReverseEtlScheduleConfig = new ReverseEtlScheduleConfig(JsonConvert.DeserializeObject<ReverseEtlDbtCloudScheduleConfig>(jsonString, ReverseEtlScheduleConfig.SerializerSettings));
+                // deserialization is considered successful at this point if no exception has been thrown.
+                return newReverseEtlScheduleConfig;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into ReverseEtlDbtCloudScheduleConfig: {1}", jsonString, exception.ToString()));
             }
 
             try
