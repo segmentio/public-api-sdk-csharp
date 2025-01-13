@@ -27,64 +27,50 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Represents a role.
+    /// Definition for a schedule triggered by dbt Cloud job events.
     /// </summary>
-    [DataContract(Name = "RoleV1")]
-    public partial class RoleV1 : IEquatable<RoleV1>, IValidatableObject
+    [DataContract(Name = "ReverseEtlDbtCloudScheduleConfig")]
+    public partial class ReverseEtlDbtCloudScheduleConfig : IEquatable<ReverseEtlDbtCloudScheduleConfig>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RoleV1" /> class.
+        /// Initializes a new instance of the <see cref="ReverseEtlDbtCloudScheduleConfig" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected RoleV1() { }
+        protected ReverseEtlDbtCloudScheduleConfig() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="RoleV1" /> class.
+        /// Initializes a new instance of the <see cref="ReverseEtlDbtCloudScheduleConfig" /> class.
         /// </summary>
-        /// <param name="id">The unique identifier of the role. (required).</param>
-        /// <param name="name">The human-readable name of the role. (required).</param>
-        /// <param name="description">The human-readable description of the role. (required).</param>
-        public RoleV1(string id = default(string), string name = default(string), string description = default(string))
+        /// <param name="jobId">The dbt Cloud job used to trigger a sync for a Reverse ETL Connection. (required).</param>
+        /// <param name="accountId">The dbt Cloud account where the job belongs to. (required).</param>
+        public ReverseEtlDbtCloudScheduleConfig(string jobId = default(string), string accountId = default(string))
         {
-            // to ensure "id" is required (not null)
-            if (id == null)
+            // to ensure "jobId" is required (not null)
+            if (jobId == null)
             {
-                throw new ArgumentNullException("id is a required property for RoleV1 and cannot be null");
+                throw new ArgumentNullException("jobId is a required property for ReverseEtlDbtCloudScheduleConfig and cannot be null");
             }
-            this.Id = id;
-            // to ensure "name" is required (not null)
-            if (name == null)
+            this.JobId = jobId;
+            // to ensure "accountId" is required (not null)
+            if (accountId == null)
             {
-                throw new ArgumentNullException("name is a required property for RoleV1 and cannot be null");
+                throw new ArgumentNullException("accountId is a required property for ReverseEtlDbtCloudScheduleConfig and cannot be null");
             }
-            this.Name = name;
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new ArgumentNullException("description is a required property for RoleV1 and cannot be null");
-            }
-            this.Description = description;
+            this.AccountId = accountId;
         }
 
         /// <summary>
-        /// The unique identifier of the role.
+        /// The dbt Cloud job used to trigger a sync for a Reverse ETL Connection.
         /// </summary>
-        /// <value>The unique identifier of the role.</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public string Id { get; set; }
+        /// <value>The dbt Cloud job used to trigger a sync for a Reverse ETL Connection.</value>
+        [DataMember(Name = "jobId", IsRequired = true, EmitDefaultValue = true)]
+        public string JobId { get; set; }
 
         /// <summary>
-        /// The human-readable name of the role.
+        /// The dbt Cloud account where the job belongs to.
         /// </summary>
-        /// <value>The human-readable name of the role.</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The human-readable description of the role.
-        /// </summary>
-        /// <value>The human-readable description of the role.</value>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
-        public string Description { get; set; }
+        /// <value>The dbt Cloud account where the job belongs to.</value>
+        [DataMember(Name = "accountId", IsRequired = true, EmitDefaultValue = true)]
+        public string AccountId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -93,10 +79,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RoleV1 {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("class ReverseEtlDbtCloudScheduleConfig {\n");
+            sb.Append("  JobId: ").Append(JobId).Append("\n");
+            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,15 +102,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RoleV1);
+            return this.Equals(input as ReverseEtlDbtCloudScheduleConfig);
         }
 
         /// <summary>
-        /// Returns true if RoleV1 instances are equal
+        /// Returns true if ReverseEtlDbtCloudScheduleConfig instances are equal
         /// </summary>
-        /// <param name="input">Instance of RoleV1 to be compared</param>
+        /// <param name="input">Instance of ReverseEtlDbtCloudScheduleConfig to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RoleV1 input)
+        public bool Equals(ReverseEtlDbtCloudScheduleConfig input)
         {
             if (input == null)
             {
@@ -133,19 +118,14 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
+                    this.JobId == input.JobId ||
+                    (this.JobId != null &&
+                    this.JobId.Equals(input.JobId))
                 ) && 
                 (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Description == input.Description ||
-                    (this.Description != null &&
-                    this.Description.Equals(input.Description))
+                    this.AccountId == input.AccountId ||
+                    (this.AccountId != null &&
+                    this.AccountId.Equals(input.AccountId))
                 );
         }
 
@@ -158,17 +138,13 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
+                if (this.JobId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                    hashCode = (hashCode * 59) + this.JobId.GetHashCode();
                 }
-                if (this.Name != null)
+                if (this.AccountId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Name.GetHashCode();
-                }
-                if (this.Description != null)
-                {
-                    hashCode = (hashCode * 59) + this.Description.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AccountId.GetHashCode();
                 }
                 return hashCode;
             }
