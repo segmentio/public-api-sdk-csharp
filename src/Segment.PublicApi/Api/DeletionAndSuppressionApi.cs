@@ -31,7 +31,7 @@ namespace Segment.PublicApi.Api
         /// Create Cloud Source Regulation
         /// </summary>
         /// <remarks>
-        /// Creates a Source-scoped regulation.        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -44,7 +44,7 @@ namespace Segment.PublicApi.Api
         /// Create Cloud Source Regulation
         /// </summary>
         /// <remarks>
-        /// Creates a Source-scoped regulation.        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -56,7 +56,7 @@ namespace Segment.PublicApi.Api
         /// Create Source Regulation
         /// </summary>
         /// <remarks>
-        /// Creates a Source-scoped regulation.    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -69,7 +69,7 @@ namespace Segment.PublicApi.Api
         /// Create Source Regulation
         /// </summary>
         /// <remarks>
-        /// Creates a Source-scoped regulation.    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -238,7 +238,7 @@ namespace Segment.PublicApi.Api
         /// Create Cloud Source Regulation
         /// </summary>
         /// <remarks>
-        /// Creates a Source-scoped regulation.        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -252,7 +252,7 @@ namespace Segment.PublicApi.Api
         /// Create Cloud Source Regulation
         /// </summary>
         /// <remarks>
-        /// Creates a Source-scoped regulation.        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -265,7 +265,7 @@ namespace Segment.PublicApi.Api
         /// Create Source Regulation
         /// </summary>
         /// <remarks>
-        /// Creates a Source-scoped regulation.    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -279,7 +279,7 @@ namespace Segment.PublicApi.Api
         /// Create Source Regulation
         /// </summary>
         /// <remarks>
-        /// Creates a Source-scoped regulation.    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -569,7 +569,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Cloud Source Regulation Creates a Source-scoped regulation.        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Create Cloud Source Regulation Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -583,7 +583,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Cloud Source Regulation Creates a Source-scoped regulation.        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Create Cloud Source Regulation Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -661,7 +661,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Cloud Source Regulation Creates a Source-scoped regulation.        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Create Cloud Source Regulation Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -676,7 +676,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Cloud Source Regulation Creates a Source-scoped regulation.        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Create Cloud Source Regulation Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment        Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -757,7 +757,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Source Regulation Creates a Source-scoped regulation.    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Create Source Regulation Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -771,7 +771,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Source Regulation Creates a Source-scoped regulation.    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Create Source Regulation Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -849,7 +849,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Source Regulation Creates a Source-scoped regulation.    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Create Source Regulation Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -864,7 +864,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Source Regulation Creates a Source-scoped regulation.    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
+        /// Create Source Regulation Creates a Source-scoped regulation.    Please Note: Suppression rules at the Workspace level take precedence over those at the Source level. If a user has been suppressed at the Workspace level, any attempt to un-suppress at the Source level is not supported and the processing of the request will fail in Segment    • When called, this endpoint may generate the &#x60;Source Regulation Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Config API omitted fields: - &#x60;attributes&#x60;, - &#x60;userAgent&#x60;       
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
