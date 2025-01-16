@@ -33,9 +33,9 @@ namespace Segment.PublicApi.Model
     public partial class CreateSourceRegulationV1Input : IEquatable<CreateSourceRegulationV1Input>, IValidatableObject
     {
         /// <summary>
-        /// The regulation type to create.
+        /// The regulation type to create. Please note that &#x60;DELETE_ARCHIVE_ONLY&#x60; is only supported for limited Workspaces for Source-scoped regulations.
         /// </summary>
-        /// <value>The regulation type to create.</value>
+        /// <value>The regulation type to create. Please note that &#x60;DELETE_ARCHIVE_ONLY&#x60; is only supported for limited Workspaces for Source-scoped regulations.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum RegulationTypeEnum
         {
@@ -84,9 +84,9 @@ namespace Segment.PublicApi.Model
 
 
         /// <summary>
-        /// The regulation type to create.
+        /// The regulation type to create. Please note that &#x60;DELETE_ARCHIVE_ONLY&#x60; is only supported for limited Workspaces for Source-scoped regulations.
         /// </summary>
-        /// <value>The regulation type to create.</value>
+        /// <value>The regulation type to create. Please note that &#x60;DELETE_ARCHIVE_ONLY&#x60; is only supported for limited Workspaces for Source-scoped regulations.</value>
         [DataMember(Name = "regulationType", IsRequired = true, EmitDefaultValue = true)]
         public RegulationTypeEnum RegulationType { get; set; }
         /// <summary>
@@ -124,7 +124,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateSourceRegulationV1Input" /> class.
         /// </summary>
-        /// <param name="regulationType">The regulation type to create. (required).</param>
+        /// <param name="regulationType">The regulation type to create. Please note that &#x60;DELETE_ARCHIVE_ONLY&#x60; is only supported for limited Workspaces for Source-scoped regulations. (required).</param>
         /// <param name="subjectType">The subject type. (required).</param>
         /// <param name="subjectIds">The list of &#x60;userId&#x60; or &#x60;objectId&#x60; values of the subjects to regulate.  Config API note: equal to &#x60;parent&#x60; but allows an array. (required).</param>
         public CreateSourceRegulationV1Input(RegulationTypeEnum regulationType = default(RegulationTypeEnum), SubjectTypeEnum subjectType = default(SubjectTypeEnum), List<string> subjectIds = default(List<string>))
