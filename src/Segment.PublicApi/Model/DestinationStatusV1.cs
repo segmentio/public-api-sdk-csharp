@@ -63,22 +63,22 @@ namespace Segment.PublicApi.Model
             INVALID = 4,
 
             /// <summary>
+            /// Enum INPROGRESS for value: IN_PROGRESS
+            /// </summary>
+            [EnumMember(Value = "IN_PROGRESS")]
+            INPROGRESS = 5,
+
+            /// <summary>
             /// Enum NOTSUPPORTED for value: NOT_SUPPORTED
             /// </summary>
             [EnumMember(Value = "NOT_SUPPORTED")]
-            NOTSUPPORTED = 5,
+            NOTSUPPORTED = 6,
 
             /// <summary>
             /// Enum PARTIALSUCCESS for value: PARTIAL_SUCCESS
             /// </summary>
             [EnumMember(Value = "PARTIAL_SUCCESS")]
-            PARTIALSUCCESS = 6,
-
-            /// <summary>
-            /// Enum RUNNING for value: RUNNING
-            /// </summary>
-            [EnumMember(Value = "RUNNING")]
-            RUNNING = 7
+            PARTIALSUCCESS = 7
         }
 
 
