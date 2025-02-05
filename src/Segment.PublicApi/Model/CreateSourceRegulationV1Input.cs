@@ -90,9 +90,9 @@ namespace Segment.PublicApi.Model
         [DataMember(Name = "regulationType", IsRequired = true, EmitDefaultValue = true)]
         public RegulationTypeEnum RegulationType { get; set; }
         /// <summary>
-        /// The subject type.
+        /// The subject type. Note: &#x60;ANONYMOUS_ID&#x60; is only supported for limited Workspaces for Source-scoped regulations. &#x60;ANONYMOUS_ID&#x60; is only supported when regulationType is &#x60;DELETE_ARCHIVE_ONLY&#x60;.
         /// </summary>
-        /// <value>The subject type.</value>
+        /// <value>The subject type. Note: &#x60;ANONYMOUS_ID&#x60; is only supported for limited Workspaces for Source-scoped regulations. &#x60;ANONYMOUS_ID&#x60; is only supported when regulationType is &#x60;DELETE_ARCHIVE_ONLY&#x60;.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum SubjectTypeEnum
         {
@@ -111,9 +111,9 @@ namespace Segment.PublicApi.Model
 
 
         /// <summary>
-        /// The subject type.
+        /// The subject type. Note: &#x60;ANONYMOUS_ID&#x60; is only supported for limited Workspaces for Source-scoped regulations. &#x60;ANONYMOUS_ID&#x60; is only supported when regulationType is &#x60;DELETE_ARCHIVE_ONLY&#x60;.
         /// </summary>
-        /// <value>The subject type.</value>
+        /// <value>The subject type. Note: &#x60;ANONYMOUS_ID&#x60; is only supported for limited Workspaces for Source-scoped regulations. &#x60;ANONYMOUS_ID&#x60; is only supported when regulationType is &#x60;DELETE_ARCHIVE_ONLY&#x60;.</value>
         [DataMember(Name = "subjectType", IsRequired = true, EmitDefaultValue = true)]
         public SubjectTypeEnum SubjectType { get; set; }
         /// <summary>
@@ -125,8 +125,8 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="CreateSourceRegulationV1Input" /> class.
         /// </summary>
         /// <param name="regulationType">The regulation type to create. Please note that &#x60;DELETE_ARCHIVE_ONLY&#x60; is only supported for limited Workspaces for Source-scoped regulations. (required).</param>
-        /// <param name="subjectType">The subject type. (required).</param>
-        /// <param name="subjectIds">The list of &#x60;userId&#x60; or &#x60;objectId&#x60; values of the subjects to regulate.  Config API note: equal to &#x60;parent&#x60; but allows an array. (required).</param>
+        /// <param name="subjectType">The subject type. Note: &#x60;ANONYMOUS_ID&#x60; is only supported for limited Workspaces for Source-scoped regulations. &#x60;ANONYMOUS_ID&#x60; is only supported when regulationType is &#x60;DELETE_ARCHIVE_ONLY&#x60;. (required).</param>
+        /// <param name="subjectIds">The list of &#x60;userId&#x60; or &#x60;objectId&#x60; or &#x60;anonymousId&#x60; values of the subjects to regulate.  Config API note: equal to &#x60;parent&#x60; but allows an array. (required).</param>
         public CreateSourceRegulationV1Input(RegulationTypeEnum regulationType = default(RegulationTypeEnum), SubjectTypeEnum subjectType = default(SubjectTypeEnum), List<string> subjectIds = default(List<string>))
         {
             this.RegulationType = regulationType;
@@ -140,9 +140,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// The list of &#x60;userId&#x60; or &#x60;objectId&#x60; values of the subjects to regulate.  Config API note: equal to &#x60;parent&#x60; but allows an array.
+        /// The list of &#x60;userId&#x60; or &#x60;objectId&#x60; or &#x60;anonymousId&#x60; values of the subjects to regulate.  Config API note: equal to &#x60;parent&#x60; but allows an array.
         /// </summary>
-        /// <value>The list of &#x60;userId&#x60; or &#x60;objectId&#x60; values of the subjects to regulate.  Config API note: equal to &#x60;parent&#x60; but allows an array.</value>
+        /// <value>The list of &#x60;userId&#x60; or &#x60;objectId&#x60; or &#x60;anonymousId&#x60; values of the subjects to regulate.  Config API note: equal to &#x60;parent&#x60; but allows an array.</value>
         [DataMember(Name = "subjectIds", IsRequired = true, EmitDefaultValue = true)]
         public List<string> SubjectIds { get; set; }
 

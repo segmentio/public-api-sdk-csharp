@@ -40,46 +40,40 @@ namespace Segment.PublicApi.Model
         public enum RegulationTypeEnum
         {
             /// <summary>
-            /// Enum DELETEARCHIVEONLY for value: DELETE_ARCHIVE_ONLY
-            /// </summary>
-            [EnumMember(Value = "DELETE_ARCHIVE_ONLY")]
-            DELETEARCHIVEONLY = 1,
-
-            /// <summary>
             /// Enum DELETEINTERNAL for value: DELETE_INTERNAL
             /// </summary>
             [EnumMember(Value = "DELETE_INTERNAL")]
-            DELETEINTERNAL = 2,
+            DELETEINTERNAL = 1,
 
             /// <summary>
             /// Enum DELETEONLY for value: DELETE_ONLY
             /// </summary>
             [EnumMember(Value = "DELETE_ONLY")]
-            DELETEONLY = 3,
+            DELETEONLY = 2,
 
             /// <summary>
             /// Enum SUPPRESSONLY for value: SUPPRESS_ONLY
             /// </summary>
             [EnumMember(Value = "SUPPRESS_ONLY")]
-            SUPPRESSONLY = 4,
+            SUPPRESSONLY = 3,
 
             /// <summary>
             /// Enum SUPPRESSWITHDELETE for value: SUPPRESS_WITH_DELETE
             /// </summary>
             [EnumMember(Value = "SUPPRESS_WITH_DELETE")]
-            SUPPRESSWITHDELETE = 5,
+            SUPPRESSWITHDELETE = 4,
 
             /// <summary>
             /// Enum SUPPRESSWITHDELETEINTERNAL for value: SUPPRESS_WITH_DELETE_INTERNAL
             /// </summary>
             [EnumMember(Value = "SUPPRESS_WITH_DELETE_INTERNAL")]
-            SUPPRESSWITHDELETEINTERNAL = 6,
+            SUPPRESSWITHDELETEINTERNAL = 5,
 
             /// <summary>
             /// Enum UNSUPPRESS for value: UNSUPPRESS
             /// </summary>
             [EnumMember(Value = "UNSUPPRESS")]
-            UNSUPPRESS = 7
+            UNSUPPRESS = 6
         }
 
 
@@ -97,22 +91,16 @@ namespace Segment.PublicApi.Model
         public enum SubjectTypeEnum
         {
             /// <summary>
-            /// Enum ANONYMOUSID for value: ANONYMOUS_ID
-            /// </summary>
-            [EnumMember(Value = "ANONYMOUS_ID")]
-            ANONYMOUSID = 1,
-
-            /// <summary>
             /// Enum OBJECTID for value: OBJECT_ID
             /// </summary>
             [EnumMember(Value = "OBJECT_ID")]
-            OBJECTID = 2,
+            OBJECTID = 1,
 
             /// <summary>
             /// Enum USERID for value: USER_ID
             /// </summary>
             [EnumMember(Value = "USER_ID")]
-            USERID = 3
+            USERID = 2
         }
 
 
