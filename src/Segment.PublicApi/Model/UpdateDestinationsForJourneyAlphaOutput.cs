@@ -43,7 +43,7 @@ namespace Segment.PublicApi.Model
         /// <param name="containerId">The journey container id. (required).</param>
         /// <param name="varVersion">The version of journey..</param>
         /// <param name="destinations">The updated DESTINATIONS. (required).</param>
-        public UpdateDestinationsForJourneyAlphaOutput(string containerId = default(string), decimal varVersion = default(decimal), List<DestinationState> destinations = default(List<DestinationState>))
+        public UpdateDestinationsForJourneyAlphaOutput(string containerId = default(string), decimal varVersion = default(decimal), List<DestinationsInner> destinations = default(List<DestinationsInner>))
         {
             // to ensure "containerId" is required (not null)
             if (containerId == null)
@@ -79,7 +79,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <value>The updated DESTINATIONS.</value>
         [DataMember(Name = "destinations", IsRequired = true, EmitDefaultValue = true)]
-        public List<DestinationState> Destinations { get; set; }
+        public List<DestinationsInner> Destinations { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

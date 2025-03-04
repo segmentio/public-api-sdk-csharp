@@ -28,30 +28,18 @@ using System.Reflection;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// StatesInner
+    /// RulesInner
     /// </summary>
-    [JsonConverter(typeof(StatesInnerJsonConverter))]
-    [DataContract(Name = "states_inner")]
-    public partial class StatesInner : AbstractOpenAPISchema, IEquatable<StatesInner>, IValidatableObject
+    [JsonConverter(typeof(RulesInnerJsonConverter))]
+    [DataContract(Name = "rules_inner")]
+    public partial class RulesInner : AbstractOpenAPISchema, IEquatable<RulesInner>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatesInner" /> class
-        /// with the <see cref="DestinationState" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of DestinationState.</param>
-        public StatesInner(DestinationState actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StatesInner" /> class
+        /// Initializes a new instance of the <see cref="RulesInner" /> class
         /// with the <see cref="EventExitRule" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of EventExitRule.</param>
-        public StatesInner(EventExitRule actualInstance)
+        public RulesInner(EventExitRule actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -59,11 +47,11 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatesInner" /> class
+        /// Initializes a new instance of the <see cref="RulesInner" /> class
         /// with the <see cref="AudienceExitRule" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of AudienceExitRule.</param>
-        public StatesInner(AudienceExitRule actualInstance)
+        public RulesInner(AudienceExitRule actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -88,29 +76,15 @@ namespace Segment.PublicApi.Model
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(DestinationState))
-                {
-                    this._actualInstance = value;
-                }
                 else if (value.GetType() == typeof(EventExitRule))
                 {
                     this._actualInstance = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: AudienceExitRule, DestinationState, EventExitRule");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: AudienceExitRule, EventExitRule");
                 }
             }
-        }
-
-        /// <summary>
-        /// Get the actual instance of `DestinationState`. If the actual instance is not `DestinationState`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of DestinationState</returns>
-        public DestinationState GetDestinationState()
-        {
-            return (DestinationState)this.ActualInstance;
         }
 
         /// <summary>
@@ -140,7 +114,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class StatesInner {\n");
+            sb.Append("class RulesInner {\n");
             sb.Append("  ActualInstance: ").Append(this.ActualInstance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -152,28 +126,28 @@ namespace Segment.PublicApi.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return JsonConvert.SerializeObject(this.ActualInstance, StatesInner.SerializerSettings);
+            return JsonConvert.SerializeObject(this.ActualInstance, RulesInner.SerializerSettings);
         }
 
         /// <summary>
-        /// Converts the JSON string into an instance of StatesInner
+        /// Converts the JSON string into an instance of RulesInner
         /// </summary>
         /// <param name="jsonString">JSON string</param>
-        /// <returns>An instance of StatesInner</returns>
-        public static StatesInner FromJson(string jsonString)
+        /// <returns>An instance of RulesInner</returns>
+        public static RulesInner FromJson(string jsonString)
         {
-            StatesInner newStatesInner = null;
+            RulesInner newRulesInner = null;
 
             if (string.IsNullOrEmpty(jsonString))
             {
-                return newStatesInner;
+                return newRulesInner;
             }
 
             try
             {
-                newStatesInner = new StatesInner(JsonConvert.DeserializeObject<AudienceExitRule>(jsonString, StatesInner.SerializerSettings));
+                newRulesInner = new RulesInner(JsonConvert.DeserializeObject<AudienceExitRule>(jsonString, RulesInner.SerializerSettings));
                 // deserialization is considered successful at this point if no exception has been thrown.
-                return newStatesInner;
+                return newRulesInner;
             }
             catch (Exception exception)
             {
@@ -183,21 +157,9 @@ namespace Segment.PublicApi.Model
 
             try
             {
-                newStatesInner = new StatesInner(JsonConvert.DeserializeObject<DestinationState>(jsonString, StatesInner.SerializerSettings));
+                newRulesInner = new RulesInner(JsonConvert.DeserializeObject<EventExitRule>(jsonString, RulesInner.SerializerSettings));
                 // deserialization is considered successful at this point if no exception has been thrown.
-                return newStatesInner;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into DestinationState: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newStatesInner = new StatesInner(JsonConvert.DeserializeObject<EventExitRule>(jsonString, StatesInner.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newStatesInner;
+                return newRulesInner;
             }
             catch (Exception exception)
             {
@@ -216,15 +178,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as StatesInner);
+            return this.Equals(input as RulesInner);
         }
 
         /// <summary>
-        /// Returns true if StatesInner instances are equal
+        /// Returns true if RulesInner instances are equal
         /// </summary>
-        /// <param name="input">Instance of StatesInner to be compared</param>
+        /// <param name="input">Instance of RulesInner to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(StatesInner input)
+        public bool Equals(RulesInner input)
         {
             if (input == null)
                 return false;
@@ -259,9 +221,9 @@ namespace Segment.PublicApi.Model
     }
 
     /// <summary>
-    /// Custom JSON converter for StatesInner
+    /// Custom JSON converter for RulesInner
     /// </summary>
-    public class StatesInnerJsonConverter : JsonConverter
+    public class RulesInnerJsonConverter : JsonConverter
     {
         /// <summary>
         /// To write the JSON string
@@ -271,7 +233,7 @@ namespace Segment.PublicApi.Model
         /// <param name="serializer">JSON Serializer</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            writer.WriteRawValue((string)(typeof(StatesInner).GetMethod("ToJson").Invoke(value, null)));
+            writer.WriteRawValue((string)(typeof(RulesInner).GetMethod("ToJson").Invoke(value, null)));
         }
 
         /// <summary>
@@ -286,7 +248,7 @@ namespace Segment.PublicApi.Model
         {
             if(reader.TokenType != JsonToken.Null)
             {
-                return StatesInner.FromJson(JObject.Load(reader).ToString(Formatting.None));
+                return RulesInner.FromJson(JObject.Load(reader).ToString(Formatting.None));
             }
             return null;
         }

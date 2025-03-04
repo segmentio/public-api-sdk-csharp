@@ -41,16 +41,18 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="ExitRulesConfig" /> class.
         /// </summary>
         /// <param name="enabled">enabled (required).</param>
-        /// <param name="states">states (required).</param>
-        public ExitRulesConfig(bool enabled = default(bool), List<StatesInner> states = default(List<StatesInner>))
+        /// <param name="rules">rules (required).</param>
+        /// <param name="relatedDestinations">relatedDestinations.</param>
+        public ExitRulesConfig(bool enabled = default(bool), List<RulesInner> rules = default(List<RulesInner>), List<ExitDestinationState> relatedDestinations = default(List<ExitDestinationState>))
         {
             this.Enabled = enabled;
-            // to ensure "states" is required (not null)
-            if (states == null)
+            // to ensure "rules" is required (not null)
+            if (rules == null)
             {
-                throw new ArgumentNullException("states is a required property for ExitRulesConfig and cannot be null");
+                throw new ArgumentNullException("rules is a required property for ExitRulesConfig and cannot be null");
             }
-            this.States = states;
+            this.Rules = rules;
+            this.RelatedDestinations = relatedDestinations;
         }
 
         /// <summary>
@@ -60,10 +62,16 @@ namespace Segment.PublicApi.Model
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Gets or Sets States
+        /// Gets or Sets Rules
         /// </summary>
-        [DataMember(Name = "states", IsRequired = true, EmitDefaultValue = true)]
-        public List<StatesInner> States { get; set; }
+        [DataMember(Name = "rules", IsRequired = true, EmitDefaultValue = true)]
+        public List<RulesInner> Rules { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RelatedDestinations
+        /// </summary>
+        [DataMember(Name = "relatedDestinations", EmitDefaultValue = false)]
+        public List<ExitDestinationState> RelatedDestinations { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,7 +82,8 @@ namespace Segment.PublicApi.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ExitRulesConfig {\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  States: ").Append(States).Append("\n");
+            sb.Append("  Rules: ").Append(Rules).Append("\n");
+            sb.Append("  RelatedDestinations: ").Append(RelatedDestinations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,10 +124,16 @@ namespace Segment.PublicApi.Model
                     this.Enabled.Equals(input.Enabled)
                 ) && 
                 (
-                    this.States == input.States ||
-                    this.States != null &&
-                    input.States != null &&
-                    this.States.SequenceEqual(input.States)
+                    this.Rules == input.Rules ||
+                    this.Rules != null &&
+                    input.Rules != null &&
+                    this.Rules.SequenceEqual(input.Rules)
+                ) && 
+                (
+                    this.RelatedDestinations == input.RelatedDestinations ||
+                    this.RelatedDestinations != null &&
+                    input.RelatedDestinations != null &&
+                    this.RelatedDestinations.SequenceEqual(input.RelatedDestinations)
                 );
         }
 
@@ -132,9 +147,13 @@ namespace Segment.PublicApi.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
-                if (this.States != null)
+                if (this.Rules != null)
                 {
-                    hashCode = (hashCode * 59) + this.States.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Rules.GetHashCode();
+                }
+                if (this.RelatedDestinations != null)
+                {
+                    hashCode = (hashCode * 59) + this.RelatedDestinations.GetHashCode();
                 }
                 return hashCode;
             }

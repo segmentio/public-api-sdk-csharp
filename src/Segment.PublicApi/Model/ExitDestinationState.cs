@@ -27,10 +27,10 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// RandomSplitState
+    /// ExitDestinationState
     /// </summary>
-    [DataContract(Name = "RandomSplitState")]
-    public partial class RandomSplitState : IEquatable<RandomSplitState>, IValidatableObject
+    [DataContract(Name = "ExitDestinationState")]
+    public partial class ExitDestinationState : IEquatable<ExitDestinationState>, IValidatableObject
     {
         /// <summary>
         /// Defines Type
@@ -39,28 +39,10 @@ namespace Segment.PublicApi.Model
         public enum TypeEnum
         {
             /// <summary>
-            /// Enum RANDOMSPLIT for value: RANDOM_SPLIT
-            /// </summary>
-            [EnumMember(Value = "RANDOM_SPLIT")]
-            RANDOMSPLIT = 1,
-
-            /// <summary>
-            /// Enum EXIT for value: EXIT
-            /// </summary>
-            [EnumMember(Value = "EXIT")]
-            EXIT = 2,
-
-            /// <summary>
             /// Enum DESTINATION for value: DESTINATION
             /// </summary>
             [EnumMember(Value = "DESTINATION")]
-            DESTINATION = 3,
-
-            /// <summary>
-            /// Enum EXITRULE for value: EXIT_RULE
-            /// </summary>
-            [EnumMember(Value = "EXIT_RULE")]
-            EXITRULE = 4
+            DESTINATION = 1
         }
 
 
@@ -70,38 +52,38 @@ namespace Segment.PublicApi.Model
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="RandomSplitState" /> class.
+        /// Initializes a new instance of the <see cref="ExitDestinationState" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected RandomSplitState() { }
+        protected ExitDestinationState() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="RandomSplitState" /> class.
+        /// Initializes a new instance of the <see cref="ExitDestinationState" /> class.
         /// </summary>
         /// <param name="type">type (required).</param>
-        /// <param name="transitions">transitions (required).</param>
+        /// <param name="destinations">destinations (required).</param>
         /// <param name="key">key (required).</param>
-        public RandomSplitState(TypeEnum type = default(TypeEnum), List<RandomSplitBranch> transitions = default(List<RandomSplitBranch>), Key key = default(Key))
+        public ExitDestinationState(TypeEnum type = default(TypeEnum), List<Destination> destinations = default(List<Destination>), Key key = default(Key))
         {
             this.Type = type;
-            // to ensure "transitions" is required (not null)
-            if (transitions == null)
+            // to ensure "destinations" is required (not null)
+            if (destinations == null)
             {
-                throw new ArgumentNullException("transitions is a required property for RandomSplitState and cannot be null");
+                throw new ArgumentNullException("destinations is a required property for ExitDestinationState and cannot be null");
             }
-            this.Transitions = transitions;
+            this.Destinations = destinations;
             // to ensure "key" is required (not null)
             if (key == null)
             {
-                throw new ArgumentNullException("key is a required property for RandomSplitState and cannot be null");
+                throw new ArgumentNullException("key is a required property for ExitDestinationState and cannot be null");
             }
             this.Key = key;
         }
 
         /// <summary>
-        /// Gets or Sets Transitions
+        /// Gets or Sets Destinations
         /// </summary>
-        [DataMember(Name = "transitions", IsRequired = true, EmitDefaultValue = true)]
-        public List<RandomSplitBranch> Transitions { get; set; }
+        [DataMember(Name = "destinations", IsRequired = true, EmitDefaultValue = true)]
+        public List<Destination> Destinations { get; set; }
 
         /// <summary>
         /// Gets or Sets Key
@@ -116,9 +98,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RandomSplitState {\n");
+            sb.Append("class ExitDestinationState {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Transitions: ").Append(Transitions).Append("\n");
+            sb.Append("  Destinations: ").Append(Destinations).Append("\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -140,15 +122,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RandomSplitState);
+            return this.Equals(input as ExitDestinationState);
         }
 
         /// <summary>
-        /// Returns true if RandomSplitState instances are equal
+        /// Returns true if ExitDestinationState instances are equal
         /// </summary>
-        /// <param name="input">Instance of RandomSplitState to be compared</param>
+        /// <param name="input">Instance of ExitDestinationState to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RandomSplitState input)
+        public bool Equals(ExitDestinationState input)
         {
             if (input == null)
             {
@@ -160,10 +142,10 @@ namespace Segment.PublicApi.Model
                     this.Type.Equals(input.Type)
                 ) && 
                 (
-                    this.Transitions == input.Transitions ||
-                    this.Transitions != null &&
-                    input.Transitions != null &&
-                    this.Transitions.SequenceEqual(input.Transitions)
+                    this.Destinations == input.Destinations ||
+                    this.Destinations != null &&
+                    input.Destinations != null &&
+                    this.Destinations.SequenceEqual(input.Destinations)
                 ) && 
                 (
                     this.Key == input.Key ||
@@ -182,9 +164,9 @@ namespace Segment.PublicApi.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
-                if (this.Transitions != null)
+                if (this.Destinations != null)
                 {
-                    hashCode = (hashCode * 59) + this.Transitions.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Destinations.GetHashCode();
                 }
                 if (this.Key != null)
                 {

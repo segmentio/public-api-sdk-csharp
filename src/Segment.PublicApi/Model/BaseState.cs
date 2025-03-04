@@ -60,6 +60,18 @@ namespace Segment.PublicApi.Model
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseState" /> class
+        /// with the <see cref="ExitDestinationState" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of ExitDestinationState.</param>
+        public BaseState(ExitDestinationState actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseState" /> class
         /// with the <see cref="ExitRule" /> class
         /// </summary>
         /// <param name="actualInstance">An instance of ExitRule.</param>
@@ -84,7 +96,11 @@ namespace Segment.PublicApi.Model
             }
             set
             {
-                if (value.GetType() == typeof(ExitRule))
+                if (value.GetType() == typeof(ExitDestinationState))
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(ExitRule))
                 {
                     this._actualInstance = value;
                 }
@@ -98,7 +114,7 @@ namespace Segment.PublicApi.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: ExitRule, ExitState, TransitionState");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: ExitDestinationState, ExitRule, ExitState, TransitionState");
                 }
             }
         }
@@ -121,6 +137,16 @@ namespace Segment.PublicApi.Model
         public ExitState GetExitState()
         {
             return (ExitState)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `ExitDestinationState`. If the actual instance is not `ExitDestinationState`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of ExitDestinationState</returns>
+        public ExitDestinationState GetExitDestinationState()
+        {
+            return (ExitDestinationState)this.ActualInstance;
         }
 
         /// <summary>
@@ -170,6 +196,26 @@ namespace Segment.PublicApi.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(ExitDestinationState).GetProperty("AdditionalProperties") == null)
+                {
+                    newBaseState = new BaseState(JsonConvert.DeserializeObject<ExitDestinationState>(jsonString, BaseState.SerializerSettings));
+                }
+                else
+                {
+                    newBaseState = new BaseState(JsonConvert.DeserializeObject<ExitDestinationState>(jsonString, BaseState.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("ExitDestinationState");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into ExitDestinationState: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {

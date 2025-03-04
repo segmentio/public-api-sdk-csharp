@@ -94,9 +94,9 @@ namespace Segment.PublicApi.Model
         /// <param name="exitType">exitType (required).</param>
         /// <param name="enabled">enabled (required).</param>
         /// <param name="concurrencyEnabled">concurrencyEnabled (required).</param>
-        /// <param name="transitions">transitions.</param>
+        /// <param name="connectedDestinations">connectedDestinations.</param>
         /// <param name="key">key (required).</param>
-        public ExitRule(TypeEnum type = default(TypeEnum), ExitTypeEnum exitType = default(ExitTypeEnum), bool enabled = default(bool), bool concurrencyEnabled = default(bool), List<Transitions> transitions = default(List<Transitions>), Key key = default(Key))
+        public ExitRule(TypeEnum type = default(TypeEnum), ExitTypeEnum exitType = default(ExitTypeEnum), bool enabled = default(bool), bool concurrencyEnabled = default(bool), List<string> connectedDestinations = default(List<string>), Key key = default(Key))
         {
             this.Type = type;
             this.ExitType = exitType;
@@ -108,7 +108,7 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("key is a required property for ExitRule and cannot be null");
             }
             this.Key = key;
-            this.Transitions = transitions;
+            this.ConnectedDestinations = connectedDestinations;
         }
 
         /// <summary>
@@ -124,10 +124,10 @@ namespace Segment.PublicApi.Model
         public bool ConcurrencyEnabled { get; set; }
 
         /// <summary>
-        /// Gets or Sets Transitions
+        /// Gets or Sets ConnectedDestinations
         /// </summary>
-        [DataMember(Name = "transitions", EmitDefaultValue = false)]
-        public List<Transitions> Transitions { get; set; }
+        [DataMember(Name = "connectedDestinations", EmitDefaultValue = false)]
+        public List<string> ConnectedDestinations { get; set; }
 
         /// <summary>
         /// Gets or Sets Key
@@ -147,7 +147,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  ExitType: ").Append(ExitType).Append("\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  ConcurrencyEnabled: ").Append(ConcurrencyEnabled).Append("\n");
-            sb.Append("  Transitions: ").Append(Transitions).Append("\n");
+            sb.Append("  ConnectedDestinations: ").Append(ConnectedDestinations).Append("\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -201,10 +201,10 @@ namespace Segment.PublicApi.Model
                     this.ConcurrencyEnabled.Equals(input.ConcurrencyEnabled)
                 ) && 
                 (
-                    this.Transitions == input.Transitions ||
-                    this.Transitions != null &&
-                    input.Transitions != null &&
-                    this.Transitions.SequenceEqual(input.Transitions)
+                    this.ConnectedDestinations == input.ConnectedDestinations ||
+                    this.ConnectedDestinations != null &&
+                    input.ConnectedDestinations != null &&
+                    this.ConnectedDestinations.SequenceEqual(input.ConnectedDestinations)
                 ) && 
                 (
                     this.Key == input.Key ||
@@ -226,9 +226,9 @@ namespace Segment.PublicApi.Model
                 hashCode = (hashCode * 59) + this.ExitType.GetHashCode();
                 hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
                 hashCode = (hashCode * 59) + this.ConcurrencyEnabled.GetHashCode();
-                if (this.Transitions != null)
+                if (this.ConnectedDestinations != null)
                 {
-                    hashCode = (hashCode * 59) + this.Transitions.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ConnectedDestinations.GetHashCode();
                 }
                 if (this.Key != null)
                 {
