@@ -48,11 +48,9 @@ namespace Segment.PublicApi.Model
         /// <param name="description">The description of the filter..</param>
         /// <param name="varIf">The \&quot;if\&quot; statement for a filter..</param>
         /// <param name="drop">Whether the event is dropped..</param>
-        /// <param name="dropProperties">Describes the properties to be dropped on events that match the \&quot;if\&quot; statement..</param>
-        /// <param name="allowProperties">Describes the properties allowed on events that match the \&quot;if\&quot; statement..</param>
         /// <param name="createdAt">The timestamp of this filter&#39;s creation. (required).</param>
         /// <param name="updatedAt">The timestamp of this filter&#39;s last change. (required).</param>
-        public Filter(string id = default(string), string workspaceId = default(string), string integrationId = default(string), bool enabled = default(bool), string name = default(string), string description = default(string), string varIf = default(string), bool drop = default(bool), List<string> dropProperties = default(List<string>), List<string> allowProperties = default(List<string>), string createdAt = default(string), string updatedAt = default(string))
+        public Filter(string id = default(string), string workspaceId = default(string), string integrationId = default(string), bool enabled = default(bool), string name = default(string), string description = default(string), string varIf = default(string), bool drop = default(bool), string createdAt = default(string), string updatedAt = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -89,8 +87,6 @@ namespace Segment.PublicApi.Model
             this.Description = description;
             this.VarIf = varIf;
             this.Drop = drop;
-            this.DropProperties = dropProperties;
-            this.AllowProperties = allowProperties;
         }
 
         /// <summary>
@@ -150,20 +146,6 @@ namespace Segment.PublicApi.Model
         public bool Drop { get; set; }
 
         /// <summary>
-        /// Describes the properties to be dropped on events that match the \&quot;if\&quot; statement.
-        /// </summary>
-        /// <value>Describes the properties to be dropped on events that match the \&quot;if\&quot; statement.</value>
-        [DataMember(Name = "dropProperties", EmitDefaultValue = false)]
-        public List<string> DropProperties { get; set; }
-
-        /// <summary>
-        /// Describes the properties allowed on events that match the \&quot;if\&quot; statement.
-        /// </summary>
-        /// <value>Describes the properties allowed on events that match the \&quot;if\&quot; statement.</value>
-        [DataMember(Name = "allowProperties", EmitDefaultValue = false)]
-        public List<string> AllowProperties { get; set; }
-
-        /// <summary>
         /// The timestamp of this filter&#39;s creation.
         /// </summary>
         /// <value>The timestamp of this filter&#39;s creation.</value>
@@ -193,8 +175,6 @@ namespace Segment.PublicApi.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  VarIf: ").Append(VarIf).Append("\n");
             sb.Append("  Drop: ").Append(Drop).Append("\n");
-            sb.Append("  DropProperties: ").Append(DropProperties).Append("\n");
-            sb.Append("  AllowProperties: ").Append(AllowProperties).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
@@ -271,18 +251,6 @@ namespace Segment.PublicApi.Model
                     this.Drop.Equals(input.Drop)
                 ) && 
                 (
-                    this.DropProperties == input.DropProperties ||
-                    this.DropProperties != null &&
-                    input.DropProperties != null &&
-                    this.DropProperties.SequenceEqual(input.DropProperties)
-                ) && 
-                (
-                    this.AllowProperties == input.AllowProperties ||
-                    this.AllowProperties != null &&
-                    input.AllowProperties != null &&
-                    this.AllowProperties.SequenceEqual(input.AllowProperties)
-                ) && 
-                (
                     this.CreatedAt == input.CreatedAt ||
                     (this.CreatedAt != null &&
                     this.CreatedAt.Equals(input.CreatedAt))
@@ -329,14 +297,6 @@ namespace Segment.PublicApi.Model
                     hashCode = (hashCode * 59) + this.VarIf.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Drop.GetHashCode();
-                if (this.DropProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.DropProperties.GetHashCode();
-                }
-                if (this.AllowProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.AllowProperties.GetHashCode();
-                }
                 if (this.CreatedAt != null)
                 {
                     hashCode = (hashCode * 59) + this.CreatedAt.GetHashCode();

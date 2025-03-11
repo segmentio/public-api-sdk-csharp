@@ -46,9 +46,7 @@ namespace Segment.PublicApi.Model
         /// <param name="description">The description of the filter..</param>
         /// <param name="varIf">The \&quot;if\&quot; statement for a filter..</param>
         /// <param name="drop">Whether the event is dropped..</param>
-        /// <param name="dropProperties">Describes the properties to be dropped on events that match the \&quot;if\&quot; statement..</param>
-        /// <param name="allowProperties">Describes the properties allowed on events that match the \&quot;if\&quot; statement..</param>
-        public UpdateFilterByIdInput(string integrationId = default(string), bool enabled = default(bool), string name = default(string), string description = default(string), string varIf = default(string), bool drop = default(bool), List<string> dropProperties = default(List<string>), List<string> allowProperties = default(List<string>))
+        public UpdateFilterByIdInput(string integrationId = default(string), bool enabled = default(bool), string name = default(string), string description = default(string), string varIf = default(string), bool drop = default(bool))
         {
             // to ensure "integrationId" is required (not null)
             if (integrationId == null)
@@ -61,8 +59,6 @@ namespace Segment.PublicApi.Model
             this.Description = description;
             this.VarIf = varIf;
             this.Drop = drop;
-            this.DropProperties = dropProperties;
-            this.AllowProperties = allowProperties;
         }
 
         /// <summary>
@@ -108,20 +104,6 @@ namespace Segment.PublicApi.Model
         public bool Drop { get; set; }
 
         /// <summary>
-        /// Describes the properties to be dropped on events that match the \&quot;if\&quot; statement.
-        /// </summary>
-        /// <value>Describes the properties to be dropped on events that match the \&quot;if\&quot; statement.</value>
-        [DataMember(Name = "dropProperties", EmitDefaultValue = false)]
-        public List<string> DropProperties { get; set; }
-
-        /// <summary>
-        /// Describes the properties allowed on events that match the \&quot;if\&quot; statement.
-        /// </summary>
-        /// <value>Describes the properties allowed on events that match the \&quot;if\&quot; statement.</value>
-        [DataMember(Name = "allowProperties", EmitDefaultValue = false)]
-        public List<string> AllowProperties { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -135,8 +117,6 @@ namespace Segment.PublicApi.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  VarIf: ").Append(VarIf).Append("\n");
             sb.Append("  Drop: ").Append(Drop).Append("\n");
-            sb.Append("  DropProperties: ").Append(DropProperties).Append("\n");
-            sb.Append("  AllowProperties: ").Append(AllowProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -199,18 +179,6 @@ namespace Segment.PublicApi.Model
                 (
                     this.Drop == input.Drop ||
                     this.Drop.Equals(input.Drop)
-                ) && 
-                (
-                    this.DropProperties == input.DropProperties ||
-                    this.DropProperties != null &&
-                    input.DropProperties != null &&
-                    this.DropProperties.SequenceEqual(input.DropProperties)
-                ) && 
-                (
-                    this.AllowProperties == input.AllowProperties ||
-                    this.AllowProperties != null &&
-                    input.AllowProperties != null &&
-                    this.AllowProperties.SequenceEqual(input.AllowProperties)
                 );
         }
 
@@ -241,14 +209,6 @@ namespace Segment.PublicApi.Model
                     hashCode = (hashCode * 59) + this.VarIf.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Drop.GetHashCode();
-                if (this.DropProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.DropProperties.GetHashCode();
-                }
-                if (this.AllowProperties != null)
-                {
-                    hashCode = (hashCode * 59) + this.AllowProperties.GetHashCode();
-                }
                 return hashCode;
             }
         }
