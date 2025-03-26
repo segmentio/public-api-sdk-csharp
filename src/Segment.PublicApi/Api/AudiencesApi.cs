@@ -909,7 +909,7 @@ namespace Segment.PublicApi.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListAudienceConsumersFromSpaceAndAudience200Response>("/spaces/{spaceId}/audiences/{id}/consumers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListAudienceConsumersFromSpaceAndAudience200Response>("/spaces/{spaceId}/audiences/{id}/audience-references", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListAudienceConsumersFromSpaceAndAudience", localVarResponse);
@@ -1004,7 +1004,7 @@ namespace Segment.PublicApi.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListAudienceConsumersFromSpaceAndAudience200Response>("/spaces/{spaceId}/audiences/{id}/consumers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListAudienceConsumersFromSpaceAndAudience200Response>("/spaces/{spaceId}/audiences/{id}/audience-references", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
