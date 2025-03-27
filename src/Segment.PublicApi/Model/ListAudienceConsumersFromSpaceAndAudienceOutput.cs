@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// List the audience consumers endpoint output.
+    /// List Audience consumers output.
     /// </summary>
     [DataContract(Name = "ListAudienceConsumersFromSpaceAndAudienceOutput")]
     public partial class ListAudienceConsumersFromSpaceAndAudienceOutput : IEquatable<ListAudienceConsumersFromSpaceAndAudienceOutput>, IValidatableObject
@@ -40,7 +40,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ListAudienceConsumersFromSpaceAndAudienceOutput" /> class.
         /// </summary>
-        /// <param name="audiences">A list of audience summary results. (required).</param>
+        /// <param name="audiences">The list of audience consumers. (required).</param>
         /// <param name="pagination">pagination (required).</param>
         public ListAudienceConsumersFromSpaceAndAudienceOutput(List<AudienceSummary> audiences = default(List<AudienceSummary>), PaginationOutput pagination = default(PaginationOutput))
         {
@@ -59,9 +59,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// A list of audience summary results.
+        /// The list of audience consumers.
         /// </summary>
-        /// <value>A list of audience summary results.</value>
+        /// <value>The list of audience consumers.</value>
         [DataMember(Name = "audiences", IsRequired = true, EmitDefaultValue = true)]
         public List<AudienceSummary> Audiences { get; set; }
 
