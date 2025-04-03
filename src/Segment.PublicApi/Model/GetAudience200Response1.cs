@@ -27,16 +27,16 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// GetAudience200Response
+    /// GetAudience200Response1
     /// </summary>
-    [DataContract(Name = "getAudience_200_response")]
-    public partial class GetAudience200Response : IEquatable<GetAudience200Response>, IValidatableObject
+    [DataContract(Name = "getAudience_200_response_1")]
+    public partial class GetAudience200Response1 : IEquatable<GetAudience200Response1>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetAudience200Response" /> class.
+        /// Initializes a new instance of the <see cref="GetAudience200Response1" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public GetAudience200Response(GetAudienceBetaOutput data = default(GetAudienceBetaOutput))
+        public GetAudience200Response1(GetAudienceAlphaOutput data = default(GetAudienceAlphaOutput))
         {
             this.Data = data;
         }
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public GetAudienceBetaOutput Data { get; set; }
+        public GetAudienceAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class GetAudience200Response {\n");
+            sb.Append("class GetAudience200Response1 {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GetAudience200Response);
+            return this.Equals(input as GetAudience200Response1);
         }
 
         /// <summary>
-        /// Returns true if GetAudience200Response instances are equal
+        /// Returns true if GetAudience200Response1 instances are equal
         /// </summary>
-        /// <param name="input">Instance of GetAudience200Response to be compared</param>
+        /// <param name="input">Instance of GetAudience200Response1 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(GetAudience200Response input)
+        public bool Equals(GetAudience200Response1 input)
         {
             if (input == null)
             {
