@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Defines an audience definition.
+    /// AudienceDefinition
     /// </summary>
     [DataContract(Name = "AudienceDefinition")]
     public partial class AudienceDefinition : IEquatable<AudienceDefinition>, IValidatableObject
@@ -67,23 +67,23 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
         /// </summary>
-        /// <param name="query">The query language string defining the audience segmentation criteria. (required).</param>
         /// <param name="type">The underlying data type being segmented for this audience.  Possible values: users, accounts. (required).</param>
-        public AudienceDefinition(string query = default(string), TypeEnum type = default(TypeEnum))
+        /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
+        public AudienceDefinition(TypeEnum type = default(TypeEnum), string query = default(string))
         {
+            this.Type = type;
             // to ensure "query" is required (not null)
             if (query == null)
             {
                 throw new ArgumentNullException("query is a required property for AudienceDefinition and cannot be null");
             }
             this.Query = query;
-            this.Type = type;
         }
 
         /// <summary>
-        /// The query language string defining the audience segmentation criteria.
+        /// The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).
         /// </summary>
-        /// <value>The query language string defining the audience segmentation criteria.</value>
+        /// <value>The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).</value>
         [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
         public string Query { get; set; }
 
@@ -95,8 +95,8 @@ namespace Segment.PublicApi.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AudienceDefinition {\n");
-            sb.Append("  Query: ").Append(Query).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Query: ").Append(Query).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -133,13 +133,13 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
+                ) && 
+                (
                     this.Query == input.Query ||
                     (this.Query != null &&
                     this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
                 );
         }
 
@@ -152,11 +152,11 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 if (this.Query != null)
                 {
                     hashCode = (hashCode * 59) + this.Query.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 return hashCode;
             }
         }

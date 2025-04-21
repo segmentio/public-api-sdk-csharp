@@ -27,65 +27,49 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Defines an audience definition.
+    /// List Audience consumers output.
     /// </summary>
-    [DataContract(Name = "AudienceDefinitionBeta")]
-    public partial class AudienceDefinitionBeta : IEquatable<AudienceDefinitionBeta>, IValidatableObject
+    [DataContract(Name = "ListAudienceConsumersFromSpaceAndAudienceAlphaOutput")]
+    public partial class ListAudienceConsumersFromSpaceAndAudienceAlphaOutput : IEquatable<ListAudienceConsumersFromSpaceAndAudienceAlphaOutput>, IValidatableObject
     {
         /// <summary>
-        /// The underlying data type being segmented for this audience.  Possible values: users, accounts.
-        /// </summary>
-        /// <value>The underlying data type being segmented for this audience.  Possible values: users, accounts.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            /// <summary>
-            /// Enum ACCOUNTS for value: ACCOUNTS
-            /// </summary>
-            [EnumMember(Value = "ACCOUNTS")]
-            ACCOUNTS = 1,
-
-            /// <summary>
-            /// Enum USERS for value: USERS
-            /// </summary>
-            [EnumMember(Value = "USERS")]
-            USERS = 2
-        }
-
-
-        /// <summary>
-        /// The underlying data type being segmented for this audience.  Possible values: users, accounts.
-        /// </summary>
-        /// <value>The underlying data type being segmented for this audience.  Possible values: users, accounts.</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public TypeEnum Type { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinitionBeta" /> class.
+        /// Initializes a new instance of the <see cref="ListAudienceConsumersFromSpaceAndAudienceAlphaOutput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AudienceDefinitionBeta() { }
+        protected ListAudienceConsumersFromSpaceAndAudienceAlphaOutput() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinitionBeta" /> class.
+        /// Initializes a new instance of the <see cref="ListAudienceConsumersFromSpaceAndAudienceAlphaOutput" /> class.
         /// </summary>
-        /// <param name="query">The query language string defining the audience segmentation criteria. (required).</param>
-        /// <param name="type">The underlying data type being segmented for this audience.  Possible values: users, accounts. (required).</param>
-        public AudienceDefinitionBeta(string query = default(string), TypeEnum type = default(TypeEnum))
+        /// <param name="audiences">The list of audience consumers. (required).</param>
+        /// <param name="pagination">pagination (required).</param>
+        public ListAudienceConsumersFromSpaceAndAudienceAlphaOutput(List<AudienceSummary> audiences = default(List<AudienceSummary>), PaginationOutput pagination = default(PaginationOutput))
         {
-            // to ensure "query" is required (not null)
-            if (query == null)
+            // to ensure "audiences" is required (not null)
+            if (audiences == null)
             {
-                throw new ArgumentNullException("query is a required property for AudienceDefinitionBeta and cannot be null");
+                throw new ArgumentNullException("audiences is a required property for ListAudienceConsumersFromSpaceAndAudienceAlphaOutput and cannot be null");
             }
-            this.Query = query;
-            this.Type = type;
+            this.Audiences = audiences;
+            // to ensure "pagination" is required (not null)
+            if (pagination == null)
+            {
+                throw new ArgumentNullException("pagination is a required property for ListAudienceConsumersFromSpaceAndAudienceAlphaOutput and cannot be null");
+            }
+            this.Pagination = pagination;
         }
 
         /// <summary>
-        /// The query language string defining the audience segmentation criteria.
+        /// The list of audience consumers.
         /// </summary>
-        /// <value>The query language string defining the audience segmentation criteria.</value>
-        [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
-        public string Query { get; set; }
+        /// <value>The list of audience consumers.</value>
+        [DataMember(Name = "audiences", IsRequired = true, EmitDefaultValue = true)]
+        public List<AudienceSummary> Audiences { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pagination
+        /// </summary>
+        [DataMember(Name = "pagination", IsRequired = true, EmitDefaultValue = true)]
+        public PaginationOutput Pagination { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,9 +78,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AudienceDefinitionBeta {\n");
-            sb.Append("  Query: ").Append(Query).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("class ListAudienceConsumersFromSpaceAndAudienceAlphaOutput {\n");
+            sb.Append("  Audiences: ").Append(Audiences).Append("\n");
+            sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,15 +101,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudienceDefinitionBeta);
+            return this.Equals(input as ListAudienceConsumersFromSpaceAndAudienceAlphaOutput);
         }
 
         /// <summary>
-        /// Returns true if AudienceDefinitionBeta instances are equal
+        /// Returns true if ListAudienceConsumersFromSpaceAndAudienceAlphaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of AudienceDefinitionBeta to be compared</param>
+        /// <param name="input">Instance of ListAudienceConsumersFromSpaceAndAudienceAlphaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AudienceDefinitionBeta input)
+        public bool Equals(ListAudienceConsumersFromSpaceAndAudienceAlphaOutput input)
         {
             if (input == null)
             {
@@ -133,13 +117,15 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
+                    this.Audiences == input.Audiences ||
+                    this.Audiences != null &&
+                    input.Audiences != null &&
+                    this.Audiences.SequenceEqual(input.Audiences)
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
+                    this.Pagination == input.Pagination ||
+                    (this.Pagination != null &&
+                    this.Pagination.Equals(input.Pagination))
                 );
         }
 
@@ -152,11 +138,14 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Query != null)
+                if (this.Audiences != null)
                 {
-                    hashCode = (hashCode * 59) + this.Query.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Audiences.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                if (this.Pagination != null)
+                {
+                    hashCode = (hashCode * 59) + this.Pagination.GetHashCode();
+                }
                 return hashCode;
             }
         }
