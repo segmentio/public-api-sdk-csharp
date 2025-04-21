@@ -42,7 +42,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="audiences">A list of audience summary results. (required).</param>
         /// <param name="pagination">pagination (required).</param>
-        public ListAudiencesBetaOutput(List<AudienceSummaryBeta> audiences = default(List<AudienceSummaryBeta>), PaginationOutput pagination = default(PaginationOutput))
+        public ListAudiencesBetaOutput(List<AudienceSummary> audiences = default(List<AudienceSummary>), PaginationOutput pagination = default(PaginationOutput))
         {
             // to ensure "audiences" is required (not null)
             if (audiences == null)
@@ -63,7 +63,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <value>A list of audience summary results.</value>
         [DataMember(Name = "audiences", IsRequired = true, EmitDefaultValue = true)]
-        public List<AudienceSummaryBeta> Audiences { get; set; }
+        public List<AudienceSummary> Audiences { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination

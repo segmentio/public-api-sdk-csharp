@@ -41,7 +41,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="GetAudienceBetaOutput" /> class.
         /// </summary>
         /// <param name="audience">audience (required).</param>
-        public GetAudienceBetaOutput(AudienceSummaryBeta audience = default(AudienceSummaryBeta))
+        public GetAudienceBetaOutput(AudienceSummary audience = default(AudienceSummary))
         {
             // to ensure "audience" is required (not null)
             if (audience == null)
@@ -55,7 +55,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Audience
         /// </summary>
         [DataMember(Name = "audience", IsRequired = true, EmitDefaultValue = true)]
-        public AudienceSummaryBeta Audience { get; set; }
+        public AudienceSummary Audience { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

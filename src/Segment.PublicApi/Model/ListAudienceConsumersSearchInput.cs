@@ -27,35 +27,65 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// AudienceOptionsBeta
+    /// Search criteria input for list audience consumers.
     /// </summary>
-    [DataContract(Name = "AudienceOptionsBeta")]
-    public partial class AudienceOptionsBeta : IEquatable<AudienceOptionsBeta>, IValidatableObject
+    [DataContract(Name = "ListAudienceConsumersSearchInput")]
+    public partial class ListAudienceConsumersSearchInput : IEquatable<ListAudienceConsumersSearchInput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceOptionsBeta" /> class.
+        /// Field to filter by.
         /// </summary>
-        /// <param name="includeHistoricalData">Determines whether data prior to the audience being created is included when determining audience membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true..</param>
-        /// <param name="includeAnonymousUsers">Determines whether anonymous users should be included when determining audience membership..</param>
-        public AudienceOptionsBeta(bool includeHistoricalData = default(bool), bool includeAnonymousUsers = default(bool))
+        /// <value>Field to filter by.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
         {
-            this.IncludeHistoricalData = includeHistoricalData;
-            this.IncludeAnonymousUsers = includeAnonymousUsers;
+            /// <summary>
+            /// Enum DEFINITION for value: DEFINITION
+            /// </summary>
+            [EnumMember(Value = "DEFINITION")]
+            DEFINITION = 1,
+
+            /// <summary>
+            /// Enum NAME for value: NAME
+            /// </summary>
+            [EnumMember(Value = "NAME")]
+            NAME = 2
+        }
+
+
+        /// <summary>
+        /// Field to filter by.
+        /// </summary>
+        /// <value>Field to filter by.</value>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAudienceConsumersSearchInput" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected ListAudienceConsumersSearchInput() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAudienceConsumersSearchInput" /> class.
+        /// </summary>
+        /// <param name="type">Field to filter by. (required).</param>
+        /// <param name="query">Text to match the field value. (required).</param>
+        public ListAudienceConsumersSearchInput(TypeEnum type = default(TypeEnum), string query = default(string))
+        {
+            this.Type = type;
+            // to ensure "query" is required (not null)
+            if (query == null)
+            {
+                throw new ArgumentNullException("query is a required property for ListAudienceConsumersSearchInput and cannot be null");
+            }
+            this.Query = query;
         }
 
         /// <summary>
-        /// Determines whether data prior to the audience being created is included when determining audience membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true.
+        /// Text to match the field value.
         /// </summary>
-        /// <value>Determines whether data prior to the audience being created is included when determining audience membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true.</value>
-        [DataMember(Name = "includeHistoricalData", EmitDefaultValue = true)]
-        public bool IncludeHistoricalData { get; set; }
-
-        /// <summary>
-        /// Determines whether anonymous users should be included when determining audience membership.
-        /// </summary>
-        /// <value>Determines whether anonymous users should be included when determining audience membership.</value>
-        [DataMember(Name = "includeAnonymousUsers", EmitDefaultValue = true)]
-        public bool IncludeAnonymousUsers { get; set; }
+        /// <value>Text to match the field value.</value>
+        [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
+        public string Query { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,9 +94,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AudienceOptionsBeta {\n");
-            sb.Append("  IncludeHistoricalData: ").Append(IncludeHistoricalData).Append("\n");
-            sb.Append("  IncludeAnonymousUsers: ").Append(IncludeAnonymousUsers).Append("\n");
+            sb.Append("class ListAudienceConsumersSearchInput {\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Query: ").Append(Query).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +117,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudienceOptionsBeta);
+            return this.Equals(input as ListAudienceConsumersSearchInput);
         }
 
         /// <summary>
-        /// Returns true if AudienceOptionsBeta instances are equal
+        /// Returns true if ListAudienceConsumersSearchInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of AudienceOptionsBeta to be compared</param>
+        /// <param name="input">Instance of ListAudienceConsumersSearchInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AudienceOptionsBeta input)
+        public bool Equals(ListAudienceConsumersSearchInput input)
         {
             if (input == null)
             {
@@ -103,12 +133,13 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.IncludeHistoricalData == input.IncludeHistoricalData ||
-                    this.IncludeHistoricalData.Equals(input.IncludeHistoricalData)
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
                 ) && 
                 (
-                    this.IncludeAnonymousUsers == input.IncludeAnonymousUsers ||
-                    this.IncludeAnonymousUsers.Equals(input.IncludeAnonymousUsers)
+                    this.Query == input.Query ||
+                    (this.Query != null &&
+                    this.Query.Equals(input.Query))
                 );
         }
 
@@ -121,8 +152,11 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.IncludeHistoricalData.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeAnonymousUsers.GetHashCode();
+                hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                if (this.Query != null)
+                {
+                    hashCode = (hashCode * 59) + this.Query.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -36,7 +36,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="ListAudienceConsumersFromSpaceAndAudience200Response" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public ListAudienceConsumersFromSpaceAndAudience200Response(ListAudienceConsumersFromSpaceAndAudienceOutput data = default(ListAudienceConsumersFromSpaceAndAudienceOutput))
+        public ListAudienceConsumersFromSpaceAndAudience200Response(ListAudienceConsumersFromSpaceAndAudienceAlphaOutput data = default(ListAudienceConsumersFromSpaceAndAudienceAlphaOutput))
         {
             this.Data = data;
         }
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public ListAudienceConsumersFromSpaceAndAudienceOutput Data { get; set; }
+        public ListAudienceConsumersFromSpaceAndAudienceAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

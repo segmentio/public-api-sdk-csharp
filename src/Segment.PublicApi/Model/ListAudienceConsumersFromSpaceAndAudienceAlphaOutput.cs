@@ -29,31 +29,31 @@ namespace Segment.PublicApi.Model
     /// <summary>
     /// List Audience consumers output.
     /// </summary>
-    [DataContract(Name = "ListAudienceConsumersFromSpaceAndAudienceOutput")]
-    public partial class ListAudienceConsumersFromSpaceAndAudienceOutput : IEquatable<ListAudienceConsumersFromSpaceAndAudienceOutput>, IValidatableObject
+    [DataContract(Name = "ListAudienceConsumersFromSpaceAndAudienceAlphaOutput")]
+    public partial class ListAudienceConsumersFromSpaceAndAudienceAlphaOutput : IEquatable<ListAudienceConsumersFromSpaceAndAudienceAlphaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListAudienceConsumersFromSpaceAndAudienceOutput" /> class.
+        /// Initializes a new instance of the <see cref="ListAudienceConsumersFromSpaceAndAudienceAlphaOutput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ListAudienceConsumersFromSpaceAndAudienceOutput() { }
+        protected ListAudienceConsumersFromSpaceAndAudienceAlphaOutput() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListAudienceConsumersFromSpaceAndAudienceOutput" /> class.
+        /// Initializes a new instance of the <see cref="ListAudienceConsumersFromSpaceAndAudienceAlphaOutput" /> class.
         /// </summary>
         /// <param name="audiences">The list of audience consumers. (required).</param>
         /// <param name="pagination">pagination (required).</param>
-        public ListAudienceConsumersFromSpaceAndAudienceOutput(List<AudienceSummary> audiences = default(List<AudienceSummary>), PaginationOutput pagination = default(PaginationOutput))
+        public ListAudienceConsumersFromSpaceAndAudienceAlphaOutput(List<AudienceSummary> audiences = default(List<AudienceSummary>), PaginationOutput pagination = default(PaginationOutput))
         {
             // to ensure "audiences" is required (not null)
             if (audiences == null)
             {
-                throw new ArgumentNullException("audiences is a required property for ListAudienceConsumersFromSpaceAndAudienceOutput and cannot be null");
+                throw new ArgumentNullException("audiences is a required property for ListAudienceConsumersFromSpaceAndAudienceAlphaOutput and cannot be null");
             }
             this.Audiences = audiences;
             // to ensure "pagination" is required (not null)
             if (pagination == null)
             {
-                throw new ArgumentNullException("pagination is a required property for ListAudienceConsumersFromSpaceAndAudienceOutput and cannot be null");
+                throw new ArgumentNullException("pagination is a required property for ListAudienceConsumersFromSpaceAndAudienceAlphaOutput and cannot be null");
             }
             this.Pagination = pagination;
         }
@@ -78,7 +78,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListAudienceConsumersFromSpaceAndAudienceOutput {\n");
+            sb.Append("class ListAudienceConsumersFromSpaceAndAudienceAlphaOutput {\n");
             sb.Append("  Audiences: ").Append(Audiences).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
@@ -101,15 +101,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListAudienceConsumersFromSpaceAndAudienceOutput);
+            return this.Equals(input as ListAudienceConsumersFromSpaceAndAudienceAlphaOutput);
         }
 
         /// <summary>
-        /// Returns true if ListAudienceConsumersFromSpaceAndAudienceOutput instances are equal
+        /// Returns true if ListAudienceConsumersFromSpaceAndAudienceAlphaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of ListAudienceConsumersFromSpaceAndAudienceOutput to be compared</param>
+        /// <param name="input">Instance of ListAudienceConsumersFromSpaceAndAudienceAlphaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ListAudienceConsumersFromSpaceAndAudienceOutput input)
+        public bool Equals(ListAudienceConsumersFromSpaceAndAudienceAlphaOutput input)
         {
             if (input == null)
             {

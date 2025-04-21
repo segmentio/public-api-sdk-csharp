@@ -27,65 +27,86 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Defines an audience definition.
+    /// Sort criteria input for list audience consumers.
     /// </summary>
-    [DataContract(Name = "AudienceDefinitionBeta")]
-    public partial class AudienceDefinitionBeta : IEquatable<AudienceDefinitionBeta>, IValidatableObject
+    [DataContract(Name = "ListAudienceConsumersSortInput")]
+    public partial class ListAudienceConsumersSortInput : IEquatable<ListAudienceConsumersSortInput>, IValidatableObject
     {
         /// <summary>
-        /// The underlying data type being segmented for this audience.  Possible values: users, accounts.
+        /// Field to sort by.
         /// </summary>
-        /// <value>The underlying data type being segmented for this audience.  Possible values: users, accounts.</value>
+        /// <value>Field to sort by.</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
+        public enum FieldEnum
         {
             /// <summary>
-            /// Enum ACCOUNTS for value: ACCOUNTS
+            /// Enum CREATEDAT for value: CREATED_AT
             /// </summary>
-            [EnumMember(Value = "ACCOUNTS")]
-            ACCOUNTS = 1,
+            [EnumMember(Value = "CREATED_AT")]
+            CREATEDAT = 1,
 
             /// <summary>
-            /// Enum USERS for value: USERS
+            /// Enum NAME for value: NAME
             /// </summary>
-            [EnumMember(Value = "USERS")]
-            USERS = 2
+            [EnumMember(Value = "NAME")]
+            NAME = 2,
+
+            /// <summary>
+            /// Enum UPDATEDAT for value: UPDATED_AT
+            /// </summary>
+            [EnumMember(Value = "UPDATED_AT")]
+            UPDATEDAT = 3
         }
 
 
         /// <summary>
-        /// The underlying data type being segmented for this audience.  Possible values: users, accounts.
+        /// Field to sort by.
         /// </summary>
-        /// <value>The underlying data type being segmented for this audience.  Possible values: users, accounts.</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public TypeEnum Type { get; set; }
+        /// <value>Field to sort by.</value>
+        [DataMember(Name = "field", IsRequired = true, EmitDefaultValue = true)]
+        public FieldEnum Field { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinitionBeta" /> class.
+        /// Sort direction (ascending or descending).
+        /// </summary>
+        /// <value>Sort direction (ascending or descending).</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DirectionEnum
+        {
+            /// <summary>
+            /// Enum ASC for value: ASC
+            /// </summary>
+            [EnumMember(Value = "ASC")]
+            ASC = 1,
+
+            /// <summary>
+            /// Enum DESC for value: DESC
+            /// </summary>
+            [EnumMember(Value = "DESC")]
+            DESC = 2
+        }
+
+
+        /// <summary>
+        /// Sort direction (ascending or descending).
+        /// </summary>
+        /// <value>Sort direction (ascending or descending).</value>
+        [DataMember(Name = "direction", IsRequired = true, EmitDefaultValue = true)]
+        public DirectionEnum Direction { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAudienceConsumersSortInput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AudienceDefinitionBeta() { }
+        protected ListAudienceConsumersSortInput() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinitionBeta" /> class.
+        /// Initializes a new instance of the <see cref="ListAudienceConsumersSortInput" /> class.
         /// </summary>
-        /// <param name="query">The query language string defining the audience segmentation criteria. (required).</param>
-        /// <param name="type">The underlying data type being segmented for this audience.  Possible values: users, accounts. (required).</param>
-        public AudienceDefinitionBeta(string query = default(string), TypeEnum type = default(TypeEnum))
+        /// <param name="field">Field to sort by. (required).</param>
+        /// <param name="direction">Sort direction (ascending or descending). (required).</param>
+        public ListAudienceConsumersSortInput(FieldEnum field = default(FieldEnum), DirectionEnum direction = default(DirectionEnum))
         {
-            // to ensure "query" is required (not null)
-            if (query == null)
-            {
-                throw new ArgumentNullException("query is a required property for AudienceDefinitionBeta and cannot be null");
-            }
-            this.Query = query;
-            this.Type = type;
+            this.Field = field;
+            this.Direction = direction;
         }
-
-        /// <summary>
-        /// The query language string defining the audience segmentation criteria.
-        /// </summary>
-        /// <value>The query language string defining the audience segmentation criteria.</value>
-        [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
-        public string Query { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,9 +115,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AudienceDefinitionBeta {\n");
-            sb.Append("  Query: ").Append(Query).Append("\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("class ListAudienceConsumersSortInput {\n");
+            sb.Append("  Field: ").Append(Field).Append("\n");
+            sb.Append("  Direction: ").Append(Direction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -117,15 +138,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudienceDefinitionBeta);
+            return this.Equals(input as ListAudienceConsumersSortInput);
         }
 
         /// <summary>
-        /// Returns true if AudienceDefinitionBeta instances are equal
+        /// Returns true if ListAudienceConsumersSortInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of AudienceDefinitionBeta to be compared</param>
+        /// <param name="input">Instance of ListAudienceConsumersSortInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AudienceDefinitionBeta input)
+        public bool Equals(ListAudienceConsumersSortInput input)
         {
             if (input == null)
             {
@@ -133,13 +154,12 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
+                    this.Field == input.Field ||
+                    this.Field.Equals(input.Field)
                 ) && 
                 (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
+                    this.Direction == input.Direction ||
+                    this.Direction.Equals(input.Direction)
                 );
         }
 
@@ -152,11 +172,8 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Query != null)
-                {
-                    hashCode = (hashCode * 59) + this.Query.GetHashCode();
-                }
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                hashCode = (hashCode * 59) + this.Field.GetHashCode();
+                hashCode = (hashCode * 59) + this.Direction.GetHashCode();
                 return hashCode;
             }
         }

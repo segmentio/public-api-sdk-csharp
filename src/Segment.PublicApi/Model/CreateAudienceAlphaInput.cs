@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// <param name="description">Description of the audience..</param>
         /// <param name="definition">definition (required).</param>
         /// <param name="options">options.</param>
-        public CreateAudienceAlphaInput(string name = default(string), bool enabled = default(bool), string description = default(string), AudienceComputationDefinition definition = default(AudienceComputationDefinition), AudienceOptions options = default(AudienceOptions))
+        public CreateAudienceAlphaInput(string name = default(string), bool enabled = default(bool), string description = default(string), AudienceDefinition definition = default(AudienceDefinition), AudienceOptions options = default(AudienceOptions))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -89,7 +89,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Definition
         /// </summary>
         [DataMember(Name = "definition", IsRequired = true, EmitDefaultValue = true)]
-        public AudienceComputationDefinition Definition { get; set; }
+        public AudienceDefinition Definition { get; set; }
 
         /// <summary>
         /// Gets or Sets Options

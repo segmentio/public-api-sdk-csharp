@@ -29,17 +29,17 @@ namespace Segment.PublicApi.Model
     /// <summary>
     /// Input to update an audience.
     /// </summary>
-    [DataContract(Name = "UpdateAudienceForSpaceInput")]
-    public partial class UpdateAudienceForSpaceInput : IEquatable<UpdateAudienceForSpaceInput>, IValidatableObject
+    [DataContract(Name = "UpdateAudienceForSpaceAlphaInput")]
+    public partial class UpdateAudienceForSpaceAlphaInput : IEquatable<UpdateAudienceForSpaceAlphaInput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateAudienceForSpaceInput" /> class.
+        /// Initializes a new instance of the <see cref="UpdateAudienceForSpaceAlphaInput" /> class.
         /// </summary>
         /// <param name="enabled">Enabled/disabled status for the audience..</param>
         /// <param name="name">The name of the computation..</param>
         /// <param name="description">The description of the computation..</param>
         /// <param name="definition">definition.</param>
-        public UpdateAudienceForSpaceInput(bool enabled = default(bool), string name = default(string), string description = default(string), AudienceComputationDefinition definition = default(AudienceComputationDefinition))
+        public UpdateAudienceForSpaceAlphaInput(bool enabled = default(bool), string name = default(string), string description = default(string), AudienceDefinition definition = default(AudienceDefinition))
         {
             this.Enabled = enabled;
             this.Name = name;
@@ -72,7 +72,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Definition
         /// </summary>
         [DataMember(Name = "definition", EmitDefaultValue = false)]
-        public AudienceComputationDefinition Definition { get; set; }
+        public AudienceDefinition Definition { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -81,7 +81,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateAudienceForSpaceInput {\n");
+            sb.Append("class UpdateAudienceForSpaceAlphaInput {\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
@@ -106,15 +106,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as UpdateAudienceForSpaceInput);
+            return this.Equals(input as UpdateAudienceForSpaceAlphaInput);
         }
 
         /// <summary>
-        /// Returns true if UpdateAudienceForSpaceInput instances are equal
+        /// Returns true if UpdateAudienceForSpaceAlphaInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of UpdateAudienceForSpaceInput to be compared</param>
+        /// <param name="input">Instance of UpdateAudienceForSpaceAlphaInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(UpdateAudienceForSpaceInput input)
+        public bool Equals(UpdateAudienceForSpaceAlphaInput input)
         {
             if (input == null)
             {
