@@ -52,10 +52,16 @@ namespace Segment.PublicApi.Model
             INSERTDESTINATION = 2,
 
             /// <summary>
+            /// Enum INSERTSOURCE for value: INSERT_SOURCE
+            /// </summary>
+            [EnumMember(Value = "INSERT_SOURCE")]
+            INSERTSOURCE = 3,
+
+            /// <summary>
             /// Enum SOURCE for value: SOURCE
             /// </summary>
             [EnumMember(Value = "SOURCE")]
-            SOURCE = 3
+            SOURCE = 4
         }
 
 
