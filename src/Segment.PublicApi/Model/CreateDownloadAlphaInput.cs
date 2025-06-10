@@ -42,8 +42,8 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="collectionId">The collection&#39;s unique id. (required).</param>
         /// <param name="workspaceId">The Workspace id for the collection. (required).</param>
-        /// <param name="startTime">The ISO8601 formatted timestamp corresponding to the beginning of the time range. Currently, there is a month of data retained. (required).</param>
-        public CreateDownloadAlphaInput(string collectionId = default(string), string workspaceId = default(string), string startTime = default(string))
+        /// <param name="hour">The ISO8601 formatted timestamp corresponding to a specific hour and day to retrieve data for. E.g.: 2025-05-07T23:00:00Z Objects are bucketed by hour and a month of data is retained. (required).</param>
+        public CreateDownloadAlphaInput(string collectionId = default(string), string workspaceId = default(string), string hour = default(string))
         {
             // to ensure "collectionId" is required (not null)
             if (collectionId == null)
@@ -57,12 +57,12 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("workspaceId is a required property for CreateDownloadAlphaInput and cannot be null");
             }
             this.WorkspaceId = workspaceId;
-            // to ensure "startTime" is required (not null)
-            if (startTime == null)
+            // to ensure "hour" is required (not null)
+            if (hour == null)
             {
-                throw new ArgumentNullException("startTime is a required property for CreateDownloadAlphaInput and cannot be null");
+                throw new ArgumentNullException("hour is a required property for CreateDownloadAlphaInput and cannot be null");
             }
-            this.StartTime = startTime;
+            this.Hour = hour;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Segment.PublicApi.Model
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// The ISO8601 formatted timestamp corresponding to the beginning of the time range. Currently, there is a month of data retained.
+        /// The ISO8601 formatted timestamp corresponding to a specific hour and day to retrieve data for. E.g.: 2025-05-07T23:00:00Z Objects are bucketed by hour and a month of data is retained.
         /// </summary>
-        /// <value>The ISO8601 formatted timestamp corresponding to the beginning of the time range. Currently, there is a month of data retained.</value>
-        [DataMember(Name = "startTime", IsRequired = true, EmitDefaultValue = true)]
-        public string StartTime { get; set; }
+        /// <value>The ISO8601 formatted timestamp corresponding to a specific hour and day to retrieve data for. E.g.: 2025-05-07T23:00:00Z Objects are bucketed by hour and a month of data is retained.</value>
+        [DataMember(Name = "hour", IsRequired = true, EmitDefaultValue = true)]
+        public string Hour { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -96,7 +96,7 @@ namespace Segment.PublicApi.Model
             sb.Append("class CreateDownloadAlphaInput {\n");
             sb.Append("  CollectionId: ").Append(CollectionId).Append("\n");
             sb.Append("  WorkspaceId: ").Append(WorkspaceId).Append("\n");
-            sb.Append("  StartTime: ").Append(StartTime).Append("\n");
+            sb.Append("  Hour: ").Append(Hour).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -143,9 +143,9 @@ namespace Segment.PublicApi.Model
                     this.WorkspaceId.Equals(input.WorkspaceId))
                 ) && 
                 (
-                    this.StartTime == input.StartTime ||
-                    (this.StartTime != null &&
-                    this.StartTime.Equals(input.StartTime))
+                    this.Hour == input.Hour ||
+                    (this.Hour != null &&
+                    this.Hour.Equals(input.Hour))
                 );
         }
 
@@ -166,9 +166,9 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.WorkspaceId.GetHashCode();
                 }
-                if (this.StartTime != null)
+                if (this.Hour != null)
                 {
-                    hashCode = (hashCode * 59) + this.StartTime.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Hour.GetHashCode();
                 }
                 return hashCode;
             }
