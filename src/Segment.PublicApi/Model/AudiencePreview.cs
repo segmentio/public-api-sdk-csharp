@@ -23,115 +23,156 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
-using System.Reflection;
 
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Audience preview that can be in one of the three states: completed, running, or failed.
+    /// An audience preview.
     /// </summary>
-    [JsonConverter(typeof(AudiencePreviewJsonConverter))]
     [DataContract(Name = "AudiencePreview")]
-    public partial class AudiencePreview : AbstractOpenAPISchema, IEquatable<AudiencePreview>, IValidatableObject
+    public partial class AudiencePreview : IEquatable<AudiencePreview>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudiencePreview" /> class
-        /// with the <see cref="CompletedAudiencePreview" /> class
+        /// The audience type of the preview.
         /// </summary>
-        /// <param name="actualInstance">An instance of CompletedAudiencePreview.</param>
-        public AudiencePreview(CompletedAudiencePreview actualInstance)
+        /// <value>The audience type of the preview.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AudienceTypeEnum
         {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
+            /// <summary>
+            /// Enum ACCOUNTS for value: ACCOUNTS
+            /// </summary>
+            [EnumMember(Value = "ACCOUNTS")]
+            ACCOUNTS = 1,
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AudiencePreview" /> class
-        /// with the <see cref="RunningAudiencePreview" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of RunningAudiencePreview.</param>
-        public AudiencePreview(RunningAudiencePreview actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AudiencePreview" /> class
-        /// with the <see cref="FailedAudiencePreview" /> class
-        /// </summary>
-        /// <param name="actualInstance">An instance of FailedAudiencePreview.</param>
-        public AudiencePreview(FailedAudiencePreview actualInstance)
-        {
-            this.IsNullable = false;
-            this.SchemaType= "anyOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+            /// <summary>
+            /// Enum USERS for value: USERS
+            /// </summary>
+            [EnumMember(Value = "USERS")]
+            USERS = 2
         }
 
 
-        private Object _actualInstance;
+        /// <summary>
+        /// The audience type of the preview.
+        /// </summary>
+        /// <value>The audience type of the preview.</value>
+        [DataMember(Name = "audienceType", IsRequired = true, EmitDefaultValue = true)]
+        public AudienceTypeEnum AudienceType { get; set; }
+        /// <summary>
+        /// Status for the audience preview.
+        /// </summary>
+        /// <value>Status for the audience preview.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
+        {
+            /// <summary>
+            /// Enum COMPLETED for value: COMPLETED
+            /// </summary>
+            [EnumMember(Value = "COMPLETED")]
+            COMPLETED = 1,
+
+            /// <summary>
+            /// Enum FAILED for value: FAILED
+            /// </summary>
+            [EnumMember(Value = "FAILED")]
+            FAILED = 2,
+
+            /// <summary>
+            /// Enum RUNNING for value: RUNNING
+            /// </summary>
+            [EnumMember(Value = "RUNNING")]
+            RUNNING = 3
+        }
+
 
         /// <summary>
-        /// Gets or Sets ActualInstance
+        /// Status for the audience preview.
         /// </summary>
-        public override Object ActualInstance
+        /// <value>Status for the audience preview.</value>
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        public StatusEnum Status { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AudiencePreview" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected AudiencePreview() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AudiencePreview" /> class.
+        /// </summary>
+        /// <param name="id">Unique identifier for tracking and retrieving results of an audience preview. (required).</param>
+        /// <param name="audienceType">The audience type of the preview. (required).</param>
+        /// <param name="definition">definition (required).</param>
+        /// <param name="options">options (required).</param>
+        /// <param name="status">Status for the audience preview. (required).</param>
+        /// <param name="results">Sampled result membership for the audience preview. Only has a value if the status is &#39;COMPLETED&#39;..</param>
+        /// <param name="size">size.</param>
+        /// <param name="failureReason">Explanation of why the audience preview failed. Only has a value if status is &#39;FAILED&#39;..</param>
+        public AudiencePreview(string id = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), AudiencePreviewOptions options = default(AudiencePreviewOptions), StatusEnum status = default(StatusEnum), List<AudiencePreviewResult> results = default(List<AudiencePreviewResult>), AudienceSize size = default(AudienceSize), string failureReason = default(string))
         {
-            get
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                return _actualInstance;
+                throw new ArgumentNullException("id is a required property for AudiencePreview and cannot be null");
             }
-            set
+            this.Id = id;
+            this.AudienceType = audienceType;
+            // to ensure "definition" is required (not null)
+            if (definition == null)
             {
-                if (value.GetType() == typeof(CompletedAudiencePreview))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(FailedAudiencePreview))
-                {
-                    this._actualInstance = value;
-                }
-                else if (value.GetType() == typeof(RunningAudiencePreview))
-                {
-                    this._actualInstance = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: CompletedAudiencePreview, FailedAudiencePreview, RunningAudiencePreview");
-                }
+                throw new ArgumentNullException("definition is a required property for AudiencePreview and cannot be null");
             }
+            this.Definition = definition;
+            // to ensure "options" is required (not null)
+            if (options == null)
+            {
+                throw new ArgumentNullException("options is a required property for AudiencePreview and cannot be null");
+            }
+            this.Options = options;
+            this.Status = status;
+            this.Results = results;
+            this.Size = size;
+            this.FailureReason = failureReason;
         }
 
         /// <summary>
-        /// Get the actual instance of `CompletedAudiencePreview`. If the actual instance is not `CompletedAudiencePreview`,
-        /// the InvalidClassException will be thrown
+        /// Unique identifier for tracking and retrieving results of an audience preview.
         /// </summary>
-        /// <returns>An instance of CompletedAudiencePreview</returns>
-        public CompletedAudiencePreview GetCompletedAudiencePreview()
-        {
-            return (CompletedAudiencePreview)this.ActualInstance;
-        }
+        /// <value>Unique identifier for tracking and retrieving results of an audience preview.</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// Get the actual instance of `RunningAudiencePreview`. If the actual instance is not `RunningAudiencePreview`,
-        /// the InvalidClassException will be thrown
+        /// Gets or Sets Definition
         /// </summary>
-        /// <returns>An instance of RunningAudiencePreview</returns>
-        public RunningAudiencePreview GetRunningAudiencePreview()
-        {
-            return (RunningAudiencePreview)this.ActualInstance;
-        }
+        [DataMember(Name = "definition", IsRequired = true, EmitDefaultValue = true)]
+        public AudienceDefinitionWithoutType Definition { get; set; }
 
         /// <summary>
-        /// Get the actual instance of `FailedAudiencePreview`. If the actual instance is not `FailedAudiencePreview`,
-        /// the InvalidClassException will be thrown
+        /// Gets or Sets Options
         /// </summary>
-        /// <returns>An instance of FailedAudiencePreview</returns>
-        public FailedAudiencePreview GetFailedAudiencePreview()
-        {
-            return (FailedAudiencePreview)this.ActualInstance;
-        }
+        [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = true)]
+        public AudiencePreviewOptions Options { get; set; }
+
+        /// <summary>
+        /// Sampled result membership for the audience preview. Only has a value if the status is &#39;COMPLETED&#39;.
+        /// </summary>
+        /// <value>Sampled result membership for the audience preview. Only has a value if the status is &#39;COMPLETED&#39;.</value>
+        [DataMember(Name = "results", EmitDefaultValue = false)]
+        public List<AudiencePreviewResult> Results { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Size
+        /// </summary>
+        [DataMember(Name = "size", EmitDefaultValue = false)]
+        public AudienceSize Size { get; set; }
+
+        /// <summary>
+        /// Explanation of why the audience preview failed. Only has a value if status is &#39;FAILED&#39;.
+        /// </summary>
+        /// <value>Explanation of why the audience preview failed. Only has a value if status is &#39;FAILED&#39;.</value>
+        [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+        public string FailureReason { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -139,9 +180,16 @@ namespace Segment.PublicApi.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class AudiencePreview {\n");
-            sb.Append("  ActualInstance: ").Append(this.ActualInstance).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  AudienceType: ").Append(AudienceType).Append("\n");
+            sb.Append("  Definition: ").Append(Definition).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Results: ").Append(Results).Append("\n");
+            sb.Append("  Size: ").Append(Size).Append("\n");
+            sb.Append("  FailureReason: ").Append(FailureReason).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,63 +198,9 @@ namespace Segment.PublicApi.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public override string ToJson()
+        public virtual string ToJson()
         {
-            return JsonConvert.SerializeObject(this.ActualInstance, AudiencePreview.SerializerSettings);
-        }
-
-        /// <summary>
-        /// Converts the JSON string into an instance of AudiencePreview
-        /// </summary>
-        /// <param name="jsonString">JSON string</param>
-        /// <returns>An instance of AudiencePreview</returns>
-        public static AudiencePreview FromJson(string jsonString)
-        {
-            AudiencePreview newAudiencePreview = null;
-
-            if (string.IsNullOrEmpty(jsonString))
-            {
-                return newAudiencePreview;
-            }
-
-            try
-            {
-                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<CompletedAudiencePreview>(jsonString, AudiencePreview.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newAudiencePreview;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into CompletedAudiencePreview: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<FailedAudiencePreview>(jsonString, AudiencePreview.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newAudiencePreview;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FailedAudiencePreview: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<RunningAudiencePreview>(jsonString, AudiencePreview.SerializerSettings));
-                // deserialization is considered successful at this point if no exception has been thrown.
-                return newAudiencePreview;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into RunningAudiencePreview: {1}", jsonString, exception.ToString()));
-            }
-
-            // no match found, throw an exception
-            throw new InvalidDataException("The JSON string `" + jsonString + "` cannot be deserialized into any schema defined.");
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         /// <summary>
@@ -227,9 +221,49 @@ namespace Segment.PublicApi.Model
         public bool Equals(AudiencePreview input)
         {
             if (input == null)
+            {
                 return false;
-
-            return this.ActualInstance.Equals(input.ActualInstance);
+            }
+            return 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.AudienceType == input.AudienceType ||
+                    this.AudienceType.Equals(input.AudienceType)
+                ) && 
+                (
+                    this.Definition == input.Definition ||
+                    (this.Definition != null &&
+                    this.Definition.Equals(input.Definition))
+                ) && 
+                (
+                    this.Options == input.Options ||
+                    (this.Options != null &&
+                    this.Options.Equals(input.Options))
+                ) && 
+                (
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
+                ) && 
+                (
+                    this.Results == input.Results ||
+                    this.Results != null &&
+                    input.Results != null &&
+                    this.Results.SequenceEqual(input.Results)
+                ) && 
+                (
+                    this.Size == input.Size ||
+                    (this.Size != null &&
+                    this.Size.Equals(input.Size))
+                ) && 
+                (
+                    this.FailureReason == input.FailureReason ||
+                    (this.FailureReason != null &&
+                    this.FailureReason.Equals(input.FailureReason))
+                );
         }
 
         /// <summary>
@@ -241,8 +275,32 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ActualInstance != null)
-                    hashCode = hashCode * 59 + this.ActualInstance.GetHashCode();
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.AudienceType.GetHashCode();
+                if (this.Definition != null)
+                {
+                    hashCode = (hashCode * 59) + this.Definition.GetHashCode();
+                }
+                if (this.Options != null)
+                {
+                    hashCode = (hashCode * 59) + this.Options.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                if (this.Results != null)
+                {
+                    hashCode = (hashCode * 59) + this.Results.GetHashCode();
+                }
+                if (this.Size != null)
+                {
+                    hashCode = (hashCode * 59) + this.Size.GetHashCode();
+                }
+                if (this.FailureReason != null)
+                {
+                    hashCode = (hashCode * 59) + this.FailureReason.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -255,50 +313,6 @@ namespace Segment.PublicApi.Model
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
-        }
-    }
-
-    /// <summary>
-    /// Custom JSON converter for AudiencePreview
-    /// </summary>
-    public class AudiencePreviewJsonConverter : JsonConverter
-    {
-        /// <summary>
-        /// To write the JSON string
-        /// </summary>
-        /// <param name="writer">JSON writer</param>
-        /// <param name="value">Object to be converted into a JSON string</param>
-        /// <param name="serializer">JSON Serializer</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            writer.WriteRawValue((string)(typeof(AudiencePreview).GetMethod("ToJson").Invoke(value, null)));
-        }
-
-        /// <summary>
-        /// To convert a JSON string into an object
-        /// </summary>
-        /// <param name="reader">JSON reader</param>
-        /// <param name="objectType">Object type</param>
-        /// <param name="existingValue">Existing value</param>
-        /// <param name="serializer">JSON Serializer</param>
-        /// <returns>The object converted from the JSON string</returns>
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            if(reader.TokenType != JsonToken.Null)
-            {
-                return AudiencePreview.FromJson(JObject.Load(reader).ToString(Formatting.None));
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Check if the object can be converted
-        /// </summary>
-        /// <param name="objectType">Object type</param>
-        /// <returns>True if the object can be converted</returns>
-        public override bool CanConvert(Type objectType)
-        {
-            return false;
         }
     }
 
