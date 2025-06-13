@@ -36,10 +36,10 @@ namespace Segment.PublicApi.Model
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AudiencePreview" /> class
-        /// with the <see cref="CompletedAudiencePreview" /> class
+        /// with the <see cref="AudiencePreviewAnyOf" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of CompletedAudiencePreview.</param>
-        public AudiencePreview(CompletedAudiencePreview actualInstance)
+        /// <param name="actualInstance">An instance of AudiencePreviewAnyOf.</param>
+        public AudiencePreview(AudiencePreviewAnyOf actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -48,10 +48,10 @@ namespace Segment.PublicApi.Model
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AudiencePreview" /> class
-        /// with the <see cref="RunningAudiencePreview" /> class
+        /// with the <see cref="AudiencePreviewAnyOf1" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of RunningAudiencePreview.</param>
-        public AudiencePreview(RunningAudiencePreview actualInstance)
+        /// <param name="actualInstance">An instance of AudiencePreviewAnyOf1.</param>
+        public AudiencePreview(AudiencePreviewAnyOf1 actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -60,10 +60,10 @@ namespace Segment.PublicApi.Model
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AudiencePreview" /> class
-        /// with the <see cref="FailedAudiencePreview" /> class
+        /// with the <see cref="AudiencePreviewAnyOf2" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of FailedAudiencePreview.</param>
-        public AudiencePreview(FailedAudiencePreview actualInstance)
+        /// <param name="actualInstance">An instance of AudiencePreviewAnyOf2.</param>
+        public AudiencePreview(AudiencePreviewAnyOf2 actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -84,53 +84,53 @@ namespace Segment.PublicApi.Model
             }
             set
             {
-                if (value.GetType() == typeof(CompletedAudiencePreview))
+                if (value.GetType() == typeof(AudiencePreviewAnyOf))
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(FailedAudiencePreview))
+                else if (value.GetType() == typeof(AudiencePreviewAnyOf1))
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(RunningAudiencePreview))
+                else if (value.GetType() == typeof(AudiencePreviewAnyOf2))
                 {
                     this._actualInstance = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: CompletedAudiencePreview, FailedAudiencePreview, RunningAudiencePreview");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: AudiencePreviewAnyOf, AudiencePreviewAnyOf1, AudiencePreviewAnyOf2");
                 }
             }
         }
 
         /// <summary>
-        /// Get the actual instance of `CompletedAudiencePreview`. If the actual instance is not `CompletedAudiencePreview`,
+        /// Get the actual instance of `AudiencePreviewAnyOf`. If the actual instance is not `AudiencePreviewAnyOf`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of CompletedAudiencePreview</returns>
-        public CompletedAudiencePreview GetCompletedAudiencePreview()
+        /// <returns>An instance of AudiencePreviewAnyOf</returns>
+        public AudiencePreviewAnyOf GetAudiencePreviewAnyOf()
         {
-            return (CompletedAudiencePreview)this.ActualInstance;
+            return (AudiencePreviewAnyOf)this.ActualInstance;
         }
 
         /// <summary>
-        /// Get the actual instance of `RunningAudiencePreview`. If the actual instance is not `RunningAudiencePreview`,
+        /// Get the actual instance of `AudiencePreviewAnyOf1`. If the actual instance is not `AudiencePreviewAnyOf1`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of RunningAudiencePreview</returns>
-        public RunningAudiencePreview GetRunningAudiencePreview()
+        /// <returns>An instance of AudiencePreviewAnyOf1</returns>
+        public AudiencePreviewAnyOf1 GetAudiencePreviewAnyOf1()
         {
-            return (RunningAudiencePreview)this.ActualInstance;
+            return (AudiencePreviewAnyOf1)this.ActualInstance;
         }
 
         /// <summary>
-        /// Get the actual instance of `FailedAudiencePreview`. If the actual instance is not `FailedAudiencePreview`,
+        /// Get the actual instance of `AudiencePreviewAnyOf2`. If the actual instance is not `AudiencePreviewAnyOf2`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of FailedAudiencePreview</returns>
-        public FailedAudiencePreview GetFailedAudiencePreview()
+        /// <returns>An instance of AudiencePreviewAnyOf2</returns>
+        public AudiencePreviewAnyOf2 GetAudiencePreviewAnyOf2()
         {
-            return (FailedAudiencePreview)this.ActualInstance;
+            return (AudiencePreviewAnyOf2)this.ActualInstance;
         }
 
         /// <summary>
@@ -171,38 +171,38 @@ namespace Segment.PublicApi.Model
 
             try
             {
-                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<CompletedAudiencePreview>(jsonString, AudiencePreview.SerializerSettings));
+                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<AudiencePreviewAnyOf>(jsonString, AudiencePreview.SerializerSettings));
                 // deserialization is considered successful at this point if no exception has been thrown.
                 return newAudiencePreview;
             }
             catch (Exception exception)
             {
                 // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into CompletedAudiencePreview: {1}", jsonString, exception.ToString()));
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into AudiencePreviewAnyOf: {1}", jsonString, exception.ToString()));
             }
 
             try
             {
-                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<FailedAudiencePreview>(jsonString, AudiencePreview.SerializerSettings));
+                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<AudiencePreviewAnyOf1>(jsonString, AudiencePreview.SerializerSettings));
                 // deserialization is considered successful at this point if no exception has been thrown.
                 return newAudiencePreview;
             }
             catch (Exception exception)
             {
                 // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into FailedAudiencePreview: {1}", jsonString, exception.ToString()));
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into AudiencePreviewAnyOf1: {1}", jsonString, exception.ToString()));
             }
 
             try
             {
-                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<RunningAudiencePreview>(jsonString, AudiencePreview.SerializerSettings));
+                newAudiencePreview = new AudiencePreview(JsonConvert.DeserializeObject<AudiencePreviewAnyOf2>(jsonString, AudiencePreview.SerializerSettings));
                 // deserialization is considered successful at this point if no exception has been thrown.
                 return newAudiencePreview;
             }
             catch (Exception exception)
             {
                 // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into RunningAudiencePreview: {1}", jsonString, exception.ToString()));
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into AudiencePreviewAnyOf2: {1}", jsonString, exception.ToString()));
             }
 
             // no match found, throw an exception
