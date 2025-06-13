@@ -71,7 +71,7 @@ namespace Segment.PublicApi.Model
         /// <param name="audienceType">The audience type of the preview. (required).</param>
         /// <param name="definition">definition (required).</param>
         /// <param name="options">options (required).</param>
-        public CommonAudiencePreview(string id = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), AudienceOptionsWithLookback options = default(AudienceOptionsWithLookback))
+        public CommonAudiencePreview(string id = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), AudiencePreviewOptions options = default(AudiencePreviewOptions))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -111,7 +111,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Options
         /// </summary>
         [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = true)]
-        public AudienceOptionsWithLookback Options { get; set; }
+        public AudiencePreviewOptions Options { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -28,7 +28,7 @@ using System.Reflection;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// AudiencePreview
+    /// Audience preview that can be in one of the three states: completed, running, or failed.
     /// </summary>
     [JsonConverter(typeof(AudiencePreviewJsonConverter))]
     [DataContract(Name = "AudiencePreview")]

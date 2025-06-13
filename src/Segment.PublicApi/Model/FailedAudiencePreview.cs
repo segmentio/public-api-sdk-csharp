@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// FailedAudiencePreview
+    /// Audience preview that has failed to calculate.
     /// </summary>
     [DataContract(Name = "FailedAudiencePreview")]
     public partial class FailedAudiencePreview : IEquatable<FailedAudiencePreview>, IValidatableObject
@@ -94,7 +94,7 @@ namespace Segment.PublicApi.Model
         /// <param name="audienceType">The audience type of the preview. (required).</param>
         /// <param name="definition">definition (required).</param>
         /// <param name="options">options (required).</param>
-        public FailedAudiencePreview(StatusEnum status = default(StatusEnum), string failureReason = default(string), string id = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), AudienceOptionsWithLookback options = default(AudienceOptionsWithLookback))
+        public FailedAudiencePreview(StatusEnum status = default(StatusEnum), string failureReason = default(string), string id = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), AudiencePreviewOptions options = default(AudiencePreviewOptions))
         {
             this.Status = status;
             // to ensure "id" is required (not null)
@@ -143,7 +143,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Options
         /// </summary>
         [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = true)]
-        public AudienceOptionsWithLookback Options { get; set; }
+        public AudiencePreviewOptions Options { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
