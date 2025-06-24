@@ -29,15 +29,15 @@ namespace Segment.PublicApi.Model
     /// <summary>
     /// Options which should be applied when segmenting audience previews.
     /// </summary>
-    [DataContract(Name = "AudiencePreviewOptions")]
-    public partial class AudiencePreviewOptions : IEquatable<AudiencePreviewOptions>, IValidatableObject
+    [DataContract(Name = "CreateAudiencePreviewOptions")]
+    public partial class CreateAudiencePreviewOptions : IEquatable<CreateAudiencePreviewOptions>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudiencePreviewOptions" /> class.
+        /// Initializes a new instance of the <see cref="CreateAudiencePreviewOptions" /> class.
         /// </summary>
         /// <param name="filterByExternalIds">The set of profile external identifiers being used to determine audience preview membership. Profiles will only be considered for audience preview membership if the profile has at least one external id whose key matches a value in this set. If unspecified, a default set of external identifiers will be used: &#x60;[&#39;user_id&#39;, &#39;email&#39;, &#39;android.idfa&#39;, &#39;ios.idfa&#39;]&#x60;..</param>
-        /// <param name="backfillEventDataDays">If specified, the value of this field indicates the number of days (specified from the date the audience preview was created) that event data will be included from when determining audience preview membership. If unspecified, event data will not be included when determining audience preview membership..</param>
-        public AudiencePreviewOptions(List<string> filterByExternalIds = default(List<string>), decimal backfillEventDataDays = default(decimal))
+        /// <param name="backfillEventDataDays">If specified, the value of this field indicates the number of days (specified from the date the audience preview was created) that event data will be included from when determining audience preview membership. If not specified, the default is set to the maximum event window size, or 7 days if no window condition is defined. Note that this is applied on a best-effort basis and may not always be applicable. In such cases, the response will not return a backfillEventDataDays value, and all available data will be taken into account..</param>
+        public CreateAudiencePreviewOptions(List<string> filterByExternalIds = default(List<string>), decimal backfillEventDataDays = default(decimal))
         {
             this.FilterByExternalIds = filterByExternalIds;
             this.BackfillEventDataDays = backfillEventDataDays;
@@ -51,9 +51,9 @@ namespace Segment.PublicApi.Model
         public List<string> FilterByExternalIds { get; set; }
 
         /// <summary>
-        /// If specified, the value of this field indicates the number of days (specified from the date the audience preview was created) that event data will be included from when determining audience preview membership. If unspecified, event data will not be included when determining audience preview membership.
+        /// If specified, the value of this field indicates the number of days (specified from the date the audience preview was created) that event data will be included from when determining audience preview membership. If not specified, the default is set to the maximum event window size, or 7 days if no window condition is defined. Note that this is applied on a best-effort basis and may not always be applicable. In such cases, the response will not return a backfillEventDataDays value, and all available data will be taken into account.
         /// </summary>
-        /// <value>If specified, the value of this field indicates the number of days (specified from the date the audience preview was created) that event data will be included from when determining audience preview membership. If unspecified, event data will not be included when determining audience preview membership.</value>
+        /// <value>If specified, the value of this field indicates the number of days (specified from the date the audience preview was created) that event data will be included from when determining audience preview membership. If not specified, the default is set to the maximum event window size, or 7 days if no window condition is defined. Note that this is applied on a best-effort basis and may not always be applicable. In such cases, the response will not return a backfillEventDataDays value, and all available data will be taken into account.</value>
         [DataMember(Name = "backfillEventDataDays", EmitDefaultValue = false)]
         public decimal BackfillEventDataDays { get; set; }
 
@@ -64,7 +64,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AudiencePreviewOptions {\n");
+            sb.Append("class CreateAudiencePreviewOptions {\n");
             sb.Append("  FilterByExternalIds: ").Append(FilterByExternalIds).Append("\n");
             sb.Append("  BackfillEventDataDays: ").Append(BackfillEventDataDays).Append("\n");
             sb.Append("}\n");
@@ -87,15 +87,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudiencePreviewOptions);
+            return this.Equals(input as CreateAudiencePreviewOptions);
         }
 
         /// <summary>
-        /// Returns true if AudiencePreviewOptions instances are equal
+        /// Returns true if CreateAudiencePreviewOptions instances are equal
         /// </summary>
-        /// <param name="input">Instance of AudiencePreviewOptions to be compared</param>
+        /// <param name="input">Instance of CreateAudiencePreviewOptions to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AudiencePreviewOptions input)
+        public bool Equals(CreateAudiencePreviewOptions input)
         {
             if (input == null)
             {
