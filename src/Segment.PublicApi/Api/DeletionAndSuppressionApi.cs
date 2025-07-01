@@ -104,24 +104,26 @@ namespace Segment.PublicApi.Api
         /// Delete Regulation
         /// </summary>
         /// <remarks>
-        /// Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).       
+        /// Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).         **DEPRECATED**: this endpoint has been deprecated according to the guidelines, and may experience reduced SLA guarantees.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="regulateId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeleteRegulation200Response</returns>
+        [Obsolete]
         DeleteRegulation200Response DeleteRegulation(string regulateId, int operationIndex = 0);
 
         /// <summary>
         /// Delete Regulation
         /// </summary>
         /// <remarks>
-        /// Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).       
+        /// Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).         **DEPRECATED**: this endpoint has been deprecated according to the guidelines, and may experience reduced SLA guarantees.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="regulateId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeleteRegulation200Response</returns>
+        [Obsolete]
         ApiResponse<DeleteRegulation200Response> DeleteRegulationWithHttpInfo(string regulateId, int operationIndex = 0);
         /// <summary>
         /// Get Regulation
@@ -317,26 +319,28 @@ namespace Segment.PublicApi.Api
         /// Delete Regulation
         /// </summary>
         /// <remarks>
-        /// Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).       
+        /// Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).         **DEPRECATED**: this endpoint has been deprecated according to the guidelines, and may experience reduced SLA guarantees.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="regulateId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteRegulation200Response</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<DeleteRegulation200Response> DeleteRegulationAsync(string regulateId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Delete Regulation
         /// </summary>
         /// <remarks>
-        /// Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).       
+        /// Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).         **DEPRECATED**: this endpoint has been deprecated according to the guidelines, and may experience reduced SLA guarantees.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="regulateId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteRegulation200Response)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<DeleteRegulation200Response>> DeleteRegulationWithHttpInfoAsync(string regulateId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Regulation
@@ -1115,12 +1119,13 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Delete Regulation Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).       
+        /// Delete Regulation Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).         **DEPRECATED**: this endpoint has been deprecated according to the guidelines, and may experience reduced SLA guarantees.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="regulateId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>DeleteRegulation200Response</returns>
+        [Obsolete]
         public DeleteRegulation200Response DeleteRegulation(string regulateId, int operationIndex = 0)
         {
             Segment.PublicApi.Client.ApiResponse<DeleteRegulation200Response> localVarResponse = DeleteRegulationWithHttpInfo(regulateId);
@@ -1128,12 +1133,13 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Delete Regulation Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).       
+        /// Delete Regulation Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).         **DEPRECATED**: this endpoint has been deprecated according to the guidelines, and may experience reduced SLA guarantees.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="regulateId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of DeleteRegulation200Response</returns>
+        [Obsolete]
         public Segment.PublicApi.Client.ApiResponse<DeleteRegulation200Response> DeleteRegulationWithHttpInfo(string regulateId, int operationIndex = 0)
         {
             // verify the required parameter 'regulateId' is set
@@ -1194,13 +1200,14 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Delete Regulation Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).       
+        /// Delete Regulation Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).         **DEPRECATED**: this endpoint has been deprecated according to the guidelines, and may experience reduced SLA guarantees.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="regulateId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteRegulation200Response</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<DeleteRegulation200Response> DeleteRegulationAsync(string regulateId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Segment.PublicApi.Client.ApiResponse<DeleteRegulation200Response> localVarResponse = await DeleteRegulationWithHttpInfoAsync(regulateId, operationIndex, cancellationToken).ConfigureAwait(false);
@@ -1208,13 +1215,14 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Delete Regulation Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).       
+        /// Delete Regulation Deletes a regulation from the Workspace. The regulation must be in the initialized state to be deleted.    • When called, this endpoint may generate the &#x60;Regulation Deleted&#x60; event in the [audit trail](/tag/Audit-Trail).         **DEPRECATED**: this endpoint has been deprecated according to the guidelines, and may experience reduced SLA guarantees.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="regulateId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteRegulation200Response)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<DeleteRegulation200Response>> DeleteRegulationWithHttpInfoAsync(string regulateId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'regulateId' is set
