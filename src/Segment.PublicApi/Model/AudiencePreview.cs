@@ -46,10 +46,16 @@ namespace Segment.PublicApi.Model
             ACCOUNTS = 1,
 
             /// <summary>
+            /// Enum LINKED for value: LINKED
+            /// </summary>
+            [EnumMember(Value = "LINKED")]
+            LINKED = 2,
+
+            /// <summary>
             /// Enum USERS for value: USERS
             /// </summary>
             [EnumMember(Value = "USERS")]
-            USERS = 2
+            USERS = 3
         }
 
 

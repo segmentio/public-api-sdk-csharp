@@ -33,9 +33,9 @@ namespace Segment.PublicApi.Model
     public partial class CreateAudiencePreviewAlphaInput : IEquatable<CreateAudiencePreviewAlphaInput>, IValidatableObject
     {
         /// <summary>
-        /// Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS.
+        /// Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED.
         /// </summary>
-        /// <value>Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS.</value>
+        /// <value>Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AudienceTypeEnum
         {
@@ -46,17 +46,23 @@ namespace Segment.PublicApi.Model
             ACCOUNTS = 1,
 
             /// <summary>
+            /// Enum LINKED for value: LINKED
+            /// </summary>
+            [EnumMember(Value = "LINKED")]
+            LINKED = 2,
+
+            /// <summary>
             /// Enum USERS for value: USERS
             /// </summary>
             [EnumMember(Value = "USERS")]
-            USERS = 2
+            USERS = 3
         }
 
 
         /// <summary>
-        /// Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS.
+        /// Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED.
         /// </summary>
-        /// <value>Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS.</value>
+        /// <value>Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED.</value>
         [DataMember(Name = "audienceType", IsRequired = true, EmitDefaultValue = true)]
         public AudienceTypeEnum AudienceType { get; set; }
         /// <summary>
@@ -68,7 +74,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="CreateAudiencePreviewAlphaInput" /> class.
         /// </summary>
         /// <param name="definition">definition (required).</param>
-        /// <param name="audienceType">Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS. (required).</param>
+        /// <param name="audienceType">Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED. (required).</param>
         /// <param name="options">options.</param>
         public CreateAudiencePreviewAlphaInput(AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), AudienceTypeEnum audienceType = default(AudienceTypeEnum), CreateAudiencePreviewOptions options = default(CreateAudiencePreviewOptions))
         {

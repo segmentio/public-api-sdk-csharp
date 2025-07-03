@@ -27,36 +27,36 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Configures a periodic schedule interval.
+    /// Result membership object for an audience preview with &#x60;audienceType: ACCOUNTS&#x60;.
     /// </summary>
-    [DataContract(Name = "PeriodicConfig")]
-    public partial class PeriodicConfig : IEquatable<PeriodicConfig>, IValidatableObject
+    [DataContract(Name = "AudiencePreviewAccountResult")]
+    public partial class AudiencePreviewAccountResult : IEquatable<AudiencePreviewAccountResult>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PeriodicConfig" /> class.
+        /// Initializes a new instance of the <see cref="AudiencePreviewAccountResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected PeriodicConfig() { }
+        protected AudiencePreviewAccountResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="PeriodicConfig" /> class.
+        /// Initializes a new instance of the <see cref="AudiencePreviewAccountResult" /> class.
         /// </summary>
-        /// <param name="interval">Go duration format string, only supporting units \&quot;day\&quot; (days), \&quot;h\&quot; (hours) and \&quot;m\&quot; (minutes). (required).</param>
-        public PeriodicConfig(string interval = default(string))
+        /// <param name="id">Account id. (required).</param>
+        public AudiencePreviewAccountResult(string id = default(string))
         {
-            // to ensure "interval" is required (not null)
-            if (interval == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new ArgumentNullException("interval is a required property for PeriodicConfig and cannot be null");
+                throw new ArgumentNullException("id is a required property for AudiencePreviewAccountResult and cannot be null");
             }
-            this.Interval = interval;
+            this.Id = id;
         }
 
         /// <summary>
-        /// Go duration format string, only supporting units \&quot;day\&quot; (days), \&quot;h\&quot; (hours) and \&quot;m\&quot; (minutes).
+        /// Account id.
         /// </summary>
-        /// <value>Go duration format string, only supporting units \&quot;day\&quot; (days), \&quot;h\&quot; (hours) and \&quot;m\&quot; (minutes).</value>
-        [DataMember(Name = "interval", IsRequired = true, EmitDefaultValue = true)]
-        public string Interval { get; set; }
+        /// <value>Account id.</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,8 +65,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class PeriodicConfig {\n");
-            sb.Append("  Interval: ").Append(Interval).Append("\n");
+            sb.Append("class AudiencePreviewAccountResult {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +87,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as PeriodicConfig);
+            return this.Equals(input as AudiencePreviewAccountResult);
         }
 
         /// <summary>
-        /// Returns true if PeriodicConfig instances are equal
+        /// Returns true if AudiencePreviewAccountResult instances are equal
         /// </summary>
-        /// <param name="input">Instance of PeriodicConfig to be compared</param>
+        /// <param name="input">Instance of AudiencePreviewAccountResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(PeriodicConfig input)
+        public bool Equals(AudiencePreviewAccountResult input)
         {
             if (input == null)
             {
@@ -103,9 +103,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Interval == input.Interval ||
-                    (this.Interval != null &&
-                    this.Interval.Equals(input.Interval))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -118,9 +118,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Interval != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.Interval.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 return hashCode;
             }

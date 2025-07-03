@@ -40,7 +40,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SpecificDaysConfig" /> class.
         /// </summary>
-        /// <param name="days">Days of week for schedule (0&#x3D;Saturday, 6&#x3D;Sunday). (required).</param>
+        /// <param name="days">Days of week for schedule (0&#x3D;Sunday, 6&#x3D;Saturday). (required).</param>
         /// <param name="hours">Hours of day for schedule (0-23). (required).</param>
         /// <param name="timezone">TZ database time zone identifier; for example, America/New_York. (required).</param>
         public SpecificDaysConfig(List<decimal> days = default(List<decimal>), List<decimal> hours = default(List<decimal>), string timezone = default(string))
@@ -66,9 +66,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Days of week for schedule (0&#x3D;Saturday, 6&#x3D;Sunday).
+        /// Days of week for schedule (0&#x3D;Sunday, 6&#x3D;Saturday).
         /// </summary>
-        /// <value>Days of week for schedule (0&#x3D;Saturday, 6&#x3D;Sunday).</value>
+        /// <value>Days of week for schedule (0&#x3D;Sunday, 6&#x3D;Saturday).</value>
         [DataMember(Name = "days", IsRequired = true, EmitDefaultValue = true)]
         public List<decimal> Days { get; set; }
 
