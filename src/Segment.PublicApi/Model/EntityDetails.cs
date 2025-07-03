@@ -44,7 +44,7 @@ namespace Segment.PublicApi.Model
         /// <param name="idProperty">The entity primary key column name. (required).</param>
         /// <param name="relationshipSlug">The entity relationship slug. (required).</param>
         /// <param name="properties">Entity properties..</param>
-        /// <param name="entities">The related entities one level deeper into an entity branch..</param>
+        /// <param name="entities">Related entities that are one level deeper will only be returned if those entities are referenced in the audience definition..</param>
         public EntityDetails(string id = default(string), string idProperty = default(string), string relationshipSlug = default(string), Dictionary<string, Object> properties = default(Dictionary<string, Object>), Dictionary<string, Object> entities = default(Dictionary<string, Object>))
         {
             // to ensure "id" is required (not null)
@@ -98,9 +98,9 @@ namespace Segment.PublicApi.Model
         public Dictionary<string, Object> Properties { get; set; }
 
         /// <summary>
-        /// The related entities one level deeper into an entity branch.
+        /// Related entities that are one level deeper will only be returned if those entities are referenced in the audience definition.
         /// </summary>
-        /// <value>The related entities one level deeper into an entity branch.</value>
+        /// <value>Related entities that are one level deeper will only be returned if those entities are referenced in the audience definition.</value>
         [DataMember(Name = "entities", EmitDefaultValue = false)]
         public Dictionary<string, Object> Entities { get; set; }
 
