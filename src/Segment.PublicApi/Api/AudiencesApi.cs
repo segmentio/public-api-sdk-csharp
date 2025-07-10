@@ -170,7 +170,7 @@ namespace Segment.PublicApi.Api
         /// <param name="sort">Optional sort criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListAudienceConsumersFromSpaceAndAudience200Response</returns>
-        ListAudienceConsumersFromSpaceAndAudience200Response ListAudienceConsumersFromSpaceAndAudience(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceConsumersSearchInput? search = default(ListAudienceConsumersSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0);
+        ListAudienceConsumersFromSpaceAndAudience200Response ListAudienceConsumersFromSpaceAndAudience(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0);
 
         /// <summary>
         /// List Audience Consumers from Space And Audience
@@ -186,7 +186,7 @@ namespace Segment.PublicApi.Api
         /// <param name="sort">Optional sort criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListAudienceConsumersFromSpaceAndAudience200Response</returns>
-        ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response> ListAudienceConsumersFromSpaceAndAudienceWithHttpInfo(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceConsumersSearchInput? search = default(ListAudienceConsumersSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0);
+        ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response> ListAudienceConsumersFromSpaceAndAudienceWithHttpInfo(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0);
         /// <summary>
         /// List Audience Schedules from Space And Audience
         /// </summary>
@@ -220,11 +220,12 @@ namespace Segment.PublicApi.Api
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
+        /// <param name="search">Optional search criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="pagination">Information about the pagination of this response.  [See pagination](https://docs.segmentapis.com/tag/Pagination/#section/Pagination-parameters) for more info.  This parameter exists in alpha. (optional)</param>
         /// <param name="include">Additional resource to include, support schedules only.  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListAudiences200Response</returns>
-        ListAudiences200Response ListAudiences(string spaceId, ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0);
+        ListAudiences200Response ListAudiences(string spaceId, ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// List Audiences
@@ -234,11 +235,12 @@ namespace Segment.PublicApi.Api
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
+        /// <param name="search">Optional search criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="pagination">Information about the pagination of this response.  [See pagination](https://docs.segmentapis.com/tag/Pagination/#section/Pagination-parameters) for more info.  This parameter exists in alpha. (optional)</param>
         /// <param name="include">Additional resource to include, support schedules only.  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListAudiences200Response</returns>
-        ApiResponse<ListAudiences200Response> ListAudiencesWithHttpInfo(string spaceId, ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0);
+        ApiResponse<ListAudiences200Response> ListAudiencesWithHttpInfo(string spaceId, ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0);
         /// <summary>
         /// Remove Audience from Space
         /// </summary>
@@ -454,7 +456,7 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAudienceConsumersFromSpaceAndAudience200Response</returns>
-        System.Threading.Tasks.Task<ListAudienceConsumersFromSpaceAndAudience200Response> ListAudienceConsumersFromSpaceAndAudienceAsync(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceConsumersSearchInput? search = default(ListAudienceConsumersSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListAudienceConsumersFromSpaceAndAudience200Response> ListAudienceConsumersFromSpaceAndAudienceAsync(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Audience Consumers from Space And Audience
@@ -471,7 +473,7 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAudienceConsumersFromSpaceAndAudience200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response>> ListAudienceConsumersFromSpaceAndAudienceWithHttpInfoAsync(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceConsumersSearchInput? search = default(ListAudienceConsumersSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response>> ListAudienceConsumersFromSpaceAndAudienceWithHttpInfoAsync(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Audience Schedules from Space And Audience
         /// </summary>
@@ -507,12 +509,13 @@ namespace Segment.PublicApi.Api
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
+        /// <param name="search">Optional search criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="pagination">Information about the pagination of this response.  [See pagination](https://docs.segmentapis.com/tag/Pagination/#section/Pagination-parameters) for more info.  This parameter exists in alpha. (optional)</param>
         /// <param name="include">Additional resource to include, support schedules only.  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAudiences200Response</returns>
-        System.Threading.Tasks.Task<ListAudiences200Response> ListAudiencesAsync(string spaceId, ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListAudiences200Response> ListAudiencesAsync(string spaceId, ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Audiences
@@ -522,12 +525,13 @@ namespace Segment.PublicApi.Api
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
+        /// <param name="search">Optional search criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="pagination">Information about the pagination of this response.  [See pagination](https://docs.segmentapis.com/tag/Pagination/#section/Pagination-parameters) for more info.  This parameter exists in alpha. (optional)</param>
         /// <param name="include">Additional resource to include, support schedules only.  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAudiences200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListAudiences200Response>> ListAudiencesWithHttpInfoAsync(string spaceId, ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListAudiences200Response>> ListAudiencesWithHttpInfoAsync(string spaceId, ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove Audience from Space
         /// </summary>
@@ -1631,7 +1635,7 @@ namespace Segment.PublicApi.Api
         /// <param name="sort">Optional sort criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListAudienceConsumersFromSpaceAndAudience200Response</returns>
-        public ListAudienceConsumersFromSpaceAndAudience200Response ListAudienceConsumersFromSpaceAndAudience(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceConsumersSearchInput? search = default(ListAudienceConsumersSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0)
+        public ListAudienceConsumersFromSpaceAndAudience200Response ListAudienceConsumersFromSpaceAndAudience(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0)
         {
             Segment.PublicApi.Client.ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response> localVarResponse = ListAudienceConsumersFromSpaceAndAudienceWithHttpInfo(spaceId, id, pagination, search, sort);
             return localVarResponse.Data;
@@ -1648,7 +1652,7 @@ namespace Segment.PublicApi.Api
         /// <param name="sort">Optional sort criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListAudienceConsumersFromSpaceAndAudience200Response</returns>
-        public Segment.PublicApi.Client.ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response> ListAudienceConsumersFromSpaceAndAudienceWithHttpInfo(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceConsumersSearchInput? search = default(ListAudienceConsumersSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0)
+        public Segment.PublicApi.Client.ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response> ListAudienceConsumersFromSpaceAndAudienceWithHttpInfo(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0)
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -1736,7 +1740,7 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAudienceConsumersFromSpaceAndAudience200Response</returns>
-        public async System.Threading.Tasks.Task<ListAudienceConsumersFromSpaceAndAudience200Response> ListAudienceConsumersFromSpaceAndAudienceAsync(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceConsumersSearchInput? search = default(ListAudienceConsumersSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListAudienceConsumersFromSpaceAndAudience200Response> ListAudienceConsumersFromSpaceAndAudienceAsync(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Segment.PublicApi.Client.ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response> localVarResponse = await ListAudienceConsumersFromSpaceAndAudienceWithHttpInfoAsync(spaceId, id, pagination, search, sort, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1754,7 +1758,7 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAudienceConsumersFromSpaceAndAudience200Response)</returns>
-        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response>> ListAudienceConsumersFromSpaceAndAudienceWithHttpInfoAsync(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceConsumersSearchInput? search = default(ListAudienceConsumersSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<ListAudienceConsumersFromSpaceAndAudience200Response>> ListAudienceConsumersFromSpaceAndAudienceWithHttpInfoAsync(string spaceId, string id, PaginationInput? pagination = default(PaginationInput?), ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudienceConsumersSortInput? sort = default(ListAudienceConsumersSortInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -2013,13 +2017,14 @@ namespace Segment.PublicApi.Api
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
+        /// <param name="search">Optional search criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="pagination">Information about the pagination of this response.  [See pagination](https://docs.segmentapis.com/tag/Pagination/#section/Pagination-parameters) for more info.  This parameter exists in alpha. (optional)</param>
         /// <param name="include">Additional resource to include, support schedules only.  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListAudiences200Response</returns>
-        public ListAudiences200Response ListAudiences(string spaceId, ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0)
+        public ListAudiences200Response ListAudiences(string spaceId, ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0)
         {
-            Segment.PublicApi.Client.ApiResponse<ListAudiences200Response> localVarResponse = ListAudiencesWithHttpInfo(spaceId, pagination, include);
+            Segment.PublicApi.Client.ApiResponse<ListAudiences200Response> localVarResponse = ListAudiencesWithHttpInfo(spaceId, search, pagination, include);
             return localVarResponse.Data;
         }
 
@@ -2028,11 +2033,12 @@ namespace Segment.PublicApi.Api
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
+        /// <param name="search">Optional search criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="pagination">Information about the pagination of this response.  [See pagination](https://docs.segmentapis.com/tag/Pagination/#section/Pagination-parameters) for more info.  This parameter exists in alpha. (optional)</param>
         /// <param name="include">Additional resource to include, support schedules only.  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListAudiences200Response</returns>
-        public Segment.PublicApi.Client.ApiResponse<ListAudiences200Response> ListAudiencesWithHttpInfo(string spaceId, ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0)
+        public Segment.PublicApi.Client.ApiResponse<ListAudiences200Response> ListAudiencesWithHttpInfo(string spaceId, ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -2065,6 +2071,10 @@ namespace Segment.PublicApi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "search", search));
+            }
             if (pagination != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "pagination", pagination));
@@ -2103,14 +2113,15 @@ namespace Segment.PublicApi.Api
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
+        /// <param name="search">Optional search criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="pagination">Information about the pagination of this response.  [See pagination](https://docs.segmentapis.com/tag/Pagination/#section/Pagination-parameters) for more info.  This parameter exists in alpha. (optional)</param>
         /// <param name="include">Additional resource to include, support schedules only.  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAudiences200Response</returns>
-        public async System.Threading.Tasks.Task<ListAudiences200Response> ListAudiencesAsync(string spaceId, ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListAudiences200Response> ListAudiencesAsync(string spaceId, ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Segment.PublicApi.Client.ApiResponse<ListAudiences200Response> localVarResponse = await ListAudiencesWithHttpInfoAsync(spaceId, pagination, include, operationIndex, cancellationToken).ConfigureAwait(false);
+            Segment.PublicApi.Client.ApiResponse<ListAudiences200Response> localVarResponse = await ListAudiencesWithHttpInfoAsync(spaceId, search, pagination, include, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2119,12 +2130,13 @@ namespace Segment.PublicApi.Api
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
+        /// <param name="search">Optional search criteria  This parameter exists in alpha. (optional)</param>
         /// <param name="pagination">Information about the pagination of this response.  [See pagination](https://docs.segmentapis.com/tag/Pagination/#section/Pagination-parameters) for more info.  This parameter exists in alpha. (optional)</param>
         /// <param name="include">Additional resource to include, support schedules only.  This parameter exists in alpha. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAudiences200Response)</returns>
-        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<ListAudiences200Response>> ListAudiencesWithHttpInfoAsync(string spaceId, ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<ListAudiences200Response>> ListAudiencesWithHttpInfoAsync(string spaceId, ListAudienceSearchInput? search = default(ListAudienceSearchInput?), ListAudiencesPaginationInput? pagination = default(ListAudiencesPaginationInput?), string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -2158,6 +2170,10 @@ namespace Segment.PublicApi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "search", search));
+            }
             if (pagination != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "pagination", pagination));

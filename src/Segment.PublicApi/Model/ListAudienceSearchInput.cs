@@ -29,8 +29,8 @@ namespace Segment.PublicApi.Model
     /// <summary>
     /// Search criteria input for list audience consumers.
     /// </summary>
-    [DataContract(Name = "ListAudienceConsumersSearchInput")]
-    public partial class ListAudienceConsumersSearchInput : IEquatable<ListAudienceConsumersSearchInput>, IValidatableObject
+    [DataContract(Name = "ListAudienceSearchInput")]
+    public partial class ListAudienceSearchInput : IEquatable<ListAudienceSearchInput>, IValidatableObject
     {
         /// <summary>
         /// Field to filter by.
@@ -46,10 +46,16 @@ namespace Segment.PublicApi.Model
             DEFINITION = 1,
 
             /// <summary>
+            /// Enum KEY for value: KEY
+            /// </summary>
+            [EnumMember(Value = "KEY")]
+            KEY = 2,
+
+            /// <summary>
             /// Enum NAME for value: NAME
             /// </summary>
             [EnumMember(Value = "NAME")]
-            NAME = 2
+            NAME = 3
         }
 
 
@@ -60,22 +66,22 @@ namespace Segment.PublicApi.Model
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public TypeEnum Type { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListAudienceConsumersSearchInput" /> class.
+        /// Initializes a new instance of the <see cref="ListAudienceSearchInput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ListAudienceConsumersSearchInput() { }
+        protected ListAudienceSearchInput() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListAudienceConsumersSearchInput" /> class.
+        /// Initializes a new instance of the <see cref="ListAudienceSearchInput" /> class.
         /// </summary>
         /// <param name="type">Field to filter by. (required).</param>
         /// <param name="query">Text to match the field value. (required).</param>
-        public ListAudienceConsumersSearchInput(TypeEnum type = default(TypeEnum), string query = default(string))
+        public ListAudienceSearchInput(TypeEnum type = default(TypeEnum), string query = default(string))
         {
             this.Type = type;
             // to ensure "query" is required (not null)
             if (query == null)
             {
-                throw new ArgumentNullException("query is a required property for ListAudienceConsumersSearchInput and cannot be null");
+                throw new ArgumentNullException("query is a required property for ListAudienceSearchInput and cannot be null");
             }
             this.Query = query;
         }
@@ -94,7 +100,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListAudienceConsumersSearchInput {\n");
+            sb.Append("class ListAudienceSearchInput {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Query: ").Append(Query).Append("\n");
             sb.Append("}\n");
@@ -117,15 +123,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListAudienceConsumersSearchInput);
+            return this.Equals(input as ListAudienceSearchInput);
         }
 
         /// <summary>
-        /// Returns true if ListAudienceConsumersSearchInput instances are equal
+        /// Returns true if ListAudienceSearchInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of ListAudienceConsumersSearchInput to be compared</param>
+        /// <param name="input">Instance of ListAudienceSearchInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ListAudienceConsumersSearchInput input)
+        public bool Equals(ListAudienceSearchInput input)
         {
             if (input == null)
             {
