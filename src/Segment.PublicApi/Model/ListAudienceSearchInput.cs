@@ -74,7 +74,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="ListAudienceSearchInput" /> class.
         /// </summary>
         /// <param name="type">Field to filter by. (required).</param>
-        /// <param name="query">Text to match the field value. (required).</param>
+        /// <param name="query">Text to match against the selected field (max 255 characters). (required).</param>
         public ListAudienceSearchInput(TypeEnum type = default(TypeEnum), string query = default(string))
         {
             this.Type = type;
@@ -87,9 +87,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Text to match the field value.
+        /// Text to match against the selected field (max 255 characters).
         /// </summary>
-        /// <value>Text to match the field value.</value>
+        /// <value>Text to match against the selected field (max 255 characters).</value>
         [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
         public string Query { get; set; }
 
