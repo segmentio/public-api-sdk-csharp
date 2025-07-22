@@ -108,7 +108,7 @@ namespace Segment.PublicApi.Api
         /// Get Audience Echo
         /// </summary>
         /// <remarks>
-        /// Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 3 requests per day per spaceId for testing rate limiting functionality.
+        /// Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 1 requests per day per spaceId for testing rate limiting functionality.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -121,7 +121,7 @@ namespace Segment.PublicApi.Api
         /// Get Audience Echo
         /// </summary>
         /// <remarks>
-        /// Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 3 requests per day per spaceId for testing rate limiting functionality.
+        /// Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 1 requests per day per spaceId for testing rate limiting functionality.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -414,7 +414,7 @@ namespace Segment.PublicApi.Api
         /// Get Audience Echo
         /// </summary>
         /// <remarks>
-        /// Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 3 requests per day per spaceId for testing rate limiting functionality.
+        /// Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 1 requests per day per spaceId for testing rate limiting functionality.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -428,7 +428,7 @@ namespace Segment.PublicApi.Api
         /// Get Audience Echo
         /// </summary>
         /// <remarks>
-        /// Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 3 requests per day per spaceId for testing rate limiting functionality.
+        /// Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 1 requests per day per spaceId for testing rate limiting functionality.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -1307,7 +1307,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Audience Echo Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 3 requests per day per spaceId for testing rate limiting functionality.
+        /// Get Audience Echo Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 1 requests per day per spaceId for testing rate limiting functionality.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -1321,7 +1321,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Audience Echo Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 3 requests per day per spaceId for testing rate limiting functionality.
+        /// Get Audience Echo Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 1 requests per day per spaceId for testing rate limiting functionality.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -1390,7 +1390,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Audience Echo Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 3 requests per day per spaceId for testing rate limiting functionality.
+        /// Get Audience Echo Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 1 requests per day per spaceId for testing rate limiting functionality.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -1405,7 +1405,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Audience Echo Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 3 requests per day per spaceId for testing rate limiting functionality.
+        /// Get Audience Echo Get Audience Echo test endpoint for rate limiting per spaceId. Returns an echo response from the control plane service.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.  This endpoint has a rate limit of 1 requests per day per spaceId for testing rate limiting functionality.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
