@@ -41,7 +41,8 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AudienceDefinitionWithoutType" /> class.
         /// </summary>
         /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
-        public AudienceDefinitionWithoutType(string query = default(string))
+        /// <param name="targetEntity">The target entity slug..</param>
+        public AudienceDefinitionWithoutType(string query = default(string), string targetEntity = default(string))
         {
             // to ensure "query" is required (not null)
             if (query == null)
@@ -49,6 +50,7 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("query is a required property for AudienceDefinitionWithoutType and cannot be null");
             }
             this.Query = query;
+            this.TargetEntity = targetEntity;
         }
 
         /// <summary>
@@ -59,6 +61,13 @@ namespace Segment.PublicApi.Model
         public string Query { get; set; }
 
         /// <summary>
+        /// The target entity slug.
+        /// </summary>
+        /// <value>The target entity slug.</value>
+        [DataMember(Name = "targetEntity", EmitDefaultValue = false)]
+        public string TargetEntity { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -67,6 +76,7 @@ namespace Segment.PublicApi.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class AudienceDefinitionWithoutType {\n");
             sb.Append("  Query: ").Append(Query).Append("\n");
+            sb.Append("  TargetEntity: ").Append(TargetEntity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +116,11 @@ namespace Segment.PublicApi.Model
                     this.Query == input.Query ||
                     (this.Query != null &&
                     this.Query.Equals(input.Query))
+                ) && 
+                (
+                    this.TargetEntity == input.TargetEntity ||
+                    (this.TargetEntity != null &&
+                    this.TargetEntity.Equals(input.TargetEntity))
                 );
         }
 
@@ -121,6 +136,10 @@ namespace Segment.PublicApi.Model
                 if (this.Query != null)
                 {
                     hashCode = (hashCode * 59) + this.Query.GetHashCode();
+                }
+                if (this.TargetEntity != null)
+                {
+                    hashCode = (hashCode * 59) + this.TargetEntity.GetHashCode();
                 }
                 return hashCode;
             }

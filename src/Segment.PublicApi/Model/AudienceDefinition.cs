@@ -69,7 +69,8 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="type">The underlying data type being segmented for this audience.  Possible values: users, accounts. (required).</param>
         /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
-        public AudienceDefinition(TypeEnum type = default(TypeEnum), string query = default(string))
+        /// <param name="targetEntity">The target entity slug..</param>
+        public AudienceDefinition(TypeEnum type = default(TypeEnum), string query = default(string), string targetEntity = default(string))
         {
             this.Type = type;
             // to ensure "query" is required (not null)
@@ -78,6 +79,7 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("query is a required property for AudienceDefinition and cannot be null");
             }
             this.Query = query;
+            this.TargetEntity = targetEntity;
         }
 
         /// <summary>
@@ -86,6 +88,13 @@ namespace Segment.PublicApi.Model
         /// <value>The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).</value>
         [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
         public string Query { get; set; }
+
+        /// <summary>
+        /// The target entity slug.
+        /// </summary>
+        /// <value>The target entity slug.</value>
+        [DataMember(Name = "targetEntity", EmitDefaultValue = false)]
+        public string TargetEntity { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -97,6 +106,7 @@ namespace Segment.PublicApi.Model
             sb.Append("class AudienceDefinition {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Query: ").Append(Query).Append("\n");
+            sb.Append("  TargetEntity: ").Append(TargetEntity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,6 +150,11 @@ namespace Segment.PublicApi.Model
                     this.Query == input.Query ||
                     (this.Query != null &&
                     this.Query.Equals(input.Query))
+                ) && 
+                (
+                    this.TargetEntity == input.TargetEntity ||
+                    (this.TargetEntity != null &&
+                    this.TargetEntity.Equals(input.TargetEntity))
                 );
         }
 
@@ -156,6 +171,10 @@ namespace Segment.PublicApi.Model
                 if (this.Query != null)
                 {
                     hashCode = (hashCode * 59) + this.Query.GetHashCode();
+                }
+                if (this.TargetEntity != null)
+                {
+                    hashCode = (hashCode * 59) + this.TargetEntity.GetHashCode();
                 }
                 return hashCode;
             }
