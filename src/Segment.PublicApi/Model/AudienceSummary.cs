@@ -33,6 +33,39 @@ namespace Segment.PublicApi.Model
     public partial class AudienceSummary : IEquatable<AudienceSummary>, IValidatableObject
     {
         /// <summary>
+        /// Discriminator denoting the audience&#39;s product type.
+        /// </summary>
+        /// <value>Discriminator denoting the audience&#39;s product type.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AudienceTypeEnum
+        {
+            /// <summary>
+            /// Enum ACCOUNTS for value: ACCOUNTS
+            /// </summary>
+            [EnumMember(Value = "ACCOUNTS")]
+            ACCOUNTS = 1,
+
+            /// <summary>
+            /// Enum LINKED for value: LINKED
+            /// </summary>
+            [EnumMember(Value = "LINKED")]
+            LINKED = 2,
+
+            /// <summary>
+            /// Enum USERS for value: USERS
+            /// </summary>
+            [EnumMember(Value = "USERS")]
+            USERS = 3
+        }
+
+
+        /// <summary>
+        /// Discriminator denoting the audience&#39;s product type.
+        /// </summary>
+        /// <value>Discriminator denoting the audience&#39;s product type.</value>
+        [DataMember(Name = "audienceType", IsRequired = true, EmitDefaultValue = true)]
+        public AudienceTypeEnum AudienceType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="AudienceSummary" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -52,8 +85,9 @@ namespace Segment.PublicApi.Model
         /// <param name="updatedBy">User id who last updated the audience. (required).</param>
         /// <param name="createdAt">Date the audience was created. (required).</param>
         /// <param name="updatedAt">Date the audience was last updated. (required).</param>
+        /// <param name="audienceType">Discriminator denoting the audience&#39;s product type. (required).</param>
         /// <param name="options">options.</param>
-        public AudienceSummary(string id = default(string), string spaceId = default(string), string name = default(string), string description = default(string), string key = default(string), bool enabled = default(bool), AudienceDefinition definition = default(AudienceDefinition), string status = default(string), string createdBy = default(string), string updatedBy = default(string), string createdAt = default(string), string updatedAt = default(string), AudienceOptions options = default(AudienceOptions))
+        public AudienceSummary(string id = default(string), string spaceId = default(string), string name = default(string), string description = default(string), string key = default(string), bool enabled = default(bool), AudienceDefinition definition = default(AudienceDefinition), string status = default(string), string createdBy = default(string), string updatedBy = default(string), string createdAt = default(string), string updatedAt = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceOptions options = default(AudienceOptions))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -110,6 +144,7 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("updatedAt is a required property for AudienceSummary and cannot be null");
             }
             this.UpdatedAt = updatedAt;
+            this.AudienceType = audienceType;
             this.Description = description;
             this.Status = status;
             this.Options = options;
@@ -224,6 +259,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  AudienceType: ").Append(AudienceType).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -320,6 +356,10 @@ namespace Segment.PublicApi.Model
                     this.UpdatedAt.Equals(input.UpdatedAt))
                 ) && 
                 (
+                    this.AudienceType == input.AudienceType ||
+                    this.AudienceType.Equals(input.AudienceType)
+                ) && 
+                (
                     this.Options == input.Options ||
                     (this.Options != null &&
                     this.Options.Equals(input.Options))
@@ -380,6 +420,7 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.UpdatedAt.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AudienceType.GetHashCode();
                 if (this.Options != null)
                 {
                     hashCode = (hashCode * 59) + this.Options.GetHashCode();

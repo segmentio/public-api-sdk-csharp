@@ -73,7 +73,6 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AudienceSummaryWithAudienceTypeAndLookback" /> class.
         /// </summary>
-        /// <param name="audienceType">Discriminator denoting the audience&#39;s product type. (required).</param>
         /// <param name="computeCadence">computeCadence (required).</param>
         /// <param name="size">size.</param>
         /// <param name="options">options.</param>
@@ -90,9 +89,9 @@ namespace Segment.PublicApi.Model
         /// <param name="updatedBy">User id who last updated the audience. (required).</param>
         /// <param name="createdAt">Date the audience was created. (required).</param>
         /// <param name="updatedAt">Date the audience was last updated. (required).</param>
-        public AudienceSummaryWithAudienceTypeAndLookback(AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceComputeCadence computeCadence = default(AudienceComputeCadence), AudienceSize size = default(AudienceSize), AudienceOptionsWithLookback options = default(AudienceOptionsWithLookback), List<AudienceSchedule> schedules = default(List<AudienceSchedule>), string id = default(string), string spaceId = default(string), string name = default(string), string description = default(string), string key = default(string), bool enabled = default(bool), AudienceDefinition definition = default(AudienceDefinition), string status = default(string), string createdBy = default(string), string updatedBy = default(string), string createdAt = default(string), string updatedAt = default(string))
+        /// <param name="audienceType">Discriminator denoting the audience&#39;s product type. (required).</param>
+        public AudienceSummaryWithAudienceTypeAndLookback(AudienceComputeCadence computeCadence = default(AudienceComputeCadence), AudienceSize size = default(AudienceSize), AudienceOptionsWithLookback options = default(AudienceOptionsWithLookback), List<AudienceSchedule> schedules = default(List<AudienceSchedule>), string id = default(string), string spaceId = default(string), string name = default(string), string description = default(string), string key = default(string), bool enabled = default(bool), AudienceDefinition definition = default(AudienceDefinition), string status = default(string), string createdBy = default(string), string updatedBy = default(string), string createdAt = default(string), string updatedAt = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum))
         {
-            this.AudienceType = audienceType;
             // to ensure "computeCadence" is required (not null)
             if (computeCadence == null)
             {
@@ -154,6 +153,7 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("updatedAt is a required property for AudienceSummaryWithAudienceTypeAndLookback and cannot be null");
             }
             this.UpdatedAt = updatedAt;
+            this.AudienceType = audienceType;
             this.Size = size;
             this.Options = options;
             this.Schedules = schedules;
@@ -277,7 +277,6 @@ namespace Segment.PublicApi.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AudienceSummaryWithAudienceTypeAndLookback {\n");
-            sb.Append("  AudienceType: ").Append(AudienceType).Append("\n");
             sb.Append("  ComputeCadence: ").Append(ComputeCadence).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
@@ -294,6 +293,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+            sb.Append("  AudienceType: ").Append(AudienceType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -329,10 +329,6 @@ namespace Segment.PublicApi.Model
                 return false;
             }
             return 
-                (
-                    this.AudienceType == input.AudienceType ||
-                    this.AudienceType.Equals(input.AudienceType)
-                ) && 
                 (
                     this.ComputeCadence == input.ComputeCadence ||
                     (this.ComputeCadence != null &&
@@ -412,6 +408,10 @@ namespace Segment.PublicApi.Model
                     this.UpdatedAt == input.UpdatedAt ||
                     (this.UpdatedAt != null &&
                     this.UpdatedAt.Equals(input.UpdatedAt))
+                ) && 
+                (
+                    this.AudienceType == input.AudienceType ||
+                    this.AudienceType.Equals(input.AudienceType)
                 );
         }
 
@@ -424,7 +424,6 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.AudienceType.GetHashCode();
                 if (this.ComputeCadence != null)
                 {
                     hashCode = (hashCode * 59) + this.ComputeCadence.GetHashCode();
@@ -486,6 +485,7 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.UpdatedAt.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AudienceType.GetHashCode();
                 return hashCode;
             }
         }

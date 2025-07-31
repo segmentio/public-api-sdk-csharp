@@ -41,10 +41,10 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AudienceOptionsWithLookback" /> class.
         /// </summary>
         /// <param name="filterByExternalIds">The set of profile external identifiers being used to determine audience membership. Profiles will only be considered for audience membership if the profile has at least one external id whose key matches a value in this set. (required).</param>
-        /// <param name="backfillEventDataDays">If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership..</param>
         /// <param name="includeHistoricalData">Determines whether data prior to the audience being created is included when determining audience membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true..</param>
         /// <param name="includeAnonymousUsers">Determines whether anonymous users should be included when determining audience membership..</param>
-        public AudienceOptionsWithLookback(List<string> filterByExternalIds = default(List<string>), decimal backfillEventDataDays = default(decimal), bool includeHistoricalData = default(bool), bool includeAnonymousUsers = default(bool))
+        /// <param name="backfillEventDataDays">If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership..</param>
+        public AudienceOptionsWithLookback(List<string> filterByExternalIds = default(List<string>), bool includeHistoricalData = default(bool), bool includeAnonymousUsers = default(bool), decimal backfillEventDataDays = default(decimal))
         {
             // to ensure "filterByExternalIds" is required (not null)
             if (filterByExternalIds == null)
@@ -52,9 +52,9 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("filterByExternalIds is a required property for AudienceOptionsWithLookback and cannot be null");
             }
             this.FilterByExternalIds = filterByExternalIds;
-            this.BackfillEventDataDays = backfillEventDataDays;
             this.IncludeHistoricalData = includeHistoricalData;
             this.IncludeAnonymousUsers = includeAnonymousUsers;
+            this.BackfillEventDataDays = backfillEventDataDays;
         }
 
         /// <summary>
@@ -63,13 +63,6 @@ namespace Segment.PublicApi.Model
         /// <value>The set of profile external identifiers being used to determine audience membership. Profiles will only be considered for audience membership if the profile has at least one external id whose key matches a value in this set.</value>
         [DataMember(Name = "filterByExternalIds", IsRequired = true, EmitDefaultValue = true)]
         public List<string> FilterByExternalIds { get; set; }
-
-        /// <summary>
-        /// If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.
-        /// </summary>
-        /// <value>If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.</value>
-        [DataMember(Name = "backfillEventDataDays", EmitDefaultValue = false)]
-        public decimal BackfillEventDataDays { get; set; }
 
         /// <summary>
         /// Determines whether data prior to the audience being created is included when determining audience membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true.
@@ -86,6 +79,13 @@ namespace Segment.PublicApi.Model
         public bool IncludeAnonymousUsers { get; set; }
 
         /// <summary>
+        /// If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.
+        /// </summary>
+        /// <value>If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.</value>
+        [DataMember(Name = "backfillEventDataDays", EmitDefaultValue = false)]
+        public decimal BackfillEventDataDays { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -94,9 +94,9 @@ namespace Segment.PublicApi.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class AudienceOptionsWithLookback {\n");
             sb.Append("  FilterByExternalIds: ").Append(FilterByExternalIds).Append("\n");
-            sb.Append("  BackfillEventDataDays: ").Append(BackfillEventDataDays).Append("\n");
             sb.Append("  IncludeHistoricalData: ").Append(IncludeHistoricalData).Append("\n");
             sb.Append("  IncludeAnonymousUsers: ").Append(IncludeAnonymousUsers).Append("\n");
+            sb.Append("  BackfillEventDataDays: ").Append(BackfillEventDataDays).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -139,16 +139,16 @@ namespace Segment.PublicApi.Model
                     this.FilterByExternalIds.SequenceEqual(input.FilterByExternalIds)
                 ) && 
                 (
-                    this.BackfillEventDataDays == input.BackfillEventDataDays ||
-                    this.BackfillEventDataDays.Equals(input.BackfillEventDataDays)
-                ) && 
-                (
                     this.IncludeHistoricalData == input.IncludeHistoricalData ||
                     this.IncludeHistoricalData.Equals(input.IncludeHistoricalData)
                 ) && 
                 (
                     this.IncludeAnonymousUsers == input.IncludeAnonymousUsers ||
                     this.IncludeAnonymousUsers.Equals(input.IncludeAnonymousUsers)
+                ) && 
+                (
+                    this.BackfillEventDataDays == input.BackfillEventDataDays ||
+                    this.BackfillEventDataDays.Equals(input.BackfillEventDataDays)
                 );
         }
 
@@ -165,9 +165,9 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.FilterByExternalIds.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.BackfillEventDataDays.GetHashCode();
                 hashCode = (hashCode * 59) + this.IncludeHistoricalData.GetHashCode();
                 hashCode = (hashCode * 59) + this.IncludeAnonymousUsers.GetHashCode();
+                hashCode = (hashCode * 59) + this.BackfillEventDataDays.GetHashCode();
                 return hashCode;
             }
         }
