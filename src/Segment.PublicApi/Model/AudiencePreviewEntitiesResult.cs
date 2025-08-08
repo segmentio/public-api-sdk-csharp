@@ -27,45 +27,25 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// AudienceDefinitionWithoutType
+    /// Result membership object for an audience preview with &#x60;audienceType: USERS&#x60; or &#x60;audienceType: LINKED&#x60;.
     /// </summary>
-    [DataContract(Name = "AudienceDefinitionWithoutType")]
-    public partial class AudienceDefinitionWithoutType : IEquatable<AudienceDefinitionWithoutType>, IValidatableObject
+    [DataContract(Name = "AudiencePreviewEntitiesResult")]
+    public partial class AudiencePreviewEntitiesResult : IEquatable<AudiencePreviewEntitiesResult>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinitionWithoutType" /> class.
+        /// Initializes a new instance of the <see cref="AudiencePreviewEntitiesResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected AudienceDefinitionWithoutType() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinitionWithoutType" /> class.
-        /// </summary>
-        /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
-        /// <param name="targetEntity">The target entity slug..</param>
-        public AudienceDefinitionWithoutType(string query = default(string), string targetEntity = default(string))
+        /// <param name="entities">entities.</param>
+        public AudiencePreviewEntitiesResult(Dictionary<string, List<EntityProfileDetails>> entities = default(Dictionary<string, List<EntityProfileDetails>>))
         {
-            // to ensure "query" is required (not null)
-            if (query == null)
-            {
-                throw new ArgumentNullException("query is a required property for AudienceDefinitionWithoutType and cannot be null");
-            }
-            this.Query = query;
-            this.TargetEntity = targetEntity;
+            this.Entities = entities;
         }
 
         /// <summary>
-        /// The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).
+        /// Gets or Sets Entities
         /// </summary>
-        /// <value>The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).</value>
-        [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
-        public string Query { get; set; }
-
-        /// <summary>
-        /// The target entity slug.
-        /// </summary>
-        /// <value>The target entity slug.</value>
-        [DataMember(Name = "targetEntity", EmitDefaultValue = false)]
-        public string TargetEntity { get; set; }
+        [DataMember(Name = "entities", EmitDefaultValue = false)]
+        public Dictionary<string, List<EntityProfileDetails>> Entities { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,9 +54,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AudienceDefinitionWithoutType {\n");
-            sb.Append("  Query: ").Append(Query).Append("\n");
-            sb.Append("  TargetEntity: ").Append(TargetEntity).Append("\n");
+            sb.Append("class AudiencePreviewEntitiesResult {\n");
+            sb.Append("  Entities: ").Append(Entities).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudienceDefinitionWithoutType);
+            return this.Equals(input as AudiencePreviewEntitiesResult);
         }
 
         /// <summary>
-        /// Returns true if AudienceDefinitionWithoutType instances are equal
+        /// Returns true if AudiencePreviewEntitiesResult instances are equal
         /// </summary>
-        /// <param name="input">Instance of AudienceDefinitionWithoutType to be compared</param>
+        /// <param name="input">Instance of AudiencePreviewEntitiesResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AudienceDefinitionWithoutType input)
+        public bool Equals(AudiencePreviewEntitiesResult input)
         {
             if (input == null)
             {
@@ -113,14 +92,10 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.TargetEntity == input.TargetEntity ||
-                    (this.TargetEntity != null &&
-                    this.TargetEntity.Equals(input.TargetEntity))
+                    this.Entities == input.Entities ||
+                    this.Entities != null &&
+                    input.Entities != null &&
+                    this.Entities.SequenceEqual(input.Entities)
                 );
         }
 
@@ -133,13 +108,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Query != null)
+                if (this.Entities != null)
                 {
-                    hashCode = (hashCode * 59) + this.Query.GetHashCode();
-                }
-                if (this.TargetEntity != null)
-                {
-                    hashCode = (hashCode * 59) + this.TargetEntity.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Entities.GetHashCode();
                 }
                 return hashCode;
             }
