@@ -35,17 +35,92 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AudiencePreviewEntitiesResult" /> class.
         /// </summary>
-        /// <param name="entities">entities.</param>
-        public AudiencePreviewEntitiesResult(Dictionary<string, List<EntityProfileDetails>> entities = default(Dictionary<string, List<EntityProfileDetails>>))
+        [JsonConstructorAttribute]
+        protected AudiencePreviewEntitiesResult() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AudiencePreviewEntitiesResult" /> class.
+        /// </summary>
+        /// <param name="id">The entities associated with the profile. Will only have a value if the audience preview has &#x60;audienceType: LINKED&#x60; and entities are referenced in the audience preview&#39;s definition. (required).</param>
+        /// <param name="idProperty">The entity primary key column name. (required).</param>
+        /// <param name="relationshipSlug">The entity relationship slug. (required).</param>
+        /// <param name="properties">Entity properties..</param>
+        /// <param name="entities">Related entities that are one level deeper will only be returned if those entities are referenced in the audience definition..</param>
+        /// <param name="profiles">List of profiles..</param>
+        /// <param name="profilesTruncated">Indicates if only a subset of the profiles associated with the entity were returned. (required).</param>
+        public AudiencePreviewEntitiesResult(string id = default(string), string idProperty = default(string), string relationshipSlug = default(string), Dictionary<string, Object> properties = default(Dictionary<string, Object>), Dictionary<string, Object> entities = default(Dictionary<string, Object>), List<Profile> profiles = default(List<Profile>), bool profilesTruncated = default(bool))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for AudiencePreviewEntitiesResult and cannot be null");
+            }
+            this.Id = id;
+            // to ensure "idProperty" is required (not null)
+            if (idProperty == null)
+            {
+                throw new ArgumentNullException("idProperty is a required property for AudiencePreviewEntitiesResult and cannot be null");
+            }
+            this.IdProperty = idProperty;
+            // to ensure "relationshipSlug" is required (not null)
+            if (relationshipSlug == null)
+            {
+                throw new ArgumentNullException("relationshipSlug is a required property for AudiencePreviewEntitiesResult and cannot be null");
+            }
+            this.RelationshipSlug = relationshipSlug;
+            this.ProfilesTruncated = profilesTruncated;
+            this.Properties = properties;
             this.Entities = entities;
+            this.Profiles = profiles;
         }
 
         /// <summary>
-        /// Gets or Sets Entities
+        /// The entities associated with the profile. Will only have a value if the audience preview has &#x60;audienceType: LINKED&#x60; and entities are referenced in the audience preview&#39;s definition.
         /// </summary>
+        /// <value>The entities associated with the profile. Will only have a value if the audience preview has &#x60;audienceType: LINKED&#x60; and entities are referenced in the audience preview&#39;s definition.</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// The entity primary key column name.
+        /// </summary>
+        /// <value>The entity primary key column name.</value>
+        [DataMember(Name = "idProperty", IsRequired = true, EmitDefaultValue = true)]
+        public string IdProperty { get; set; }
+
+        /// <summary>
+        /// The entity relationship slug.
+        /// </summary>
+        /// <value>The entity relationship slug.</value>
+        [DataMember(Name = "relationshipSlug", IsRequired = true, EmitDefaultValue = true)]
+        public string RelationshipSlug { get; set; }
+
+        /// <summary>
+        /// Entity properties.
+        /// </summary>
+        /// <value>Entity properties.</value>
+        [DataMember(Name = "properties", EmitDefaultValue = false)]
+        public Dictionary<string, Object> Properties { get; set; }
+
+        /// <summary>
+        /// Related entities that are one level deeper will only be returned if those entities are referenced in the audience definition.
+        /// </summary>
+        /// <value>Related entities that are one level deeper will only be returned if those entities are referenced in the audience definition.</value>
         [DataMember(Name = "entities", EmitDefaultValue = false)]
-        public Dictionary<string, List<EntityProfileDetails>> Entities { get; set; }
+        public Dictionary<string, Object> Entities { get; set; }
+
+        /// <summary>
+        /// List of profiles.
+        /// </summary>
+        /// <value>List of profiles.</value>
+        [DataMember(Name = "profiles", EmitDefaultValue = false)]
+        public List<Profile> Profiles { get; set; }
+
+        /// <summary>
+        /// Indicates if only a subset of the profiles associated with the entity were returned.
+        /// </summary>
+        /// <value>Indicates if only a subset of the profiles associated with the entity were returned.</value>
+        [DataMember(Name = "profilesTruncated", IsRequired = true, EmitDefaultValue = true)]
+        public bool ProfilesTruncated { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -55,7 +130,13 @@ namespace Segment.PublicApi.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AudiencePreviewEntitiesResult {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  IdProperty: ").Append(IdProperty).Append("\n");
+            sb.Append("  RelationshipSlug: ").Append(RelationshipSlug).Append("\n");
+            sb.Append("  Properties: ").Append(Properties).Append("\n");
             sb.Append("  Entities: ").Append(Entities).Append("\n");
+            sb.Append("  Profiles: ").Append(Profiles).Append("\n");
+            sb.Append("  ProfilesTruncated: ").Append(ProfilesTruncated).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,10 +173,41 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.IdProperty == input.IdProperty ||
+                    (this.IdProperty != null &&
+                    this.IdProperty.Equals(input.IdProperty))
+                ) && 
+                (
+                    this.RelationshipSlug == input.RelationshipSlug ||
+                    (this.RelationshipSlug != null &&
+                    this.RelationshipSlug.Equals(input.RelationshipSlug))
+                ) && 
+                (
+                    this.Properties == input.Properties ||
+                    this.Properties != null &&
+                    input.Properties != null &&
+                    this.Properties.SequenceEqual(input.Properties)
+                ) && 
+                (
                     this.Entities == input.Entities ||
                     this.Entities != null &&
                     input.Entities != null &&
                     this.Entities.SequenceEqual(input.Entities)
+                ) && 
+                (
+                    this.Profiles == input.Profiles ||
+                    this.Profiles != null &&
+                    input.Profiles != null &&
+                    this.Profiles.SequenceEqual(input.Profiles)
+                ) && 
+                (
+                    this.ProfilesTruncated == input.ProfilesTruncated ||
+                    this.ProfilesTruncated.Equals(input.ProfilesTruncated)
                 );
         }
 
@@ -108,10 +220,31 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Id != null)
+                {
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                }
+                if (this.IdProperty != null)
+                {
+                    hashCode = (hashCode * 59) + this.IdProperty.GetHashCode();
+                }
+                if (this.RelationshipSlug != null)
+                {
+                    hashCode = (hashCode * 59) + this.RelationshipSlug.GetHashCode();
+                }
+                if (this.Properties != null)
+                {
+                    hashCode = (hashCode * 59) + this.Properties.GetHashCode();
+                }
                 if (this.Entities != null)
                 {
                     hashCode = (hashCode * 59) + this.Entities.GetHashCode();
                 }
+                if (this.Profiles != null)
+                {
+                    hashCode = (hashCode * 59) + this.Profiles.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.ProfilesTruncated.GetHashCode();
                 return hashCode;
             }
         }
