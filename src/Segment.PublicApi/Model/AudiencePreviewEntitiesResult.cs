@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// <param name="relationshipSlug">The entity relationship slug. (required).</param>
         /// <param name="properties">Entity properties..</param>
         /// <param name="entities">Related entities that are one level deeper will only be returned if those entities are referenced in the audience definition..</param>
-        /// <param name="profiles">List of profiles..</param>
+        /// <param name="profiles">Related list of profiles..</param>
         /// <param name="profilesTruncated">Indicates if only a subset of the profiles associated with the entity were returned. (required).</param>
         public AudiencePreviewEntitiesResult(string id = default(string), string idProperty = default(string), string relationshipSlug = default(string), Dictionary<string, Object> properties = default(Dictionary<string, Object>), Dictionary<string, Object> entities = default(Dictionary<string, Object>), List<Profile> profiles = default(List<Profile>), bool profilesTruncated = default(bool))
         {
@@ -109,9 +109,9 @@ namespace Segment.PublicApi.Model
         public Dictionary<string, Object> Entities { get; set; }
 
         /// <summary>
-        /// List of profiles.
+        /// Related list of profiles.
         /// </summary>
-        /// <value>List of profiles.</value>
+        /// <value>Related list of profiles.</value>
         [DataMember(Name = "profiles", EmitDefaultValue = false)]
         public List<Profile> Profiles { get; set; }
 
