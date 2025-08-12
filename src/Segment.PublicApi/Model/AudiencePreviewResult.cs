@@ -58,6 +58,18 @@ namespace Segment.PublicApi.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AudiencePreviewResult" /> class
+        /// with the <see cref="AudiencePreviewEntitiesResult" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of AudiencePreviewEntitiesResult.</param>
+        public AudiencePreviewResult(AudiencePreviewEntitiesResult actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "anyOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -76,13 +88,17 @@ namespace Segment.PublicApi.Model
                 {
                     this._actualInstance = value;
                 }
+                else if (value.GetType() == typeof(AudiencePreviewEntitiesResult))
+                {
+                    this._actualInstance = value;
+                }
                 else if (value.GetType() == typeof(AudiencePreviewProfileResult))
                 {
                     this._actualInstance = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: AudiencePreviewAccountResult, AudiencePreviewProfileResult");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: AudiencePreviewAccountResult, AudiencePreviewEntitiesResult, AudiencePreviewProfileResult");
                 }
             }
         }
@@ -105,6 +121,16 @@ namespace Segment.PublicApi.Model
         public AudiencePreviewProfileResult GetAudiencePreviewProfileResult()
         {
             return (AudiencePreviewProfileResult)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `AudiencePreviewEntitiesResult`. If the actual instance is not `AudiencePreviewEntitiesResult`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of AudiencePreviewEntitiesResult</returns>
+        public AudiencePreviewEntitiesResult GetAudiencePreviewEntitiesResult()
+        {
+            return (AudiencePreviewEntitiesResult)this.ActualInstance;
         }
 
         /// <summary>
@@ -153,6 +179,18 @@ namespace Segment.PublicApi.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into AudiencePreviewAccountResult: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                newAudiencePreviewResult = new AudiencePreviewResult(JsonConvert.DeserializeObject<AudiencePreviewEntitiesResult>(jsonString, AudiencePreviewResult.SerializerSettings));
+                // deserialization is considered successful at this point if no exception has been thrown.
+                return newAudiencePreviewResult;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into AudiencePreviewEntitiesResult: {1}", jsonString, exception.ToString()));
             }
 
             try

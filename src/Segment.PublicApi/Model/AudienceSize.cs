@@ -46,10 +46,16 @@ namespace Segment.PublicApi.Model
             ACCOUNTS = 1,
 
             /// <summary>
+            /// Enum ENTITIES for value: ENTITIES
+            /// </summary>
+            [EnumMember(Value = "ENTITIES")]
+            ENTITIES = 2,
+
+            /// <summary>
             /// Enum USERS for value: USERS
             /// </summary>
             [EnumMember(Value = "USERS")]
-            USERS = 2
+            USERS = 3
         }
 
 
@@ -67,20 +73,29 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AudienceSize" /> class.
         /// </summary>
-        /// <param name="count">The total audience membership count. Refer to the type field to determine the unit for this field (profiles, accounts, etc). (required).</param>
+        /// <param name="count">The total audience membership count. Refer to the type field to determine the unit for this field (profiles, accounts, etc)..</param>
         /// <param name="type">The unit type for the count(s) being returned. (required).</param>
-        public AudienceSize(decimal count = default(decimal), TypeEnum type = default(TypeEnum))
+        /// <param name="uniqueCount">The unique audience membership count..</param>
+        public AudienceSize(decimal count = default(decimal), TypeEnum type = default(TypeEnum), decimal uniqueCount = default(decimal))
         {
-            this.Count = count;
             this.Type = type;
+            this.Count = count;
+            this.UniqueCount = uniqueCount;
         }
 
         /// <summary>
         /// The total audience membership count. Refer to the type field to determine the unit for this field (profiles, accounts, etc).
         /// </summary>
         /// <value>The total audience membership count. Refer to the type field to determine the unit for this field (profiles, accounts, etc).</value>
-        [DataMember(Name = "count", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "count", EmitDefaultValue = false)]
         public decimal Count { get; set; }
+
+        /// <summary>
+        /// The unique audience membership count.
+        /// </summary>
+        /// <value>The unique audience membership count.</value>
+        [DataMember(Name = "uniqueCount", EmitDefaultValue = false)]
+        public decimal UniqueCount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -92,6 +107,7 @@ namespace Segment.PublicApi.Model
             sb.Append("class AudienceSize {\n");
             sb.Append("  Count: ").Append(Count).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  UniqueCount: ").Append(UniqueCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -134,6 +150,10 @@ namespace Segment.PublicApi.Model
                 (
                     this.Type == input.Type ||
                     this.Type.Equals(input.Type)
+                ) && 
+                (
+                    this.UniqueCount == input.UniqueCount ||
+                    this.UniqueCount.Equals(input.UniqueCount)
                 );
         }
 
@@ -148,6 +168,7 @@ namespace Segment.PublicApi.Model
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Count.GetHashCode();
                 hashCode = (hashCode * 59) + this.Type.GetHashCode();
+                hashCode = (hashCode * 59) + this.UniqueCount.GetHashCode();
                 return hashCode;
             }
         }

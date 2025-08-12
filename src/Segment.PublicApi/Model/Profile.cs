@@ -27,45 +27,36 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// AudienceDefinitionWithoutType
+    /// Profile
     /// </summary>
-    [DataContract(Name = "AudienceDefinitionWithoutType")]
-    public partial class AudienceDefinitionWithoutType : IEquatable<AudienceDefinitionWithoutType>, IValidatableObject
+    [DataContract(Name = "Profile")]
+    public partial class Profile : IEquatable<Profile>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinitionWithoutType" /> class.
+        /// Initializes a new instance of the <see cref="Profile" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AudienceDefinitionWithoutType() { }
+        protected Profile() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinitionWithoutType" /> class.
+        /// Initializes a new instance of the <see cref="Profile" /> class.
         /// </summary>
-        /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
-        /// <param name="targetEntity">The target entity slug..</param>
-        public AudienceDefinitionWithoutType(string query = default(string), string targetEntity = default(string))
+        /// <param name="id">The id of the profile. (required).</param>
+        public Profile(string id = default(string))
         {
-            // to ensure "query" is required (not null)
-            if (query == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new ArgumentNullException("query is a required property for AudienceDefinitionWithoutType and cannot be null");
+                throw new ArgumentNullException("id is a required property for Profile and cannot be null");
             }
-            this.Query = query;
-            this.TargetEntity = targetEntity;
+            this.Id = id;
         }
 
         /// <summary>
-        /// The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).
+        /// The id of the profile.
         /// </summary>
-        /// <value>The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).</value>
-        [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
-        public string Query { get; set; }
-
-        /// <summary>
-        /// The target entity slug.
-        /// </summary>
-        /// <value>The target entity slug.</value>
-        [DataMember(Name = "targetEntity", EmitDefaultValue = false)]
-        public string TargetEntity { get; set; }
+        /// <value>The id of the profile.</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,9 +65,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AudienceDefinitionWithoutType {\n");
-            sb.Append("  Query: ").Append(Query).Append("\n");
-            sb.Append("  TargetEntity: ").Append(TargetEntity).Append("\n");
+            sb.Append("class Profile {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,15 +87,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudienceDefinitionWithoutType);
+            return this.Equals(input as Profile);
         }
 
         /// <summary>
-        /// Returns true if AudienceDefinitionWithoutType instances are equal
+        /// Returns true if Profile instances are equal
         /// </summary>
-        /// <param name="input">Instance of AudienceDefinitionWithoutType to be compared</param>
+        /// <param name="input">Instance of Profile to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AudienceDefinitionWithoutType input)
+        public bool Equals(Profile input)
         {
             if (input == null)
             {
@@ -113,14 +103,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
-                ) && 
-                (
-                    this.TargetEntity == input.TargetEntity ||
-                    (this.TargetEntity != null &&
-                    this.TargetEntity.Equals(input.TargetEntity))
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 );
         }
 
@@ -133,13 +118,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Query != null)
+                if (this.Id != null)
                 {
-                    hashCode = (hashCode * 59) + this.Query.GetHashCode();
-                }
-                if (this.TargetEntity != null)
-                {
-                    hashCode = (hashCode * 59) + this.TargetEntity.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 }
                 return hashCode;
             }
