@@ -45,10 +45,9 @@ namespace Segment.PublicApi.Model
         /// <param name="performFirstSync">Whether to skip the first sync so the activation events are not generated on the first audience sync. (required).</param>
         /// <param name="activationType">Type of activation trigger. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
-        /// <param name="segmentEvent">Segment event type to emit. (required).</param>
-        /// <param name="personalization">personalization.</param>
+        /// <param name="personalization">personalization (required).</param>
         /// <param name="destinationMapping">destinationMapping (required).</param>
-        public AddActivationToAudienceAlphaInput(string destinationId = default(string), bool enabled = default(bool), bool performFirstSync = default(bool), string activationType = default(string), string activationName = default(string), string segmentEvent = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration))
+        public AddActivationToAudienceAlphaInput(string destinationId = default(string), bool enabled = default(bool), bool performFirstSync = default(bool), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration))
         {
             // to ensure "destinationId" is required (not null)
             if (destinationId == null)
@@ -69,12 +68,12 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("activationName is a required property for AddActivationToAudienceAlphaInput and cannot be null");
             }
             this.ActivationName = activationName;
-            // to ensure "segmentEvent" is required (not null)
-            if (segmentEvent == null)
+            // to ensure "personalization" is required (not null)
+            if (personalization == null)
             {
-                throw new ArgumentNullException("segmentEvent is a required property for AddActivationToAudienceAlphaInput and cannot be null");
+                throw new ArgumentNullException("personalization is a required property for AddActivationToAudienceAlphaInput and cannot be null");
             }
-            this.SegmentEvent = segmentEvent;
+            this.Personalization = personalization;
             // to ensure "destinationMapping" is required (not null)
             if (destinationMapping == null)
             {
@@ -82,7 +81,6 @@ namespace Segment.PublicApi.Model
             }
             this.DestinationMapping = destinationMapping;
             this.Enabled = enabled;
-            this.Personalization = personalization;
         }
 
         /// <summary>
@@ -121,16 +119,9 @@ namespace Segment.PublicApi.Model
         public string ActivationName { get; set; }
 
         /// <summary>
-        /// Segment event type to emit.
-        /// </summary>
-        /// <value>Segment event type to emit.</value>
-        [DataMember(Name = "segmentEvent", IsRequired = true, EmitDefaultValue = true)]
-        public string SegmentEvent { get; set; }
-
-        /// <summary>
         /// Gets or Sets Personalization
         /// </summary>
-        [DataMember(Name = "personalization", EmitDefaultValue = false)]
+        [DataMember(Name = "personalization", IsRequired = true, EmitDefaultValue = true)]
         public PersonalizationInput Personalization { get; set; }
 
         /// <summary>
@@ -152,7 +143,6 @@ namespace Segment.PublicApi.Model
             sb.Append("  PerformFirstSync: ").Append(PerformFirstSync).Append("\n");
             sb.Append("  ActivationType: ").Append(ActivationType).Append("\n");
             sb.Append("  ActivationName: ").Append(ActivationName).Append("\n");
-            sb.Append("  SegmentEvent: ").Append(SegmentEvent).Append("\n");
             sb.Append("  Personalization: ").Append(Personalization).Append("\n");
             sb.Append("  DestinationMapping: ").Append(DestinationMapping).Append("\n");
             sb.Append("}\n");
@@ -214,11 +204,6 @@ namespace Segment.PublicApi.Model
                     this.ActivationName.Equals(input.ActivationName))
                 ) && 
                 (
-                    this.SegmentEvent == input.SegmentEvent ||
-                    (this.SegmentEvent != null &&
-                    this.SegmentEvent.Equals(input.SegmentEvent))
-                ) && 
-                (
                     this.Personalization == input.Personalization ||
                     (this.Personalization != null &&
                     this.Personalization.Equals(input.Personalization))
@@ -252,10 +237,6 @@ namespace Segment.PublicApi.Model
                 if (this.ActivationName != null)
                 {
                     hashCode = (hashCode * 59) + this.ActivationName.GetHashCode();
-                }
-                if (this.SegmentEvent != null)
-                {
-                    hashCode = (hashCode * 59) + this.SegmentEvent.GetHashCode();
                 }
                 if (this.Personalization != null)
                 {
