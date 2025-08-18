@@ -42,7 +42,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="destinationId">The Destination id. (required).</param>
         /// <param name="enabled">Whether the event emitter should be created in an enabled state. Will trigger an audience run if enabled..</param>
-        /// <param name="performFirstSync">Whether to skip the first sync so the activation events are not generated on the first audience sync. (required).</param>
+        /// <param name="performFirstSync">Whether to perform the first sync so the activation events are generated on the first audience sync. (required).</param>
         /// <param name="activationType">Type of activation trigger. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
         /// <param name="personalization">personalization (required).</param>
@@ -98,9 +98,9 @@ namespace Segment.PublicApi.Model
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Whether to skip the first sync so the activation events are not generated on the first audience sync.
+        /// Whether to perform the first sync so the activation events are generated on the first audience sync.
         /// </summary>
-        /// <value>Whether to skip the first sync so the activation events are not generated on the first audience sync.</value>
+        /// <value>Whether to perform the first sync so the activation events are generated on the first audience sync.</value>
         [DataMember(Name = "performFirstSync", IsRequired = true, EmitDefaultValue = true)]
         public bool PerformFirstSync { get; set; }
 

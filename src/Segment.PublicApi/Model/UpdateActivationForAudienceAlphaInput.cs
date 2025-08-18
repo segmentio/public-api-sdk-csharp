@@ -39,7 +39,7 @@ namespace Segment.PublicApi.Model
         /// <param name="activationName">Activation name..</param>
         /// <param name="personalization">personalization.</param>
         /// <param name="destinationMapping">destinationMapping.</param>
-        /// <param name="performFirstSync">Whether to skip the first sync so the activation events are not generated on the first audience sync. Will only work if the Audience has not already synced..</param>
+        /// <param name="performFirstSync">Whether to perform the first sync so the activation events are generated on the first audience sync..</param>
         public UpdateActivationForAudienceAlphaInput(bool enabled = default(bool), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performFirstSync = default(bool))
         {
             this.Enabled = enabled;
@@ -76,9 +76,9 @@ namespace Segment.PublicApi.Model
         public DestinationSubscriptionConfiguration DestinationMapping { get; set; }
 
         /// <summary>
-        /// Whether to skip the first sync so the activation events are not generated on the first audience sync. Will only work if the Audience has not already synced.
+        /// Whether to perform the first sync so the activation events are generated on the first audience sync.
         /// </summary>
-        /// <value>Whether to skip the first sync so the activation events are not generated on the first audience sync. Will only work if the Audience has not already synced.</value>
+        /// <value>Whether to perform the first sync so the activation events are generated on the first audience sync.</value>
         [DataMember(Name = "performFirstSync", EmitDefaultValue = true)]
         public bool PerformFirstSync { get; set; }
 
