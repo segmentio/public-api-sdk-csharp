@@ -41,7 +41,8 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="Profile" /> class.
         /// </summary>
         /// <param name="properties">properties (required).</param>
-        public Profile(List<string> properties = default(List<string>))
+        /// <param name="mapping">mapping.</param>
+        public Profile(List<string> properties = default(List<string>), Dictionary<string, string> mapping = default(Dictionary<string, string>))
         {
             // to ensure "properties" is required (not null)
             if (properties == null)
@@ -49,6 +50,7 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("properties is a required property for Profile and cannot be null");
             }
             this.Properties = properties;
+            this.Mapping = mapping;
         }
 
         /// <summary>
@@ -56,6 +58,12 @@ namespace Segment.PublicApi.Model
         /// </summary>
         [DataMember(Name = "properties", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Properties { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Mapping
+        /// </summary>
+        [DataMember(Name = "mapping", EmitDefaultValue = false)]
+        public Dictionary<string, string> Mapping { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,6 +74,7 @@ namespace Segment.PublicApi.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class Profile {\n");
             sb.Append("  Properties: ").Append(Properties).Append("\n");
+            sb.Append("  Mapping: ").Append(Mapping).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +115,12 @@ namespace Segment.PublicApi.Model
                     this.Properties != null &&
                     input.Properties != null &&
                     this.Properties.SequenceEqual(input.Properties)
+                ) && 
+                (
+                    this.Mapping == input.Mapping ||
+                    this.Mapping != null &&
+                    input.Mapping != null &&
+                    this.Mapping.SequenceEqual(input.Mapping)
                 );
         }
 
@@ -121,6 +136,10 @@ namespace Segment.PublicApi.Model
                 if (this.Properties != null)
                 {
                     hashCode = (hashCode * 59) + this.Properties.GetHashCode();
+                }
+                if (this.Mapping != null)
+                {
+                    hashCode = (hashCode * 59) + this.Mapping.GetHashCode();
                 }
                 return hashCode;
             }
