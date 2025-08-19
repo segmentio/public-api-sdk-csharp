@@ -57,8 +57,8 @@ namespace Segment.PublicApi.Model
         /// The underlying data type being segmented for this audience.  Possible values: users, accounts.
         /// </summary>
         /// <value>The underlying data type being segmented for this audience.  Possible values: users, accounts.</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public TypeEnum Type { get; set; }
+        [DataMember(Name = "type", EmitDefaultValue = false)]
+        public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
         /// </summary>
@@ -67,18 +67,18 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
         /// </summary>
-        /// <param name="type">The underlying data type being segmented for this audience.  Possible values: users, accounts. (required).</param>
+        /// <param name="type">The underlying data type being segmented for this audience.  Possible values: users, accounts..</param>
         /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
         /// <param name="targetEntity">The target entity slug..</param>
-        public AudienceDefinition(TypeEnum type = default(TypeEnum), string query = default(string), string targetEntity = default(string))
+        public AudienceDefinition(TypeEnum? type = default(TypeEnum?), string query = default(string), string targetEntity = default(string))
         {
-            this.Type = type;
             // to ensure "query" is required (not null)
             if (query == null)
             {
                 throw new ArgumentNullException("query is a required property for AudienceDefinition and cannot be null");
             }
             this.Query = query;
+            this.Type = type;
             this.TargetEntity = targetEntity;
         }
 

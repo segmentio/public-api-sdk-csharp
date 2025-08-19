@@ -33,6 +33,33 @@ namespace Segment.PublicApi.Model
     public partial class CreateAudienceAlphaInput : IEquatable<CreateAudienceAlphaInput>, IValidatableObject
     {
         /// <summary>
+        /// Denotes the type of audience product.  Possible values: USERS, ACCOUNTS.
+        /// </summary>
+        /// <value>Denotes the type of audience product.  Possible values: USERS, ACCOUNTS.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AudienceTypeEnum
+        {
+            /// <summary>
+            /// Enum ACCOUNTS for value: ACCOUNTS
+            /// </summary>
+            [EnumMember(Value = "ACCOUNTS")]
+            ACCOUNTS = 1,
+
+            /// <summary>
+            /// Enum USERS for value: USERS
+            /// </summary>
+            [EnumMember(Value = "USERS")]
+            USERS = 2
+        }
+
+
+        /// <summary>
+        /// Denotes the type of audience product.  Possible values: USERS, ACCOUNTS.
+        /// </summary>
+        /// <value>Denotes the type of audience product.  Possible values: USERS, ACCOUNTS.</value>
+        [DataMember(Name = "audienceType", EmitDefaultValue = false)]
+        public AudienceTypeEnum? AudienceType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateAudienceAlphaInput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -44,8 +71,9 @@ namespace Segment.PublicApi.Model
         /// <param name="enabled">Determines whether a computation is enabled..</param>
         /// <param name="description">Description of the audience..</param>
         /// <param name="definition">definition (required).</param>
+        /// <param name="audienceType">Denotes the type of audience product.  Possible values: USERS, ACCOUNTS..</param>
         /// <param name="options">options.</param>
-        public CreateAudienceAlphaInput(string name = default(string), bool enabled = default(bool), string description = default(string), AudienceDefinition definition = default(AudienceDefinition), AudienceOptions options = default(AudienceOptions))
+        public CreateAudienceAlphaInput(string name = default(string), bool enabled = default(bool), string description = default(string), AudienceDefinition definition = default(AudienceDefinition), AudienceTypeEnum? audienceType = default(AudienceTypeEnum?), AudienceOptions options = default(AudienceOptions))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -61,6 +89,7 @@ namespace Segment.PublicApi.Model
             this.Definition = definition;
             this.Enabled = enabled;
             this.Description = description;
+            this.AudienceType = audienceType;
             this.Options = options;
         }
 
@@ -109,6 +138,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Definition: ").Append(Definition).Append("\n");
+            sb.Append("  AudienceType: ").Append(AudienceType).Append("\n");
             sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -165,6 +195,10 @@ namespace Segment.PublicApi.Model
                     this.Definition.Equals(input.Definition))
                 ) && 
                 (
+                    this.AudienceType == input.AudienceType ||
+                    this.AudienceType.Equals(input.AudienceType)
+                ) && 
+                (
                     this.Options == input.Options ||
                     (this.Options != null &&
                     this.Options.Equals(input.Options))
@@ -193,6 +227,7 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.Definition.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.AudienceType.GetHashCode();
                 if (this.Options != null)
                 {
                     hashCode = (hashCode * 59) + this.Options.GetHashCode();
