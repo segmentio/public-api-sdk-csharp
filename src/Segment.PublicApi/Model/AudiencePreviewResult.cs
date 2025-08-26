@@ -36,10 +36,10 @@ namespace Segment.PublicApi.Model
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AudiencePreviewResult" /> class
-        /// with the <see cref="AudiencePreviewAccountResult" /> class
+        /// with the <see cref="AudiencePreviewProfileResult" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of AudiencePreviewAccountResult.</param>
-        public AudiencePreviewResult(AudiencePreviewAccountResult actualInstance)
+        /// <param name="actualInstance">An instance of AudiencePreviewProfileResult.</param>
+        public AudiencePreviewResult(AudiencePreviewProfileResult actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -48,10 +48,10 @@ namespace Segment.PublicApi.Model
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AudiencePreviewResult" /> class
-        /// with the <see cref="AudiencePreviewProfileResult" /> class
+        /// with the <see cref="AudiencePreviewAccountResult" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of AudiencePreviewProfileResult.</param>
-        public AudiencePreviewResult(AudiencePreviewProfileResult actualInstance)
+        /// <param name="actualInstance">An instance of AudiencePreviewAccountResult.</param>
+        public AudiencePreviewResult(AudiencePreviewAccountResult actualInstance)
         {
             this.IsNullable = false;
             this.SchemaType= "anyOf";
@@ -104,16 +104,6 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Get the actual instance of `AudiencePreviewAccountResult`. If the actual instance is not `AudiencePreviewAccountResult`,
-        /// the InvalidClassException will be thrown
-        /// </summary>
-        /// <returns>An instance of AudiencePreviewAccountResult</returns>
-        public AudiencePreviewAccountResult GetAudiencePreviewAccountResult()
-        {
-            return (AudiencePreviewAccountResult)this.ActualInstance;
-        }
-
-        /// <summary>
         /// Get the actual instance of `AudiencePreviewProfileResult`. If the actual instance is not `AudiencePreviewProfileResult`,
         /// the InvalidClassException will be thrown
         /// </summary>
@@ -121,6 +111,16 @@ namespace Segment.PublicApi.Model
         public AudiencePreviewProfileResult GetAudiencePreviewProfileResult()
         {
             return (AudiencePreviewProfileResult)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `AudiencePreviewAccountResult`. If the actual instance is not `AudiencePreviewAccountResult`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of AudiencePreviewAccountResult</returns>
+        public AudiencePreviewAccountResult GetAudiencePreviewAccountResult()
+        {
+            return (AudiencePreviewAccountResult)this.ActualInstance;
         }
 
         /// <summary>

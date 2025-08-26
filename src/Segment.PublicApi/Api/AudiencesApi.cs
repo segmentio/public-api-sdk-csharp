@@ -56,27 +56,27 @@ namespace Segment.PublicApi.Api
         /// Create Audience Preview
         /// </summary>
         /// <remarks>
-        /// Previews Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
+        /// Previews Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudiencePreviewAlphaInput"></param>
+        /// <param name="createAudiencePreviewBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateAudiencePreview200Response</returns>
-        CreateAudiencePreview200Response CreateAudiencePreview(string spaceId, CreateAudiencePreviewAlphaInput createAudiencePreviewAlphaInput, int operationIndex = 0);
+        CreateAudiencePreview200Response CreateAudiencePreview(string spaceId, CreateAudiencePreviewBetaInput createAudiencePreviewBetaInput, int operationIndex = 0);
 
         /// <summary>
         /// Create Audience Preview
         /// </summary>
         /// <remarks>
-        /// Previews Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
+        /// Previews Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudiencePreviewAlphaInput"></param>
+        /// <param name="createAudiencePreviewBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateAudiencePreview200Response</returns>
-        ApiResponse<CreateAudiencePreview200Response> CreateAudiencePreviewWithHttpInfo(string spaceId, CreateAudiencePreviewAlphaInput createAudiencePreviewAlphaInput, int operationIndex = 0);
+        ApiResponse<CreateAudiencePreview200Response> CreateAudiencePreviewWithHttpInfo(string spaceId, CreateAudiencePreviewBetaInput createAudiencePreviewBetaInput, int operationIndex = 0);
         /// <summary>
         /// Get Audience
         /// </summary>
@@ -108,7 +108,7 @@ namespace Segment.PublicApi.Api
         /// Get Audience Preview
         /// </summary>
         /// <remarks>
-        /// Reads the results of an audience preview.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Reads the results of an audience preview.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -121,7 +121,7 @@ namespace Segment.PublicApi.Api
         /// Get Audience Preview
         /// </summary>
         /// <remarks>
-        /// Reads the results of an audience preview.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Reads the results of an audience preview.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -333,29 +333,29 @@ namespace Segment.PublicApi.Api
         /// Create Audience Preview
         /// </summary>
         /// <remarks>
-        /// Previews Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
+        /// Previews Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudiencePreviewAlphaInput"></param>
+        /// <param name="createAudiencePreviewBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateAudiencePreview200Response</returns>
-        System.Threading.Tasks.Task<CreateAudiencePreview200Response> CreateAudiencePreviewAsync(string spaceId, CreateAudiencePreviewAlphaInput createAudiencePreviewAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateAudiencePreview200Response> CreateAudiencePreviewAsync(string spaceId, CreateAudiencePreviewBetaInput createAudiencePreviewBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Audience Preview
         /// </summary>
         /// <remarks>
-        /// Previews Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
+        /// Previews Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudiencePreviewAlphaInput"></param>
+        /// <param name="createAudiencePreviewBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateAudiencePreview200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateAudiencePreview200Response>> CreateAudiencePreviewWithHttpInfoAsync(string spaceId, CreateAudiencePreviewAlphaInput createAudiencePreviewAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateAudiencePreview200Response>> CreateAudiencePreviewWithHttpInfoAsync(string spaceId, CreateAudiencePreviewBetaInput createAudiencePreviewBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Audience
         /// </summary>
@@ -389,7 +389,7 @@ namespace Segment.PublicApi.Api
         /// Get Audience Preview
         /// </summary>
         /// <remarks>
-        /// Reads the results of an audience preview.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Reads the results of an audience preview.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -403,7 +403,7 @@ namespace Segment.PublicApi.Api
         /// Get Audience Preview
         /// </summary>
         /// <remarks>
-        /// Reads the results of an audience preview.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Reads the results of an audience preview.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -887,28 +887,28 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Audience Preview Previews Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
+        /// Create Audience Preview Previews Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudiencePreviewAlphaInput"></param>
+        /// <param name="createAudiencePreviewBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateAudiencePreview200Response</returns>
-        public CreateAudiencePreview200Response CreateAudiencePreview(string spaceId, CreateAudiencePreviewAlphaInput createAudiencePreviewAlphaInput, int operationIndex = 0)
+        public CreateAudiencePreview200Response CreateAudiencePreview(string spaceId, CreateAudiencePreviewBetaInput createAudiencePreviewBetaInput, int operationIndex = 0)
         {
-            Segment.PublicApi.Client.ApiResponse<CreateAudiencePreview200Response> localVarResponse = CreateAudiencePreviewWithHttpInfo(spaceId, createAudiencePreviewAlphaInput);
+            Segment.PublicApi.Client.ApiResponse<CreateAudiencePreview200Response> localVarResponse = CreateAudiencePreviewWithHttpInfo(spaceId, createAudiencePreviewBetaInput);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create Audience Preview Previews Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
+        /// Create Audience Preview Previews Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudiencePreviewAlphaInput"></param>
+        /// <param name="createAudiencePreviewBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateAudiencePreview200Response</returns>
-        public Segment.PublicApi.Client.ApiResponse<CreateAudiencePreview200Response> CreateAudiencePreviewWithHttpInfo(string spaceId, CreateAudiencePreviewAlphaInput createAudiencePreviewAlphaInput, int operationIndex = 0)
+        public Segment.PublicApi.Client.ApiResponse<CreateAudiencePreview200Response> CreateAudiencePreviewWithHttpInfo(string spaceId, CreateAudiencePreviewBetaInput createAudiencePreviewBetaInput, int operationIndex = 0)
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -916,20 +916,22 @@ namespace Segment.PublicApi.Api
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->CreateAudiencePreview");
             }
 
-            // verify the required parameter 'createAudiencePreviewAlphaInput' is set
-            if (createAudiencePreviewAlphaInput == null)
+            // verify the required parameter 'createAudiencePreviewBetaInput' is set
+            if (createAudiencePreviewBetaInput == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'createAudiencePreviewAlphaInput' when calling AudiencesApi->CreateAudiencePreview");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'createAudiencePreviewBetaInput' when calling AudiencesApi->CreateAudiencePreview");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json",
                 "application/json"
             };
@@ -947,7 +949,7 @@ namespace Segment.PublicApi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
-            localVarRequestOptions.Data = createAudiencePreviewAlphaInput;
+            localVarRequestOptions.Data = createAudiencePreviewBetaInput;
 
             localVarRequestOptions.Operation = "AudiencesApi.CreateAudiencePreview";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -974,30 +976,30 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Audience Preview Previews Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
+        /// Create Audience Preview Previews Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudiencePreviewAlphaInput"></param>
+        /// <param name="createAudiencePreviewBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateAudiencePreview200Response</returns>
-        public async System.Threading.Tasks.Task<CreateAudiencePreview200Response> CreateAudiencePreviewAsync(string spaceId, CreateAudiencePreviewAlphaInput createAudiencePreviewAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateAudiencePreview200Response> CreateAudiencePreviewAsync(string spaceId, CreateAudiencePreviewBetaInput createAudiencePreviewBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Segment.PublicApi.Client.ApiResponse<CreateAudiencePreview200Response> localVarResponse = await CreateAudiencePreviewWithHttpInfoAsync(spaceId, createAudiencePreviewAlphaInput, operationIndex, cancellationToken).ConfigureAwait(false);
+            Segment.PublicApi.Client.ApiResponse<CreateAudiencePreview200Response> localVarResponse = await CreateAudiencePreviewWithHttpInfoAsync(spaceId, createAudiencePreviewBetaInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create Audience Preview Previews Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
+        /// Create Audience Preview Previews Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudiencePreviewAlphaInput"></param>
+        /// <param name="createAudiencePreviewBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateAudiencePreview200Response)</returns>
-        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<CreateAudiencePreview200Response>> CreateAudiencePreviewWithHttpInfoAsync(string spaceId, CreateAudiencePreviewAlphaInput createAudiencePreviewAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<CreateAudiencePreview200Response>> CreateAudiencePreviewWithHttpInfoAsync(string spaceId, CreateAudiencePreviewBetaInput createAudiencePreviewBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -1005,21 +1007,23 @@ namespace Segment.PublicApi.Api
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->CreateAudiencePreview");
             }
 
-            // verify the required parameter 'createAudiencePreviewAlphaInput' is set
-            if (createAudiencePreviewAlphaInput == null)
+            // verify the required parameter 'createAudiencePreviewBetaInput' is set
+            if (createAudiencePreviewBetaInput == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'createAudiencePreviewAlphaInput' when calling AudiencesApi->CreateAudiencePreview");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'createAudiencePreviewBetaInput' when calling AudiencesApi->CreateAudiencePreview");
             }
 
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1beta+json", 
                 "application/vnd.segment.v1alpha+json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json",
                 "application/json"
             };
@@ -1037,7 +1041,7 @@ namespace Segment.PublicApi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
-            localVarRequestOptions.Data = createAudiencePreviewAlphaInput;
+            localVarRequestOptions.Data = createAudiencePreviewBetaInput;
 
             localVarRequestOptions.Operation = "AudiencesApi.CreateAudiencePreview";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1255,7 +1259,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Audience Preview Reads the results of an audience preview.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Get Audience Preview Reads the results of an audience preview.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -1269,7 +1273,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Audience Preview Reads the results of an audience preview.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Get Audience Preview Reads the results of an audience preview.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -1297,6 +1301,7 @@ namespace Segment.PublicApi.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json",
                 "application/json"
             };
@@ -1341,7 +1346,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Audience Preview Reads the results of an audience preview.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Get Audience Preview Reads the results of an audience preview.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -1356,7 +1361,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Audience Preview Reads the results of an audience preview.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Get Audience Preview Reads the results of an audience preview.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.   The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -1386,6 +1391,7 @@ namespace Segment.PublicApi.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json",
                 "application/json"
             };

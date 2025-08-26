@@ -36,7 +36,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="GetAudiencePreview200Response" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public GetAudiencePreview200Response(GetAudiencePreviewAlphaOutput data = default(GetAudiencePreviewAlphaOutput))
+        public GetAudiencePreview200Response(GetAudiencePreviewBetaOutput data = default(GetAudiencePreviewBetaOutput))
         {
             this.Data = data;
         }
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public GetAudiencePreviewAlphaOutput Data { get; set; }
+        public GetAudiencePreviewBetaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

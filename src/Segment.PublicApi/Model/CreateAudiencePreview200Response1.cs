@@ -27,16 +27,16 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// CreateAudiencePreview200Response
+    /// CreateAudiencePreview200Response1
     /// </summary>
-    [DataContract(Name = "createAudiencePreview_200_response")]
-    public partial class CreateAudiencePreview200Response : IEquatable<CreateAudiencePreview200Response>, IValidatableObject
+    [DataContract(Name = "createAudiencePreview_200_response_1")]
+    public partial class CreateAudiencePreview200Response1 : IEquatable<CreateAudiencePreview200Response1>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateAudiencePreview200Response" /> class.
+        /// Initializes a new instance of the <see cref="CreateAudiencePreview200Response1" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public CreateAudiencePreview200Response(CreateAudiencePreviewBetaOutput data = default(CreateAudiencePreviewBetaOutput))
+        public CreateAudiencePreview200Response1(CreateAudiencePreviewAlphaOutput data = default(CreateAudiencePreviewAlphaOutput))
         {
             this.Data = data;
         }
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public CreateAudiencePreviewBetaOutput Data { get; set; }
+        public CreateAudiencePreviewAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateAudiencePreview200Response {\n");
+            sb.Append("class CreateAudiencePreview200Response1 {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateAudiencePreview200Response);
+            return this.Equals(input as CreateAudiencePreview200Response1);
         }
 
         /// <summary>
-        /// Returns true if CreateAudiencePreview200Response instances are equal
+        /// Returns true if CreateAudiencePreview200Response1 instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateAudiencePreview200Response to be compared</param>
+        /// <param name="input">Instance of CreateAudiencePreview200Response1 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateAudiencePreview200Response input)
+        public bool Equals(CreateAudiencePreview200Response1 input)
         {
             if (input == null)
             {

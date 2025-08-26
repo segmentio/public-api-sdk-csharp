@@ -27,25 +27,35 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// CreateAudiencePreview200Response
+    /// Output when creating an audience preview.
     /// </summary>
-    [DataContract(Name = "createAudiencePreview_200_response")]
-    public partial class CreateAudiencePreview200Response : IEquatable<CreateAudiencePreview200Response>, IValidatableObject
+    [DataContract(Name = "CreateAudiencePreviewBetaOutput")]
+    public partial class CreateAudiencePreviewBetaOutput : IEquatable<CreateAudiencePreviewBetaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateAudiencePreview200Response" /> class.
+        /// Initializes a new instance of the <see cref="CreateAudiencePreviewBetaOutput" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
-        public CreateAudiencePreview200Response(CreateAudiencePreviewBetaOutput data = default(CreateAudiencePreviewBetaOutput))
+        [JsonConstructorAttribute]
+        protected CreateAudiencePreviewBetaOutput() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAudiencePreviewBetaOutput" /> class.
+        /// </summary>
+        /// <param name="audiencePreview">audiencePreview (required).</param>
+        public CreateAudiencePreviewBetaOutput(AudiencePreviewIdentifier audiencePreview = default(AudiencePreviewIdentifier))
         {
-            this.Data = data;
+            // to ensure "audiencePreview" is required (not null)
+            if (audiencePreview == null)
+            {
+                throw new ArgumentNullException("audiencePreview is a required property for CreateAudiencePreviewBetaOutput and cannot be null");
+            }
+            this.AudiencePreview = audiencePreview;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets AudiencePreview
         /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public CreateAudiencePreviewBetaOutput Data { get; set; }
+        [DataMember(Name = "audiencePreview", IsRequired = true, EmitDefaultValue = true)]
+        public AudiencePreviewIdentifier AudiencePreview { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +64,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateAudiencePreview200Response {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class CreateAudiencePreviewBetaOutput {\n");
+            sb.Append("  AudiencePreview: ").Append(AudiencePreview).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +86,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateAudiencePreview200Response);
+            return this.Equals(input as CreateAudiencePreviewBetaOutput);
         }
 
         /// <summary>
-        /// Returns true if CreateAudiencePreview200Response instances are equal
+        /// Returns true if CreateAudiencePreviewBetaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateAudiencePreview200Response to be compared</param>
+        /// <param name="input">Instance of CreateAudiencePreviewBetaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateAudiencePreview200Response input)
+        public bool Equals(CreateAudiencePreviewBetaOutput input)
         {
             if (input == null)
             {
@@ -92,9 +102,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.AudiencePreview == input.AudiencePreview ||
+                    (this.AudiencePreview != null &&
+                    this.AudiencePreview.Equals(input.AudiencePreview))
                 );
         }
 
@@ -107,9 +117,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
+                if (this.AudiencePreview != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AudiencePreview.GetHashCode();
                 }
                 return hashCode;
             }
