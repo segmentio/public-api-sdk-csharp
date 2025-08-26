@@ -33,9 +33,9 @@ namespace Segment.PublicApi.Model
     public partial class AudienceSummary : IEquatable<AudienceSummary>, IValidatableObject
     {
         /// <summary>
-        /// Discriminator denoting the audience&#39;s product type.
+        /// Denotes the type of audience product.
         /// </summary>
-        /// <value>Discriminator denoting the audience&#39;s product type.</value>
+        /// <value>Denotes the type of audience product.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AudienceTypeEnum
         {
@@ -60,9 +60,9 @@ namespace Segment.PublicApi.Model
 
 
         /// <summary>
-        /// Discriminator denoting the audience&#39;s product type.
+        /// Denotes the type of audience product.
         /// </summary>
-        /// <value>Discriminator denoting the audience&#39;s product type.</value>
+        /// <value>Denotes the type of audience product.</value>
         [DataMember(Name = "audienceType", IsRequired = true, EmitDefaultValue = true)]
         public AudienceTypeEnum AudienceType { get; set; }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Segment.PublicApi.Model
         /// <param name="updatedBy">User id who last updated the audience. (required).</param>
         /// <param name="createdAt">Date the audience was created. (required).</param>
         /// <param name="updatedAt">Date the audience was last updated. (required).</param>
-        /// <param name="audienceType">Discriminator denoting the audience&#39;s product type. (required).</param>
+        /// <param name="audienceType">Denotes the type of audience product. (required).</param>
         /// <param name="options">options.</param>
         public AudienceSummary(string id = default(string), string spaceId = default(string), string name = default(string), string description = default(string), string key = default(string), bool enabled = default(bool), AudienceDefinition definition = default(AudienceDefinition), string status = default(string), string createdBy = default(string), string updatedBy = default(string), string createdAt = default(string), string updatedAt = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceOptions options = default(AudienceOptions))
         {

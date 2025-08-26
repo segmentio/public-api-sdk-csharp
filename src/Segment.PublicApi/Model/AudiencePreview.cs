@@ -33,9 +33,9 @@ namespace Segment.PublicApi.Model
     public partial class AudiencePreview : IEquatable<AudiencePreview>, IValidatableObject
     {
         /// <summary>
-        /// The audience type of the preview.
+        /// The audience type of the preview.  Possible values: USERS, ACCOUNTS, LINKED.
         /// </summary>
-        /// <value>The audience type of the preview.</value>
+        /// <value>The audience type of the preview.  Possible values: USERS, ACCOUNTS, LINKED.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AudienceTypeEnum
         {
@@ -60,9 +60,9 @@ namespace Segment.PublicApi.Model
 
 
         /// <summary>
-        /// The audience type of the preview.
+        /// The audience type of the preview.  Possible values: USERS, ACCOUNTS, LINKED.
         /// </summary>
-        /// <value>The audience type of the preview.</value>
+        /// <value>The audience type of the preview.  Possible values: USERS, ACCOUNTS, LINKED.</value>
         [DataMember(Name = "audienceType", IsRequired = true, EmitDefaultValue = true)]
         public AudienceTypeEnum AudienceType { get; set; }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AudiencePreview" /> class.
         /// </summary>
         /// <param name="id">Unique identifier for tracking and retrieving results of an audience preview. (required).</param>
-        /// <param name="audienceType">The audience type of the preview. (required).</param>
+        /// <param name="audienceType">The audience type of the preview.  Possible values: USERS, ACCOUNTS, LINKED. (required).</param>
         /// <param name="definition">definition (required).</param>
         /// <param name="options">options (required).</param>
         /// <param name="status">Status for the audience preview. (required).</param>

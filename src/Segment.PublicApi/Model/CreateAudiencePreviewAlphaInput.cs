@@ -33,9 +33,9 @@ namespace Segment.PublicApi.Model
     public partial class CreateAudiencePreviewAlphaInput : IEquatable<CreateAudiencePreviewAlphaInput>, IValidatableObject
     {
         /// <summary>
-        /// Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED.
+        /// Denotes the type of audience product.  Possible values: USERS, ACCOUNTS, LINKED.
         /// </summary>
-        /// <value>Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED.</value>
+        /// <value>Denotes the type of audience product.  Possible values: USERS, ACCOUNTS, LINKED.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum AudienceTypeEnum
         {
@@ -60,9 +60,9 @@ namespace Segment.PublicApi.Model
 
 
         /// <summary>
-        /// Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED.
+        /// Denotes the type of audience product.  Possible values: USERS, ACCOUNTS, LINKED.
         /// </summary>
-        /// <value>Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED.</value>
+        /// <value>Denotes the type of audience product.  Possible values: USERS, ACCOUNTS, LINKED.</value>
         [DataMember(Name = "audienceType", IsRequired = true, EmitDefaultValue = true)]
         public AudienceTypeEnum AudienceType { get; set; }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="CreateAudiencePreviewAlphaInput" /> class.
         /// </summary>
         /// <param name="definition">definition (required).</param>
-        /// <param name="audienceType">Discriminator denoting the audience&#39;s product type.  Possible values: USERS, ACCOUNTS, LINKED. (required).</param>
+        /// <param name="audienceType">Denotes the type of audience product.  Possible values: USERS, ACCOUNTS, LINKED. (required).</param>
         /// <param name="options">options.</param>
         public CreateAudiencePreviewAlphaInput(AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), AudienceTypeEnum audienceType = default(AudienceTypeEnum), CreateAudiencePreviewOptions options = default(CreateAudiencePreviewOptions))
         {
