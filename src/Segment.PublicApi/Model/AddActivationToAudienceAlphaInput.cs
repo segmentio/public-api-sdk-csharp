@@ -40,21 +40,14 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AddActivationToAudienceAlphaInput" /> class.
         /// </summary>
-        /// <param name="destinationId">The Destination id. (required).</param>
         /// <param name="enabled">Whether the event emitter should be created in an enabled state. Will trigger an audience run if enabled..</param>
         /// <param name="performFirstSync">Whether to perform the first sync so the activation events are generated on the first audience sync. (required).</param>
         /// <param name="activationType">Type of activation trigger. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
         /// <param name="personalization">personalization (required).</param>
         /// <param name="destinationMapping">destinationMapping (required).</param>
-        public AddActivationToAudienceAlphaInput(string destinationId = default(string), bool enabled = default(bool), bool performFirstSync = default(bool), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration))
+        public AddActivationToAudienceAlphaInput(bool enabled = default(bool), bool performFirstSync = default(bool), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration))
         {
-            // to ensure "destinationId" is required (not null)
-            if (destinationId == null)
-            {
-                throw new ArgumentNullException("destinationId is a required property for AddActivationToAudienceAlphaInput and cannot be null");
-            }
-            this.DestinationId = destinationId;
             this.PerformFirstSync = performFirstSync;
             // to ensure "activationType" is required (not null)
             if (activationType == null)
@@ -82,13 +75,6 @@ namespace Segment.PublicApi.Model
             this.DestinationMapping = destinationMapping;
             this.Enabled = enabled;
         }
-
-        /// <summary>
-        /// The Destination id.
-        /// </summary>
-        /// <value>The Destination id.</value>
-        [DataMember(Name = "destinationId", IsRequired = true, EmitDefaultValue = true)]
-        public string DestinationId { get; set; }
 
         /// <summary>
         /// Whether the event emitter should be created in an enabled state. Will trigger an audience run if enabled.
@@ -138,7 +124,6 @@ namespace Segment.PublicApi.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AddActivationToAudienceAlphaInput {\n");
-            sb.Append("  DestinationId: ").Append(DestinationId).Append("\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  PerformFirstSync: ").Append(PerformFirstSync).Append("\n");
             sb.Append("  ActivationType: ").Append(ActivationType).Append("\n");
@@ -181,11 +166,6 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.DestinationId == input.DestinationId ||
-                    (this.DestinationId != null &&
-                    this.DestinationId.Equals(input.DestinationId))
-                ) && 
-                (
                     this.Enabled == input.Enabled ||
                     this.Enabled.Equals(input.Enabled)
                 ) && 
@@ -224,10 +204,6 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DestinationId != null)
-                {
-                    hashCode = (hashCode * 59) + this.DestinationId.GetHashCode();
-                }
                 hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
                 hashCode = (hashCode * 59) + this.PerformFirstSync.GetHashCode();
                 if (this.ActivationType != null)
