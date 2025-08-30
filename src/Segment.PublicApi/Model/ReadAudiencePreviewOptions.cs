@@ -35,21 +35,11 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ReadAudiencePreviewOptions" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ReadAudiencePreviewOptions() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ReadAudiencePreviewOptions" /> class.
-        /// </summary>
-        /// <param name="filterByExternalIds">The set of profile external identifiers being used to determine audience preview membership. Profiles will only be considered for audience preview membership if the profile has at least one external id whose key matches a value in this set. (required).</param>
-        /// <param name="includeHistoricalData">Determines whether data prior to the audience preview being created is included when determining audience preview membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true. (required).</param>
+        /// <param name="filterByExternalIds">The set of profile external identifiers being used to determine audience preview membership. Profiles will only be considered for audience preview membership if the profile has at least one external id whose key matches a value in this set..</param>
+        /// <param name="includeHistoricalData">Determines whether data prior to the audience preview being created is included when determining audience preview membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true..</param>
         /// <param name="backfillEventDataDays">If specified, the value of this field indicates the number of days (specified from the date the audience preview was created) that event data will be included from when determining audience preview membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience preview membership..</param>
         public ReadAudiencePreviewOptions(List<string> filterByExternalIds = default(List<string>), bool includeHistoricalData = default(bool), decimal backfillEventDataDays = default(decimal))
         {
-            // to ensure "filterByExternalIds" is required (not null)
-            if (filterByExternalIds == null)
-            {
-                throw new ArgumentNullException("filterByExternalIds is a required property for ReadAudiencePreviewOptions and cannot be null");
-            }
             this.FilterByExternalIds = filterByExternalIds;
             this.IncludeHistoricalData = includeHistoricalData;
             this.BackfillEventDataDays = backfillEventDataDays;
@@ -59,14 +49,14 @@ namespace Segment.PublicApi.Model
         /// The set of profile external identifiers being used to determine audience preview membership. Profiles will only be considered for audience preview membership if the profile has at least one external id whose key matches a value in this set.
         /// </summary>
         /// <value>The set of profile external identifiers being used to determine audience preview membership. Profiles will only be considered for audience preview membership if the profile has at least one external id whose key matches a value in this set.</value>
-        [DataMember(Name = "filterByExternalIds", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "filterByExternalIds", EmitDefaultValue = false)]
         public List<string> FilterByExternalIds { get; set; }
 
         /// <summary>
         /// Determines whether data prior to the audience preview being created is included when determining audience preview membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true.
         /// </summary>
         /// <value>Determines whether data prior to the audience preview being created is included when determining audience preview membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true.</value>
-        [DataMember(Name = "includeHistoricalData", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "includeHistoricalData", EmitDefaultValue = true)]
         public bool IncludeHistoricalData { get; set; }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AudiencePreviewEntitiesResult" /> class.
         /// </summary>
-        /// <param name="id">The entities associated with the profile. Will only have a value if the audience preview has &#x60;audienceType: LINKED&#x60; and entities are referenced in the audience preview&#39;s definition. (required).</param>
+        /// <param name="id">Entity id. (required).</param>
         /// <param name="idProperty">The entity primary key column name. (required).</param>
         /// <param name="relationshipSlug">The entity relationship slug. (required).</param>
         /// <param name="properties">Entity properties..</param>
@@ -74,9 +74,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// The entities associated with the profile. Will only have a value if the audience preview has &#x60;audienceType: LINKED&#x60; and entities are referenced in the audience preview&#39;s definition.
+        /// Entity id.
         /// </summary>
-        /// <value>The entities associated with the profile. Will only have a value if the audience preview has &#x60;audienceType: LINKED&#x60; and entities are referenced in the audience preview&#39;s definition.</value>
+        /// <value>Entity id.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 

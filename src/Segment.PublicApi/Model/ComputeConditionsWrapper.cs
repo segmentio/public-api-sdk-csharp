@@ -27,25 +27,50 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// CreateAudience200Response
+    /// Compute conditions wrapper for beta API.
     /// </summary>
-    [DataContract(Name = "createAudience_200_response")]
-    public partial class CreateAudience200Response : IEquatable<CreateAudience200Response>, IValidatableObject
+    [DataContract(Name = "ComputeConditionsWrapper")]
+    public partial class ComputeConditionsWrapper : IEquatable<ComputeConditionsWrapper>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateAudience200Response" /> class.
+        /// Initializes a new instance of the <see cref="ComputeConditionsWrapper" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
-        public CreateAudience200Response(CreateAudienceBetaOutput data = default(CreateAudienceBetaOutput))
+        [JsonConstructorAttribute]
+        protected ComputeConditionsWrapper() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComputeConditionsWrapper" /> class.
+        /// </summary>
+        /// <param name="format">The query format. (required).</param>
+        /// <param name="conditions">The query language string or AST object defining the audience segmentation criteria. (required).</param>
+        public ComputeConditionsWrapper(string format = default(string), Object conditions = default(Object))
         {
-            this.Data = data;
+            // to ensure "format" is required (not null)
+            if (format == null)
+            {
+                throw new ArgumentNullException("format is a required property for ComputeConditionsWrapper and cannot be null");
+            }
+            this.Format = format;
+            // to ensure "conditions" is required (not null)
+            if (conditions == null)
+            {
+                throw new ArgumentNullException("conditions is a required property for ComputeConditionsWrapper and cannot be null");
+            }
+            this.Conditions = conditions;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// The query format.
         /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public CreateAudienceBetaOutput Data { get; set; }
+        /// <value>The query format.</value>
+        [DataMember(Name = "format", IsRequired = true, EmitDefaultValue = true)]
+        public string Format { get; set; }
+
+        /// <summary>
+        /// The query language string or AST object defining the audience segmentation criteria.
+        /// </summary>
+        /// <value>The query language string or AST object defining the audience segmentation criteria.</value>
+        [DataMember(Name = "conditions", IsRequired = true, EmitDefaultValue = true)]
+        public Object Conditions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +79,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateAudience200Response {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class ComputeConditionsWrapper {\n");
+            sb.Append("  Format: ").Append(Format).Append("\n");
+            sb.Append("  Conditions: ").Append(Conditions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +102,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateAudience200Response);
+            return this.Equals(input as ComputeConditionsWrapper);
         }
 
         /// <summary>
-        /// Returns true if CreateAudience200Response instances are equal
+        /// Returns true if ComputeConditionsWrapper instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateAudience200Response to be compared</param>
+        /// <param name="input">Instance of ComputeConditionsWrapper to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateAudience200Response input)
+        public bool Equals(ComputeConditionsWrapper input)
         {
             if (input == null)
             {
@@ -92,9 +118,14 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Format == input.Format ||
+                    (this.Format != null &&
+                    this.Format.Equals(input.Format))
+                ) && 
+                (
+                    this.Conditions == input.Conditions ||
+                    (this.Conditions != null &&
+                    this.Conditions.Equals(input.Conditions))
                 );
         }
 
@@ -107,9 +138,13 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
+                if (this.Format != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Format.GetHashCode();
+                }
+                if (this.Conditions != null)
+                {
+                    hashCode = (hashCode * 59) + this.Conditions.GetHashCode();
                 }
                 return hashCode;
             }
