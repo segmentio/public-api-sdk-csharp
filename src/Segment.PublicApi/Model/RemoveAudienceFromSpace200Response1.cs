@@ -27,16 +27,16 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// RemoveAudienceFromSpace200Response
+    /// RemoveAudienceFromSpace200Response1
     /// </summary>
-    [DataContract(Name = "removeAudienceFromSpace_200_response")]
-    public partial class RemoveAudienceFromSpace200Response : IEquatable<RemoveAudienceFromSpace200Response>, IValidatableObject
+    [DataContract(Name = "removeAudienceFromSpace_200_response_1")]
+    public partial class RemoveAudienceFromSpace200Response1 : IEquatable<RemoveAudienceFromSpace200Response1>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RemoveAudienceFromSpace200Response" /> class.
+        /// Initializes a new instance of the <see cref="RemoveAudienceFromSpace200Response1" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public RemoveAudienceFromSpace200Response(RemoveAudienceFromSpaceBetaOutput data = default(RemoveAudienceFromSpaceBetaOutput))
+        public RemoveAudienceFromSpace200Response1(RemoveAudienceFromSpaceAlphaOutput data = default(RemoveAudienceFromSpaceAlphaOutput))
         {
             this.Data = data;
         }
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public RemoveAudienceFromSpaceBetaOutput Data { get; set; }
+        public RemoveAudienceFromSpaceAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RemoveAudienceFromSpace200Response {\n");
+            sb.Append("class RemoveAudienceFromSpace200Response1 {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RemoveAudienceFromSpace200Response);
+            return this.Equals(input as RemoveAudienceFromSpace200Response1);
         }
 
         /// <summary>
-        /// Returns true if RemoveAudienceFromSpace200Response instances are equal
+        /// Returns true if RemoveAudienceFromSpace200Response1 instances are equal
         /// </summary>
-        /// <param name="input">Instance of RemoveAudienceFromSpace200Response to be compared</param>
+        /// <param name="input">Instance of RemoveAudienceFromSpace200Response1 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RemoveAudienceFromSpace200Response input)
+        public bool Equals(RemoveAudienceFromSpace200Response1 input)
         {
             if (input == null)
             {
