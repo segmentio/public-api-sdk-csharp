@@ -27,25 +27,45 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// RemoveAudienceFromSpace200Response
+    /// Delete audience endpoint output.
     /// </summary>
-    [DataContract(Name = "removeAudienceFromSpace_200_response")]
-    public partial class RemoveAudienceFromSpace200Response : IEquatable<RemoveAudienceFromSpace200Response>, IValidatableObject
+    [DataContract(Name = "RemoveAudienceFromSpaceBetaOutput")]
+    public partial class RemoveAudienceFromSpaceBetaOutput : IEquatable<RemoveAudienceFromSpaceBetaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RemoveAudienceFromSpace200Response" /> class.
+        /// The status of the operation.
         /// </summary>
-        /// <param name="data">data.</param>
-        public RemoveAudienceFromSpace200Response(RemoveAudienceFromSpaceBetaOutput data = default(RemoveAudienceFromSpaceBetaOutput))
+        /// <value>The status of the operation.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
         {
-            this.Data = data;
+            /// <summary>
+            /// Enum SUCCESS for value: SUCCESS
+            /// </summary>
+            [EnumMember(Value = "SUCCESS")]
+            SUCCESS = 1
         }
 
+
         /// <summary>
-        /// Gets or Sets Data
+        /// The status of the operation.
         /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public RemoveAudienceFromSpaceBetaOutput Data { get; set; }
+        /// <value>The status of the operation.</value>
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        public StatusEnum Status { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoveAudienceFromSpaceBetaOutput" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected RemoveAudienceFromSpaceBetaOutput() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemoveAudienceFromSpaceBetaOutput" /> class.
+        /// </summary>
+        /// <param name="status">The status of the operation. (required).</param>
+        public RemoveAudienceFromSpaceBetaOutput(StatusEnum status = default(StatusEnum))
+        {
+            this.Status = status;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +74,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RemoveAudienceFromSpace200Response {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class RemoveAudienceFromSpaceBetaOutput {\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +96,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as RemoveAudienceFromSpace200Response);
+            return this.Equals(input as RemoveAudienceFromSpaceBetaOutput);
         }
 
         /// <summary>
-        /// Returns true if RemoveAudienceFromSpace200Response instances are equal
+        /// Returns true if RemoveAudienceFromSpaceBetaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of RemoveAudienceFromSpace200Response to be compared</param>
+        /// <param name="input">Instance of RemoveAudienceFromSpaceBetaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(RemoveAudienceFromSpace200Response input)
+        public bool Equals(RemoveAudienceFromSpaceBetaOutput input)
         {
             if (input == null)
             {
@@ -92,9 +112,8 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
                 );
         }
 
@@ -107,10 +126,7 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
-                {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 return hashCode;
             }
         }
