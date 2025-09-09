@@ -31,27 +31,27 @@ namespace Segment.PublicApi.Api
         /// Create Audience
         /// </summary>
         /// <remarks>
-        /// Creates Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Creates Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudienceBetaInput"></param>
+        /// <param name="createAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateAudience200Response</returns>
-        CreateAudience200Response CreateAudience(string spaceId, CreateAudienceBetaInput createAudienceBetaInput, int operationIndex = 0);
+        CreateAudience200Response CreateAudience(string spaceId, CreateAudienceAlphaInput createAudienceAlphaInput, int operationIndex = 0);
 
         /// <summary>
         /// Create Audience
         /// </summary>
         /// <remarks>
-        /// Creates Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Creates Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudienceBetaInput"></param>
+        /// <param name="createAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateAudience200Response</returns>
-        ApiResponse<CreateAudience200Response> CreateAudienceWithHttpInfo(string spaceId, CreateAudienceBetaInput createAudienceBetaInput, int operationIndex = 0);
+        ApiResponse<CreateAudience200Response> CreateAudienceWithHttpInfo(string spaceId, CreateAudienceAlphaInput createAudienceAlphaInput, int operationIndex = 0);
         /// <summary>
         /// Create Audience Preview
         /// </summary>
@@ -306,29 +306,29 @@ namespace Segment.PublicApi.Api
         /// Create Audience
         /// </summary>
         /// <remarks>
-        /// Creates Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Creates Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudienceBetaInput"></param>
+        /// <param name="createAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateAudience200Response</returns>
-        System.Threading.Tasks.Task<CreateAudience200Response> CreateAudienceAsync(string spaceId, CreateAudienceBetaInput createAudienceBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreateAudience200Response> CreateAudienceAsync(string spaceId, CreateAudienceAlphaInput createAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Create Audience
         /// </summary>
         /// <remarks>
-        /// Creates Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Creates Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudienceBetaInput"></param>
+        /// <param name="createAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateAudience200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateAudience200Response>> CreateAudienceWithHttpInfoAsync(string spaceId, CreateAudienceBetaInput createAudienceBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreateAudience200Response>> CreateAudienceWithHttpInfoAsync(string spaceId, CreateAudienceAlphaInput createAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Audience Preview
         /// </summary>
@@ -709,28 +709,28 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Audience Creates Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Create Audience Creates Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudienceBetaInput"></param>
+        /// <param name="createAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>CreateAudience200Response</returns>
-        public CreateAudience200Response CreateAudience(string spaceId, CreateAudienceBetaInput createAudienceBetaInput, int operationIndex = 0)
+        public CreateAudience200Response CreateAudience(string spaceId, CreateAudienceAlphaInput createAudienceAlphaInput, int operationIndex = 0)
         {
-            Segment.PublicApi.Client.ApiResponse<CreateAudience200Response> localVarResponse = CreateAudienceWithHttpInfo(spaceId, createAudienceBetaInput);
+            Segment.PublicApi.Client.ApiResponse<CreateAudience200Response> localVarResponse = CreateAudienceWithHttpInfo(spaceId, createAudienceAlphaInput);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create Audience Creates Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Create Audience Creates Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudienceBetaInput"></param>
+        /// <param name="createAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of CreateAudience200Response</returns>
-        public Segment.PublicApi.Client.ApiResponse<CreateAudience200Response> CreateAudienceWithHttpInfo(string spaceId, CreateAudienceBetaInput createAudienceBetaInput, int operationIndex = 0)
+        public Segment.PublicApi.Client.ApiResponse<CreateAudience200Response> CreateAudienceWithHttpInfo(string spaceId, CreateAudienceAlphaInput createAudienceAlphaInput, int operationIndex = 0)
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -738,22 +738,20 @@ namespace Segment.PublicApi.Api
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->CreateAudience");
             }
 
-            // verify the required parameter 'createAudienceBetaInput' is set
-            if (createAudienceBetaInput == null)
+            // verify the required parameter 'createAudienceAlphaInput' is set
+            if (createAudienceAlphaInput == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'createAudienceBetaInput' when calling AudiencesApi->CreateAudience");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'createAudienceAlphaInput' when calling AudiencesApi->CreateAudience");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json",
                 "application/json"
             };
@@ -771,7 +769,7 @@ namespace Segment.PublicApi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
-            localVarRequestOptions.Data = createAudienceBetaInput;
+            localVarRequestOptions.Data = createAudienceAlphaInput;
 
             localVarRequestOptions.Operation = "AudiencesApi.CreateAudience";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -798,30 +796,30 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Audience Creates Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Create Audience Creates Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudienceBetaInput"></param>
+        /// <param name="createAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateAudience200Response</returns>
-        public async System.Threading.Tasks.Task<CreateAudience200Response> CreateAudienceAsync(string spaceId, CreateAudienceBetaInput createAudienceBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreateAudience200Response> CreateAudienceAsync(string spaceId, CreateAudienceAlphaInput createAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Segment.PublicApi.Client.ApiResponse<CreateAudience200Response> localVarResponse = await CreateAudienceWithHttpInfoAsync(spaceId, createAudienceBetaInput, operationIndex, cancellationToken).ConfigureAwait(false);
+            Segment.PublicApi.Client.ApiResponse<CreateAudience200Response> localVarResponse = await CreateAudienceWithHttpInfoAsync(spaceId, createAudienceAlphaInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create Audience Creates Audience.  • This endpoint is in **Beta** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// Create Audience Creates Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Created&#x60; event in the [audit trail](/tag/Audit-Trail).  Note: The definition for an Audience created using the API is not editable through the Segment App.   The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
-        /// <param name="createAudienceBetaInput"></param>
+        /// <param name="createAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateAudience200Response)</returns>
-        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<CreateAudience200Response>> CreateAudienceWithHttpInfoAsync(string spaceId, CreateAudienceBetaInput createAudienceBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<CreateAudience200Response>> CreateAudienceWithHttpInfoAsync(string spaceId, CreateAudienceAlphaInput createAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -829,23 +827,21 @@ namespace Segment.PublicApi.Api
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->CreateAudience");
             }
 
-            // verify the required parameter 'createAudienceBetaInput' is set
-            if (createAudienceBetaInput == null)
+            // verify the required parameter 'createAudienceAlphaInput' is set
+            if (createAudienceAlphaInput == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'createAudienceBetaInput' when calling AudiencesApi->CreateAudience");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'createAudienceAlphaInput' when calling AudiencesApi->CreateAudience");
             }
 
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/vnd.segment.v1beta+json", 
                 "application/vnd.segment.v1alpha+json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json",
                 "application/json"
             };
@@ -863,7 +859,7 @@ namespace Segment.PublicApi.Api
             }
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
-            localVarRequestOptions.Data = createAudienceBetaInput;
+            localVarRequestOptions.Data = createAudienceAlphaInput;
 
             localVarRequestOptions.Operation = "AudiencesApi.CreateAudience";
             localVarRequestOptions.OperationIndex = operationIndex;
