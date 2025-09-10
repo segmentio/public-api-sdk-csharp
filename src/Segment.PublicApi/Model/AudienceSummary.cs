@@ -80,6 +80,7 @@ namespace Segment.PublicApi.Model
         /// <param name="key">Key for the audience. (required).</param>
         /// <param name="enabled">Enabled/disabled status for the audience. (required).</param>
         /// <param name="definition">definition (required).</param>
+        /// <param name="conditions">Array of conditions in different formats (AST, CQL) - Enhanced format..</param>
         /// <param name="status">Status for the audience.  Possible values: Backfilling, Computing, Failed, Live, Awaiting Destinations, Disabled..</param>
         /// <param name="createdBy">User id who created the audience. (required).</param>
         /// <param name="updatedBy">User id who last updated the audience. (required).</param>
@@ -87,7 +88,7 @@ namespace Segment.PublicApi.Model
         /// <param name="updatedAt">Date the audience was last updated. (required).</param>
         /// <param name="audienceType">Denotes the type of audience product. (required).</param>
         /// <param name="options">options.</param>
-        public AudienceSummary(string id = default(string), string spaceId = default(string), string name = default(string), string description = default(string), string key = default(string), bool enabled = default(bool), AudienceDefinition definition = default(AudienceDefinition), string status = default(string), string createdBy = default(string), string updatedBy = default(string), string createdAt = default(string), string updatedAt = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceOptions options = default(AudienceOptions))
+        public AudienceSummary(string id = default(string), string spaceId = default(string), string name = default(string), string description = default(string), string key = default(string), bool enabled = default(bool), AudienceDefinition definition = default(AudienceDefinition), List<AudienceConditionsWrapper> conditions = default(List<AudienceConditionsWrapper>), string status = default(string), string createdBy = default(string), string updatedBy = default(string), string createdAt = default(string), string updatedAt = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceOptions options = default(AudienceOptions))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -146,6 +147,7 @@ namespace Segment.PublicApi.Model
             this.UpdatedAt = updatedAt;
             this.AudienceType = audienceType;
             this.Description = description;
+            this.Conditions = conditions;
             this.Status = status;
             this.Options = options;
         }
@@ -197,6 +199,13 @@ namespace Segment.PublicApi.Model
         /// </summary>
         [DataMember(Name = "definition", IsRequired = true, EmitDefaultValue = true)]
         public AudienceDefinition Definition { get; set; }
+
+        /// <summary>
+        /// Array of conditions in different formats (AST, CQL) - Enhanced format.
+        /// </summary>
+        /// <value>Array of conditions in different formats (AST, CQL) - Enhanced format.</value>
+        [DataMember(Name = "conditions", EmitDefaultValue = false)]
+        public List<AudienceConditionsWrapper> Conditions { get; set; }
 
         /// <summary>
         /// Status for the audience.  Possible values: Backfilling, Computing, Failed, Live, Awaiting Destinations, Disabled.
@@ -254,6 +263,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  Definition: ").Append(Definition).Append("\n");
+            sb.Append("  Conditions: ").Append(Conditions).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  UpdatedBy: ").Append(UpdatedBy).Append("\n");
@@ -331,6 +341,12 @@ namespace Segment.PublicApi.Model
                     this.Definition.Equals(input.Definition))
                 ) && 
                 (
+                    this.Conditions == input.Conditions ||
+                    this.Conditions != null &&
+                    input.Conditions != null &&
+                    this.Conditions.SequenceEqual(input.Conditions)
+                ) && 
+                (
                     this.Status == input.Status ||
                     (this.Status != null &&
                     this.Status.Equals(input.Status))
@@ -399,6 +415,10 @@ namespace Segment.PublicApi.Model
                 if (this.Definition != null)
                 {
                     hashCode = (hashCode * 59) + this.Definition.GetHashCode();
+                }
+                if (this.Conditions != null)
+                {
+                    hashCode = (hashCode * 59) + this.Conditions.GetHashCode();
                 }
                 if (this.Status != null)
                 {

@@ -27,16 +27,16 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// CreateAudience200Response
+    /// CreateAudience200Response1
     /// </summary>
-    [DataContract(Name = "createAudience_200_response")]
-    public partial class CreateAudience200Response : IEquatable<CreateAudience200Response>, IValidatableObject
+    [DataContract(Name = "createAudience_200_response_1")]
+    public partial class CreateAudience200Response1 : IEquatable<CreateAudience200Response1>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateAudience200Response" /> class.
+        /// Initializes a new instance of the <see cref="CreateAudience200Response1" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public CreateAudience200Response(CreateAudienceBetaOutput data = default(CreateAudienceBetaOutput))
+        public CreateAudience200Response1(CreateAudienceAlphaOutput data = default(CreateAudienceAlphaOutput))
         {
             this.Data = data;
         }
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public CreateAudienceBetaOutput Data { get; set; }
+        public CreateAudienceAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateAudience200Response {\n");
+            sb.Append("class CreateAudience200Response1 {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateAudience200Response);
+            return this.Equals(input as CreateAudience200Response1);
         }
 
         /// <summary>
-        /// Returns true if CreateAudience200Response instances are equal
+        /// Returns true if CreateAudience200Response1 instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateAudience200Response to be compared</param>
+        /// <param name="input">Instance of CreateAudience200Response1 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateAudience200Response input)
+        public bool Equals(CreateAudience200Response1 input)
         {
             if (input == null)
             {
