@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// A class that encapsulates the output shared across endpoints for a given activation.
+    /// ActivationSummaryOutput
     /// </summary>
     [DataContract(Name = "ActivationSummaryOutput")]
     public partial class ActivationSummaryOutput : IEquatable<ActivationSummaryOutput>, IValidatableObject
