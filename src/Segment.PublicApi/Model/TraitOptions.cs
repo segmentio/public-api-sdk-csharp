@@ -37,10 +37,12 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="includeHistoricalData">Determines whether data prior to the computed trait being created is included when determining the computed trait value. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true..</param>
         /// <param name="includeAnonymousUsers">Determines whether anonymous users should be included when determining the computed trait value..</param>
-        public TraitOptions(bool includeHistoricalData = default(bool), bool includeAnonymousUsers = default(bool))
+        /// <param name="backfillDurationDays">If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership..</param>
+        public TraitOptions(bool includeHistoricalData = default(bool), bool includeAnonymousUsers = default(bool), decimal backfillDurationDays = default(decimal))
         {
             this.IncludeHistoricalData = includeHistoricalData;
             this.IncludeAnonymousUsers = includeAnonymousUsers;
+            this.BackfillDurationDays = backfillDurationDays;
         }
 
         /// <summary>
@@ -58,6 +60,13 @@ namespace Segment.PublicApi.Model
         public bool IncludeAnonymousUsers { get; set; }
 
         /// <summary>
+        /// If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.
+        /// </summary>
+        /// <value>If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.</value>
+        [DataMember(Name = "backfillDurationDays", EmitDefaultValue = false)]
+        public decimal BackfillDurationDays { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -67,6 +76,7 @@ namespace Segment.PublicApi.Model
             sb.Append("class TraitOptions {\n");
             sb.Append("  IncludeHistoricalData: ").Append(IncludeHistoricalData).Append("\n");
             sb.Append("  IncludeAnonymousUsers: ").Append(IncludeAnonymousUsers).Append("\n");
+            sb.Append("  BackfillDurationDays: ").Append(BackfillDurationDays).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,6 +119,10 @@ namespace Segment.PublicApi.Model
                 (
                     this.IncludeAnonymousUsers == input.IncludeAnonymousUsers ||
                     this.IncludeAnonymousUsers.Equals(input.IncludeAnonymousUsers)
+                ) && 
+                (
+                    this.BackfillDurationDays == input.BackfillDurationDays ||
+                    this.BackfillDurationDays.Equals(input.BackfillDurationDays)
                 );
         }
 
@@ -123,6 +137,7 @@ namespace Segment.PublicApi.Model
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.IncludeHistoricalData.GetHashCode();
                 hashCode = (hashCode * 59) + this.IncludeAnonymousUsers.GetHashCode();
+                hashCode = (hashCode * 59) + this.BackfillDurationDays.GetHashCode();
                 return hashCode;
             }
         }
