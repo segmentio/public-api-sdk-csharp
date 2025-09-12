@@ -41,14 +41,14 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AddActivationToAudienceAlphaInput" /> class.
         /// </summary>
         /// <param name="enabled">Whether the event emitter should be created in an enabled state. Will trigger an audience run if enabled..</param>
-        /// <param name="performFirstSync">Whether to perform the first sync so the activation events are generated on the first audience sync. (required).</param>
+        /// <param name="performResync">Whether to perform a resync after creation of the activation. (required).</param>
         /// <param name="activationType">Type of activation trigger. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
         /// <param name="personalization">personalization (required).</param>
         /// <param name="destinationMapping">destinationMapping (required).</param>
-        public AddActivationToAudienceAlphaInput(bool enabled = default(bool), bool performFirstSync = default(bool), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration))
+        public AddActivationToAudienceAlphaInput(bool enabled = default(bool), bool performResync = default(bool), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration))
         {
-            this.PerformFirstSync = performFirstSync;
+            this.PerformResync = performResync;
             // to ensure "activationType" is required (not null)
             if (activationType == null)
             {
@@ -84,11 +84,11 @@ namespace Segment.PublicApi.Model
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Whether to perform the first sync so the activation events are generated on the first audience sync.
+        /// Whether to perform a resync after creation of the activation.
         /// </summary>
-        /// <value>Whether to perform the first sync so the activation events are generated on the first audience sync.</value>
-        [DataMember(Name = "performFirstSync", IsRequired = true, EmitDefaultValue = true)]
-        public bool PerformFirstSync { get; set; }
+        /// <value>Whether to perform a resync after creation of the activation.</value>
+        [DataMember(Name = "performResync", IsRequired = true, EmitDefaultValue = true)]
+        public bool PerformResync { get; set; }
 
         /// <summary>
         /// Type of activation trigger.
@@ -125,7 +125,7 @@ namespace Segment.PublicApi.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class AddActivationToAudienceAlphaInput {\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  PerformFirstSync: ").Append(PerformFirstSync).Append("\n");
+            sb.Append("  PerformResync: ").Append(PerformResync).Append("\n");
             sb.Append("  ActivationType: ").Append(ActivationType).Append("\n");
             sb.Append("  ActivationName: ").Append(ActivationName).Append("\n");
             sb.Append("  Personalization: ").Append(Personalization).Append("\n");
@@ -170,8 +170,8 @@ namespace Segment.PublicApi.Model
                     this.Enabled.Equals(input.Enabled)
                 ) && 
                 (
-                    this.PerformFirstSync == input.PerformFirstSync ||
-                    this.PerformFirstSync.Equals(input.PerformFirstSync)
+                    this.PerformResync == input.PerformResync ||
+                    this.PerformResync.Equals(input.PerformResync)
                 ) && 
                 (
                     this.ActivationType == input.ActivationType ||
@@ -205,7 +205,7 @@ namespace Segment.PublicApi.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.PerformFirstSync.GetHashCode();
+                hashCode = (hashCode * 59) + this.PerformResync.GetHashCode();
                 if (this.ActivationType != null)
                 {
                     hashCode = (hashCode * 59) + this.ActivationType.GetHashCode();

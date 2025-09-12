@@ -42,7 +42,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="activations">A list of activation results. (required).</param>
         /// <param name="pagination">pagination.</param>
-        public ListActivationsFromAudienceOutput(List<ActivationSummaryOutput> activations = default(List<ActivationSummaryOutput>), PaginationOutput pagination = default(PaginationOutput))
+        public ListActivationsFromAudienceOutput(List<ActivationOutput> activations = default(List<ActivationOutput>), PaginationOutput pagination = default(PaginationOutput))
         {
             // to ensure "activations" is required (not null)
             if (activations == null)
@@ -58,7 +58,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <value>A list of activation results.</value>
         [DataMember(Name = "activations", IsRequired = true, EmitDefaultValue = true)]
-        public List<ActivationSummaryOutput> Activations { get; set; }
+        public List<ActivationOutput> Activations { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination

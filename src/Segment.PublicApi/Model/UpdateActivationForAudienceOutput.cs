@@ -41,7 +41,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="UpdateActivationForAudienceOutput" /> class.
         /// </summary>
         /// <param name="activation">activation (required).</param>
-        public UpdateActivationForAudienceOutput(ActivationSummaryOutput activation = default(ActivationSummaryOutput))
+        public UpdateActivationForAudienceOutput(ActivationOutput activation = default(ActivationOutput))
         {
             // to ensure "activation" is required (not null)
             if (activation == null)
@@ -55,7 +55,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Activation
         /// </summary>
         [DataMember(Name = "activation", IsRequired = true, EmitDefaultValue = true)]
-        public ActivationSummaryOutput Activation { get; set; }
+        public ActivationOutput Activation { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
