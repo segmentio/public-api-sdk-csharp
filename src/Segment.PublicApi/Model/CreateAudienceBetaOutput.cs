@@ -27,25 +27,35 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// CreateAudience200Response
+    /// Audience output for create.
     /// </summary>
-    [DataContract(Name = "createAudience_200_response")]
-    public partial class CreateAudience200Response : IEquatable<CreateAudience200Response>, IValidatableObject
+    [DataContract(Name = "CreateAudienceBetaOutput")]
+    public partial class CreateAudienceBetaOutput : IEquatable<CreateAudienceBetaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateAudience200Response" /> class.
+        /// Initializes a new instance of the <see cref="CreateAudienceBetaOutput" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
-        public CreateAudience200Response(CreateAudienceBetaOutput data = default(CreateAudienceBetaOutput))
+        [JsonConstructorAttribute]
+        protected CreateAudienceBetaOutput() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAudienceBetaOutput" /> class.
+        /// </summary>
+        /// <param name="audience">audience (required).</param>
+        public CreateAudienceBetaOutput(AudienceSummary audience = default(AudienceSummary))
         {
-            this.Data = data;
+            // to ensure "audience" is required (not null)
+            if (audience == null)
+            {
+                throw new ArgumentNullException("audience is a required property for CreateAudienceBetaOutput and cannot be null");
+            }
+            this.Audience = audience;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets Audience
         /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public CreateAudienceBetaOutput Data { get; set; }
+        [DataMember(Name = "audience", IsRequired = true, EmitDefaultValue = true)]
+        public AudienceSummary Audience { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +64,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateAudience200Response {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class CreateAudienceBetaOutput {\n");
+            sb.Append("  Audience: ").Append(Audience).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +86,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateAudience200Response);
+            return this.Equals(input as CreateAudienceBetaOutput);
         }
 
         /// <summary>
-        /// Returns true if CreateAudience200Response instances are equal
+        /// Returns true if CreateAudienceBetaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateAudience200Response to be compared</param>
+        /// <param name="input">Instance of CreateAudienceBetaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateAudience200Response input)
+        public bool Equals(CreateAudienceBetaOutput input)
         {
             if (input == null)
             {
@@ -92,9 +102,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Audience == input.Audience ||
+                    (this.Audience != null &&
+                    this.Audience.Equals(input.Audience))
                 );
         }
 
@@ -107,9 +117,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
+                if (this.Audience != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Audience.GetHashCode();
                 }
                 return hashCode;
             }
