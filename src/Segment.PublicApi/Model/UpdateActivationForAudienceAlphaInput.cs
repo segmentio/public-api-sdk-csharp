@@ -39,14 +39,14 @@ namespace Segment.PublicApi.Model
         /// <param name="activationName">Activation name..</param>
         /// <param name="personalization">personalization.</param>
         /// <param name="destinationMapping">destinationMapping.</param>
-        /// <param name="performFirstSync">Whether to perform the first sync so the activation events are generated on the first audience sync..</param>
-        public UpdateActivationForAudienceAlphaInput(bool enabled = default(bool), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performFirstSync = default(bool))
+        /// <param name="performResync">Whether to perform a resync after creation of the activation..</param>
+        public UpdateActivationForAudienceAlphaInput(bool enabled = default(bool), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
         {
             this.Enabled = enabled;
             this.ActivationName = activationName;
             this.Personalization = personalization;
             this.DestinationMapping = destinationMapping;
-            this.PerformFirstSync = performFirstSync;
+            this.PerformResync = performResync;
         }
 
         /// <summary>
@@ -76,11 +76,11 @@ namespace Segment.PublicApi.Model
         public DestinationSubscriptionConfiguration DestinationMapping { get; set; }
 
         /// <summary>
-        /// Whether to perform the first sync so the activation events are generated on the first audience sync.
+        /// Whether to perform a resync after creation of the activation.
         /// </summary>
-        /// <value>Whether to perform the first sync so the activation events are generated on the first audience sync.</value>
-        [DataMember(Name = "performFirstSync", EmitDefaultValue = true)]
-        public bool PerformFirstSync { get; set; }
+        /// <value>Whether to perform a resync after creation of the activation.</value>
+        [DataMember(Name = "performResync", EmitDefaultValue = true)]
+        public bool PerformResync { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -94,7 +94,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  ActivationName: ").Append(ActivationName).Append("\n");
             sb.Append("  Personalization: ").Append(Personalization).Append("\n");
             sb.Append("  DestinationMapping: ").Append(DestinationMapping).Append("\n");
-            sb.Append("  PerformFirstSync: ").Append(PerformFirstSync).Append("\n");
+            sb.Append("  PerformResync: ").Append(PerformResync).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -150,8 +150,8 @@ namespace Segment.PublicApi.Model
                     this.DestinationMapping.Equals(input.DestinationMapping))
                 ) && 
                 (
-                    this.PerformFirstSync == input.PerformFirstSync ||
-                    this.PerformFirstSync.Equals(input.PerformFirstSync)
+                    this.PerformResync == input.PerformResync ||
+                    this.PerformResync.Equals(input.PerformResync)
                 );
         }
 
@@ -177,7 +177,7 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.DestinationMapping.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.PerformFirstSync.GetHashCode();
+                hashCode = (hashCode * 59) + this.PerformResync.GetHashCode();
                 return hashCode;
             }
         }

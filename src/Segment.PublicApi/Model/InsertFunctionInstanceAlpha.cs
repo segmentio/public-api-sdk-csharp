@@ -49,7 +49,8 @@ namespace Segment.PublicApi.Model
         /// <param name="updatedAt">updatedAt (required).</param>
         /// <param name="settings">settings (required).</param>
         /// <param name="encryptedSettings">encryptedSettings (required).</param>
-        public InsertFunctionInstanceAlpha(string id = default(string), string name = default(string), string integrationId = default(string), string classId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), Dictionary<string, Object> encryptedSettings = default(Dictionary<string, Object>))
+        /// <param name="integrationType">integrationType.</param>
+        public InsertFunctionInstanceAlpha(string id = default(string), string name = default(string), string integrationId = default(string), string classId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), Dictionary<string, Object> encryptedSettings = default(Dictionary<string, Object>), Object integrationType = default(Object))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -95,6 +96,7 @@ namespace Segment.PublicApi.Model
             }
             this.EncryptedSettings = encryptedSettings;
             this.Name = name;
+            this.IntegrationType = integrationType;
         }
 
         /// <summary>
@@ -152,6 +154,12 @@ namespace Segment.PublicApi.Model
         public Dictionary<string, Object> EncryptedSettings { get; set; }
 
         /// <summary>
+        /// Gets or Sets IntegrationType
+        /// </summary>
+        [DataMember(Name = "integrationType", EmitDefaultValue = true)]
+        public Object IntegrationType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -168,6 +176,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("  EncryptedSettings: ").Append(EncryptedSettings).Append("\n");
+            sb.Append("  IntegrationType: ").Append(IntegrationType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -248,6 +257,11 @@ namespace Segment.PublicApi.Model
                     this.EncryptedSettings != null &&
                     input.EncryptedSettings != null &&
                     this.EncryptedSettings.SequenceEqual(input.EncryptedSettings)
+                ) && 
+                (
+                    this.IntegrationType == input.IntegrationType ||
+                    (this.IntegrationType != null &&
+                    this.IntegrationType.Equals(input.IntegrationType))
                 );
         }
 
@@ -292,6 +306,10 @@ namespace Segment.PublicApi.Model
                 if (this.EncryptedSettings != null)
                 {
                     hashCode = (hashCode * 59) + this.EncryptedSettings.GetHashCode();
+                }
+                if (this.IntegrationType != null)
+                {
+                    hashCode = (hashCode * 59) + this.IntegrationType.GetHashCode();
                 }
                 return hashCode;
             }
