@@ -73,7 +73,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInsertFunctionInstanceAlphaInput" /> class.
         /// </summary>
-        /// <param name="functionId">Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_ prefix from the id. (required).</param>
+        /// <param name="functionId">Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_/ifn_ prefix from the id. (required).</param>
         /// <param name="integrationId">The Source or Destination id to be connected. (required).</param>
         /// <param name="enabled">Whether this insert Function instance should be enabled for the Destination..</param>
         /// <param name="name">Defines the display name of the insert Function instance. (required).</param>
@@ -110,9 +110,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_ prefix from the id.
+        /// Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_/ifn_ prefix from the id.
         /// </summary>
-        /// <value>Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_ prefix from the id.</value>
+        /// <value>Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_/ifn_ prefix from the id.</value>
         [DataMember(Name = "functionId", IsRequired = true, EmitDefaultValue = true)]
         public string FunctionId { get; set; }
 
