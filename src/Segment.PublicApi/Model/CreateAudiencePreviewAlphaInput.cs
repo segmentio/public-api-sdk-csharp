@@ -76,7 +76,7 @@ namespace Segment.PublicApi.Model
         /// <param name="definition">definition (required).</param>
         /// <param name="audienceType">Denotes the type of audience product.  Possible values: USERS, ACCOUNTS, LINKED. (required).</param>
         /// <param name="options">options.</param>
-        public CreateAudiencePreviewAlphaInput(AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), AudienceTypeEnum audienceType = default(AudienceTypeEnum), CreateAudiencePreviewOptions options = default(CreateAudiencePreviewOptions))
+        public CreateAudiencePreviewAlphaInput(AudienceDefinition definition = default(AudienceDefinition), AudienceTypeEnum audienceType = default(AudienceTypeEnum), CreateAudiencePreviewOptions options = default(CreateAudiencePreviewOptions))
         {
             // to ensure "definition" is required (not null)
             if (definition == null)
@@ -92,7 +92,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Definition
         /// </summary>
         [DataMember(Name = "definition", IsRequired = true, EmitDefaultValue = true)]
-        public AudienceDefinitionWithoutType Definition { get; set; }
+        public AudienceDefinition Definition { get; set; }
 
         /// <summary>
         /// Gets or Sets Options
