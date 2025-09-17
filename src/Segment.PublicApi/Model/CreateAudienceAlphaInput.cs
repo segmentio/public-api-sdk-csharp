@@ -57,8 +57,8 @@ namespace Segment.PublicApi.Model
         /// Denotes the type of audience product.  Possible values: USERS, ACCOUNTS.
         /// </summary>
         /// <value>Denotes the type of audience product.  Possible values: USERS, ACCOUNTS.</value>
-        [DataMember(Name = "audienceType", EmitDefaultValue = false)]
-        public AudienceTypeEnum? AudienceType { get; set; }
+        [DataMember(Name = "audienceType", IsRequired = true, EmitDefaultValue = true)]
+        public AudienceTypeEnum AudienceType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateAudienceAlphaInput" /> class.
         /// </summary>
@@ -71,9 +71,9 @@ namespace Segment.PublicApi.Model
         /// <param name="enabled">Determines whether a computation is enabled..</param>
         /// <param name="description">Description of the audience..</param>
         /// <param name="definition">definition (required).</param>
-        /// <param name="audienceType">Denotes the type of audience product.  Possible values: USERS, ACCOUNTS..</param>
+        /// <param name="audienceType">Denotes the type of audience product.  Possible values: USERS, ACCOUNTS. (required).</param>
         /// <param name="options">options.</param>
-        public CreateAudienceAlphaInput(string name = default(string), bool enabled = default(bool), string description = default(string), AudienceDefinition definition = default(AudienceDefinition), AudienceTypeEnum? audienceType = default(AudienceTypeEnum?), AudienceOptions options = default(AudienceOptions))
+        public CreateAudienceAlphaInput(string name = default(string), bool enabled = default(bool), string description = default(string), AudienceDefinition definition = default(AudienceDefinition), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceOptions options = default(AudienceOptions))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -87,9 +87,9 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("definition is a required property for CreateAudienceAlphaInput and cannot be null");
             }
             this.Definition = definition;
+            this.AudienceType = audienceType;
             this.Enabled = enabled;
             this.Description = description;
-            this.AudienceType = audienceType;
             this.Options = options;
         }
 

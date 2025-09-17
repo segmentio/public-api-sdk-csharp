@@ -36,13 +36,11 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AudienceOptions" /> class.
         /// </summary>
         /// <param name="includeHistoricalData">Determines whether data prior to the audience being created is included when determining audience membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true..</param>
-        /// <param name="includeAnonymousUsers">Determines whether anonymous users should be included when determining audience membership..</param>
         /// <param name="filterByExternalIds">The set of profile external identifiers being used to determine audience membership. Profiles will only be considered for audience membership if the profile has at least one external id whose key matches a value in this set..</param>
         /// <param name="backfillEventDataDays">If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership..</param>
-        public AudienceOptions(bool includeHistoricalData = default(bool), bool includeAnonymousUsers = default(bool), List<string> filterByExternalIds = default(List<string>), decimal backfillEventDataDays = default(decimal))
+        public AudienceOptions(bool includeHistoricalData = default(bool), List<string> filterByExternalIds = default(List<string>), decimal backfillEventDataDays = default(decimal))
         {
             this.IncludeHistoricalData = includeHistoricalData;
-            this.IncludeAnonymousUsers = includeAnonymousUsers;
             this.FilterByExternalIds = filterByExternalIds;
             this.BackfillEventDataDays = backfillEventDataDays;
         }
@@ -53,13 +51,6 @@ namespace Segment.PublicApi.Model
         /// <value>Determines whether data prior to the audience being created is included when determining audience membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true.</value>
         [DataMember(Name = "includeHistoricalData", EmitDefaultValue = true)]
         public bool IncludeHistoricalData { get; set; }
-
-        /// <summary>
-        /// Determines whether anonymous users should be included when determining audience membership.
-        /// </summary>
-        /// <value>Determines whether anonymous users should be included when determining audience membership.</value>
-        [DataMember(Name = "includeAnonymousUsers", EmitDefaultValue = true)]
-        public bool IncludeAnonymousUsers { get; set; }
 
         /// <summary>
         /// The set of profile external identifiers being used to determine audience membership. Profiles will only be considered for audience membership if the profile has at least one external id whose key matches a value in this set.
@@ -84,7 +75,6 @@ namespace Segment.PublicApi.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class AudienceOptions {\n");
             sb.Append("  IncludeHistoricalData: ").Append(IncludeHistoricalData).Append("\n");
-            sb.Append("  IncludeAnonymousUsers: ").Append(IncludeAnonymousUsers).Append("\n");
             sb.Append("  FilterByExternalIds: ").Append(FilterByExternalIds).Append("\n");
             sb.Append("  BackfillEventDataDays: ").Append(BackfillEventDataDays).Append("\n");
             sb.Append("}\n");
@@ -127,10 +117,6 @@ namespace Segment.PublicApi.Model
                     this.IncludeHistoricalData.Equals(input.IncludeHistoricalData)
                 ) && 
                 (
-                    this.IncludeAnonymousUsers == input.IncludeAnonymousUsers ||
-                    this.IncludeAnonymousUsers.Equals(input.IncludeAnonymousUsers)
-                ) && 
-                (
                     this.FilterByExternalIds == input.FilterByExternalIds ||
                     this.FilterByExternalIds != null &&
                     input.FilterByExternalIds != null &&
@@ -152,7 +138,6 @@ namespace Segment.PublicApi.Model
             {
                 int hashCode = 41;
                 hashCode = (hashCode * 59) + this.IncludeHistoricalData.GetHashCode();
-                hashCode = (hashCode * 59) + this.IncludeAnonymousUsers.GetHashCode();
                 if (this.FilterByExternalIds != null)
                 {
                     hashCode = (hashCode * 59) + this.FilterByExternalIds.GetHashCode();

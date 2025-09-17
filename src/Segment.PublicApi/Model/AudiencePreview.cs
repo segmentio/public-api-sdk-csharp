@@ -114,7 +114,7 @@ namespace Segment.PublicApi.Model
         /// <param name="results">Sampled result membership for the audience preview. Only has a value if the status is &#39;COMPLETED&#39;..</param>
         /// <param name="size">size.</param>
         /// <param name="failureReason">Explanation of why the audience preview failed. Only has a value if status is &#39;FAILED&#39;..</param>
-        public AudiencePreview(string id = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceDefinitionWithoutType definition = default(AudienceDefinitionWithoutType), ReadAudiencePreviewOptions options = default(ReadAudiencePreviewOptions), StatusEnum status = default(StatusEnum), List<AudiencePreviewResult> results = default(List<AudiencePreviewResult>), AudienceSize size = default(AudienceSize), string failureReason = default(string))
+        public AudiencePreview(string id = default(string), AudienceTypeEnum audienceType = default(AudienceTypeEnum), AudienceDefinition definition = default(AudienceDefinition), ReadAudiencePreviewOptions options = default(ReadAudiencePreviewOptions), StatusEnum status = default(StatusEnum), List<AudiencePreviewResult> results = default(List<AudiencePreviewResult>), AudienceSize size = default(AudienceSize), string failureReason = default(string))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -152,7 +152,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Definition
         /// </summary>
         [DataMember(Name = "definition", IsRequired = true, EmitDefaultValue = true)]
-        public AudienceDefinitionWithoutType Definition { get; set; }
+        public AudienceDefinition Definition { get; set; }
 
         /// <summary>
         /// Gets or Sets Options

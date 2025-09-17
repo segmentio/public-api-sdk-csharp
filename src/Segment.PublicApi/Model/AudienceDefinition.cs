@@ -33,33 +33,6 @@ namespace Segment.PublicApi.Model
     public partial class AudienceDefinition : IEquatable<AudienceDefinition>, IValidatableObject
     {
         /// <summary>
-        /// The underlying data type being segmented for this audience.  Possible values: users, accounts.
-        /// </summary>
-        /// <value>The underlying data type being segmented for this audience.  Possible values: users, accounts.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum TypeEnum
-        {
-            /// <summary>
-            /// Enum ACCOUNTS for value: ACCOUNTS
-            /// </summary>
-            [EnumMember(Value = "ACCOUNTS")]
-            ACCOUNTS = 1,
-
-            /// <summary>
-            /// Enum USERS for value: USERS
-            /// </summary>
-            [EnumMember(Value = "USERS")]
-            USERS = 2
-        }
-
-
-        /// <summary>
-        /// The underlying data type being segmented for this audience.  Possible values: users, accounts.
-        /// </summary>
-        /// <value>The underlying data type being segmented for this audience.  Possible values: users, accounts.</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TypeEnum? Type { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -67,10 +40,9 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
         /// </summary>
-        /// <param name="type">The underlying data type being segmented for this audience.  Possible values: users, accounts..</param>
         /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
         /// <param name="targetEntity">The target entity slug..</param>
-        public AudienceDefinition(TypeEnum? type = default(TypeEnum?), string query = default(string), string targetEntity = default(string))
+        public AudienceDefinition(string query = default(string), string targetEntity = default(string))
         {
             // to ensure "query" is required (not null)
             if (query == null)
@@ -78,7 +50,6 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("query is a required property for AudienceDefinition and cannot be null");
             }
             this.Query = query;
-            this.Type = type;
             this.TargetEntity = targetEntity;
         }
 
@@ -104,7 +75,6 @@ namespace Segment.PublicApi.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AudienceDefinition {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Query: ").Append(Query).Append("\n");
             sb.Append("  TargetEntity: ").Append(TargetEntity).Append("\n");
             sb.Append("}\n");
@@ -143,10 +113,6 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
                     this.Query == input.Query ||
                     (this.Query != null &&
                     this.Query.Equals(input.Query))
@@ -167,7 +133,6 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Type.GetHashCode();
                 if (this.Query != null)
                 {
                     hashCode = (hashCode * 59) + this.Query.GetHashCode();
