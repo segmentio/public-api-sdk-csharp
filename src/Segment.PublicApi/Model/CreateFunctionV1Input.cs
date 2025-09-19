@@ -46,22 +46,22 @@ namespace Segment.PublicApi.Model
             DESTINATION = 1,
 
             /// <summary>
-            /// Enum INSERT for value: INSERT
-            /// </summary>
-            [EnumMember(Value = "INSERT")]
-            INSERT = 2,
-
-            /// <summary>
             /// Enum INSERTDESTINATION for value: INSERT_DESTINATION
             /// </summary>
             [EnumMember(Value = "INSERT_DESTINATION")]
-            INSERTDESTINATION = 3,
+            INSERTDESTINATION = 2,
 
             /// <summary>
             /// Enum INSERTSOURCE for value: INSERT_SOURCE
             /// </summary>
             [EnumMember(Value = "INSERT_SOURCE")]
-            INSERTSOURCE = 4,
+            INSERTSOURCE = 3,
+
+            /// <summary>
+            /// Enum INSERTTRANSFORMATION for value: INSERT_TRANSFORMATION
+            /// </summary>
+            [EnumMember(Value = "INSERT_TRANSFORMATION")]
+            INSERTTRANSFORMATION = 4,
 
             /// <summary>
             /// Enum SOURCE for value: SOURCE
