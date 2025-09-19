@@ -27,25 +27,44 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// AddAudienceScheduleToAudience200Response
+    /// Output to List all Destinations from an Audience.
     /// </summary>
-    [DataContract(Name = "addAudienceScheduleToAudience_200_response")]
-    public partial class AddAudienceScheduleToAudience200Response : IEquatable<AddAudienceScheduleToAudience200Response>, IValidatableObject
+    [DataContract(Name = "ListDestinationsFromAudienceAlphaOutput")]
+    public partial class ListDestinationsFromAudienceAlphaOutput : IEquatable<ListDestinationsFromAudienceAlphaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddAudienceScheduleToAudience200Response" /> class.
+        /// Initializes a new instance of the <see cref="ListDestinationsFromAudienceAlphaOutput" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
-        public AddAudienceScheduleToAudience200Response(AddAudienceScheduleToAudienceAlphaOutput data = default(AddAudienceScheduleToAudienceAlphaOutput))
+        [JsonConstructorAttribute]
+        protected ListDestinationsFromAudienceAlphaOutput() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListDestinationsFromAudienceAlphaOutput" /> class.
+        /// </summary>
+        /// <param name="connections">A list of connection results. (required).</param>
+        /// <param name="pagination">pagination.</param>
+        public ListDestinationsFromAudienceAlphaOutput(List<SimpleDestination> connections = default(List<SimpleDestination>), PaginationOutput pagination = default(PaginationOutput))
         {
-            this.Data = data;
+            // to ensure "connections" is required (not null)
+            if (connections == null)
+            {
+                throw new ArgumentNullException("connections is a required property for ListDestinationsFromAudienceAlphaOutput and cannot be null");
+            }
+            this.Connections = connections;
+            this.Pagination = pagination;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// A list of connection results.
         /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public AddAudienceScheduleToAudienceAlphaOutput Data { get; set; }
+        /// <value>A list of connection results.</value>
+        [DataMember(Name = "connections", IsRequired = true, EmitDefaultValue = true)]
+        public List<SimpleDestination> Connections { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pagination
+        /// </summary>
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
+        public PaginationOutput Pagination { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +73,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AddAudienceScheduleToAudience200Response {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class ListDestinationsFromAudienceAlphaOutput {\n");
+            sb.Append("  Connections: ").Append(Connections).Append("\n");
+            sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +96,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddAudienceScheduleToAudience200Response);
+            return this.Equals(input as ListDestinationsFromAudienceAlphaOutput);
         }
 
         /// <summary>
-        /// Returns true if AddAudienceScheduleToAudience200Response instances are equal
+        /// Returns true if ListDestinationsFromAudienceAlphaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of AddAudienceScheduleToAudience200Response to be compared</param>
+        /// <param name="input">Instance of ListDestinationsFromAudienceAlphaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AddAudienceScheduleToAudience200Response input)
+        public bool Equals(ListDestinationsFromAudienceAlphaOutput input)
         {
             if (input == null)
             {
@@ -92,9 +112,15 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.Connections == input.Connections ||
+                    this.Connections != null &&
+                    input.Connections != null &&
+                    this.Connections.SequenceEqual(input.Connections)
+                ) && 
+                (
+                    this.Pagination == input.Pagination ||
+                    (this.Pagination != null &&
+                    this.Pagination.Equals(input.Pagination))
                 );
         }
 
@@ -107,9 +133,13 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
+                if (this.Connections != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Connections.GetHashCode();
+                }
+                if (this.Pagination != null)
+                {
+                    hashCode = (hashCode * 59) + this.Pagination.GetHashCode();
                 }
                 return hashCode;
             }

@@ -138,6 +138,33 @@ namespace Segment.PublicApi.Api
         /// <returns>ApiResponse of ListActivationsFromAudience200Response</returns>
         ApiResponse<ListActivationsFromAudience200Response> ListActivationsFromAudienceWithHttpInfo(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0);
         /// <summary>
+        /// List Destinations from Audience
+        /// </summary>
+        /// <remarks>
+        /// Lists all Destinations from an Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Destinations Listed from Audience&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 50 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="audienceId"></param>
+        /// <param name="pagination">Optional pagination.  This parameter exists in alpha. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ListDestinationsFromAudience200Response</returns>
+        ListDestinationsFromAudience200Response ListDestinationsFromAudience(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0);
+
+        /// <summary>
+        /// List Destinations from Audience
+        /// </summary>
+        /// <remarks>
+        /// Lists all Destinations from an Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Destinations Listed from Audience&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 50 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="audienceId"></param>
+        /// <param name="pagination">Optional pagination.  This parameter exists in alpha. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ListDestinationsFromAudience200Response</returns>
+        ApiResponse<ListDestinationsFromAudience200Response> ListDestinationsFromAudienceWithHttpInfo(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0);
+        /// <summary>
         /// Remove Activation from Audience
         /// </summary>
         /// <remarks>
@@ -320,6 +347,35 @@ namespace Segment.PublicApi.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListActivationsFromAudience200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListActivationsFromAudience200Response>> ListActivationsFromAudienceWithHttpInfoAsync(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// List Destinations from Audience
+        /// </summary>
+        /// <remarks>
+        /// Lists all Destinations from an Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Destinations Listed from Audience&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 50 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="audienceId"></param>
+        /// <param name="pagination">Optional pagination.  This parameter exists in alpha. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListDestinationsFromAudience200Response</returns>
+        System.Threading.Tasks.Task<ListDestinationsFromAudience200Response> ListDestinationsFromAudienceAsync(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// List Destinations from Audience
+        /// </summary>
+        /// <remarks>
+        /// Lists all Destinations from an Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Destinations Listed from Audience&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 50 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="audienceId"></param>
+        /// <param name="pagination">Optional pagination.  This parameter exists in alpha. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListDestinationsFromAudience200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListDestinationsFromAudience200Response>> ListDestinationsFromAudienceWithHttpInfoAsync(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Remove Activation from Audience
         /// </summary>
@@ -1283,6 +1339,194 @@ namespace Segment.PublicApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListActivationsFromAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Destinations from Audience Lists all Destinations from an Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Destinations Listed from Audience&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 50 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="audienceId"></param>
+        /// <param name="pagination">Optional pagination.  This parameter exists in alpha. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ListDestinationsFromAudience200Response</returns>
+        public ListDestinationsFromAudience200Response ListDestinationsFromAudience(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0)
+        {
+            Segment.PublicApi.Client.ApiResponse<ListDestinationsFromAudience200Response> localVarResponse = ListDestinationsFromAudienceWithHttpInfo(spaceId, audienceId, pagination);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Destinations from Audience Lists all Destinations from an Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Destinations Listed from Audience&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 50 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="audienceId"></param>
+        /// <param name="pagination">Optional pagination.  This parameter exists in alpha. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of ListDestinationsFromAudience200Response</returns>
+        public Segment.PublicApi.Client.ApiResponse<ListDestinationsFromAudience200Response> ListDestinationsFromAudienceWithHttpInfo(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling ActivationsApi->ListDestinationsFromAudience");
+            }
+
+            // verify the required parameter 'audienceId' is set
+            if (audienceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'audienceId' when calling ActivationsApi->ListDestinationsFromAudience");
+            }
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("audienceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(audienceId)); // path parameter
+            if (pagination != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "pagination", pagination));
+            }
+
+            localVarRequestOptions.Operation = "ActivationsApi.ListDestinationsFromAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ListDestinationsFromAudience200Response>("/spaces/{spaceId}/audiences/{audienceId}/destination-connections", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDestinationsFromAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List Destinations from Audience Lists all Destinations from an Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Destinations Listed from Audience&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 50 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="audienceId"></param>
+        /// <param name="pagination">Optional pagination.  This parameter exists in alpha. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListDestinationsFromAudience200Response</returns>
+        public async System.Threading.Tasks.Task<ListDestinationsFromAudience200Response> ListDestinationsFromAudienceAsync(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Segment.PublicApi.Client.ApiResponse<ListDestinationsFromAudience200Response> localVarResponse = await ListDestinationsFromAudienceWithHttpInfoAsync(spaceId, audienceId, pagination, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List Destinations from Audience Lists all Destinations from an Audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Destinations Listed from Audience&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 50 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="audienceId"></param>
+        /// <param name="pagination">Optional pagination.  This parameter exists in alpha. (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListDestinationsFromAudience200Response)</returns>
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<ListDestinationsFromAudience200Response>> ListDestinationsFromAudienceWithHttpInfoAsync(string spaceId, string audienceId, PaginationInput? pagination = default(PaginationInput?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling ActivationsApi->ListDestinationsFromAudience");
+            }
+
+            // verify the required parameter 'audienceId' is set
+            if (audienceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'audienceId' when calling ActivationsApi->ListDestinationsFromAudience");
+            }
+
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("audienceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(audienceId)); // path parameter
+            if (pagination != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "pagination", pagination));
+            }
+
+            localVarRequestOptions.Operation = "ActivationsApi.ListDestinationsFromAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListDestinationsFromAudience200Response>("/spaces/{spaceId}/audiences/{audienceId}/destination-connections", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListDestinationsFromAudience", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

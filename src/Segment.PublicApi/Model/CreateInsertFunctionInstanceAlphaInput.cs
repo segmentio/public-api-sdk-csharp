@@ -33,39 +33,6 @@ namespace Segment.PublicApi.Model
     public partial class CreateInsertFunctionInstanceAlphaInput : IEquatable<CreateInsertFunctionInstanceAlphaInput>, IValidatableObject
     {
         /// <summary>
-        /// The Integration type for the insert Function instance.
-        /// </summary>
-        /// <value>The Integration type for the insert Function instance.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum IntegrationTypeEnum
-        {
-            /// <summary>
-            /// Enum DESTINATION for value: DESTINATION
-            /// </summary>
-            [EnumMember(Value = "DESTINATION")]
-            DESTINATION = 1,
-
-            /// <summary>
-            /// Enum JOURNEY for value: JOURNEY
-            /// </summary>
-            [EnumMember(Value = "JOURNEY")]
-            JOURNEY = 2,
-
-            /// <summary>
-            /// Enum SOURCE for value: SOURCE
-            /// </summary>
-            [EnumMember(Value = "SOURCE")]
-            SOURCE = 3
-        }
-
-
-        /// <summary>
-        /// The Integration type for the insert Function instance.
-        /// </summary>
-        /// <value>The Integration type for the insert Function instance.</value>
-        [DataMember(Name = "integrationType", IsRequired = true, EmitDefaultValue = true)]
-        public IntegrationTypeEnum IntegrationType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="CreateInsertFunctionInstanceAlphaInput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -73,13 +40,12 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateInsertFunctionInstanceAlphaInput" /> class.
         /// </summary>
-        /// <param name="functionId">Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_/ifn_ prefix from the id. (required).</param>
+        /// <param name="functionId">Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_ prefix from the id. (required).</param>
         /// <param name="integrationId">The Source or Destination id to be connected. (required).</param>
         /// <param name="enabled">Whether this insert Function instance should be enabled for the Destination..</param>
         /// <param name="name">Defines the display name of the insert Function instance. (required).</param>
         /// <param name="settings">An object that contains settings for this insert Function instance based on the settings present in the insert Function class. (required).</param>
-        /// <param name="integrationType">The Integration type for the insert Function instance. (required).</param>
-        public CreateInsertFunctionInstanceAlphaInput(string functionId = default(string), string integrationId = default(string), bool enabled = default(bool), string name = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), IntegrationTypeEnum integrationType = default(IntegrationTypeEnum))
+        public CreateInsertFunctionInstanceAlphaInput(string functionId = default(string), string integrationId = default(string), bool enabled = default(bool), string name = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>))
         {
             // to ensure "functionId" is required (not null)
             if (functionId == null)
@@ -105,14 +71,13 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("settings is a required property for CreateInsertFunctionInstanceAlphaInput and cannot be null");
             }
             this.Settings = settings;
-            this.IntegrationType = integrationType;
             this.Enabled = enabled;
         }
 
         /// <summary>
-        /// Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_/ifn_ prefix from the id.
+        /// Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_ prefix from the id.
         /// </summary>
-        /// <value>Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_/ifn_ prefix from the id.</value>
+        /// <value>Insert Function id to which this instance is associated.  Note: Remove the ifnd_/ifns_ prefix from the id.</value>
         [DataMember(Name = "functionId", IsRequired = true, EmitDefaultValue = true)]
         public string FunctionId { get; set; }
 
@@ -157,7 +122,6 @@ namespace Segment.PublicApi.Model
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Settings: ").Append(Settings).Append("\n");
-            sb.Append("  IntegrationType: ").Append(IntegrationType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -217,10 +181,6 @@ namespace Segment.PublicApi.Model
                     this.Settings != null &&
                     input.Settings != null &&
                     this.Settings.SequenceEqual(input.Settings)
-                ) && 
-                (
-                    this.IntegrationType == input.IntegrationType ||
-                    this.IntegrationType.Equals(input.IntegrationType)
                 );
         }
 
@@ -250,7 +210,6 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.Settings.GetHashCode();
                 }
-                hashCode = (hashCode * 59) + this.IntegrationType.GetHashCode();
                 return hashCode;
             }
         }

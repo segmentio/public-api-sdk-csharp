@@ -27,129 +27,140 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// InsertFunctionInstanceAlpha
+    /// SimpleDestination
     /// </summary>
-    [DataContract(Name = "InsertFunctionInstanceAlpha")]
-    public partial class InsertFunctionInstanceAlpha : IEquatable<InsertFunctionInstanceAlpha>, IValidatableObject
+    [DataContract(Name = "SimpleDestination")]
+    public partial class SimpleDestination : IEquatable<SimpleDestination>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InsertFunctionInstanceAlpha" /> class.
+        /// Initializes a new instance of the <see cref="SimpleDestination" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected InsertFunctionInstanceAlpha() { }
+        protected SimpleDestination() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="InsertFunctionInstanceAlpha" /> class.
+        /// Initializes a new instance of the <see cref="SimpleDestination" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="name">name.</param>
-        /// <param name="integrationId">integrationId (required).</param>
-        /// <param name="classId">classId (required).</param>
-        /// <param name="enabled">enabled (required).</param>
-        /// <param name="createdAt">createdAt (required).</param>
-        /// <param name="updatedAt">updatedAt (required).</param>
-        /// <param name="settings">settings (required).</param>
-        /// <param name="encryptedSettings">encryptedSettings (required).</param>
-        public InsertFunctionInstanceAlpha(string id = default(string), string name = default(string), string integrationId = default(string), string classId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), Dictionary<string, Object> encryptedSettings = default(Dictionary<string, Object>))
+        /// <param name="id">The id of the Integration. (required).</param>
+        /// <param name="name">The name of the Destination..</param>
+        /// <param name="sourceId">The Source of the Destination. (required).</param>
+        /// <param name="enabled">Whether the Integration is enabled or not. (required).</param>
+        /// <param name="createdAt">When the Integration connection was created. (required).</param>
+        /// <param name="updatedAt">When the Integration connection was last updated. (required).</param>
+        /// <param name="settings">The Destination settings. (required).</param>
+        /// <param name="destinationId">The Destination id. (required).</param>
+        /// <param name="metadata">metadata.</param>
+        /// <param name="idSync">idSync.</param>
+        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string destinationId = default(string), Metadata metadata = default(Metadata), IDSyncOptions idSync = default(IDSyncOptions))
         {
             // to ensure "id" is required (not null)
             if (id == null)
             {
-                throw new ArgumentNullException("id is a required property for InsertFunctionInstanceAlpha and cannot be null");
+                throw new ArgumentNullException("id is a required property for SimpleDestination and cannot be null");
             }
             this.Id = id;
-            // to ensure "integrationId" is required (not null)
-            if (integrationId == null)
+            // to ensure "sourceId" is required (not null)
+            if (sourceId == null)
             {
-                throw new ArgumentNullException("integrationId is a required property for InsertFunctionInstanceAlpha and cannot be null");
+                throw new ArgumentNullException("sourceId is a required property for SimpleDestination and cannot be null");
             }
-            this.IntegrationId = integrationId;
-            // to ensure "classId" is required (not null)
-            if (classId == null)
-            {
-                throw new ArgumentNullException("classId is a required property for InsertFunctionInstanceAlpha and cannot be null");
-            }
-            this.ClassId = classId;
+            this.SourceId = sourceId;
             this.Enabled = enabled;
             // to ensure "createdAt" is required (not null)
             if (createdAt == null)
             {
-                throw new ArgumentNullException("createdAt is a required property for InsertFunctionInstanceAlpha and cannot be null");
+                throw new ArgumentNullException("createdAt is a required property for SimpleDestination and cannot be null");
             }
             this.CreatedAt = createdAt;
             // to ensure "updatedAt" is required (not null)
             if (updatedAt == null)
             {
-                throw new ArgumentNullException("updatedAt is a required property for InsertFunctionInstanceAlpha and cannot be null");
+                throw new ArgumentNullException("updatedAt is a required property for SimpleDestination and cannot be null");
             }
             this.UpdatedAt = updatedAt;
             // to ensure "settings" is required (not null)
             if (settings == null)
             {
-                throw new ArgumentNullException("settings is a required property for InsertFunctionInstanceAlpha and cannot be null");
+                throw new ArgumentNullException("settings is a required property for SimpleDestination and cannot be null");
             }
             this.Settings = settings;
-            // to ensure "encryptedSettings" is required (not null)
-            if (encryptedSettings == null)
+            // to ensure "destinationId" is required (not null)
+            if (destinationId == null)
             {
-                throw new ArgumentNullException("encryptedSettings is a required property for InsertFunctionInstanceAlpha and cannot be null");
+                throw new ArgumentNullException("destinationId is a required property for SimpleDestination and cannot be null");
             }
-            this.EncryptedSettings = encryptedSettings;
+            this.DestinationId = destinationId;
             this.Name = name;
+            this.Metadata = metadata;
+            this.IdSync = idSync;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// The id of the Integration.
         /// </summary>
+        /// <value>The id of the Integration.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the Destination.
         /// </summary>
+        /// <value>The name of the Destination.</value>
         [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets IntegrationId
+        /// The Source of the Destination.
         /// </summary>
-        [DataMember(Name = "integrationId", IsRequired = true, EmitDefaultValue = true)]
-        public string IntegrationId { get; set; }
+        /// <value>The Source of the Destination.</value>
+        [DataMember(Name = "sourceId", IsRequired = true, EmitDefaultValue = true)]
+        public string SourceId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ClassId
+        /// Whether the Integration is enabled or not.
         /// </summary>
-        [DataMember(Name = "classId", IsRequired = true, EmitDefaultValue = true)]
-        public string ClassId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Enabled
-        /// </summary>
+        /// <value>Whether the Integration is enabled or not.</value>
         [DataMember(Name = "enabled", IsRequired = true, EmitDefaultValue = true)]
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedAt
+        /// When the Integration connection was created.
         /// </summary>
+        /// <value>When the Integration connection was created.</value>
         [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public string CreatedAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets UpdatedAt
+        /// When the Integration connection was last updated.
         /// </summary>
+        /// <value>When the Integration connection was last updated.</value>
         [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
         public string UpdatedAt { get; set; }
 
         /// <summary>
-        /// Gets or Sets Settings
+        /// The Destination settings.
         /// </summary>
+        /// <value>The Destination settings.</value>
         [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Settings { get; set; }
 
         /// <summary>
-        /// Gets or Sets EncryptedSettings
+        /// The Destination id.
         /// </summary>
-        [DataMember(Name = "encryptedSettings", IsRequired = true, EmitDefaultValue = true)]
-        public Dictionary<string, Object> EncryptedSettings { get; set; }
+        /// <value>The Destination id.</value>
+        [DataMember(Name = "destinationId", IsRequired = true, EmitDefaultValue = true)]
+        public string DestinationId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Metadata
+        /// </summary>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public Metadata Metadata { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IdSync
+        /// </summary>
+        [DataMember(Name = "idSync", EmitDefaultValue = false)]
+        public IDSyncOptions IdSync { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -158,16 +169,17 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class InsertFunctionInstanceAlpha {\n");
+            sb.Append("class SimpleDestination {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  IntegrationId: ").Append(IntegrationId).Append("\n");
-            sb.Append("  ClassId: ").Append(ClassId).Append("\n");
+            sb.Append("  SourceId: ").Append(SourceId).Append("\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  Settings: ").Append(Settings).Append("\n");
-            sb.Append("  EncryptedSettings: ").Append(EncryptedSettings).Append("\n");
+            sb.Append("  DestinationId: ").Append(DestinationId).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  IdSync: ").Append(IdSync).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -188,15 +200,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as InsertFunctionInstanceAlpha);
+            return this.Equals(input as SimpleDestination);
         }
 
         /// <summary>
-        /// Returns true if InsertFunctionInstanceAlpha instances are equal
+        /// Returns true if SimpleDestination instances are equal
         /// </summary>
-        /// <param name="input">Instance of InsertFunctionInstanceAlpha to be compared</param>
+        /// <param name="input">Instance of SimpleDestination to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InsertFunctionInstanceAlpha input)
+        public bool Equals(SimpleDestination input)
         {
             if (input == null)
             {
@@ -214,14 +226,9 @@ namespace Segment.PublicApi.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
-                    this.IntegrationId == input.IntegrationId ||
-                    (this.IntegrationId != null &&
-                    this.IntegrationId.Equals(input.IntegrationId))
-                ) && 
-                (
-                    this.ClassId == input.ClassId ||
-                    (this.ClassId != null &&
-                    this.ClassId.Equals(input.ClassId))
+                    this.SourceId == input.SourceId ||
+                    (this.SourceId != null &&
+                    this.SourceId.Equals(input.SourceId))
                 ) && 
                 (
                     this.Enabled == input.Enabled ||
@@ -244,10 +251,19 @@ namespace Segment.PublicApi.Model
                     this.Settings.SequenceEqual(input.Settings)
                 ) && 
                 (
-                    this.EncryptedSettings == input.EncryptedSettings ||
-                    this.EncryptedSettings != null &&
-                    input.EncryptedSettings != null &&
-                    this.EncryptedSettings.SequenceEqual(input.EncryptedSettings)
+                    this.DestinationId == input.DestinationId ||
+                    (this.DestinationId != null &&
+                    this.DestinationId.Equals(input.DestinationId))
+                ) && 
+                (
+                    this.Metadata == input.Metadata ||
+                    (this.Metadata != null &&
+                    this.Metadata.Equals(input.Metadata))
+                ) && 
+                (
+                    this.IdSync == input.IdSync ||
+                    (this.IdSync != null &&
+                    this.IdSync.Equals(input.IdSync))
                 );
         }
 
@@ -268,13 +284,9 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 }
-                if (this.IntegrationId != null)
+                if (this.SourceId != null)
                 {
-                    hashCode = (hashCode * 59) + this.IntegrationId.GetHashCode();
-                }
-                if (this.ClassId != null)
-                {
-                    hashCode = (hashCode * 59) + this.ClassId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.SourceId.GetHashCode();
                 }
                 hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
                 if (this.CreatedAt != null)
@@ -289,9 +301,17 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.Settings.GetHashCode();
                 }
-                if (this.EncryptedSettings != null)
+                if (this.DestinationId != null)
                 {
-                    hashCode = (hashCode * 59) + this.EncryptedSettings.GetHashCode();
+                    hashCode = (hashCode * 59) + this.DestinationId.GetHashCode();
+                }
+                if (this.Metadata != null)
+                {
+                    hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
+                }
+                if (this.IdSync != null)
+                {
+                    hashCode = (hashCode * 59) + this.IdSync.GetHashCode();
                 }
                 return hashCode;
             }

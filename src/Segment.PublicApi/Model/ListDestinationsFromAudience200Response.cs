@@ -27,35 +27,25 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Defines an Create Audience Schedule Output.
+    /// ListDestinationsFromAudience200Response
     /// </summary>
-    [DataContract(Name = "AddAudienceScheduleToAudienceAlphaOutput")]
-    public partial class AddAudienceScheduleToAudienceAlphaOutput : IEquatable<AddAudienceScheduleToAudienceAlphaOutput>, IValidatableObject
+    [DataContract(Name = "listDestinationsFromAudience_200_response")]
+    public partial class ListDestinationsFromAudience200Response : IEquatable<ListDestinationsFromAudience200Response>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddAudienceScheduleToAudienceAlphaOutput" /> class.
+        /// Initializes a new instance of the <see cref="ListDestinationsFromAudience200Response" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected AddAudienceScheduleToAudienceAlphaOutput() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddAudienceScheduleToAudienceAlphaOutput" /> class.
-        /// </summary>
-        /// <param name="audienceSchedule">audienceSchedule (required).</param>
-        public AddAudienceScheduleToAudienceAlphaOutput(AudienceSchedule audienceSchedule = default(AudienceSchedule))
+        /// <param name="data">data.</param>
+        public ListDestinationsFromAudience200Response(ListDestinationsFromAudienceAlphaOutput data = default(ListDestinationsFromAudienceAlphaOutput))
         {
-            // to ensure "audienceSchedule" is required (not null)
-            if (audienceSchedule == null)
-            {
-                throw new ArgumentNullException("audienceSchedule is a required property for AddAudienceScheduleToAudienceAlphaOutput and cannot be null");
-            }
-            this.AudienceSchedule = audienceSchedule;
+            this.Data = data;
         }
 
         /// <summary>
-        /// Gets or Sets AudienceSchedule
+        /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name = "audienceSchedule", IsRequired = true, EmitDefaultValue = true)]
-        public AudienceSchedule AudienceSchedule { get; set; }
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public ListDestinationsFromAudienceAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +54,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AddAudienceScheduleToAudienceAlphaOutput {\n");
-            sb.Append("  AudienceSchedule: ").Append(AudienceSchedule).Append("\n");
+            sb.Append("class ListDestinationsFromAudience200Response {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddAudienceScheduleToAudienceAlphaOutput);
+            return this.Equals(input as ListDestinationsFromAudience200Response);
         }
 
         /// <summary>
-        /// Returns true if AddAudienceScheduleToAudienceAlphaOutput instances are equal
+        /// Returns true if ListDestinationsFromAudience200Response instances are equal
         /// </summary>
-        /// <param name="input">Instance of AddAudienceScheduleToAudienceAlphaOutput to be compared</param>
+        /// <param name="input">Instance of ListDestinationsFromAudience200Response to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AddAudienceScheduleToAudienceAlphaOutput input)
+        public bool Equals(ListDestinationsFromAudience200Response input)
         {
             if (input == null)
             {
@@ -102,9 +92,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.AudienceSchedule == input.AudienceSchedule ||
-                    (this.AudienceSchedule != null &&
-                    this.AudienceSchedule.Equals(input.AudienceSchedule))
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -117,9 +107,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.AudienceSchedule != null)
+                if (this.Data != null)
                 {
-                    hashCode = (hashCode * 59) + this.AudienceSchedule.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
                 return hashCode;
             }

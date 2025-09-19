@@ -27,74 +27,81 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Defines an Create Audience Schedule Input.
+    /// IDSyncOptions
     /// </summary>
-    [DataContract(Name = "AddAudienceScheduleToAudienceAlphaInput")]
-    public partial class AddAudienceScheduleToAudienceAlphaInput : IEquatable<AddAudienceScheduleToAudienceAlphaInput>, IValidatableObject
+    [DataContract(Name = "IDSyncOptions")]
+    public partial class IDSyncOptions : IEquatable<IDSyncOptions>, IValidatableObject
     {
         /// <summary>
-        /// Strategy of the audience schedule (manual, periodic, or specific days).
+        /// Defines TriggerOn
         /// </summary>
-        /// <value>Strategy of the audience schedule (manual, periodic, or specific days).</value>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum StrategyEnum
+        public enum TriggerOnEnum
         {
             /// <summary>
-            /// Enum MANUAL for value: MANUAL
+            /// Enum Any for value: any
             /// </summary>
-            [EnumMember(Value = "MANUAL")]
-            MANUAL = 1,
+            [EnumMember(Value = "any")]
+            Any = 1,
 
             /// <summary>
-            /// Enum PERIODIC for value: PERIODIC
+            /// Enum AudienceExited for value: audience_exited
             /// </summary>
-            [EnumMember(Value = "PERIODIC")]
-            PERIODIC = 2,
+            [EnumMember(Value = "audience_exited")]
+            AudienceExited = 2,
 
             /// <summary>
-            /// Enum SPECIFICDAYS for value: SPECIFIC_DAYS
+            /// Enum AudienceJoined for value: audience_joined
             /// </summary>
-            [EnumMember(Value = "SPECIFIC_DAYS")]
-            SPECIFICDAYS = 3
+            [EnumMember(Value = "audience_joined")]
+            AudienceJoined = 3,
+
+            /// <summary>
+            /// Enum NewExternalIdAdded for value: new_external_id_added
+            /// </summary>
+            [EnumMember(Value = "new_external_id_added")]
+            NewExternalIdAdded = 4
         }
 
-
         /// <summary>
-        /// Strategy of the audience schedule (manual, periodic, or specific days).
-        /// </summary>
-        /// <value>Strategy of the audience schedule (manual, periodic, or specific days).</value>
-        [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
-        public StrategyEnum Strategy { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AddAudienceScheduleToAudienceAlphaInput" /> class.
+        /// Initializes a new instance of the <see cref="IDSyncOptions" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AddAudienceScheduleToAudienceAlphaInput() { }
+        protected IDSyncOptions() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddAudienceScheduleToAudienceAlphaInput" /> class.
+        /// Initializes a new instance of the <see cref="IDSyncOptions" /> class.
         /// </summary>
-        /// <param name="enabled">The enabled status of the schedule to be created. (required).</param>
-        /// <param name="strategy">Strategy of the audience schedule (manual, periodic, or specific days). (required).</param>
-        /// <param name="config">config.</param>
-        public AddAudienceScheduleToAudienceAlphaInput(bool enabled = default(bool), StrategyEnum strategy = default(StrategyEnum), Config config = default(Config))
+        /// <param name="triggerOn">The list of trigger on conditions. (required).</param>
+        /// <param name="ids">The map of identifiers to the config. (required).</param>
+        public IDSyncOptions(List<TriggerOnEnum> triggerOn = default(List<TriggerOnEnum>), Dictionary<string, Object> ids = default(Dictionary<string, Object>))
         {
-            this.Enabled = enabled;
-            this.Strategy = strategy;
-            this.Config = config;
+            // to ensure "triggerOn" is required (not null)
+            if (triggerOn == null)
+            {
+                throw new ArgumentNullException("triggerOn is a required property for IDSyncOptions and cannot be null");
+            }
+            this.TriggerOn = triggerOn;
+            // to ensure "ids" is required (not null)
+            if (ids == null)
+            {
+                throw new ArgumentNullException("ids is a required property for IDSyncOptions and cannot be null");
+            }
+            this.Ids = ids;
         }
 
         /// <summary>
-        /// The enabled status of the schedule to be created.
+        /// The list of trigger on conditions.
         /// </summary>
-        /// <value>The enabled status of the schedule to be created.</value>
-        [DataMember(Name = "enabled", IsRequired = true, EmitDefaultValue = true)]
-        public bool Enabled { get; set; }
+        /// <value>The list of trigger on conditions.</value>
+        [DataMember(Name = "triggerOn", IsRequired = true, EmitDefaultValue = true)]
+        public List<IDSyncOptions.TriggerOnEnum> TriggerOn { get; set; }
 
         /// <summary>
-        /// Gets or Sets Config
+        /// The map of identifiers to the config.
         /// </summary>
-        [DataMember(Name = "config", EmitDefaultValue = true)]
-        public Config Config { get; set; }
+        /// <value>The map of identifiers to the config.</value>
+        [DataMember(Name = "ids", IsRequired = true, EmitDefaultValue = true)]
+        public Dictionary<string, Object> Ids { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -103,10 +110,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AddAudienceScheduleToAudienceAlphaInput {\n");
-            sb.Append("  Enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  Strategy: ").Append(Strategy).Append("\n");
-            sb.Append("  Config: ").Append(Config).Append("\n");
+            sb.Append("class IDSyncOptions {\n");
+            sb.Append("  TriggerOn: ").Append(TriggerOn).Append("\n");
+            sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -127,15 +133,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddAudienceScheduleToAudienceAlphaInput);
+            return this.Equals(input as IDSyncOptions);
         }
 
         /// <summary>
-        /// Returns true if AddAudienceScheduleToAudienceAlphaInput instances are equal
+        /// Returns true if IDSyncOptions instances are equal
         /// </summary>
-        /// <param name="input">Instance of AddAudienceScheduleToAudienceAlphaInput to be compared</param>
+        /// <param name="input">Instance of IDSyncOptions to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AddAudienceScheduleToAudienceAlphaInput input)
+        public bool Equals(IDSyncOptions input)
         {
             if (input == null)
             {
@@ -143,17 +149,16 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Enabled == input.Enabled ||
-                    this.Enabled.Equals(input.Enabled)
+                    this.TriggerOn == input.TriggerOn ||
+                    this.TriggerOn != null &&
+                    input.TriggerOn != null &&
+                    this.TriggerOn.SequenceEqual(input.TriggerOn)
                 ) && 
                 (
-                    this.Strategy == input.Strategy ||
-                    this.Strategy.Equals(input.Strategy)
-                ) && 
-                (
-                    this.Config == input.Config ||
-                    (this.Config != null &&
-                    this.Config.Equals(input.Config))
+                    this.Ids == input.Ids ||
+                    this.Ids != null &&
+                    input.Ids != null &&
+                    this.Ids.SequenceEqual(input.Ids)
                 );
         }
 
@@ -166,11 +171,13 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
-                hashCode = (hashCode * 59) + this.Strategy.GetHashCode();
-                if (this.Config != null)
+                if (this.TriggerOn != null)
                 {
-                    hashCode = (hashCode * 59) + this.Config.GetHashCode();
+                    hashCode = (hashCode * 59) + this.TriggerOn.GetHashCode();
+                }
+                if (this.Ids != null)
+                {
+                    hashCode = (hashCode * 59) + this.Ids.GetHashCode();
                 }
                 return hashCode;
             }
