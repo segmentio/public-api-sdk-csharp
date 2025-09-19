@@ -40,16 +40,17 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleDestination" /> class.
         /// </summary>
-        /// <param name="id">The id of the Destination. (required).</param>
+        /// <param name="id">The id of the Integration. (required).</param>
         /// <param name="name">The name of the Destination..</param>
         /// <param name="sourceId">The Source of the Destination. (required).</param>
-        /// <param name="enabled">Enabled or not. (required).</param>
+        /// <param name="enabled">Whether the Integration is enabled or not. (required).</param>
         /// <param name="createdAt">When the Integration connection was created. (required).</param>
         /// <param name="updatedAt">When the Integration connection was last updated. (required).</param>
         /// <param name="settings">The Destination settings. (required).</param>
+        /// <param name="destinationId">The Destination id. (required).</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="idSync">idSync.</param>
-        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), Metadata metadata = default(Metadata), IDSyncOptions idSync = default(IDSyncOptions))
+        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string destinationId = default(string), Metadata metadata = default(Metadata), IDSyncOptions idSync = default(IDSyncOptions))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -82,15 +83,21 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("settings is a required property for SimpleDestination and cannot be null");
             }
             this.Settings = settings;
+            // to ensure "destinationId" is required (not null)
+            if (destinationId == null)
+            {
+                throw new ArgumentNullException("destinationId is a required property for SimpleDestination and cannot be null");
+            }
+            this.DestinationId = destinationId;
             this.Name = name;
             this.Metadata = metadata;
             this.IdSync = idSync;
         }
 
         /// <summary>
-        /// The id of the Destination.
+        /// The id of the Integration.
         /// </summary>
-        /// <value>The id of the Destination.</value>
+        /// <value>The id of the Integration.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -109,9 +116,9 @@ namespace Segment.PublicApi.Model
         public string SourceId { get; set; }
 
         /// <summary>
-        /// Enabled or not.
+        /// Whether the Integration is enabled or not.
         /// </summary>
-        /// <value>Enabled or not.</value>
+        /// <value>Whether the Integration is enabled or not.</value>
         [DataMember(Name = "enabled", IsRequired = true, EmitDefaultValue = true)]
         public bool Enabled { get; set; }
 
@@ -135,6 +142,13 @@ namespace Segment.PublicApi.Model
         /// <value>The Destination settings.</value>
         [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Settings { get; set; }
+
+        /// <summary>
+        /// The Destination id.
+        /// </summary>
+        /// <value>The Destination id.</value>
+        [DataMember(Name = "destinationId", IsRequired = true, EmitDefaultValue = true)]
+        public string DestinationId { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
@@ -163,6 +177,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  Settings: ").Append(Settings).Append("\n");
+            sb.Append("  DestinationId: ").Append(DestinationId).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  IdSync: ").Append(IdSync).Append("\n");
             sb.Append("}\n");
@@ -236,6 +251,11 @@ namespace Segment.PublicApi.Model
                     this.Settings.SequenceEqual(input.Settings)
                 ) && 
                 (
+                    this.DestinationId == input.DestinationId ||
+                    (this.DestinationId != null &&
+                    this.DestinationId.Equals(input.DestinationId))
+                ) && 
+                (
                     this.Metadata == input.Metadata ||
                     (this.Metadata != null &&
                     this.Metadata.Equals(input.Metadata))
@@ -280,6 +300,10 @@ namespace Segment.PublicApi.Model
                 if (this.Settings != null)
                 {
                     hashCode = (hashCode * 59) + this.Settings.GetHashCode();
+                }
+                if (this.DestinationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.DestinationId.GetHashCode();
                 }
                 if (this.Metadata != null)
                 {
