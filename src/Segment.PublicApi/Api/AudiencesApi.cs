@@ -31,7 +31,7 @@ namespace Segment.PublicApi.Api
         /// Add Audience Schedule to Audience
         /// </summary>
         /// <remarks>
-        /// The ability to configure the run schedule for an Audience is limited to Linked Audiences (for example audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// The ability to configure the run schedule for an Audience is limited to Linked Audiences (audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Api
         /// Add Audience Schedule to Audience
         /// </summary>
         /// <remarks>
-        /// The ability to configure the run schedule for an Audience is limited to Linked Audiences (for example audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// The ability to configure the run schedule for an Audience is limited to Linked Audiences (audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -333,7 +333,7 @@ namespace Segment.PublicApi.Api
         /// Add Audience Schedule to Audience
         /// </summary>
         /// <remarks>
-        /// The ability to configure the run schedule for an Audience is limited to Linked Audiences (for example audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// The ability to configure the run schedule for an Audience is limited to Linked Audiences (audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -348,7 +348,7 @@ namespace Segment.PublicApi.Api
         /// Add Audience Schedule to Audience
         /// </summary>
         /// <remarks>
-        /// The ability to configure the run schedule for an Audience is limited to Linked Audiences (for example audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// The ability to configure the run schedule for an Audience is limited to Linked Audiences (audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -765,7 +765,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Add Audience Schedule to Audience The ability to configure the run schedule for an Audience is limited to Linked Audiences (for example audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Add Audience Schedule to Audience The ability to configure the run schedule for an Audience is limited to Linked Audiences (audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -780,7 +780,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Add Audience Schedule to Audience The ability to configure the run schedule for an Audience is limited to Linked Audiences (for example audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Add Audience Schedule to Audience The ability to configure the run schedule for an Audience is limited to Linked Audiences (audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -861,7 +861,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Add Audience Schedule to Audience The ability to configure the run schedule for an Audience is limited to Linked Audiences (for example audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Add Audience Schedule to Audience The ability to configure the run schedule for an Audience is limited to Linked Audiences (audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
@@ -877,7 +877,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Add Audience Schedule to Audience The ability to configure the run schedule for an Audience is limited to Linked Audiences (for example audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Add Audience Schedule to Audience The ability to configure the run schedule for an Audience is limited to Linked Audiences (audienceType &#x3D; LINKED).  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
