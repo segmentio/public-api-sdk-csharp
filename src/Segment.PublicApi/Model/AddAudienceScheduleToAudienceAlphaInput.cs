@@ -73,22 +73,13 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AddAudienceScheduleToAudienceAlphaInput" /> class.
         /// </summary>
-        /// <param name="enabled">The enabled status of the schedule to be created. (required).</param>
         /// <param name="strategy">Strategy of the audience schedule (manual, periodic, or specific days). (required).</param>
         /// <param name="config">config.</param>
-        public AddAudienceScheduleToAudienceAlphaInput(bool enabled = default(bool), StrategyEnum strategy = default(StrategyEnum), Config config = default(Config))
+        public AddAudienceScheduleToAudienceAlphaInput(StrategyEnum strategy = default(StrategyEnum), Config config = default(Config))
         {
-            this.Enabled = enabled;
             this.Strategy = strategy;
             this.Config = config;
         }
-
-        /// <summary>
-        /// The enabled status of the schedule to be created.
-        /// </summary>
-        /// <value>The enabled status of the schedule to be created.</value>
-        [DataMember(Name = "enabled", IsRequired = true, EmitDefaultValue = true)]
-        public bool Enabled { get; set; }
 
         /// <summary>
         /// Gets or Sets Config
@@ -104,7 +95,6 @@ namespace Segment.PublicApi.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AddAudienceScheduleToAudienceAlphaInput {\n");
-            sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  Strategy: ").Append(Strategy).Append("\n");
             sb.Append("  Config: ").Append(Config).Append("\n");
             sb.Append("}\n");
@@ -143,10 +133,6 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Enabled == input.Enabled ||
-                    this.Enabled.Equals(input.Enabled)
-                ) && 
-                (
                     this.Strategy == input.Strategy ||
                     this.Strategy.Equals(input.Strategy)
                 ) && 
@@ -166,7 +152,6 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Enabled.GetHashCode();
                 hashCode = (hashCode * 59) + this.Strategy.GetHashCode();
                 if (this.Config != null)
                 {
