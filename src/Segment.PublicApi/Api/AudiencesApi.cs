@@ -28,6 +28,33 @@ namespace Segment.PublicApi.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Add Audience Schedule to Audience
+        /// </summary>
+        /// <remarks>
+        /// Creates a schedule for the given audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="addAudienceScheduleToAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AddAudienceScheduleToAudience200Response</returns>
+        AddAudienceScheduleToAudience200Response AddAudienceScheduleToAudience(string spaceId, string id, AddAudienceScheduleToAudienceAlphaInput addAudienceScheduleToAudienceAlphaInput, int operationIndex = 0);
+
+        /// <summary>
+        /// Add Audience Schedule to Audience
+        /// </summary>
+        /// <remarks>
+        /// Creates a schedule for the given audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="addAudienceScheduleToAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AddAudienceScheduleToAudience200Response</returns>
+        ApiResponse<AddAudienceScheduleToAudience200Response> AddAudienceScheduleToAudienceWithHttpInfo(string spaceId, string id, AddAudienceScheduleToAudienceAlphaInput addAudienceScheduleToAudienceAlphaInput, int operationIndex = 0);
+        /// <summary>
         /// Create Audience
         /// </summary>
         /// <remarks>
@@ -293,6 +320,35 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateAudienceForSpace200Response</returns>
         ApiResponse<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceWithHttpInfo(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0);
+        /// <summary>
+        /// Update Audience Schedule for Audience
+        /// </summary>
+        /// <remarks>
+        /// Updates an audience schedule for the given audience id.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="updateAudienceScheduleForAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>UpdateAudienceScheduleForAudience200Response</returns>
+        UpdateAudienceScheduleForAudience200Response UpdateAudienceScheduleForAudience(string spaceId, string id, string scheduleId, UpdateAudienceScheduleForAudienceAlphaInput updateAudienceScheduleForAudienceAlphaInput, int operationIndex = 0);
+
+        /// <summary>
+        /// Update Audience Schedule for Audience
+        /// </summary>
+        /// <remarks>
+        /// Updates an audience schedule for the given audience id.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="updateAudienceScheduleForAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of UpdateAudienceScheduleForAudience200Response</returns>
+        ApiResponse<UpdateAudienceScheduleForAudience200Response> UpdateAudienceScheduleForAudienceWithHttpInfo(string spaceId, string id, string scheduleId, UpdateAudienceScheduleForAudienceAlphaInput updateAudienceScheduleForAudienceAlphaInput, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -302,6 +358,35 @@ namespace Segment.PublicApi.Api
     public interface IAudiencesApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Add Audience Schedule to Audience
+        /// </summary>
+        /// <remarks>
+        /// Creates a schedule for the given audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="addAudienceScheduleToAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AddAudienceScheduleToAudience200Response</returns>
+        System.Threading.Tasks.Task<AddAudienceScheduleToAudience200Response> AddAudienceScheduleToAudienceAsync(string spaceId, string id, AddAudienceScheduleToAudienceAlphaInput addAudienceScheduleToAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Add Audience Schedule to Audience
+        /// </summary>
+        /// <remarks>
+        /// Creates a schedule for the given audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="addAudienceScheduleToAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AddAudienceScheduleToAudience200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AddAudienceScheduleToAudience200Response>> AddAudienceScheduleToAudienceWithHttpInfoAsync(string spaceId, string id, AddAudienceScheduleToAudienceAlphaInput addAudienceScheduleToAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Create Audience
         /// </summary>
@@ -588,6 +673,37 @@ namespace Segment.PublicApi.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateAudienceForSpace200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateAudienceForSpace200Response>> UpdateAudienceForSpaceWithHttpInfoAsync(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Update Audience Schedule for Audience
+        /// </summary>
+        /// <remarks>
+        /// Updates an audience schedule for the given audience id.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="updateAudienceScheduleForAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UpdateAudienceScheduleForAudience200Response</returns>
+        System.Threading.Tasks.Task<UpdateAudienceScheduleForAudience200Response> UpdateAudienceScheduleForAudienceAsync(string spaceId, string id, string scheduleId, UpdateAudienceScheduleForAudienceAlphaInput updateAudienceScheduleForAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Update Audience Schedule for Audience
+        /// </summary>
+        /// <remarks>
+        /// Updates an audience schedule for the given audience id.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="updateAudienceScheduleForAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UpdateAudienceScheduleForAudience200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateAudienceScheduleForAudience200Response>> UpdateAudienceScheduleForAudienceWithHttpInfoAsync(string spaceId, string id, string scheduleId, UpdateAudienceScheduleForAudienceAlphaInput updateAudienceScheduleForAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -706,6 +822,202 @@ namespace Segment.PublicApi.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Add Audience Schedule to Audience Creates a schedule for the given audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="addAudienceScheduleToAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>AddAudienceScheduleToAudience200Response</returns>
+        public AddAudienceScheduleToAudience200Response AddAudienceScheduleToAudience(string spaceId, string id, AddAudienceScheduleToAudienceAlphaInput addAudienceScheduleToAudienceAlphaInput, int operationIndex = 0)
+        {
+            Segment.PublicApi.Client.ApiResponse<AddAudienceScheduleToAudience200Response> localVarResponse = AddAudienceScheduleToAudienceWithHttpInfo(spaceId, id, addAudienceScheduleToAudienceAlphaInput);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add Audience Schedule to Audience Creates a schedule for the given audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="addAudienceScheduleToAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of AddAudienceScheduleToAudience200Response</returns>
+        public Segment.PublicApi.Client.ApiResponse<AddAudienceScheduleToAudience200Response> AddAudienceScheduleToAudienceWithHttpInfo(string spaceId, string id, AddAudienceScheduleToAudienceAlphaInput addAudienceScheduleToAudienceAlphaInput, int operationIndex = 0)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->AddAudienceScheduleToAudience");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->AddAudienceScheduleToAudience");
+            }
+
+            // verify the required parameter 'addAudienceScheduleToAudienceAlphaInput' is set
+            if (addAudienceScheduleToAudienceAlphaInput == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'addAudienceScheduleToAudienceAlphaInput' when calling AudiencesApi->AddAudienceScheduleToAudience");
+            }
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1alpha+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = addAudienceScheduleToAudienceAlphaInput;
+
+            localVarRequestOptions.Operation = "AudiencesApi.AddAudienceScheduleToAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<AddAudienceScheduleToAudience200Response>("/spaces/{spaceId}/audiences/{id}/schedules", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddAudienceScheduleToAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add Audience Schedule to Audience Creates a schedule for the given audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="addAudienceScheduleToAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AddAudienceScheduleToAudience200Response</returns>
+        public async System.Threading.Tasks.Task<AddAudienceScheduleToAudience200Response> AddAudienceScheduleToAudienceAsync(string spaceId, string id, AddAudienceScheduleToAudienceAlphaInput addAudienceScheduleToAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Segment.PublicApi.Client.ApiResponse<AddAudienceScheduleToAudience200Response> localVarResponse = await AddAudienceScheduleToAudienceWithHttpInfoAsync(spaceId, id, addAudienceScheduleToAudienceAlphaInput, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add Audience Schedule to Audience Creates a schedule for the given audience.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="addAudienceScheduleToAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AddAudienceScheduleToAudience200Response)</returns>
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<AddAudienceScheduleToAudience200Response>> AddAudienceScheduleToAudienceWithHttpInfoAsync(string spaceId, string id, AddAudienceScheduleToAudienceAlphaInput addAudienceScheduleToAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->AddAudienceScheduleToAudience");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->AddAudienceScheduleToAudience");
+            }
+
+            // verify the required parameter 'addAudienceScheduleToAudienceAlphaInput' is set
+            if (addAudienceScheduleToAudienceAlphaInput == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'addAudienceScheduleToAudienceAlphaInput' when calling AudiencesApi->AddAudienceScheduleToAudience");
+            }
+
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1alpha+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = addAudienceScheduleToAudienceAlphaInput;
+
+            localVarRequestOptions.Operation = "AudiencesApi.AddAudienceScheduleToAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<AddAudienceScheduleToAudience200Response>("/spaces/{spaceId}/audiences/{id}/schedules", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddAudienceScheduleToAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -2583,6 +2895,220 @@ namespace Segment.PublicApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateAudienceForSpace", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Audience Schedule for Audience Updates an audience schedule for the given audience id.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="updateAudienceScheduleForAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>UpdateAudienceScheduleForAudience200Response</returns>
+        public UpdateAudienceScheduleForAudience200Response UpdateAudienceScheduleForAudience(string spaceId, string id, string scheduleId, UpdateAudienceScheduleForAudienceAlphaInput updateAudienceScheduleForAudienceAlphaInput, int operationIndex = 0)
+        {
+            Segment.PublicApi.Client.ApiResponse<UpdateAudienceScheduleForAudience200Response> localVarResponse = UpdateAudienceScheduleForAudienceWithHttpInfo(spaceId, id, scheduleId, updateAudienceScheduleForAudienceAlphaInput);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Audience Schedule for Audience Updates an audience schedule for the given audience id.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="updateAudienceScheduleForAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of UpdateAudienceScheduleForAudience200Response</returns>
+        public Segment.PublicApi.Client.ApiResponse<UpdateAudienceScheduleForAudience200Response> UpdateAudienceScheduleForAudienceWithHttpInfo(string spaceId, string id, string scheduleId, UpdateAudienceScheduleForAudienceAlphaInput updateAudienceScheduleForAudienceAlphaInput, int operationIndex = 0)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->UpdateAudienceScheduleForAudience");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->UpdateAudienceScheduleForAudience");
+            }
+
+            // verify the required parameter 'scheduleId' is set
+            if (scheduleId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'scheduleId' when calling AudiencesApi->UpdateAudienceScheduleForAudience");
+            }
+
+            // verify the required parameter 'updateAudienceScheduleForAudienceAlphaInput' is set
+            if (updateAudienceScheduleForAudienceAlphaInput == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'updateAudienceScheduleForAudienceAlphaInput' when calling AudiencesApi->UpdateAudienceScheduleForAudience");
+            }
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1alpha+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scheduleId", Segment.PublicApi.Client.ClientUtils.ParameterToString(scheduleId)); // path parameter
+            localVarRequestOptions.Data = updateAudienceScheduleForAudienceAlphaInput;
+
+            localVarRequestOptions.Operation = "AudiencesApi.UpdateAudienceScheduleForAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<UpdateAudienceScheduleForAudience200Response>("/spaces/{spaceId}/audiences/{id}/schedules/{scheduleId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateAudienceScheduleForAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Audience Schedule for Audience Updates an audience schedule for the given audience id.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="updateAudienceScheduleForAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UpdateAudienceScheduleForAudience200Response</returns>
+        public async System.Threading.Tasks.Task<UpdateAudienceScheduleForAudience200Response> UpdateAudienceScheduleForAudienceAsync(string spaceId, string id, string scheduleId, UpdateAudienceScheduleForAudienceAlphaInput updateAudienceScheduleForAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Segment.PublicApi.Client.ApiResponse<UpdateAudienceScheduleForAudience200Response> localVarResponse = await UpdateAudienceScheduleForAudienceWithHttpInfoAsync(spaceId, id, scheduleId, updateAudienceScheduleForAudienceAlphaInput, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update Audience Schedule for Audience Updates an audience schedule for the given audience id.  • This endpoint is in **Alpha** testing.  Please submit any feedback by sending an email to friends@segment.com.   • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="updateAudienceScheduleForAudienceAlphaInput"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UpdateAudienceScheduleForAudience200Response)</returns>
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<UpdateAudienceScheduleForAudience200Response>> UpdateAudienceScheduleForAudienceWithHttpInfoAsync(string spaceId, string id, string scheduleId, UpdateAudienceScheduleForAudienceAlphaInput updateAudienceScheduleForAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->UpdateAudienceScheduleForAudience");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->UpdateAudienceScheduleForAudience");
+            }
+
+            // verify the required parameter 'scheduleId' is set
+            if (scheduleId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'scheduleId' when calling AudiencesApi->UpdateAudienceScheduleForAudience");
+            }
+
+            // verify the required parameter 'updateAudienceScheduleForAudienceAlphaInput' is set
+            if (updateAudienceScheduleForAudienceAlphaInput == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'updateAudienceScheduleForAudienceAlphaInput' when calling AudiencesApi->UpdateAudienceScheduleForAudience");
+            }
+
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1alpha+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("scheduleId", Segment.PublicApi.Client.ClientUtils.ParameterToString(scheduleId)); // path parameter
+            localVarRequestOptions.Data = updateAudienceScheduleForAudienceAlphaInput;
+
+            localVarRequestOptions.Operation = "AudiencesApi.UpdateAudienceScheduleForAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateAudienceScheduleForAudience200Response>("/spaces/{spaceId}/audiences/{id}/schedules/{scheduleId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateAudienceScheduleForAudience", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
