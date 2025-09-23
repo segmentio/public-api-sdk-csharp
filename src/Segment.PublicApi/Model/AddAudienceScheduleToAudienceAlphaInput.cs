@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Defines a Create Audience Schedule Input.
+    /// Defines an input for creating an audience schedule.
     /// </summary>
     [DataContract(Name = "AddAudienceScheduleToAudienceAlphaInput")]
     public partial class AddAudienceScheduleToAudienceAlphaInput : IEquatable<AddAudienceScheduleToAudienceAlphaInput>, IValidatableObject
