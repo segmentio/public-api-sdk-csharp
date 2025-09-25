@@ -152,7 +152,7 @@ namespace Segment.PublicApi.Api
         /// List Regulations from Source
         /// </summary>
         /// <remarks>
-        /// Lists all Source-scoped regulations.
+        /// Lists all Source-scoped regulations.    Please note: List regulations for Source only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -167,7 +167,7 @@ namespace Segment.PublicApi.Api
         /// List Regulations from Source
         /// </summary>
         /// <remarks>
-        /// Lists all Source-scoped regulations.
+        /// Lists all Source-scoped regulations.    Please note: List regulations for Source only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -204,7 +204,7 @@ namespace Segment.PublicApi.Api
         /// List Workspace Regulations
         /// </summary>
         /// <remarks>
-        /// Lists all Workspace-scoped regulations.
+        /// Lists all Workspace-scoped regulations.    Please note: List Workspace regulations only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">The status on which to filter the returned regulations.  This parameter exists in v1. (optional)</param>
@@ -218,7 +218,7 @@ namespace Segment.PublicApi.Api
         /// List Workspace Regulations
         /// </summary>
         /// <remarks>
-        /// Lists all Workspace-scoped regulations.
+        /// Lists all Workspace-scoped regulations.    Please note: List Workspace regulations only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">The status on which to filter the returned regulations.  This parameter exists in v1. (optional)</param>
@@ -371,7 +371,7 @@ namespace Segment.PublicApi.Api
         /// List Regulations from Source
         /// </summary>
         /// <remarks>
-        /// Lists all Source-scoped regulations.
+        /// Lists all Source-scoped regulations.    Please note: List regulations for Source only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -387,7 +387,7 @@ namespace Segment.PublicApi.Api
         /// List Regulations from Source
         /// </summary>
         /// <remarks>
-        /// Lists all Source-scoped regulations.
+        /// Lists all Source-scoped regulations.    Please note: List regulations for Source only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -427,7 +427,7 @@ namespace Segment.PublicApi.Api
         /// List Workspace Regulations
         /// </summary>
         /// <remarks>
-        /// Lists all Workspace-scoped regulations.
+        /// Lists all Workspace-scoped regulations.    Please note: List Workspace regulations only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">The status on which to filter the returned regulations.  This parameter exists in v1. (optional)</param>
@@ -442,7 +442,7 @@ namespace Segment.PublicApi.Api
         /// List Workspace Regulations
         /// </summary>
         /// <remarks>
-        /// Lists all Workspace-scoped regulations.
+        /// Lists all Workspace-scoped regulations.    Please note: List Workspace regulations only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">The status on which to filter the returned regulations.  This parameter exists in v1. (optional)</param>
@@ -1447,7 +1447,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Regulations from Source Lists all Source-scoped regulations.
+        /// List Regulations from Source Lists all Source-scoped regulations.    Please note: List regulations for Source only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -1463,7 +1463,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Regulations from Source Lists all Source-scoped regulations.
+        /// List Regulations from Source Lists all Source-scoped regulations.    Please note: List regulations for Source only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -1544,7 +1544,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Regulations from Source Lists all Source-scoped regulations.
+        /// List Regulations from Source Lists all Source-scoped regulations.    Please note: List regulations for Source only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -1561,7 +1561,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Regulations from Source Lists all Source-scoped regulations.
+        /// List Regulations from Source Lists all Source-scoped regulations.    Please note: List regulations for Source only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sourceId"></param>
@@ -1801,7 +1801,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Workspace Regulations Lists all Workspace-scoped regulations.
+        /// List Workspace Regulations Lists all Workspace-scoped regulations.    Please note: List Workspace regulations only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">The status on which to filter the returned regulations.  This parameter exists in v1. (optional)</param>
@@ -1816,7 +1816,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Workspace Regulations Lists all Workspace-scoped regulations.
+        /// List Workspace Regulations Lists all Workspace-scoped regulations.    Please note: List Workspace regulations only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">The status on which to filter the returned regulations.  This parameter exists in v1. (optional)</param>
@@ -1889,7 +1889,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Workspace Regulations Lists all Workspace-scoped regulations.
+        /// List Workspace Regulations Lists all Workspace-scoped regulations.    Please note: List Workspace regulations only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">The status on which to filter the returned regulations.  This parameter exists in v1. (optional)</param>
@@ -1905,7 +1905,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Workspace Regulations Lists all Workspace-scoped regulations.
+        /// List Workspace Regulations Lists all Workspace-scoped regulations.    Please note: List Workspace regulations only returns deletion requests from the past 90 days. Deletion requests older than 90 days are not retained and will result in 404 resource not found.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">The status on which to filter the returned regulations.  This parameter exists in v1. (optional)</param>
