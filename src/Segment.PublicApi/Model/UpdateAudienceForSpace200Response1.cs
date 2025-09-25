@@ -27,45 +27,25 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// AudienceDefinition
+    /// UpdateAudienceForSpace200Response1
     /// </summary>
-    [DataContract(Name = "AudienceDefinition")]
-    public partial class AudienceDefinition : IEquatable<AudienceDefinition>, IValidatableObject
+    [DataContract(Name = "updateAudienceForSpace_200_response_1")]
+    public partial class UpdateAudienceForSpace200Response1 : IEquatable<UpdateAudienceForSpace200Response1>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
+        /// Initializes a new instance of the <see cref="UpdateAudienceForSpace200Response1" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected AudienceDefinition() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
-        /// </summary>
-        /// <param name="targetEntity">The target entity slug, required in creating a linked audience..</param>
-        /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
-        public AudienceDefinition(string targetEntity = default(string), string query = default(string))
+        /// <param name="data">data.</param>
+        public UpdateAudienceForSpace200Response1(UpdateAudienceForSpaceAlphaOutput data = default(UpdateAudienceForSpaceAlphaOutput))
         {
-            // to ensure "query" is required (not null)
-            if (query == null)
-            {
-                throw new ArgumentNullException("query is a required property for AudienceDefinition and cannot be null");
-            }
-            this.Query = query;
-            this.TargetEntity = targetEntity;
+            this.Data = data;
         }
 
         /// <summary>
-        /// The target entity slug, required in creating a linked audience.
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>The target entity slug, required in creating a linked audience.</value>
-        [DataMember(Name = "targetEntity", EmitDefaultValue = false)]
-        public string TargetEntity { get; set; }
-
-        /// <summary>
-        /// The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).
-        /// </summary>
-        /// <value>The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).</value>
-        [DataMember(Name = "query", IsRequired = true, EmitDefaultValue = true)]
-        public string Query { get; set; }
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public UpdateAudienceForSpaceAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,9 +54,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AudienceDefinition {\n");
-            sb.Append("  TargetEntity: ").Append(TargetEntity).Append("\n");
-            sb.Append("  Query: ").Append(Query).Append("\n");
+            sb.Append("class UpdateAudienceForSpace200Response1 {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudienceDefinition);
+            return this.Equals(input as UpdateAudienceForSpace200Response1);
         }
 
         /// <summary>
-        /// Returns true if AudienceDefinition instances are equal
+        /// Returns true if UpdateAudienceForSpace200Response1 instances are equal
         /// </summary>
-        /// <param name="input">Instance of AudienceDefinition to be compared</param>
+        /// <param name="input">Instance of UpdateAudienceForSpace200Response1 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AudienceDefinition input)
+        public bool Equals(UpdateAudienceForSpace200Response1 input)
         {
             if (input == null)
             {
@@ -113,14 +92,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.TargetEntity == input.TargetEntity ||
-                    (this.TargetEntity != null &&
-                    this.TargetEntity.Equals(input.TargetEntity))
-                ) && 
-                (
-                    this.Query == input.Query ||
-                    (this.Query != null &&
-                    this.Query.Equals(input.Query))
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -133,13 +107,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TargetEntity != null)
+                if (this.Data != null)
                 {
-                    hashCode = (hashCode * 59) + this.TargetEntity.GetHashCode();
-                }
-                if (this.Query != null)
-                {
-                    hashCode = (hashCode * 59) + this.Query.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
                 return hashCode;
             }

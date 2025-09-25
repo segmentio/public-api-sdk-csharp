@@ -36,7 +36,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="UpdateAudienceForSpace200Response" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public UpdateAudienceForSpace200Response(UpdateAudienceForSpaceAlphaOutput data = default(UpdateAudienceForSpaceAlphaOutput))
+        public UpdateAudienceForSpace200Response(UpdateAudienceForSpaceBetaOutput data = default(UpdateAudienceForSpaceBetaOutput))
         {
             this.Data = data;
         }
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public UpdateAudienceForSpaceAlphaOutput Data { get; set; }
+        public UpdateAudienceForSpaceBetaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

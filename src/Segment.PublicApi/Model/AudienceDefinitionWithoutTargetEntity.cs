@@ -27,38 +27,29 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// AudienceDefinition
+    /// AudienceDefinitionWithoutTargetEntity
     /// </summary>
-    [DataContract(Name = "AudienceDefinition")]
-    public partial class AudienceDefinition : IEquatable<AudienceDefinition>, IValidatableObject
+    [DataContract(Name = "AudienceDefinitionWithoutTargetEntity")]
+    public partial class AudienceDefinitionWithoutTargetEntity : IEquatable<AudienceDefinitionWithoutTargetEntity>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
+        /// Initializes a new instance of the <see cref="AudienceDefinitionWithoutTargetEntity" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AudienceDefinition() { }
+        protected AudienceDefinitionWithoutTargetEntity() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
+        /// Initializes a new instance of the <see cref="AudienceDefinitionWithoutTargetEntity" /> class.
         /// </summary>
-        /// <param name="targetEntity">The target entity slug, required in creating a linked audience..</param>
         /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
-        public AudienceDefinition(string targetEntity = default(string), string query = default(string))
+        public AudienceDefinitionWithoutTargetEntity(string query = default(string))
         {
             // to ensure "query" is required (not null)
             if (query == null)
             {
-                throw new ArgumentNullException("query is a required property for AudienceDefinition and cannot be null");
+                throw new ArgumentNullException("query is a required property for AudienceDefinitionWithoutTargetEntity and cannot be null");
             }
             this.Query = query;
-            this.TargetEntity = targetEntity;
         }
-
-        /// <summary>
-        /// The target entity slug, required in creating a linked audience.
-        /// </summary>
-        /// <value>The target entity slug, required in creating a linked audience.</value>
-        [DataMember(Name = "targetEntity", EmitDefaultValue = false)]
-        public string TargetEntity { get; set; }
 
         /// <summary>
         /// The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language).
@@ -74,8 +65,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AudienceDefinition {\n");
-            sb.Append("  TargetEntity: ").Append(TargetEntity).Append("\n");
+            sb.Append("class AudienceDefinitionWithoutTargetEntity {\n");
             sb.Append("  Query: ").Append(Query).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -97,26 +87,21 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AudienceDefinition);
+            return this.Equals(input as AudienceDefinitionWithoutTargetEntity);
         }
 
         /// <summary>
-        /// Returns true if AudienceDefinition instances are equal
+        /// Returns true if AudienceDefinitionWithoutTargetEntity instances are equal
         /// </summary>
-        /// <param name="input">Instance of AudienceDefinition to be compared</param>
+        /// <param name="input">Instance of AudienceDefinitionWithoutTargetEntity to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AudienceDefinition input)
+        public bool Equals(AudienceDefinitionWithoutTargetEntity input)
         {
             if (input == null)
             {
                 return false;
             }
             return 
-                (
-                    this.TargetEntity == input.TargetEntity ||
-                    (this.TargetEntity != null &&
-                    this.TargetEntity.Equals(input.TargetEntity))
-                ) && 
                 (
                     this.Query == input.Query ||
                     (this.Query != null &&
@@ -133,10 +118,6 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.TargetEntity != null)
-                {
-                    hashCode = (hashCode * 59) + this.TargetEntity.GetHashCode();
-                }
                 if (this.Query != null)
                 {
                     hashCode = (hashCode * 59) + this.Query.GetHashCode();

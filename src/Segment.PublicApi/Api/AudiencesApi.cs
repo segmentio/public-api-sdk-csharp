@@ -302,10 +302,10 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="updateAudienceForSpaceAlphaInput"></param>
+        /// <param name="updateAudienceForSpaceBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateAudienceForSpace200Response</returns>
-        UpdateAudienceForSpace200Response UpdateAudienceForSpace(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0);
+        UpdateAudienceForSpace200Response UpdateAudienceForSpace(string spaceId, string id, UpdateAudienceForSpaceBetaInput updateAudienceForSpaceBetaInput, int operationIndex = 0);
 
         /// <summary>
         /// Update Audience for Space
@@ -316,10 +316,10 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="updateAudienceForSpaceAlphaInput"></param>
+        /// <param name="updateAudienceForSpaceBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateAudienceForSpace200Response</returns>
-        ApiResponse<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceWithHttpInfo(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0);
+        ApiResponse<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceWithHttpInfo(string spaceId, string id, UpdateAudienceForSpaceBetaInput updateAudienceForSpaceBetaInput, int operationIndex = 0);
         /// <summary>
         /// Update Audience Schedule for Audience
         /// </summary>
@@ -653,11 +653,11 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="updateAudienceForSpaceAlphaInput"></param>
+        /// <param name="updateAudienceForSpaceBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateAudienceForSpace200Response</returns>
-        System.Threading.Tasks.Task<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceAsync(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceAsync(string spaceId, string id, UpdateAudienceForSpaceBetaInput updateAudienceForSpaceBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Update Audience for Space
@@ -668,11 +668,11 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="updateAudienceForSpaceAlphaInput"></param>
+        /// <param name="updateAudienceForSpaceBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateAudienceForSpace200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateAudienceForSpace200Response>> UpdateAudienceForSpaceWithHttpInfoAsync(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdateAudienceForSpace200Response>> UpdateAudienceForSpaceWithHttpInfoAsync(string spaceId, string id, UpdateAudienceForSpaceBetaInput updateAudienceForSpaceBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Audience Schedule for Audience
         /// </summary>
@@ -2714,12 +2714,12 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="updateAudienceForSpaceAlphaInput"></param>
+        /// <param name="updateAudienceForSpaceBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>UpdateAudienceForSpace200Response</returns>
-        public UpdateAudienceForSpace200Response UpdateAudienceForSpace(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0)
+        public UpdateAudienceForSpace200Response UpdateAudienceForSpace(string spaceId, string id, UpdateAudienceForSpaceBetaInput updateAudienceForSpaceBetaInput, int operationIndex = 0)
         {
-            Segment.PublicApi.Client.ApiResponse<UpdateAudienceForSpace200Response> localVarResponse = UpdateAudienceForSpaceWithHttpInfo(spaceId, id, updateAudienceForSpaceAlphaInput);
+            Segment.PublicApi.Client.ApiResponse<UpdateAudienceForSpace200Response> localVarResponse = UpdateAudienceForSpaceWithHttpInfo(spaceId, id, updateAudienceForSpaceBetaInput);
             return localVarResponse.Data;
         }
 
@@ -2729,10 +2729,10 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="updateAudienceForSpaceAlphaInput"></param>
+        /// <param name="updateAudienceForSpaceBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of UpdateAudienceForSpace200Response</returns>
-        public Segment.PublicApi.Client.ApiResponse<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceWithHttpInfo(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0)
+        public Segment.PublicApi.Client.ApiResponse<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceWithHttpInfo(string spaceId, string id, UpdateAudienceForSpaceBetaInput updateAudienceForSpaceBetaInput, int operationIndex = 0)
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -2746,20 +2746,22 @@ namespace Segment.PublicApi.Api
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->UpdateAudienceForSpace");
             }
 
-            // verify the required parameter 'updateAudienceForSpaceAlphaInput' is set
-            if (updateAudienceForSpaceAlphaInput == null)
+            // verify the required parameter 'updateAudienceForSpaceBetaInput' is set
+            if (updateAudienceForSpaceBetaInput == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'updateAudienceForSpaceAlphaInput' when calling AudiencesApi->UpdateAudienceForSpace");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'updateAudienceForSpaceBetaInput' when calling AudiencesApi->UpdateAudienceForSpace");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json",
                 "application/json"
             };
@@ -2778,7 +2780,7 @@ namespace Segment.PublicApi.Api
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateAudienceForSpaceAlphaInput;
+            localVarRequestOptions.Data = updateAudienceForSpaceBetaInput;
 
             localVarRequestOptions.Operation = "AudiencesApi.UpdateAudienceForSpace";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -2810,13 +2812,13 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="updateAudienceForSpaceAlphaInput"></param>
+        /// <param name="updateAudienceForSpaceBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateAudienceForSpace200Response</returns>
-        public async System.Threading.Tasks.Task<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceAsync(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdateAudienceForSpace200Response> UpdateAudienceForSpaceAsync(string spaceId, string id, UpdateAudienceForSpaceBetaInput updateAudienceForSpaceBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Segment.PublicApi.Client.ApiResponse<UpdateAudienceForSpace200Response> localVarResponse = await UpdateAudienceForSpaceWithHttpInfoAsync(spaceId, id, updateAudienceForSpaceAlphaInput, operationIndex, cancellationToken).ConfigureAwait(false);
+            Segment.PublicApi.Client.ApiResponse<UpdateAudienceForSpace200Response> localVarResponse = await UpdateAudienceForSpaceWithHttpInfoAsync(spaceId, id, updateAudienceForSpaceBetaInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2826,11 +2828,11 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="updateAudienceForSpaceAlphaInput"></param>
+        /// <param name="updateAudienceForSpaceBetaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateAudienceForSpace200Response)</returns>
-        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<UpdateAudienceForSpace200Response>> UpdateAudienceForSpaceWithHttpInfoAsync(string spaceId, string id, UpdateAudienceForSpaceAlphaInput updateAudienceForSpaceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<UpdateAudienceForSpace200Response>> UpdateAudienceForSpaceWithHttpInfoAsync(string spaceId, string id, UpdateAudienceForSpaceBetaInput updateAudienceForSpaceBetaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -2844,21 +2846,23 @@ namespace Segment.PublicApi.Api
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->UpdateAudienceForSpace");
             }
 
-            // verify the required parameter 'updateAudienceForSpaceAlphaInput' is set
-            if (updateAudienceForSpaceAlphaInput == null)
+            // verify the required parameter 'updateAudienceForSpaceBetaInput' is set
+            if (updateAudienceForSpaceBetaInput == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'updateAudienceForSpaceAlphaInput' when calling AudiencesApi->UpdateAudienceForSpace");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'updateAudienceForSpaceBetaInput' when calling AudiencesApi->UpdateAudienceForSpace");
             }
 
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1beta+json", 
                 "application/vnd.segment.v1alpha+json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/vnd.segment.v1beta+json",
                 "application/vnd.segment.v1alpha+json",
                 "application/json"
             };
@@ -2877,7 +2881,7 @@ namespace Segment.PublicApi.Api
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
-            localVarRequestOptions.Data = updateAudienceForSpaceAlphaInput;
+            localVarRequestOptions.Data = updateAudienceForSpaceBetaInput;
 
             localVarRequestOptions.Operation = "AudiencesApi.UpdateAudienceForSpace";
             localVarRequestOptions.OperationIndex = operationIndex;
