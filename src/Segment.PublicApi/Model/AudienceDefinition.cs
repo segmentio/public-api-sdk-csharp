@@ -40,7 +40,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AudienceDefinition" /> class.
         /// </summary>
-        /// <param name="targetEntity">The target entity slug, required in creating a linked audience..</param>
+        /// <param name="targetEntity">The target entity relationship slug, required in a linked audience, default to profile if not specified..</param>
         /// <param name="query">The query language string defining the audience segmentation criteria.  For guidance on using the query language, see the [Segment documentation site](https://segment.com/docs/api/public-api/query-language). (required).</param>
         public AudienceDefinition(string targetEntity = default(string), string query = default(string))
         {
@@ -54,9 +54,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// The target entity slug, required in creating a linked audience.
+        /// The target entity relationship slug, required in a linked audience, default to profile if not specified.
         /// </summary>
-        /// <value>The target entity slug, required in creating a linked audience.</value>
+        /// <value>The target entity relationship slug, required in a linked audience, default to profile if not specified.</value>
         [DataMember(Name = "targetEntity", EmitDefaultValue = false)]
         public string TargetEntity { get; set; }
 
