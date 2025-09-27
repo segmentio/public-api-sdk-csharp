@@ -42,7 +42,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="filterByExternalIds">The set of profile external identifiers being used to determine audience membership. Profiles will only be considered for audience membership if the profile has at least one external id whose key matches a value in this set. (required).</param>
         /// <param name="includeHistoricalData">Determines whether data prior to the audience being created is included when determining audience membership. Note that including historical data may be needed in order to properly handle the definition specified. In these cases, Segment will automatically handle including historical data and the response will return the includeHistoricalData parameter as true..</param>
-        /// <param name="backfillEventDataDays">If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership..</param>
+        /// <param name="backfillEventDataDays">If specified and positive, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership..</param>
         public AudienceOptionsWithLookback(List<string> filterByExternalIds = default(List<string>), bool includeHistoricalData = default(bool), decimal backfillEventDataDays = default(decimal))
         {
             // to ensure "filterByExternalIds" is required (not null)
@@ -70,9 +70,9 @@ namespace Segment.PublicApi.Model
         public bool IncludeHistoricalData { get; set; }
 
         /// <summary>
-        /// If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.
+        /// If specified and positive, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.
         /// </summary>
-        /// <value>If specified, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.</value>
+        /// <value>If specified and positive, the value of this field indicates the number of days, specified from the date the audience was created, that event data will be included from when determining audience membership. If unspecified, defer to the value of &#x60;includeHistoricalData&#x60; to determine whether historical data is either entirely included or entirely excluded when determining audience membership.</value>
         [DataMember(Name = "backfillEventDataDays", EmitDefaultValue = false)]
         public decimal BackfillEventDataDays { get; set; }
 
