@@ -42,7 +42,8 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="profile">profile (required).</param>
         /// <param name="entities">Entities V2 Object..</param>
-        public PersonalizationInput(Profile profile = default(Profile), List<PersonalizationInputEntity> entities = default(List<PersonalizationInputEntity>))
+        /// <param name="syncEntityPropertyChanges">Sync entity property changes back to Segment. Only applicable if activationType is \&quot;Audience Membership Changed\&quot; and segmentEvent is \&quot;identify\&quot;..</param>
+        public PersonalizationInput(Profile profile = default(Profile), List<PersonalizationInputEntity> entities = default(List<PersonalizationInputEntity>), bool syncEntityPropertyChanges = default(bool))
         {
             // to ensure "profile" is required (not null)
             if (profile == null)
@@ -51,6 +52,7 @@ namespace Segment.PublicApi.Model
             }
             this.Profile = profile;
             this.Entities = entities;
+            this.SyncEntityPropertyChanges = syncEntityPropertyChanges;
         }
 
         /// <summary>
@@ -67,6 +69,13 @@ namespace Segment.PublicApi.Model
         public List<PersonalizationInputEntity> Entities { get; set; }
 
         /// <summary>
+        /// Sync entity property changes back to Segment. Only applicable if activationType is \&quot;Audience Membership Changed\&quot; and segmentEvent is \&quot;identify\&quot;.
+        /// </summary>
+        /// <value>Sync entity property changes back to Segment. Only applicable if activationType is \&quot;Audience Membership Changed\&quot; and segmentEvent is \&quot;identify\&quot;.</value>
+        [DataMember(Name = "syncEntityPropertyChanges", EmitDefaultValue = true)]
+        public bool SyncEntityPropertyChanges { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -76,6 +85,7 @@ namespace Segment.PublicApi.Model
             sb.Append("class PersonalizationInput {\n");
             sb.Append("  Profile: ").Append(Profile).Append("\n");
             sb.Append("  Entities: ").Append(Entities).Append("\n");
+            sb.Append("  SyncEntityPropertyChanges: ").Append(SyncEntityPropertyChanges).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,6 +131,10 @@ namespace Segment.PublicApi.Model
                     this.Entities != null &&
                     input.Entities != null &&
                     this.Entities.SequenceEqual(input.Entities)
+                ) && 
+                (
+                    this.SyncEntityPropertyChanges == input.SyncEntityPropertyChanges ||
+                    this.SyncEntityPropertyChanges.Equals(input.SyncEntityPropertyChanges)
                 );
         }
 
@@ -141,6 +155,7 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.Entities.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.SyncEntityPropertyChanges.GetHashCode();
                 return hashCode;
             }
         }
