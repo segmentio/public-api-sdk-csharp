@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Output to remove a RETL audience schedule.
+    /// Delete audience schedule endpoint output.
     /// </summary>
     [DataContract(Name = "RemoveAudienceScheduleFromAudienceAlphaOutput")]
     public partial class RemoveAudienceScheduleFromAudienceAlphaOutput : IEquatable<RemoveAudienceScheduleFromAudienceAlphaOutput>, IValidatableObject

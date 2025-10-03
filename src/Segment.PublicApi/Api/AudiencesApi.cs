@@ -327,10 +327,10 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="scheduleId">The ID of the schedule to delete  This parameter exists in alpha. (optional)</param>
+        /// <param name="scheduleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RemoveAudienceScheduleFromAudience200Response</returns>
-        RemoveAudienceScheduleFromAudience200Response RemoveAudienceScheduleFromAudience(string spaceId, string id, string? scheduleId = default(string?), int operationIndex = 0);
+        RemoveAudienceScheduleFromAudience200Response RemoveAudienceScheduleFromAudience(string spaceId, string id, string scheduleId, int operationIndex = 0);
 
         /// <summary>
         /// Remove Audience Schedule from Audience
@@ -341,10 +341,10 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="scheduleId">The ID of the schedule to delete  This parameter exists in alpha. (optional)</param>
+        /// <param name="scheduleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RemoveAudienceScheduleFromAudience200Response</returns>
-        ApiResponse<RemoveAudienceScheduleFromAudience200Response> RemoveAudienceScheduleFromAudienceWithHttpInfo(string spaceId, string id, string? scheduleId = default(string?), int operationIndex = 0);
+        ApiResponse<RemoveAudienceScheduleFromAudience200Response> RemoveAudienceScheduleFromAudienceWithHttpInfo(string spaceId, string id, string scheduleId, int operationIndex = 0);
         /// <summary>
         /// Update Audience for Space
         /// </summary>
@@ -732,11 +732,11 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="scheduleId">The ID of the schedule to delete  This parameter exists in alpha. (optional)</param>
+        /// <param name="scheduleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RemoveAudienceScheduleFromAudience200Response</returns>
-        System.Threading.Tasks.Task<RemoveAudienceScheduleFromAudience200Response> RemoveAudienceScheduleFromAudienceAsync(string spaceId, string id, string? scheduleId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RemoveAudienceScheduleFromAudience200Response> RemoveAudienceScheduleFromAudienceAsync(string spaceId, string id, string scheduleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Remove Audience Schedule from Audience
@@ -747,11 +747,11 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="scheduleId">The ID of the schedule to delete  This parameter exists in alpha. (optional)</param>
+        /// <param name="scheduleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RemoveAudienceScheduleFromAudience200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RemoveAudienceScheduleFromAudience200Response>> RemoveAudienceScheduleFromAudienceWithHttpInfoAsync(string spaceId, string id, string? scheduleId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RemoveAudienceScheduleFromAudience200Response>> RemoveAudienceScheduleFromAudienceWithHttpInfoAsync(string spaceId, string id, string scheduleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Update Audience for Space
         /// </summary>
@@ -2998,10 +2998,10 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="scheduleId">The ID of the schedule to delete  This parameter exists in alpha. (optional)</param>
+        /// <param name="scheduleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RemoveAudienceScheduleFromAudience200Response</returns>
-        public RemoveAudienceScheduleFromAudience200Response RemoveAudienceScheduleFromAudience(string spaceId, string id, string? scheduleId = default(string?), int operationIndex = 0)
+        public RemoveAudienceScheduleFromAudience200Response RemoveAudienceScheduleFromAudience(string spaceId, string id, string scheduleId, int operationIndex = 0)
         {
             Segment.PublicApi.Client.ApiResponse<RemoveAudienceScheduleFromAudience200Response> localVarResponse = RemoveAudienceScheduleFromAudienceWithHttpInfo(spaceId, id, scheduleId);
             return localVarResponse.Data;
@@ -3013,10 +3013,10 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="scheduleId">The ID of the schedule to delete  This parameter exists in alpha. (optional)</param>
+        /// <param name="scheduleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RemoveAudienceScheduleFromAudience200Response</returns>
-        public Segment.PublicApi.Client.ApiResponse<RemoveAudienceScheduleFromAudience200Response> RemoveAudienceScheduleFromAudienceWithHttpInfo(string spaceId, string id, string? scheduleId = default(string?), int operationIndex = 0)
+        public Segment.PublicApi.Client.ApiResponse<RemoveAudienceScheduleFromAudience200Response> RemoveAudienceScheduleFromAudienceWithHttpInfo(string spaceId, string id, string scheduleId, int operationIndex = 0)
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -3028,6 +3028,12 @@ namespace Segment.PublicApi.Api
             if (id == null)
             {
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->RemoveAudienceScheduleFromAudience");
+            }
+
+            // verify the required parameter 'scheduleId' is set
+            if (scheduleId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'scheduleId' when calling AudiencesApi->RemoveAudienceScheduleFromAudience");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -3055,10 +3061,7 @@ namespace Segment.PublicApi.Api
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (scheduleId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "scheduleId", scheduleId));
-            }
+            localVarRequestOptions.PathParameters.Add("scheduleId", Segment.PublicApi.Client.ClientUtils.ParameterToString(scheduleId)); // path parameter
 
             localVarRequestOptions.Operation = "AudiencesApi.RemoveAudienceScheduleFromAudience";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3071,7 +3074,7 @@ namespace Segment.PublicApi.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<RemoveAudienceScheduleFromAudience200Response>("/spaces/{spaceId}/audiences/{id}/schedules", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<RemoveAudienceScheduleFromAudience200Response>("/spaces/{spaceId}/audiences/{id}/schedules/{scheduleId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveAudienceScheduleFromAudience", localVarResponse);
@@ -3090,11 +3093,11 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="scheduleId">The ID of the schedule to delete  This parameter exists in alpha. (optional)</param>
+        /// <param name="scheduleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RemoveAudienceScheduleFromAudience200Response</returns>
-        public async System.Threading.Tasks.Task<RemoveAudienceScheduleFromAudience200Response> RemoveAudienceScheduleFromAudienceAsync(string spaceId, string id, string? scheduleId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RemoveAudienceScheduleFromAudience200Response> RemoveAudienceScheduleFromAudienceAsync(string spaceId, string id, string scheduleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Segment.PublicApi.Client.ApiResponse<RemoveAudienceScheduleFromAudience200Response> localVarResponse = await RemoveAudienceScheduleFromAudienceWithHttpInfoAsync(spaceId, id, scheduleId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3106,11 +3109,11 @@ namespace Segment.PublicApi.Api
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
-        /// <param name="scheduleId">The ID of the schedule to delete  This parameter exists in alpha. (optional)</param>
+        /// <param name="scheduleId"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RemoveAudienceScheduleFromAudience200Response)</returns>
-        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<RemoveAudienceScheduleFromAudience200Response>> RemoveAudienceScheduleFromAudienceWithHttpInfoAsync(string spaceId, string id, string? scheduleId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<RemoveAudienceScheduleFromAudience200Response>> RemoveAudienceScheduleFromAudienceWithHttpInfoAsync(string spaceId, string id, string scheduleId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -3122,6 +3125,12 @@ namespace Segment.PublicApi.Api
             if (id == null)
             {
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->RemoveAudienceScheduleFromAudience");
+            }
+
+            // verify the required parameter 'scheduleId' is set
+            if (scheduleId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'scheduleId' when calling AudiencesApi->RemoveAudienceScheduleFromAudience");
             }
 
 
@@ -3150,10 +3159,7 @@ namespace Segment.PublicApi.Api
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
-            if (scheduleId != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "scheduleId", scheduleId));
-            }
+            localVarRequestOptions.PathParameters.Add("scheduleId", Segment.PublicApi.Client.ClientUtils.ParameterToString(scheduleId)); // path parameter
 
             localVarRequestOptions.Operation = "AudiencesApi.RemoveAudienceScheduleFromAudience";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -3166,7 +3172,7 @@ namespace Segment.PublicApi.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<RemoveAudienceScheduleFromAudience200Response>("/spaces/{spaceId}/audiences/{id}/schedules", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<RemoveAudienceScheduleFromAudience200Response>("/spaces/{spaceId}/audiences/{id}/schedules/{scheduleId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
