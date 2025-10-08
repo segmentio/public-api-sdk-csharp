@@ -27,16 +27,16 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// CreateEdgeFunction200Response
+    /// CreateLivePlugin200Response
     /// </summary>
-    [DataContract(Name = "createEdgeFunction_200_response")]
-    public partial class CreateEdgeFunction200Response : IEquatable<CreateEdgeFunction200Response>, IValidatableObject
+    [DataContract(Name = "createLivePlugin_200_response")]
+    public partial class CreateLivePlugin200Response : IEquatable<CreateLivePlugin200Response>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEdgeFunction200Response" /> class.
+        /// Initializes a new instance of the <see cref="CreateLivePlugin200Response" /> class.
         /// </summary>
         /// <param name="data">data.</param>
-        public CreateEdgeFunction200Response(CreateEdgeFunctionAlphaOutput data = default(CreateEdgeFunctionAlphaOutput))
+        public CreateLivePlugin200Response(CreateLivePluginAlphaOutput data = default(CreateLivePluginAlphaOutput))
         {
             this.Data = data;
         }
@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name = "data", EmitDefaultValue = false)]
-        public CreateEdgeFunctionAlphaOutput Data { get; set; }
+        public CreateLivePluginAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,7 +54,7 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateEdgeFunction200Response {\n");
+            sb.Append("class CreateLivePlugin200Response {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -76,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateEdgeFunction200Response);
+            return this.Equals(input as CreateLivePlugin200Response);
         }
 
         /// <summary>
-        /// Returns true if CreateEdgeFunction200Response instances are equal
+        /// Returns true if CreateLivePlugin200Response instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateEdgeFunction200Response to be compared</param>
+        /// <param name="input">Instance of CreateLivePlugin200Response to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateEdgeFunction200Response input)
+        public bool Equals(CreateLivePlugin200Response input)
         {
             if (input == null)
             {

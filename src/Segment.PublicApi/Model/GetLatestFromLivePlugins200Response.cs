@@ -27,35 +27,25 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Output for CreateEdgeFunction.
+    /// GetLatestFromLivePlugins200Response
     /// </summary>
-    [DataContract(Name = "CreateEdgeFunctionAlphaOutput")]
-    public partial class CreateEdgeFunctionAlphaOutput : IEquatable<CreateEdgeFunctionAlphaOutput>, IValidatableObject
+    [DataContract(Name = "getLatestFromLivePlugins_200_response")]
+    public partial class GetLatestFromLivePlugins200Response : IEquatable<GetLatestFromLivePlugins200Response>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEdgeFunctionAlphaOutput" /> class.
+        /// Initializes a new instance of the <see cref="GetLatestFromLivePlugins200Response" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CreateEdgeFunctionAlphaOutput() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEdgeFunctionAlphaOutput" /> class.
-        /// </summary>
-        /// <param name="edgeFunction">edgeFunction (required).</param>
-        public CreateEdgeFunctionAlphaOutput(EdgeFunctionsAlpha edgeFunction = default(EdgeFunctionsAlpha))
+        /// <param name="data">data.</param>
+        public GetLatestFromLivePlugins200Response(GetLatestFromLivePluginsAlphaOutput data = default(GetLatestFromLivePluginsAlphaOutput))
         {
-            // to ensure "edgeFunction" is required (not null)
-            if (edgeFunction == null)
-            {
-                throw new ArgumentNullException("edgeFunction is a required property for CreateEdgeFunctionAlphaOutput and cannot be null");
-            }
-            this.EdgeFunction = edgeFunction;
+            this.Data = data;
         }
 
         /// <summary>
-        /// Gets or Sets EdgeFunction
+        /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name = "edgeFunction", IsRequired = true, EmitDefaultValue = true)]
-        public EdgeFunctionsAlpha EdgeFunction { get; set; }
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public GetLatestFromLivePluginsAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +54,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateEdgeFunctionAlphaOutput {\n");
-            sb.Append("  EdgeFunction: ").Append(EdgeFunction).Append("\n");
+            sb.Append("class GetLatestFromLivePlugins200Response {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateEdgeFunctionAlphaOutput);
+            return this.Equals(input as GetLatestFromLivePlugins200Response);
         }
 
         /// <summary>
-        /// Returns true if CreateEdgeFunctionAlphaOutput instances are equal
+        /// Returns true if GetLatestFromLivePlugins200Response instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateEdgeFunctionAlphaOutput to be compared</param>
+        /// <param name="input">Instance of GetLatestFromLivePlugins200Response to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateEdgeFunctionAlphaOutput input)
+        public bool Equals(GetLatestFromLivePlugins200Response input)
         {
             if (input == null)
             {
@@ -102,9 +92,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.EdgeFunction == input.EdgeFunction ||
-                    (this.EdgeFunction != null &&
-                    this.EdgeFunction.Equals(input.EdgeFunction))
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -117,9 +107,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EdgeFunction != null)
+                if (this.Data != null)
                 {
-                    hashCode = (hashCode * 59) + this.EdgeFunction.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
                 return hashCode;
             }

@@ -27,36 +27,25 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Input for CreateEdgeFunction.
+    /// DeleteLivePluginCode200Response
     /// </summary>
-    [DataContract(Name = "CreateEdgeFunctionAlphaInput")]
-    public partial class CreateEdgeFunctionAlphaInput : IEquatable<CreateEdgeFunctionAlphaInput>, IValidatableObject
+    [DataContract(Name = "deleteLivePluginCode_200_response")]
+    public partial class DeleteLivePluginCode200Response : IEquatable<DeleteLivePluginCode200Response>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEdgeFunctionAlphaInput" /> class.
+        /// Initializes a new instance of the <see cref="DeleteLivePluginCode200Response" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CreateEdgeFunctionAlphaInput() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateEdgeFunctionAlphaInput" /> class.
-        /// </summary>
-        /// <param name="code">The Edge Function code to be uploaded. (required).</param>
-        public CreateEdgeFunctionAlphaInput(string code = default(string))
+        /// <param name="data">data.</param>
+        public DeleteLivePluginCode200Response(DeleteLivePluginCodeAlphaOutput data = default(DeleteLivePluginCodeAlphaOutput))
         {
-            // to ensure "code" is required (not null)
-            if (code == null)
-            {
-                throw new ArgumentNullException("code is a required property for CreateEdgeFunctionAlphaInput and cannot be null");
-            }
-            this.Code = code;
+            this.Data = data;
         }
 
         /// <summary>
-        /// The Edge Function code to be uploaded.
+        /// Gets or Sets Data
         /// </summary>
-        /// <value>The Edge Function code to be uploaded.</value>
-        [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
-        public string Code { get; set; }
+        [DataMember(Name = "data", EmitDefaultValue = false)]
+        public DeleteLivePluginCodeAlphaOutput Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,8 +54,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateEdgeFunctionAlphaInput {\n");
-            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("class DeleteLivePluginCode200Response {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateEdgeFunctionAlphaInput);
+            return this.Equals(input as DeleteLivePluginCode200Response);
         }
 
         /// <summary>
-        /// Returns true if CreateEdgeFunctionAlphaInput instances are equal
+        /// Returns true if DeleteLivePluginCode200Response instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateEdgeFunctionAlphaInput to be compared</param>
+        /// <param name="input">Instance of DeleteLivePluginCode200Response to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateEdgeFunctionAlphaInput input)
+        public bool Equals(DeleteLivePluginCode200Response input)
         {
             if (input == null)
             {
@@ -103,9 +92,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Code == input.Code ||
-                    (this.Code != null &&
-                    this.Code.Equals(input.Code))
+                    this.Data == input.Data ||
+                    (this.Data != null &&
+                    this.Data.Equals(input.Data))
                 );
         }
 
@@ -118,9 +107,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Code != null)
+                if (this.Data != null)
                 {
-                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
                 }
                 return hashCode;
             }

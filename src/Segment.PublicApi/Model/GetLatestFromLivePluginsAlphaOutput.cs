@@ -27,25 +27,35 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// DeleteEdgeFunctionCode200Response
+    /// Output for GetLatestFromLivePlugins.
     /// </summary>
-    [DataContract(Name = "deleteEdgeFunctionCode_200_response")]
-    public partial class DeleteEdgeFunctionCode200Response : IEquatable<DeleteEdgeFunctionCode200Response>, IValidatableObject
+    [DataContract(Name = "GetLatestFromLivePluginsAlphaOutput")]
+    public partial class GetLatestFromLivePluginsAlphaOutput : IEquatable<GetLatestFromLivePluginsAlphaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeleteEdgeFunctionCode200Response" /> class.
+        /// Initializes a new instance of the <see cref="GetLatestFromLivePluginsAlphaOutput" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
-        public DeleteEdgeFunctionCode200Response(DeleteEdgeFunctionCodeAlphaOutput data = default(DeleteEdgeFunctionCodeAlphaOutput))
+        [JsonConstructorAttribute]
+        protected GetLatestFromLivePluginsAlphaOutput() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetLatestFromLivePluginsAlphaOutput" /> class.
+        /// </summary>
+        /// <param name="livePlugin">livePlugin (required).</param>
+        public GetLatestFromLivePluginsAlphaOutput(LivePluginsAlpha livePlugin = default(LivePluginsAlpha))
         {
-            this.Data = data;
+            // to ensure "livePlugin" is required (not null)
+            if (livePlugin == null)
+            {
+                throw new ArgumentNullException("livePlugin is a required property for GetLatestFromLivePluginsAlphaOutput and cannot be null");
+            }
+            this.LivePlugin = livePlugin;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets LivePlugin
         /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public DeleteEdgeFunctionCodeAlphaOutput Data { get; set; }
+        [DataMember(Name = "livePlugin", IsRequired = true, EmitDefaultValue = true)]
+        public LivePluginsAlpha LivePlugin { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +64,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DeleteEdgeFunctionCode200Response {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class GetLatestFromLivePluginsAlphaOutput {\n");
+            sb.Append("  LivePlugin: ").Append(LivePlugin).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +86,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteEdgeFunctionCode200Response);
+            return this.Equals(input as GetLatestFromLivePluginsAlphaOutput);
         }
 
         /// <summary>
-        /// Returns true if DeleteEdgeFunctionCode200Response instances are equal
+        /// Returns true if GetLatestFromLivePluginsAlphaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of DeleteEdgeFunctionCode200Response to be compared</param>
+        /// <param name="input">Instance of GetLatestFromLivePluginsAlphaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DeleteEdgeFunctionCode200Response input)
+        public bool Equals(GetLatestFromLivePluginsAlphaOutput input)
         {
             if (input == null)
             {
@@ -92,9 +102,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.LivePlugin == input.LivePlugin ||
+                    (this.LivePlugin != null &&
+                    this.LivePlugin.Equals(input.LivePlugin))
                 );
         }
 
@@ -107,9 +117,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
+                if (this.LivePlugin != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.LivePlugin.GetHashCode();
                 }
                 return hashCode;
             }

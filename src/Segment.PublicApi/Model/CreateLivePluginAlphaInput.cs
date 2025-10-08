@@ -27,45 +27,36 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Output for DeleteEdgeFunctionCode.
+    /// Input for CreateLivePlugin.
     /// </summary>
-    [DataContract(Name = "DeleteEdgeFunctionCodeAlphaOutput")]
-    public partial class DeleteEdgeFunctionCodeAlphaOutput : IEquatable<DeleteEdgeFunctionCodeAlphaOutput>, IValidatableObject
+    [DataContract(Name = "CreateLivePluginAlphaInput")]
+    public partial class CreateLivePluginAlphaInput : IEquatable<CreateLivePluginAlphaInput>, IValidatableObject
     {
         /// <summary>
-        /// The status of the delete operation.
-        /// </summary>
-        /// <value>The status of the delete operation.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum SUCCESS for value: SUCCESS
-            /// </summary>
-            [EnumMember(Value = "SUCCESS")]
-            SUCCESS = 1
-        }
-
-
-        /// <summary>
-        /// The status of the delete operation.
-        /// </summary>
-        /// <value>The status of the delete operation.</value>
-        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
-        public StatusEnum Status { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeleteEdgeFunctionCodeAlphaOutput" /> class.
+        /// Initializes a new instance of the <see cref="CreateLivePluginAlphaInput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected DeleteEdgeFunctionCodeAlphaOutput() { }
+        protected CreateLivePluginAlphaInput() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeleteEdgeFunctionCodeAlphaOutput" /> class.
+        /// Initializes a new instance of the <see cref="CreateLivePluginAlphaInput" /> class.
         /// </summary>
-        /// <param name="status">The status of the delete operation. (required).</param>
-        public DeleteEdgeFunctionCodeAlphaOutput(StatusEnum status = default(StatusEnum))
+        /// <param name="code">The Live Plugin code to be uploaded. (required).</param>
+        public CreateLivePluginAlphaInput(string code = default(string))
         {
-            this.Status = status;
+            // to ensure "code" is required (not null)
+            if (code == null)
+            {
+                throw new ArgumentNullException("code is a required property for CreateLivePluginAlphaInput and cannot be null");
+            }
+            this.Code = code;
         }
+
+        /// <summary>
+        /// The Live Plugin code to be uploaded.
+        /// </summary>
+        /// <value>The Live Plugin code to be uploaded.</value>
+        [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
+        public string Code { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,8 +65,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DeleteEdgeFunctionCodeAlphaOutput {\n");
-            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("class CreateLivePluginAlphaInput {\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,15 +87,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DeleteEdgeFunctionCodeAlphaOutput);
+            return this.Equals(input as CreateLivePluginAlphaInput);
         }
 
         /// <summary>
-        /// Returns true if DeleteEdgeFunctionCodeAlphaOutput instances are equal
+        /// Returns true if CreateLivePluginAlphaInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of DeleteEdgeFunctionCodeAlphaOutput to be compared</param>
+        /// <param name="input">Instance of CreateLivePluginAlphaInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DeleteEdgeFunctionCodeAlphaOutput input)
+        public bool Equals(CreateLivePluginAlphaInput input)
         {
             if (input == null)
             {
@@ -112,8 +103,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Status == input.Status ||
-                    this.Status.Equals(input.Status)
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 );
         }
 
@@ -126,7 +118,10 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                if (this.Code != null)
+                {
+                    hashCode = (hashCode * 59) + this.Code.GetHashCode();
+                }
                 return hashCode;
             }
         }

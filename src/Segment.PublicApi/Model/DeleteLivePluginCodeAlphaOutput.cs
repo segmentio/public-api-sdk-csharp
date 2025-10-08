@@ -27,35 +27,45 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Output for GetLatestFromEdgeFunctions.
+    /// Output for DeleteLivePlugin.
     /// </summary>
-    [DataContract(Name = "GetLatestFromEdgeFunctionsAlphaOutput")]
-    public partial class GetLatestFromEdgeFunctionsAlphaOutput : IEquatable<GetLatestFromEdgeFunctionsAlphaOutput>, IValidatableObject
+    [DataContract(Name = "DeleteLivePluginCodeAlphaOutput")]
+    public partial class DeleteLivePluginCodeAlphaOutput : IEquatable<DeleteLivePluginCodeAlphaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetLatestFromEdgeFunctionsAlphaOutput" /> class.
+        /// The status of the delete operation.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected GetLatestFromEdgeFunctionsAlphaOutput() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetLatestFromEdgeFunctionsAlphaOutput" /> class.
-        /// </summary>
-        /// <param name="edgeFunctions">edgeFunctions (required).</param>
-        public GetLatestFromEdgeFunctionsAlphaOutput(EdgeFunctionsAlpha edgeFunctions = default(EdgeFunctionsAlpha))
+        /// <value>The status of the delete operation.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum StatusEnum
         {
-            // to ensure "edgeFunctions" is required (not null)
-            if (edgeFunctions == null)
-            {
-                throw new ArgumentNullException("edgeFunctions is a required property for GetLatestFromEdgeFunctionsAlphaOutput and cannot be null");
-            }
-            this.EdgeFunctions = edgeFunctions;
+            /// <summary>
+            /// Enum SUCCESS for value: SUCCESS
+            /// </summary>
+            [EnumMember(Value = "SUCCESS")]
+            SUCCESS = 1
         }
 
+
         /// <summary>
-        /// Gets or Sets EdgeFunctions
+        /// The status of the delete operation.
         /// </summary>
-        [DataMember(Name = "edgeFunctions", IsRequired = true, EmitDefaultValue = true)]
-        public EdgeFunctionsAlpha EdgeFunctions { get; set; }
+        /// <value>The status of the delete operation.</value>
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        public StatusEnum Status { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteLivePluginCodeAlphaOutput" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected DeleteLivePluginCodeAlphaOutput() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteLivePluginCodeAlphaOutput" /> class.
+        /// </summary>
+        /// <param name="status">The status of the delete operation. (required).</param>
+        public DeleteLivePluginCodeAlphaOutput(StatusEnum status = default(StatusEnum))
+        {
+            this.Status = status;
+        }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +74,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class GetLatestFromEdgeFunctionsAlphaOutput {\n");
-            sb.Append("  EdgeFunctions: ").Append(EdgeFunctions).Append("\n");
+            sb.Append("class DeleteLivePluginCodeAlphaOutput {\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +96,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as GetLatestFromEdgeFunctionsAlphaOutput);
+            return this.Equals(input as DeleteLivePluginCodeAlphaOutput);
         }
 
         /// <summary>
-        /// Returns true if GetLatestFromEdgeFunctionsAlphaOutput instances are equal
+        /// Returns true if DeleteLivePluginCodeAlphaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of GetLatestFromEdgeFunctionsAlphaOutput to be compared</param>
+        /// <param name="input">Instance of DeleteLivePluginCodeAlphaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(GetLatestFromEdgeFunctionsAlphaOutput input)
+        public bool Equals(DeleteLivePluginCodeAlphaOutput input)
         {
             if (input == null)
             {
@@ -102,9 +112,8 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.EdgeFunctions == input.EdgeFunctions ||
-                    (this.EdgeFunctions != null &&
-                    this.EdgeFunctions.Equals(input.EdgeFunctions))
+                    this.Status == input.Status ||
+                    this.Status.Equals(input.Status)
                 );
         }
 
@@ -117,10 +126,7 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.EdgeFunctions != null)
-                {
-                    hashCode = (hashCode * 59) + this.EdgeFunctions.GetHashCode();
-                }
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
                 return hashCode;
             }
         }
