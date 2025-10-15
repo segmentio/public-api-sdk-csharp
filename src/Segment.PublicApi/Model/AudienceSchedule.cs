@@ -33,30 +33,36 @@ namespace Segment.PublicApi.Model
     public partial class AudienceSchedule : IEquatable<AudienceSchedule>, IValidatableObject
     {
         /// <summary>
-        /// Strategy of the audience schedule (periodic or specific days).
+        /// Strategy of the audience schedule (manual, periodic or specific days).
         /// </summary>
-        /// <value>Strategy of the audience schedule (periodic or specific days).</value>
+        /// <value>Strategy of the audience schedule (manual, periodic or specific days).</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StrategyEnum
         {
             /// <summary>
+            /// Enum MANUAL for value: MANUAL
+            /// </summary>
+            [EnumMember(Value = "MANUAL")]
+            MANUAL = 1,
+
+            /// <summary>
             /// Enum PERIODIC for value: PERIODIC
             /// </summary>
             [EnumMember(Value = "PERIODIC")]
-            PERIODIC = 1,
+            PERIODIC = 2,
 
             /// <summary>
             /// Enum SPECIFICDAYS for value: SPECIFIC_DAYS
             /// </summary>
             [EnumMember(Value = "SPECIFIC_DAYS")]
-            SPECIFICDAYS = 2
+            SPECIFICDAYS = 3
         }
 
 
         /// <summary>
-        /// Strategy of the audience schedule (periodic or specific days).
+        /// Strategy of the audience schedule (manual, periodic or specific days).
         /// </summary>
-        /// <value>Strategy of the audience schedule (periodic or specific days).</value>
+        /// <value>Strategy of the audience schedule (manual, periodic or specific days).</value>
         [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
         public StrategyEnum Strategy { get; set; }
         /// <summary>
@@ -68,7 +74,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AudienceSchedule" /> class.
         /// </summary>
         /// <param name="id">Distinct identifier for the schedule. (required).</param>
-        /// <param name="strategy">Strategy of the audience schedule (periodic or specific days). (required).</param>
+        /// <param name="strategy">Strategy of the audience schedule (manual, periodic or specific days). (required).</param>
         /// <param name="config">config.</param>
         /// <param name="nextExecution">The next scheduled execution time (RFC3339)..</param>
         public AudienceSchedule(string id = default(string), StrategyEnum strategy = default(StrategyEnum), Config config = default(Config), string nextExecution = default(string))
