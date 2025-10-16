@@ -33,36 +33,30 @@ namespace Segment.PublicApi.Model
     public partial class UpdateAudienceScheduleForAudienceAlphaInput : IEquatable<UpdateAudienceScheduleForAudienceAlphaInput>, IValidatableObject
     {
         /// <summary>
-        /// Strategy of the audience schedule (manual, periodic, or specific days).
+        /// Strategy of the audience schedule (periodic or specific days).
         /// </summary>
-        /// <value>Strategy of the audience schedule (manual, periodic, or specific days).</value>
+        /// <value>Strategy of the audience schedule (periodic or specific days).</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StrategyEnum
         {
             /// <summary>
-            /// Enum MANUAL for value: MANUAL
-            /// </summary>
-            [EnumMember(Value = "MANUAL")]
-            MANUAL = 1,
-
-            /// <summary>
             /// Enum PERIODIC for value: PERIODIC
             /// </summary>
             [EnumMember(Value = "PERIODIC")]
-            PERIODIC = 2,
+            PERIODIC = 1,
 
             /// <summary>
             /// Enum SPECIFICDAYS for value: SPECIFIC_DAYS
             /// </summary>
             [EnumMember(Value = "SPECIFIC_DAYS")]
-            SPECIFICDAYS = 3
+            SPECIFICDAYS = 2
         }
 
 
         /// <summary>
-        /// Strategy of the audience schedule (manual, periodic, or specific days).
+        /// Strategy of the audience schedule (periodic or specific days).
         /// </summary>
-        /// <value>Strategy of the audience schedule (manual, periodic, or specific days).</value>
+        /// <value>Strategy of the audience schedule (periodic or specific days).</value>
         [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
         public StrategyEnum Strategy { get; set; }
         /// <summary>
@@ -73,7 +67,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateAudienceScheduleForAudienceAlphaInput" /> class.
         /// </summary>
-        /// <param name="strategy">Strategy of the audience schedule (manual, periodic, or specific days). (required).</param>
+        /// <param name="strategy">Strategy of the audience schedule (periodic or specific days). (required).</param>
         /// <param name="config">config.</param>
         public UpdateAudienceScheduleForAudienceAlphaInput(StrategyEnum strategy = default(StrategyEnum), Config config = default(Config))
         {
