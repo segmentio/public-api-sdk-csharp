@@ -69,7 +69,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="id">Distinct identifier for the schedule. (required).</param>
         /// <param name="strategy">Strategy of the audience schedule (periodic or specific days). (required).</param>
-        /// <param name="config">config.</param>
+        /// <param name="config">config (required).</param>
         /// <param name="nextExecution">The next scheduled execution time (RFC3339)..</param>
         public AudienceSchedule(string id = default(string), StrategyEnum strategy = default(StrategyEnum), Config config = default(Config), string nextExecution = default(string))
         {
@@ -80,6 +80,11 @@ namespace Segment.PublicApi.Model
             }
             this.Id = id;
             this.Strategy = strategy;
+            // to ensure "config" is required (not null)
+            if (config == null)
+            {
+                throw new ArgumentNullException("config is a required property for AudienceSchedule and cannot be null");
+            }
             this.Config = config;
             this.NextExecution = nextExecution;
         }
@@ -94,7 +99,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Gets or Sets Config
         /// </summary>
-        [DataMember(Name = "config", EmitDefaultValue = true)]
+        [DataMember(Name = "config", IsRequired = true, EmitDefaultValue = true)]
         public Config Config { get; set; }
 
         /// <summary>

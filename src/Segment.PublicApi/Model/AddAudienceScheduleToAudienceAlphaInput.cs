@@ -68,17 +68,22 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AddAudienceScheduleToAudienceAlphaInput" /> class.
         /// </summary>
         /// <param name="strategy">Strategy of the audience schedule (periodic or specific days). (required).</param>
-        /// <param name="config">config.</param>
+        /// <param name="config">config (required).</param>
         public AddAudienceScheduleToAudienceAlphaInput(StrategyEnum strategy = default(StrategyEnum), Config config = default(Config))
         {
             this.Strategy = strategy;
+            // to ensure "config" is required (not null)
+            if (config == null)
+            {
+                throw new ArgumentNullException("config is a required property for AddAudienceScheduleToAudienceAlphaInput and cannot be null");
+            }
             this.Config = config;
         }
 
         /// <summary>
         /// Gets or Sets Config
         /// </summary>
-        [DataMember(Name = "config", EmitDefaultValue = true)]
+        [DataMember(Name = "config", IsRequired = true, EmitDefaultValue = true)]
         public Config Config { get; set; }
 
         /// <summary>
