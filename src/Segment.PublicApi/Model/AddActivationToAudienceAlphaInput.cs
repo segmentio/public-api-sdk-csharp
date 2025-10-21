@@ -45,7 +45,7 @@ namespace Segment.PublicApi.Model
         /// <param name="activationType">Type of activation trigger. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
         /// <param name="personalization">personalization (required).</param>
-        /// <param name="destinationMapping">destinationMapping (required).</param>
+        /// <param name="destinationMapping">destinationMapping.</param>
         public AddActivationToAudienceAlphaInput(bool enabled = default(bool), bool performResync = default(bool), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration))
         {
             this.PerformResync = performResync;
@@ -67,13 +67,8 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("personalization is a required property for AddActivationToAudienceAlphaInput and cannot be null");
             }
             this.Personalization = personalization;
-            // to ensure "destinationMapping" is required (not null)
-            if (destinationMapping == null)
-            {
-                throw new ArgumentNullException("destinationMapping is a required property for AddActivationToAudienceAlphaInput and cannot be null");
-            }
-            this.DestinationMapping = destinationMapping;
             this.Enabled = enabled;
+            this.DestinationMapping = destinationMapping;
         }
 
         /// <summary>
@@ -113,7 +108,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Gets or Sets DestinationMapping
         /// </summary>
-        [DataMember(Name = "destinationMapping", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "destinationMapping", EmitDefaultValue = false)]
         public DestinationSubscriptionConfiguration DestinationMapping { get; set; }
 
         /// <summary>

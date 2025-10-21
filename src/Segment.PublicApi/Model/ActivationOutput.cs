@@ -49,7 +49,7 @@ namespace Segment.PublicApi.Model
         /// <param name="activationType">Type of activation trigger. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
         /// <param name="personalization">personalization (required).</param>
-        /// <param name="destinationMapping">destinationMapping (required).</param>
+        /// <param name="destinationMapping">destinationMapping.</param>
         /// <param name="performResync">Whether to perform a resync after creation of the activation..</param>
         public ActivationOutput(string id = default(string), bool enabled = default(bool), string workspaceId = default(string), string spaceId = default(string), string audienceId = default(string), string destinationConnectionId = default(string), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
         {
@@ -102,11 +102,6 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("personalization is a required property for ActivationOutput and cannot be null");
             }
             this.Personalization = personalization;
-            // to ensure "destinationMapping" is required (not null)
-            if (destinationMapping == null)
-            {
-                throw new ArgumentNullException("destinationMapping is a required property for ActivationOutput and cannot be null");
-            }
             this.DestinationMapping = destinationMapping;
             this.PerformResync = performResync;
         }
@@ -176,7 +171,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Gets or Sets DestinationMapping
         /// </summary>
-        [DataMember(Name = "destinationMapping", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "destinationMapping", EmitDefaultValue = false)]
         public DestinationSubscriptionConfiguration DestinationMapping { get; set; }
 
         /// <summary>
