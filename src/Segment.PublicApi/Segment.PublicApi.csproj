@@ -12,7 +12,7 @@
     <Description>Segment Public API SDK</Description>
     <Copyright>2024 Twilio, Inc.</Copyright>
     <RootNamespace>Segment.PublicApi</RootNamespace>
-    <Version> 61.0.1</Version>
+    <Version> 61.1.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Segment.PublicApi.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/segmentio/public-api-sdk-csharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
