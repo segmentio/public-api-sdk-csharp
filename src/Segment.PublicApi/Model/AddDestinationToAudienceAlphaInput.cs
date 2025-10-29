@@ -41,9 +41,9 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AddDestinationToAudienceAlphaInput" /> class.
         /// </summary>
         /// <param name="destination">destination (required).</param>
-        /// <param name="idSyncConfiguration">The identifier sync configuration input..</param>
+        /// <param name="idSyncConfiguration">Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed..</param>
         /// <param name="connectionSettings">The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific and thus are best defined as unknown..</param>
-        public AddDestinationToAudienceAlphaInput(DestinationInput destination = default(DestinationInput), Object idSyncConfiguration = default(Object), Object connectionSettings = default(Object))
+        public AddDestinationToAudienceAlphaInput(DestinationInput destination = default(DestinationInput), List<IDSyncConfigurationInput> idSyncConfiguration = default(List<IDSyncConfigurationInput>), Object connectionSettings = default(Object))
         {
             // to ensure "destination" is required (not null)
             if (destination == null)
@@ -62,11 +62,11 @@ namespace Segment.PublicApi.Model
         public DestinationInput Destination { get; set; }
 
         /// <summary>
-        /// The identifier sync configuration input.
+        /// Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed.
         /// </summary>
-        /// <value>The identifier sync configuration input.</value>
+        /// <value>Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed.</value>
         [DataMember(Name = "idSyncConfiguration", EmitDefaultValue = false)]
-        public Object IdSyncConfiguration { get; set; }
+        public List<IDSyncConfigurationInput> IdSyncConfiguration { get; set; }
 
         /// <summary>
         /// The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific and thus are best defined as unknown.
@@ -128,8 +128,9 @@ namespace Segment.PublicApi.Model
                 ) && 
                 (
                     this.IdSyncConfiguration == input.IdSyncConfiguration ||
-                    (this.IdSyncConfiguration != null &&
-                    this.IdSyncConfiguration.Equals(input.IdSyncConfiguration))
+                    this.IdSyncConfiguration != null &&
+                    input.IdSyncConfiguration != null &&
+                    this.IdSyncConfiguration.SequenceEqual(input.IdSyncConfiguration)
                 ) && 
                 (
                     this.ConnectionSettings == input.ConnectionSettings ||

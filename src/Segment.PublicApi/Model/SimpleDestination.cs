@@ -49,8 +49,8 @@ namespace Segment.PublicApi.Model
         /// <param name="settings">The Destination settings. (required).</param>
         /// <param name="destinationId">The Destination id. (required).</param>
         /// <param name="metadata">metadata.</param>
-        /// <param name="idSync">idSync.</param>
-        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string destinationId = default(string), Metadata metadata = default(Metadata), IDSyncOptions idSync = default(IDSyncOptions))
+        /// <param name="idSyncConfiguration">idSyncConfiguration.</param>
+        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string destinationId = default(string), Metadata metadata = default(Metadata), IDSyncOptions idSyncConfiguration = default(IDSyncOptions))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -91,7 +91,7 @@ namespace Segment.PublicApi.Model
             this.DestinationId = destinationId;
             this.Name = name;
             this.Metadata = metadata;
-            this.IdSync = idSync;
+            this.IdSyncConfiguration = idSyncConfiguration;
         }
 
         /// <summary>
@@ -157,10 +157,10 @@ namespace Segment.PublicApi.Model
         public Metadata Metadata { get; set; }
 
         /// <summary>
-        /// Gets or Sets IdSync
+        /// Gets or Sets IdSyncConfiguration
         /// </summary>
-        [DataMember(Name = "idSync", EmitDefaultValue = false)]
-        public IDSyncOptions IdSync { get; set; }
+        [DataMember(Name = "idSyncConfiguration", EmitDefaultValue = false)]
+        public IDSyncOptions IdSyncConfiguration { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -179,7 +179,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("  DestinationId: ").Append(DestinationId).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("  IdSync: ").Append(IdSync).Append("\n");
+            sb.Append("  IdSyncConfiguration: ").Append(IdSyncConfiguration).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -261,9 +261,9 @@ namespace Segment.PublicApi.Model
                     this.Metadata.Equals(input.Metadata))
                 ) && 
                 (
-                    this.IdSync == input.IdSync ||
-                    (this.IdSync != null &&
-                    this.IdSync.Equals(input.IdSync))
+                    this.IdSyncConfiguration == input.IdSyncConfiguration ||
+                    (this.IdSyncConfiguration != null &&
+                    this.IdSyncConfiguration.Equals(input.IdSyncConfiguration))
                 );
         }
 
@@ -309,9 +309,9 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.Metadata.GetHashCode();
                 }
-                if (this.IdSync != null)
+                if (this.IdSyncConfiguration != null)
                 {
-                    hashCode = (hashCode * 59) + this.IdSync.GetHashCode();
+                    hashCode = (hashCode * 59) + this.IdSyncConfiguration.GetHashCode();
                 }
                 return hashCode;
             }

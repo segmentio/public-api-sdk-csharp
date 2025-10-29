@@ -27,49 +27,50 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// AddDestinationToAudienceAlphaOutput
+    /// The identifier sync configuration input.
     /// </summary>
-    [DataContract(Name = "AddDestinationToAudienceAlphaOutput")]
-    public partial class AddDestinationToAudienceAlphaOutput : IEquatable<AddDestinationToAudienceAlphaOutput>, IValidatableObject
+    [DataContract(Name = "IDSyncConfigurationInput")]
+    public partial class IDSyncConfigurationInput : IEquatable<IDSyncConfigurationInput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddDestinationToAudienceAlphaOutput" /> class.
+        /// Initializes a new instance of the <see cref="IDSyncConfigurationInput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AddDestinationToAudienceAlphaOutput() { }
+        protected IDSyncConfigurationInput() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddDestinationToAudienceAlphaOutput" /> class.
+        /// Initializes a new instance of the <see cref="IDSyncConfigurationInput" /> class.
         /// </summary>
-        /// <param name="connection">connection (required).</param>
-        /// <param name="idSyncConfiguration">The id sync configuration for the Destination - array of external ids with their strategies. (required).</param>
-        public AddDestinationToAudienceAlphaOutput(Connection connection = default(Connection), List<IDSyncConfigurationInput> idSyncConfiguration = default(List<IDSyncConfigurationInput>))
+        /// <param name="externalId">The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;. (required).</param>
+        /// <param name="strategy">The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;. (required).</param>
+        public IDSyncConfigurationInput(string externalId = default(string), string strategy = default(string))
         {
-            // to ensure "connection" is required (not null)
-            if (connection == null)
+            // to ensure "externalId" is required (not null)
+            if (externalId == null)
             {
-                throw new ArgumentNullException("connection is a required property for AddDestinationToAudienceAlphaOutput and cannot be null");
+                throw new ArgumentNullException("externalId is a required property for IDSyncConfigurationInput and cannot be null");
             }
-            this.Connection = connection;
-            // to ensure "idSyncConfiguration" is required (not null)
-            if (idSyncConfiguration == null)
+            this.ExternalId = externalId;
+            // to ensure "strategy" is required (not null)
+            if (strategy == null)
             {
-                throw new ArgumentNullException("idSyncConfiguration is a required property for AddDestinationToAudienceAlphaOutput and cannot be null");
+                throw new ArgumentNullException("strategy is a required property for IDSyncConfigurationInput and cannot be null");
             }
-            this.IdSyncConfiguration = idSyncConfiguration;
+            this.Strategy = strategy;
         }
 
         /// <summary>
-        /// Gets or Sets Connection
+        /// The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;.
         /// </summary>
-        [DataMember(Name = "connection", IsRequired = true, EmitDefaultValue = true)]
-        public Connection Connection { get; set; }
+        /// <value>The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;.</value>
+        [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
+        public string ExternalId { get; set; }
 
         /// <summary>
-        /// The id sync configuration for the Destination - array of external ids with their strategies.
+        /// The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;.
         /// </summary>
-        /// <value>The id sync configuration for the Destination - array of external ids with their strategies.</value>
-        [DataMember(Name = "idSyncConfiguration", IsRequired = true, EmitDefaultValue = true)]
-        public List<IDSyncConfigurationInput> IdSyncConfiguration { get; set; }
+        /// <value>The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;.</value>
+        [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
+        public string Strategy { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -78,9 +79,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AddDestinationToAudienceAlphaOutput {\n");
-            sb.Append("  Connection: ").Append(Connection).Append("\n");
-            sb.Append("  IdSyncConfiguration: ").Append(IdSyncConfiguration).Append("\n");
+            sb.Append("class IDSyncConfigurationInput {\n");
+            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
+            sb.Append("  Strategy: ").Append(Strategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -101,15 +102,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AddDestinationToAudienceAlphaOutput);
+            return this.Equals(input as IDSyncConfigurationInput);
         }
 
         /// <summary>
-        /// Returns true if AddDestinationToAudienceAlphaOutput instances are equal
+        /// Returns true if IDSyncConfigurationInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of AddDestinationToAudienceAlphaOutput to be compared</param>
+        /// <param name="input">Instance of IDSyncConfigurationInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AddDestinationToAudienceAlphaOutput input)
+        public bool Equals(IDSyncConfigurationInput input)
         {
             if (input == null)
             {
@@ -117,15 +118,14 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Connection == input.Connection ||
-                    (this.Connection != null &&
-                    this.Connection.Equals(input.Connection))
+                    this.ExternalId == input.ExternalId ||
+                    (this.ExternalId != null &&
+                    this.ExternalId.Equals(input.ExternalId))
                 ) && 
                 (
-                    this.IdSyncConfiguration == input.IdSyncConfiguration ||
-                    this.IdSyncConfiguration != null &&
-                    input.IdSyncConfiguration != null &&
-                    this.IdSyncConfiguration.SequenceEqual(input.IdSyncConfiguration)
+                    this.Strategy == input.Strategy ||
+                    (this.Strategy != null &&
+                    this.Strategy.Equals(input.Strategy))
                 );
         }
 
@@ -138,13 +138,13 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Connection != null)
+                if (this.ExternalId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Connection.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ExternalId.GetHashCode();
                 }
-                if (this.IdSyncConfiguration != null)
+                if (this.Strategy != null)
                 {
-                    hashCode = (hashCode * 59) + this.IdSyncConfiguration.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Strategy.GetHashCode();
                 }
                 return hashCode;
             }
