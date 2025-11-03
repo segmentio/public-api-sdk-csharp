@@ -49,8 +49,8 @@ namespace Segment.PublicApi.Model
         /// <param name="settings">The Destination settings. (required).</param>
         /// <param name="destinationId">The Destination id. (required).</param>
         /// <param name="metadata">metadata.</param>
-        /// <param name="idSyncConfiguration">idSyncConfiguration.</param>
-        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string destinationId = default(string), Metadata metadata = default(Metadata), IDSyncOptions idSyncConfiguration = default(IDSyncOptions))
+        /// <param name="idSyncConfiguration">ID Sync configuration - array of external IDs with their strategies..</param>
+        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string destinationId = default(string), Metadata metadata = default(Metadata), List<IDSyncConfigurationInput> idSyncConfiguration = default(List<IDSyncConfigurationInput>))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -157,10 +157,11 @@ namespace Segment.PublicApi.Model
         public Metadata Metadata { get; set; }
 
         /// <summary>
-        /// Gets or Sets IdSyncConfiguration
+        /// ID Sync configuration - array of external IDs with their strategies.
         /// </summary>
+        /// <value>ID Sync configuration - array of external IDs with their strategies.</value>
         [DataMember(Name = "idSyncConfiguration", EmitDefaultValue = false)]
-        public IDSyncOptions IdSyncConfiguration { get; set; }
+        public List<IDSyncConfigurationInput> IdSyncConfiguration { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -262,8 +263,9 @@ namespace Segment.PublicApi.Model
                 ) && 
                 (
                     this.IdSyncConfiguration == input.IdSyncConfiguration ||
-                    (this.IdSyncConfiguration != null &&
-                    this.IdSyncConfiguration.Equals(input.IdSyncConfiguration))
+                    this.IdSyncConfiguration != null &&
+                    input.IdSyncConfiguration != null &&
+                    this.IdSyncConfiguration.SequenceEqual(input.IdSyncConfiguration)
                 );
         }
 
