@@ -45,13 +45,13 @@ namespace Segment.PublicApi.Model
         /// <param name="workspaceId">The WORKSPACE id. (required).</param>
         /// <param name="spaceId">The space id. (required).</param>
         /// <param name="audienceId">The audience id. (required).</param>
-        /// <param name="destinationConnectionId">The DESTINATION connection id (formerly integrationInstanceId). (required).</param>
+        /// <param name="connectionId">The connection id. (required).</param>
         /// <param name="activationType">Type of activation trigger. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
         /// <param name="personalization">personalization (required).</param>
         /// <param name="destinationMapping">destinationMapping.</param>
         /// <param name="performResync">Whether to perform a resync after creation of the activation..</param>
-        public ActivationOutput(string id = default(string), bool enabled = default(bool), string workspaceId = default(string), string spaceId = default(string), string audienceId = default(string), string destinationConnectionId = default(string), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
+        public ActivationOutput(string id = default(string), bool enabled = default(bool), string workspaceId = default(string), string spaceId = default(string), string audienceId = default(string), string connectionId = default(string), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -78,12 +78,12 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("audienceId is a required property for ActivationOutput and cannot be null");
             }
             this.AudienceId = audienceId;
-            // to ensure "destinationConnectionId" is required (not null)
-            if (destinationConnectionId == null)
+            // to ensure "connectionId" is required (not null)
+            if (connectionId == null)
             {
-                throw new ArgumentNullException("destinationConnectionId is a required property for ActivationOutput and cannot be null");
+                throw new ArgumentNullException("connectionId is a required property for ActivationOutput and cannot be null");
             }
-            this.DestinationConnectionId = destinationConnectionId;
+            this.ConnectionId = connectionId;
             // to ensure "activationType" is required (not null)
             if (activationType == null)
             {
@@ -142,11 +142,11 @@ namespace Segment.PublicApi.Model
         public string AudienceId { get; set; }
 
         /// <summary>
-        /// The DESTINATION connection id (formerly integrationInstanceId).
+        /// The connection id.
         /// </summary>
-        /// <value>The DESTINATION connection id (formerly integrationInstanceId).</value>
-        [DataMember(Name = "destinationConnectionId", IsRequired = true, EmitDefaultValue = true)]
-        public string DestinationConnectionId { get; set; }
+        /// <value>The connection id.</value>
+        [DataMember(Name = "connectionId", IsRequired = true, EmitDefaultValue = true)]
+        public string ConnectionId { get; set; }
 
         /// <summary>
         /// Type of activation trigger.
@@ -194,7 +194,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  WorkspaceId: ").Append(WorkspaceId).Append("\n");
             sb.Append("  SpaceId: ").Append(SpaceId).Append("\n");
             sb.Append("  AudienceId: ").Append(AudienceId).Append("\n");
-            sb.Append("  DestinationConnectionId: ").Append(DestinationConnectionId).Append("\n");
+            sb.Append("  ConnectionId: ").Append(ConnectionId).Append("\n");
             sb.Append("  ActivationType: ").Append(ActivationType).Append("\n");
             sb.Append("  ActivationName: ").Append(ActivationName).Append("\n");
             sb.Append("  Personalization: ").Append(Personalization).Append("\n");
@@ -260,9 +260,9 @@ namespace Segment.PublicApi.Model
                     this.AudienceId.Equals(input.AudienceId))
                 ) && 
                 (
-                    this.DestinationConnectionId == input.DestinationConnectionId ||
-                    (this.DestinationConnectionId != null &&
-                    this.DestinationConnectionId.Equals(input.DestinationConnectionId))
+                    this.ConnectionId == input.ConnectionId ||
+                    (this.ConnectionId != null &&
+                    this.ConnectionId.Equals(input.ConnectionId))
                 ) && 
                 (
                     this.ActivationType == input.ActivationType ||
@@ -316,9 +316,9 @@ namespace Segment.PublicApi.Model
                 {
                     hashCode = (hashCode * 59) + this.AudienceId.GetHashCode();
                 }
-                if (this.DestinationConnectionId != null)
+                if (this.ConnectionId != null)
                 {
-                    hashCode = (hashCode * 59) + this.DestinationConnectionId.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ConnectionId.GetHashCode();
                 }
                 if (this.ActivationType != null)
                 {

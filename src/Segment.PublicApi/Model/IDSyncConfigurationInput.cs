@@ -27,45 +27,50 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// IDSyncConfig
+    /// The identifier sync configuration input.
     /// </summary>
-    [DataContract(Name = "IDSyncConfig")]
-    public partial class IDSyncConfig : IEquatable<IDSyncConfig>, IValidatableObject
+    [DataContract(Name = "IDSyncConfigurationInput")]
+    public partial class IDSyncConfigurationInput : IEquatable<IDSyncConfigurationInput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="IDSyncConfig" /> class.
+        /// Initializes a new instance of the <see cref="IDSyncConfigurationInput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected IDSyncConfig() { }
+        protected IDSyncConfigurationInput() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="IDSyncConfig" /> class.
+        /// Initializes a new instance of the <see cref="IDSyncConfigurationInput" /> class.
         /// </summary>
-        /// <param name="strategy">The strategy of the identifier. (required).</param>
-        /// <param name="mapTo">The property to map the identifier to..</param>
-        public IDSyncConfig(string strategy = default(string), string mapTo = default(string))
+        /// <param name="externalId">The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;. (required).</param>
+        /// <param name="strategy">The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;. (required).</param>
+        public IDSyncConfigurationInput(string externalId = default(string), string strategy = default(string))
         {
+            // to ensure "externalId" is required (not null)
+            if (externalId == null)
+            {
+                throw new ArgumentNullException("externalId is a required property for IDSyncConfigurationInput and cannot be null");
+            }
+            this.ExternalId = externalId;
             // to ensure "strategy" is required (not null)
             if (strategy == null)
             {
-                throw new ArgumentNullException("strategy is a required property for IDSyncConfig and cannot be null");
+                throw new ArgumentNullException("strategy is a required property for IDSyncConfigurationInput and cannot be null");
             }
             this.Strategy = strategy;
-            this.MapTo = mapTo;
         }
 
         /// <summary>
-        /// The strategy of the identifier.
+        /// The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;.
         /// </summary>
-        /// <value>The strategy of the identifier.</value>
-        [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
-        public string Strategy { get; set; }
+        /// <value>The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;.</value>
+        [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
+        public string ExternalId { get; set; }
 
         /// <summary>
-        /// The property to map the identifier to.
+        /// The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;.
         /// </summary>
-        /// <value>The property to map the identifier to.</value>
-        [DataMember(Name = "mapTo", EmitDefaultValue = false)]
-        public string MapTo { get; set; }
+        /// <value>The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;.</value>
+        [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
+        public string Strategy { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,9 +79,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class IDSyncConfig {\n");
+            sb.Append("class IDSyncConfigurationInput {\n");
+            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Strategy: ").Append(Strategy).Append("\n");
-            sb.Append("  MapTo: ").Append(MapTo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -97,15 +102,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as IDSyncConfig);
+            return this.Equals(input as IDSyncConfigurationInput);
         }
 
         /// <summary>
-        /// Returns true if IDSyncConfig instances are equal
+        /// Returns true if IDSyncConfigurationInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of IDSyncConfig to be compared</param>
+        /// <param name="input">Instance of IDSyncConfigurationInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(IDSyncConfig input)
+        public bool Equals(IDSyncConfigurationInput input)
         {
             if (input == null)
             {
@@ -113,14 +118,14 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
+                    this.ExternalId == input.ExternalId ||
+                    (this.ExternalId != null &&
+                    this.ExternalId.Equals(input.ExternalId))
+                ) && 
+                (
                     this.Strategy == input.Strategy ||
                     (this.Strategy != null &&
                     this.Strategy.Equals(input.Strategy))
-                ) && 
-                (
-                    this.MapTo == input.MapTo ||
-                    (this.MapTo != null &&
-                    this.MapTo.Equals(input.MapTo))
                 );
         }
 
@@ -133,13 +138,13 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.ExternalId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ExternalId.GetHashCode();
+                }
                 if (this.Strategy != null)
                 {
                     hashCode = (hashCode * 59) + this.Strategy.GetHashCode();
-                }
-                if (this.MapTo != null)
-                {
-                    hashCode = (hashCode * 59) + this.MapTo.GetHashCode();
                 }
                 return hashCode;
             }

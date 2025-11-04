@@ -41,7 +41,8 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AddDestinationToAudienceAlphaOutput" /> class.
         /// </summary>
         /// <param name="connection">connection (required).</param>
-        public AddDestinationToAudienceAlphaOutput(Connection connection = default(Connection))
+        /// <param name="idSyncConfiguration">The id sync configuration for the Destination - array of external ids with their strategies. (required).</param>
+        public AddDestinationToAudienceAlphaOutput(Connection connection = default(Connection), List<IDSyncConfigurationInput> idSyncConfiguration = default(List<IDSyncConfigurationInput>))
         {
             // to ensure "connection" is required (not null)
             if (connection == null)
@@ -49,6 +50,12 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("connection is a required property for AddDestinationToAudienceAlphaOutput and cannot be null");
             }
             this.Connection = connection;
+            // to ensure "idSyncConfiguration" is required (not null)
+            if (idSyncConfiguration == null)
+            {
+                throw new ArgumentNullException("idSyncConfiguration is a required property for AddDestinationToAudienceAlphaOutput and cannot be null");
+            }
+            this.IdSyncConfiguration = idSyncConfiguration;
         }
 
         /// <summary>
@@ -56,6 +63,13 @@ namespace Segment.PublicApi.Model
         /// </summary>
         [DataMember(Name = "connection", IsRequired = true, EmitDefaultValue = true)]
         public Connection Connection { get; set; }
+
+        /// <summary>
+        /// The id sync configuration for the Destination - array of external ids with their strategies.
+        /// </summary>
+        /// <value>The id sync configuration for the Destination - array of external ids with their strategies.</value>
+        [DataMember(Name = "idSyncConfiguration", IsRequired = true, EmitDefaultValue = true)]
+        public List<IDSyncConfigurationInput> IdSyncConfiguration { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,6 +80,7 @@ namespace Segment.PublicApi.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class AddDestinationToAudienceAlphaOutput {\n");
             sb.Append("  Connection: ").Append(Connection).Append("\n");
+            sb.Append("  IdSyncConfiguration: ").Append(IdSyncConfiguration).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,6 +120,12 @@ namespace Segment.PublicApi.Model
                     this.Connection == input.Connection ||
                     (this.Connection != null &&
                     this.Connection.Equals(input.Connection))
+                ) && 
+                (
+                    this.IdSyncConfiguration == input.IdSyncConfiguration ||
+                    this.IdSyncConfiguration != null &&
+                    input.IdSyncConfiguration != null &&
+                    this.IdSyncConfiguration.SequenceEqual(input.IdSyncConfiguration)
                 );
         }
 
@@ -120,6 +141,10 @@ namespace Segment.PublicApi.Model
                 if (this.Connection != null)
                 {
                     hashCode = (hashCode * 59) + this.Connection.GetHashCode();
+                }
+                if (this.IdSyncConfiguration != null)
+                {
+                    hashCode = (hashCode * 59) + this.IdSyncConfiguration.GetHashCode();
                 }
                 return hashCode;
             }
