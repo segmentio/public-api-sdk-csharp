@@ -58,10 +58,16 @@ namespace Segment.PublicApi.Model
             INSERTSOURCE = 3,
 
             /// <summary>
+            /// Enum INSERTTRANSFORMATION for value: INSERT_TRANSFORMATION
+            /// </summary>
+            [EnumMember(Value = "INSERT_TRANSFORMATION")]
+            INSERTTRANSFORMATION = 4,
+
+            /// <summary>
             /// Enum SOURCE for value: SOURCE
             /// </summary>
             [EnumMember(Value = "SOURCE")]
-            SOURCE = 4
+            SOURCE = 5
         }
 
 
