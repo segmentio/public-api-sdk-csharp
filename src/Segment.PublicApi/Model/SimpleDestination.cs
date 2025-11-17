@@ -50,8 +50,7 @@ namespace Segment.PublicApi.Model
         /// <param name="destinationId">The Destination id. (required).</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="idSyncConfiguration">ID Sync configuration - array of external IDs with their strategies..</param>
-        /// <param name="connectionSettings">The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific and thus are best defined as unknown..</param>
-        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string destinationId = default(string), Metadata metadata = default(Metadata), List<IDSyncConfigurationInput> idSyncConfiguration = default(List<IDSyncConfigurationInput>), Object connectionSettings = default(Object))
+        public SimpleDestination(string id = default(string), string name = default(string), string sourceId = default(string), bool enabled = default(bool), string createdAt = default(string), string updatedAt = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string destinationId = default(string), Metadata metadata = default(Metadata), List<IDSyncConfigurationInput> idSyncConfiguration = default(List<IDSyncConfigurationInput>))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -93,7 +92,6 @@ namespace Segment.PublicApi.Model
             this.Name = name;
             this.Metadata = metadata;
             this.IdSyncConfiguration = idSyncConfiguration;
-            this.ConnectionSettings = connectionSettings;
         }
 
         /// <summary>
@@ -166,13 +164,6 @@ namespace Segment.PublicApi.Model
         public List<IDSyncConfigurationInput> IdSyncConfiguration { get; set; }
 
         /// <summary>
-        /// The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific and thus are best defined as unknown.
-        /// </summary>
-        /// <value>The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific and thus are best defined as unknown.</value>
-        [DataMember(Name = "connectionSettings", EmitDefaultValue = true)]
-        public Object ConnectionSettings { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -190,7 +181,6 @@ namespace Segment.PublicApi.Model
             sb.Append("  DestinationId: ").Append(DestinationId).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  IdSyncConfiguration: ").Append(IdSyncConfiguration).Append("\n");
-            sb.Append("  ConnectionSettings: ").Append(ConnectionSettings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -276,11 +266,6 @@ namespace Segment.PublicApi.Model
                     this.IdSyncConfiguration != null &&
                     input.IdSyncConfiguration != null &&
                     this.IdSyncConfiguration.SequenceEqual(input.IdSyncConfiguration)
-                ) && 
-                (
-                    this.ConnectionSettings == input.ConnectionSettings ||
-                    (this.ConnectionSettings != null &&
-                    this.ConnectionSettings.Equals(input.ConnectionSettings))
                 );
         }
 
@@ -329,10 +314,6 @@ namespace Segment.PublicApi.Model
                 if (this.IdSyncConfiguration != null)
                 {
                     hashCode = (hashCode * 59) + this.IdSyncConfiguration.GetHashCode();
-                }
-                if (this.ConnectionSettings != null)
-                {
-                    hashCode = (hashCode * 59) + this.ConnectionSettings.GetHashCode();
                 }
                 return hashCode;
             }
