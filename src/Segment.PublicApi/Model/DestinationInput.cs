@@ -40,8 +40,8 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DestinationInput" /> class.
         /// </summary>
-        /// <param name="id">The Destination instance id. (required).</param>
-        /// <param name="type">Type of Destination to add to the audience. (required).</param>
+        /// <param name="id">The Destination id. Use the List Destinations endpoint to look up available ids. (required).</param>
+        /// <param name="type">The category of the Destination.  Possible values: destination, warehouse. (required).</param>
         public DestinationInput(string id = default(string), string type = default(string))
         {
             // to ensure "id" is required (not null)
@@ -59,16 +59,16 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// The Destination instance id.
+        /// The Destination id. Use the List Destinations endpoint to look up available ids.
         /// </summary>
-        /// <value>The Destination instance id.</value>
+        /// <value>The Destination id. Use the List Destinations endpoint to look up available ids.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
-        /// Type of Destination to add to the audience.
+        /// The category of the Destination.  Possible values: destination, warehouse.
         /// </summary>
-        /// <value>Type of Destination to add to the audience.</value>
+        /// <value>The category of the Destination.  Possible values: destination, warehouse.</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 

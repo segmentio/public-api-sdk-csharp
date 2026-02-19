@@ -42,7 +42,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="profile">profile (required).</param>
         /// <param name="entities">Entities V2 Object..</param>
-        /// <param name="syncEntityPropertyChanges">Sync entity property changes back to Segment. Only applicable if activationType is \&quot;Audience Membership Changed\&quot;..</param>
+        /// <param name="syncEntityPropertyChanges">Sync entity property changes to the Destination. Only applicable if activationType is \&quot;Audience Membership Changed\&quot;..</param>
         public PersonalizationInput(Profile profile = default(Profile), List<PersonalizationInputEntity> entities = default(List<PersonalizationInputEntity>), bool syncEntityPropertyChanges = default(bool))
         {
             // to ensure "profile" is required (not null)
@@ -69,9 +69,9 @@ namespace Segment.PublicApi.Model
         public List<PersonalizationInputEntity> Entities { get; set; }
 
         /// <summary>
-        /// Sync entity property changes back to Segment. Only applicable if activationType is \&quot;Audience Membership Changed\&quot;.
+        /// Sync entity property changes to the Destination. Only applicable if activationType is \&quot;Audience Membership Changed\&quot;.
         /// </summary>
-        /// <value>Sync entity property changes back to Segment. Only applicable if activationType is \&quot;Audience Membership Changed\&quot;.</value>
+        /// <value>Sync entity property changes to the Destination. Only applicable if activationType is \&quot;Audience Membership Changed\&quot;.</value>
         [DataMember(Name = "syncEntityPropertyChanges", EmitDefaultValue = true)]
         public bool SyncEntityPropertyChanges { get; set; }
 

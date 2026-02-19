@@ -40,7 +40,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DestinationSubscriptionConfiguration" /> class.
         /// </summary>
-        /// <param name="actionId">The action id to instantiate. (required).</param>
+        /// <param name="actionId">The id for the action that Segment should perform on the Destination. (required).</param>
         /// <param name="settings">Represents settings used to configure an action subscription..</param>
         public DestinationSubscriptionConfiguration(string actionId = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>))
         {
@@ -54,9 +54,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// The action id to instantiate.
+        /// The id for the action that Segment should perform on the Destination.
         /// </summary>
-        /// <value>The action id to instantiate.</value>
+        /// <value>The id for the action that Segment should perform on the Destination.</value>
         [DataMember(Name = "actionId", IsRequired = true, EmitDefaultValue = true)]
         public string ActionId { get; set; }
 

@@ -41,8 +41,8 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="AddDestinationToAudienceAlphaOutput" /> class.
         /// </summary>
         /// <param name="connection">connection (required).</param>
-        /// <param name="idSyncConfiguration">The id sync configuration for the Destination - array of external ids with their strategies. (required).</param>
-        /// <param name="connectionSettings">The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific and thus are best defined as unknown..</param>
+        /// <param name="idSyncConfiguration">Identifier sync configuration. Defines which external ids to sync and their selection strategies. Maximum 5 items allowed. If omitted, the default will be last email and last user_id, or all email and all user_id depending on the Destination. (required).</param>
+        /// <param name="connectionSettings">The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific. Use the List Supported Destinations from Audience endpoint to find the required connection settings..</param>
         public AddDestinationToAudienceAlphaOutput(Connection connection = default(Connection), List<IDSyncConfigurationInput> idSyncConfiguration = default(List<IDSyncConfigurationInput>), Object connectionSettings = default(Object))
         {
             // to ensure "connection" is required (not null)
@@ -67,16 +67,16 @@ namespace Segment.PublicApi.Model
         public Connection Connection { get; set; }
 
         /// <summary>
-        /// The id sync configuration for the Destination - array of external ids with their strategies.
+        /// Identifier sync configuration. Defines which external ids to sync and their selection strategies. Maximum 5 items allowed. If omitted, the default will be last email and last user_id, or all email and all user_id depending on the Destination.
         /// </summary>
-        /// <value>The id sync configuration for the Destination - array of external ids with their strategies.</value>
+        /// <value>Identifier sync configuration. Defines which external ids to sync and their selection strategies. Maximum 5 items allowed. If omitted, the default will be last email and last user_id, or all email and all user_id depending on the Destination.</value>
         [DataMember(Name = "idSyncConfiguration", IsRequired = true, EmitDefaultValue = true)]
         public List<IDSyncConfigurationInput> IdSyncConfiguration { get; set; }
 
         /// <summary>
-        /// The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific and thus are best defined as unknown.
+        /// The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific. Use the List Supported Destinations from Audience endpoint to find the required connection settings.
         /// </summary>
-        /// <value>The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific and thus are best defined as unknown.</value>
+        /// <value>The settings that a Destination requires to create audiences on a third-party platform. These settings are Destination-specific. Use the List Supported Destinations from Audience endpoint to find the required connection settings.</value>
         [DataMember(Name = "connectionSettings", EmitDefaultValue = true)]
         public Object ConnectionSettings { get; set; }
 

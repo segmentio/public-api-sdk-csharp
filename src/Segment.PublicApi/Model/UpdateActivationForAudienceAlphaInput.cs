@@ -39,7 +39,7 @@ namespace Segment.PublicApi.Model
         /// <param name="activationName">Activation name..</param>
         /// <param name="personalization">personalization.</param>
         /// <param name="destinationMapping">destinationMapping.</param>
-        /// <param name="performResync">Whether to perform a resync after creation of the activation..</param>
+        /// <param name="performResync">Determines whether to perform a full resync after the update. If true, the entire audience is resent to the Destination using the updated configuration. If false, the update applies only to future syncs..</param>
         public UpdateActivationForAudienceAlphaInput(bool enabled = default(bool), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
         {
             this.Enabled = enabled;
@@ -76,9 +76,9 @@ namespace Segment.PublicApi.Model
         public DestinationSubscriptionConfiguration DestinationMapping { get; set; }
 
         /// <summary>
-        /// Whether to perform a resync after creation of the activation.
+        /// Determines whether to perform a full resync after the update. If true, the entire audience is resent to the Destination using the updated configuration. If false, the update applies only to future syncs.
         /// </summary>
-        /// <value>Whether to perform a resync after creation of the activation.</value>
+        /// <value>Determines whether to perform a full resync after the update. If true, the entire audience is resent to the Destination using the updated configuration. If false, the update applies only to future syncs.</value>
         [DataMember(Name = "performResync", EmitDefaultValue = true)]
         public bool PerformResync { get; set; }
 

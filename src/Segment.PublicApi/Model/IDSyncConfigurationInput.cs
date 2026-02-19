@@ -40,8 +40,8 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="IDSyncConfigurationInput" /> class.
         /// </summary>
-        /// <param name="externalId">The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;. (required).</param>
-        /// <param name="strategy">The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;. (required).</param>
+        /// <param name="externalId">The id type to sync. Examples: user_id, email, anonymous_id. (required).</param>
+        /// <param name="strategy">The rule for selecting which identifiers to sync from a profile.  Possible values: first: Syncs only the oldest recorded value. last: Syncs only the most recently updated value. all: Syncs every value found on the profile (sends multiple events). (required).</param>
         public IDSyncConfigurationInput(string externalId = default(string), string strategy = default(string))
         {
             // to ensure "externalId" is required (not null)
@@ -59,16 +59,16 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;.
+        /// The id type to sync. Examples: user_id, email, anonymous_id.
         /// </summary>
-        /// <value>The external id to sync, for example \&quot;user_id\&quot; or \&quot;email\&quot;.</value>
+        /// <value>The id type to sync. Examples: user_id, email, anonymous_id.</value>
         [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
-        /// The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;.
+        /// The rule for selecting which identifiers to sync from a profile.  Possible values: first: Syncs only the oldest recorded value. last: Syncs only the most recently updated value. all: Syncs every value found on the profile (sends multiple events).
         /// </summary>
-        /// <value>The strategy for syncing this identifier. Valid values: \&quot;first\&quot;, \&quot;last\&quot;, \&quot;all\&quot;.</value>
+        /// <value>The rule for selecting which identifiers to sync from a profile.  Possible values: first: Syncs only the oldest recorded value. last: Syncs only the most recently updated value. all: Syncs every value found on the profile (sends multiple events).</value>
         [DataMember(Name = "strategy", IsRequired = true, EmitDefaultValue = true)]
         public string Strategy { get; set; }
 
