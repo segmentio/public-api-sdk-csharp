@@ -40,9 +40,9 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AddActivationToAudienceAlphaInput" /> class.
         /// </summary>
-        /// <param name="enabled">Whether the event emitter should be created in an enabled state. Will trigger an audience run if enabled..</param>
-        /// <param name="performResync">Whether to perform a resync after creation of the activation. (required).</param>
-        /// <param name="activationType">Type of activation trigger. (required).</param>
+        /// <param name="enabled">Determines whether an activation is enabled..</param>
+        /// <param name="performResync">Determines whether to perform a full resync upon creation. If true, the entire audience is resent to the Destination from scratch. If false, only future changes will be synced. (required).</param>
+        /// <param name="activationType">Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
         /// <param name="personalization">personalization (required).</param>
         /// <param name="destinationMapping">destinationMapping.</param>
@@ -72,23 +72,23 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Whether the event emitter should be created in an enabled state. Will trigger an audience run if enabled.
+        /// Determines whether an activation is enabled.
         /// </summary>
-        /// <value>Whether the event emitter should be created in an enabled state. Will trigger an audience run if enabled.</value>
+        /// <value>Determines whether an activation is enabled.</value>
         [DataMember(Name = "enabled", EmitDefaultValue = true)]
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Whether to perform a resync after creation of the activation.
+        /// Determines whether to perform a full resync upon creation. If true, the entire audience is resent to the Destination from scratch. If false, only future changes will be synced.
         /// </summary>
-        /// <value>Whether to perform a resync after creation of the activation.</value>
+        /// <value>Determines whether to perform a full resync upon creation. If true, the entire audience is resent to the Destination from scratch. If false, only future changes will be synced.</value>
         [DataMember(Name = "performResync", IsRequired = true, EmitDefaultValue = true)]
         public bool PerformResync { get; set; }
 
         /// <summary>
-        /// Type of activation trigger.
+        /// Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience.
         /// </summary>
-        /// <value>Type of activation trigger.</value>
+        /// <value>Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience.</value>
         [DataMember(Name = "activationType", IsRequired = true, EmitDefaultValue = true)]
         public string ActivationType { get; set; }
 

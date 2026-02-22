@@ -46,11 +46,11 @@ namespace Segment.PublicApi.Model
         /// <param name="spaceId">The space id. (required).</param>
         /// <param name="audienceId">The audience id. (required).</param>
         /// <param name="connectionId">The connection id. (required).</param>
-        /// <param name="activationType">Type of activation trigger. (required).</param>
+        /// <param name="activationType">Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience. (required).</param>
         /// <param name="activationName">Name of the activation. (required).</param>
         /// <param name="personalization">personalization (required).</param>
         /// <param name="destinationMapping">destinationMapping.</param>
-        /// <param name="performResync">Whether to perform a resync after creation of the activation..</param>
+        /// <param name="performResync">Indicates if a full resync is currently pending or in progress..</param>
         public ActivationOutput(string id = default(string), bool enabled = default(bool), string workspaceId = default(string), string spaceId = default(string), string audienceId = default(string), string connectionId = default(string), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
         {
             // to ensure "id" is required (not null)
@@ -149,9 +149,9 @@ namespace Segment.PublicApi.Model
         public string ConnectionId { get; set; }
 
         /// <summary>
-        /// Type of activation trigger.
+        /// Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience.
         /// </summary>
-        /// <value>Type of activation trigger.</value>
+        /// <value>Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience.</value>
         [DataMember(Name = "activationType", IsRequired = true, EmitDefaultValue = true)]
         public string ActivationType { get; set; }
 
@@ -175,9 +175,9 @@ namespace Segment.PublicApi.Model
         public DestinationSubscriptionConfiguration DestinationMapping { get; set; }
 
         /// <summary>
-        /// Whether to perform a resync after creation of the activation.
+        /// Indicates if a full resync is currently pending or in progress.
         /// </summary>
-        /// <value>Whether to perform a resync after creation of the activation.</value>
+        /// <value>Indicates if a full resync is currently pending or in progress.</value>
         [DataMember(Name = "performResync", EmitDefaultValue = true)]
         public bool PerformResync { get; set; }
 
