@@ -80,7 +80,7 @@ namespace Segment.PublicApi.Model
         /// <param name="key">Key for the audience. (required).</param>
         /// <param name="enabled">Enabled/disabled status for the audience. (required).</param>
         /// <param name="definition">definition (required).</param>
-        /// <param name="status">Status for the audience.  Possible values: Backfilling, Computing, Failed, Live, Awaiting Destinations, Disabled..</param>
+        /// <param name="status">Status for the audience.  Possible values: Backfilling, Computing, Disabled, Error, Failed, Live, Locked, Not Computing, Preparing, Awaiting Destinations..</param>
         /// <param name="createdBy">User id who created the audience. (required).</param>
         /// <param name="updatedBy">User id who last updated the audience. (required).</param>
         /// <param name="createdAt">Date the audience was created. (required).</param>
@@ -199,9 +199,9 @@ namespace Segment.PublicApi.Model
         public AudienceDefinition Definition { get; set; }
 
         /// <summary>
-        /// Status for the audience.  Possible values: Backfilling, Computing, Failed, Live, Awaiting Destinations, Disabled.
+        /// Status for the audience.  Possible values: Backfilling, Computing, Disabled, Error, Failed, Live, Locked, Not Computing, Preparing, Awaiting Destinations.
         /// </summary>
-        /// <value>Status for the audience.  Possible values: Backfilling, Computing, Failed, Live, Awaiting Destinations, Disabled.</value>
+        /// <value>Status for the audience.  Possible values: Backfilling, Computing, Disabled, Error, Failed, Live, Locked, Not Computing, Preparing, Awaiting Destinations.</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
 
