@@ -42,7 +42,8 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="externalId">The id type to sync. Examples: user_id, email, anonymous_id. (required).</param>
         /// <param name="strategy">The rule for selecting which identifiers to sync from a profile.  Possible values: first: Syncs only the oldest recorded value. last: Syncs only the most recently updated value. all: Syncs every value found on the profile (sends multiple events). (required).</param>
-        public IDSyncConfigurationInput(string externalId = default(string), string strategy = default(string))
+        /// <param name="mapTo">Optional destination-specific identifier to map to (for example, \&quot;Email_Address_c\&quot;)..</param>
+        public IDSyncConfigurationInput(string externalId = default(string), string strategy = default(string), string mapTo = default(string))
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -56,6 +57,7 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("strategy is a required property for IDSyncConfigurationInput and cannot be null");
             }
             this.Strategy = strategy;
+            this.MapTo = mapTo;
         }
 
         /// <summary>
@@ -73,6 +75,13 @@ namespace Segment.PublicApi.Model
         public string Strategy { get; set; }
 
         /// <summary>
+        /// Optional destination-specific identifier to map to (for example, \&quot;Email_Address_c\&quot;).
+        /// </summary>
+        /// <value>Optional destination-specific identifier to map to (for example, \&quot;Email_Address_c\&quot;).</value>
+        [DataMember(Name = "mapTo", EmitDefaultValue = false)]
+        public string MapTo { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -82,6 +91,7 @@ namespace Segment.PublicApi.Model
             sb.Append("class IDSyncConfigurationInput {\n");
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Strategy: ").Append(Strategy).Append("\n");
+            sb.Append("  MapTo: ").Append(MapTo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -126,6 +136,11 @@ namespace Segment.PublicApi.Model
                     this.Strategy == input.Strategy ||
                     (this.Strategy != null &&
                     this.Strategy.Equals(input.Strategy))
+                ) && 
+                (
+                    this.MapTo == input.MapTo ||
+                    (this.MapTo != null &&
+                    this.MapTo.Equals(input.MapTo))
                 );
         }
 
@@ -145,6 +160,10 @@ namespace Segment.PublicApi.Model
                 if (this.Strategy != null)
                 {
                     hashCode = (hashCode * 59) + this.Strategy.GetHashCode();
+                }
+                if (this.MapTo != null)
+                {
+                    hashCode = (hashCode * 59) + this.MapTo.GetHashCode();
                 }
                 return hashCode;
             }
