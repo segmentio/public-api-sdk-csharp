@@ -36,14 +36,16 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="UpdateActivationForAudienceAlphaInput" /> class.
         /// </summary>
         /// <param name="enabled">Determines whether an activation is enabled..</param>
-        /// <param name="activationName">Activation name..</param>
+        /// <param name="activationName">Activation name. For Warehouse Destinations, this is used as the table name..</param>
+        /// <param name="displayName">Optional human-readable label for the activation. Only supported for Warehouse Destinations. When omitted, the activationName is used as the label..</param>
         /// <param name="personalization">personalization.</param>
         /// <param name="destinationMapping">destinationMapping.</param>
         /// <param name="performResync">Determines whether to perform a full resync after the update. If true, the entire audience is resent to the Destination using the updated configuration. If false, the update applies only to future syncs..</param>
-        public UpdateActivationForAudienceAlphaInput(bool enabled = default(bool), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
+        public UpdateActivationForAudienceAlphaInput(bool enabled = default(bool), string activationName = default(string), string displayName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
         {
             this.Enabled = enabled;
             this.ActivationName = activationName;
+            this.DisplayName = displayName;
             this.Personalization = personalization;
             this.DestinationMapping = destinationMapping;
             this.PerformResync = performResync;
@@ -57,11 +59,18 @@ namespace Segment.PublicApi.Model
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Activation name.
+        /// Activation name. For Warehouse Destinations, this is used as the table name.
         /// </summary>
-        /// <value>Activation name.</value>
+        /// <value>Activation name. For Warehouse Destinations, this is used as the table name.</value>
         [DataMember(Name = "activationName", EmitDefaultValue = false)]
         public string ActivationName { get; set; }
+
+        /// <summary>
+        /// Optional human-readable label for the activation. Only supported for Warehouse Destinations. When omitted, the activationName is used as the label.
+        /// </summary>
+        /// <value>Optional human-readable label for the activation. Only supported for Warehouse Destinations. When omitted, the activationName is used as the label.</value>
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
+        public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets Personalization
@@ -92,6 +101,7 @@ namespace Segment.PublicApi.Model
             sb.Append("class UpdateActivationForAudienceAlphaInput {\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  ActivationName: ").Append(ActivationName).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  Personalization: ").Append(Personalization).Append("\n");
             sb.Append("  DestinationMapping: ").Append(DestinationMapping).Append("\n");
             sb.Append("  PerformResync: ").Append(PerformResync).Append("\n");
@@ -140,6 +150,11 @@ namespace Segment.PublicApi.Model
                     this.ActivationName.Equals(input.ActivationName))
                 ) && 
                 (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
                     this.Personalization == input.Personalization ||
                     (this.Personalization != null &&
                     this.Personalization.Equals(input.Personalization))
@@ -168,6 +183,10 @@ namespace Segment.PublicApi.Model
                 if (this.ActivationName != null)
                 {
                     hashCode = (hashCode * 59) + this.ActivationName.GetHashCode();
+                }
+                if (this.DisplayName != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
                 }
                 if (this.Personalization != null)
                 {
