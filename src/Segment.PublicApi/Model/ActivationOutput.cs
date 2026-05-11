@@ -46,12 +46,13 @@ namespace Segment.PublicApi.Model
         /// <param name="spaceId">The space id. (required).</param>
         /// <param name="audienceId">The audience id. (required).</param>
         /// <param name="connectionId">The connection id. (required).</param>
-        /// <param name="activationType">Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience. (required).</param>
-        /// <param name="activationName">Name of the activation. (required).</param>
+        /// <param name="activationType">Determines when an event is sent to the Destination.  Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience. (required).</param>
+        /// <param name="activationName">Activation name. For Warehouse Destinations, this is the table name. (required).</param>
+        /// <param name="displayName">Human-readable label for the activation. Only present for Warehouse Destinations that have a display name configured. When null, the activationName serves as the label..</param>
         /// <param name="personalization">personalization (required).</param>
         /// <param name="destinationMapping">destinationMapping.</param>
         /// <param name="performResync">Indicates if a full resync is currently pending or in progress..</param>
-        public ActivationOutput(string id = default(string), bool enabled = default(bool), string workspaceId = default(string), string spaceId = default(string), string audienceId = default(string), string connectionId = default(string), string activationType = default(string), string activationName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
+        public ActivationOutput(string id = default(string), bool enabled = default(bool), string workspaceId = default(string), string spaceId = default(string), string audienceId = default(string), string connectionId = default(string), string activationType = default(string), string activationName = default(string), string displayName = default(string), PersonalizationInput personalization = default(PersonalizationInput), DestinationSubscriptionConfiguration destinationMapping = default(DestinationSubscriptionConfiguration), bool performResync = default(bool))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -102,6 +103,7 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("personalization is a required property for ActivationOutput and cannot be null");
             }
             this.Personalization = personalization;
+            this.DisplayName = displayName;
             this.DestinationMapping = destinationMapping;
             this.PerformResync = performResync;
         }
@@ -149,18 +151,25 @@ namespace Segment.PublicApi.Model
         public string ConnectionId { get; set; }
 
         /// <summary>
-        /// Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience.
+        /// Determines when an event is sent to the Destination.  Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience.
         /// </summary>
-        /// <value>Determines when an event is sent to the Destination.   Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience.</value>
+        /// <value>Determines when an event is sent to the Destination.  Possible values: Audience Entered: Sends an event when a profile or entity enters the audience. Audience Exited: Sends an event when a profile or entity exits the audience. Audience Membership Changed: Sends an event for both entries and exits. This does not apply to entities.  Note that events are sent for the profile, unless the audience is a Linked Audience. In that case, events are sent for the target entity defined for that audience.</value>
         [DataMember(Name = "activationType", IsRequired = true, EmitDefaultValue = true)]
         public string ActivationType { get; set; }
 
         /// <summary>
-        /// Name of the activation.
+        /// Activation name. For Warehouse Destinations, this is the table name.
         /// </summary>
-        /// <value>Name of the activation.</value>
+        /// <value>Activation name. For Warehouse Destinations, this is the table name.</value>
         [DataMember(Name = "activationName", IsRequired = true, EmitDefaultValue = true)]
         public string ActivationName { get; set; }
+
+        /// <summary>
+        /// Human-readable label for the activation. Only present for Warehouse Destinations that have a display name configured. When null, the activationName serves as the label.
+        /// </summary>
+        /// <value>Human-readable label for the activation. Only present for Warehouse Destinations that have a display name configured. When null, the activationName serves as the label.</value>
+        [DataMember(Name = "displayName", EmitDefaultValue = true)]
+        public string DisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets Personalization
@@ -197,6 +206,7 @@ namespace Segment.PublicApi.Model
             sb.Append("  ConnectionId: ").Append(ConnectionId).Append("\n");
             sb.Append("  ActivationType: ").Append(ActivationType).Append("\n");
             sb.Append("  ActivationName: ").Append(ActivationName).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  Personalization: ").Append(Personalization).Append("\n");
             sb.Append("  DestinationMapping: ").Append(DestinationMapping).Append("\n");
             sb.Append("  PerformResync: ").Append(PerformResync).Append("\n");
@@ -275,6 +285,11 @@ namespace Segment.PublicApi.Model
                     this.ActivationName.Equals(input.ActivationName))
                 ) && 
                 (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
                     this.Personalization == input.Personalization ||
                     (this.Personalization != null &&
                     this.Personalization.Equals(input.Personalization))
@@ -327,6 +342,10 @@ namespace Segment.PublicApi.Model
                 if (this.ActivationName != null)
                 {
                     hashCode = (hashCode * 59) + this.ActivationName.GetHashCode();
+                }
+                if (this.DisplayName != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
                 }
                 if (this.Personalization != null)
                 {
