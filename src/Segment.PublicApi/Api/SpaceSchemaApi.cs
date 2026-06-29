@@ -193,7 +193,7 @@ namespace Segment.PublicApi.Api
         /// <param name="propertyType">The property type.  This parameter exists in alpha.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListSampleValuesFromEventProperty200Response</returns>
-        ListSampleValuesFromEventProperty200Response ListSampleValuesFromEventProperty(string spaceId, string eventName, string propertyName, string propertyType, int operationIndex = 0);
+        ListSampleValuesFromEventProperty200Response ListSampleValuesFromEventProperty(string spaceId, string eventName, string propertyName, EventPropertyType propertyType, int operationIndex = 0);
 
         /// <summary>
         /// List Sample Values from Event Property
@@ -208,7 +208,7 @@ namespace Segment.PublicApi.Api
         /// <param name="propertyType">The property type.  This parameter exists in alpha.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListSampleValuesFromEventProperty200Response</returns>
-        ApiResponse<ListSampleValuesFromEventProperty200Response> ListSampleValuesFromEventPropertyWithHttpInfo(string spaceId, string eventName, string propertyName, string propertyType, int operationIndex = 0);
+        ApiResponse<ListSampleValuesFromEventProperty200Response> ListSampleValuesFromEventPropertyWithHttpInfo(string spaceId, string eventName, string propertyName, EventPropertyType propertyType, int operationIndex = 0);
         /// <summary>
         /// List Sample Values from Trait
         /// </summary>
@@ -459,7 +459,7 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListSampleValuesFromEventProperty200Response</returns>
-        System.Threading.Tasks.Task<ListSampleValuesFromEventProperty200Response> ListSampleValuesFromEventPropertyAsync(string spaceId, string eventName, string propertyName, string propertyType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ListSampleValuesFromEventProperty200Response> ListSampleValuesFromEventPropertyAsync(string spaceId, string eventName, string propertyName, EventPropertyType propertyType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// List Sample Values from Event Property
@@ -475,7 +475,7 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListSampleValuesFromEventProperty200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListSampleValuesFromEventProperty200Response>> ListSampleValuesFromEventPropertyWithHttpInfoAsync(string spaceId, string eventName, string propertyName, string propertyType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ListSampleValuesFromEventProperty200Response>> ListSampleValuesFromEventPropertyWithHttpInfoAsync(string spaceId, string eventName, string propertyName, EventPropertyType propertyType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// List Sample Values from Trait
         /// </summary>
@@ -1716,7 +1716,7 @@ namespace Segment.PublicApi.Api
         /// <param name="propertyType">The property type.  This parameter exists in alpha.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ListSampleValuesFromEventProperty200Response</returns>
-        public ListSampleValuesFromEventProperty200Response ListSampleValuesFromEventProperty(string spaceId, string eventName, string propertyName, string propertyType, int operationIndex = 0)
+        public ListSampleValuesFromEventProperty200Response ListSampleValuesFromEventProperty(string spaceId, string eventName, string propertyName, EventPropertyType propertyType, int operationIndex = 0)
         {
             Segment.PublicApi.Client.ApiResponse<ListSampleValuesFromEventProperty200Response> localVarResponse = ListSampleValuesFromEventPropertyWithHttpInfo(spaceId, eventName, propertyName, propertyType);
             return localVarResponse.Data;
@@ -1732,7 +1732,7 @@ namespace Segment.PublicApi.Api
         /// <param name="propertyType">The property type.  This parameter exists in alpha.</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of ListSampleValuesFromEventProperty200Response</returns>
-        public Segment.PublicApi.Client.ApiResponse<ListSampleValuesFromEventProperty200Response> ListSampleValuesFromEventPropertyWithHttpInfo(string spaceId, string eventName, string propertyName, string propertyType, int operationIndex = 0)
+        public Segment.PublicApi.Client.ApiResponse<ListSampleValuesFromEventProperty200Response> ListSampleValuesFromEventPropertyWithHttpInfo(string spaceId, string eventName, string propertyName, EventPropertyType propertyType, int operationIndex = 0)
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -1821,7 +1821,7 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListSampleValuesFromEventProperty200Response</returns>
-        public async System.Threading.Tasks.Task<ListSampleValuesFromEventProperty200Response> ListSampleValuesFromEventPropertyAsync(string spaceId, string eventName, string propertyName, string propertyType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ListSampleValuesFromEventProperty200Response> ListSampleValuesFromEventPropertyAsync(string spaceId, string eventName, string propertyName, EventPropertyType propertyType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             Segment.PublicApi.Client.ApiResponse<ListSampleValuesFromEventProperty200Response> localVarResponse = await ListSampleValuesFromEventPropertyWithHttpInfoAsync(spaceId, eventName, propertyName, propertyType, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1838,7 +1838,7 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListSampleValuesFromEventProperty200Response)</returns>
-        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<ListSampleValuesFromEventProperty200Response>> ListSampleValuesFromEventPropertyWithHttpInfoAsync(string spaceId, string eventName, string propertyName, string propertyType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<ListSampleValuesFromEventProperty200Response>> ListSampleValuesFromEventPropertyWithHttpInfoAsync(string spaceId, string eventName, string propertyName, EventPropertyType propertyType, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
