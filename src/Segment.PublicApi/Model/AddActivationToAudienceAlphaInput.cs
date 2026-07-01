@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Input to create an activation.
+    /// AddActivationToAudienceAlphaInput
     /// </summary>
     [DataContract(Name = "AddActivationToAudienceAlphaInput")]
     public partial class AddActivationToAudienceAlphaInput : IEquatable<AddActivationToAudienceAlphaInput>, IValidatableObject
