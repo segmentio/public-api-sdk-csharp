@@ -2,7 +2,7 @@
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Segment.PublicApi", "src\Segment.PublicApi\Segment.PublicApi.csproj", "{CDEF033C-6D3B-4767-8666-2AABFE873DD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Segment.PublicApi", "src\Segment.PublicApi\Segment.PublicApi.csproj", "{981EDC5E-E804-42EE-B433-24BA99735D57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CDEF033C-6D3B-4767-8666-2AABFE873DD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CDEF033C-6D3B-4767-8666-2AABFE873DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CDEF033C-6D3B-4767-8666-2AABFE873DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CDEF033C-6D3B-4767-8666-2AABFE873DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{981EDC5E-E804-42EE-B433-24BA99735D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981EDC5E-E804-42EE-B433-24BA99735D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981EDC5E-E804-42EE-B433-24BA99735D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981EDC5E-E804-42EE-B433-24BA99735D57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
