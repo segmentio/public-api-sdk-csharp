@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// The XState-format definition of a journey. Passed through to personas-service as-is.
+    /// The XState-format definition of an event-triggered journey. Passed through to personas-service as-is.
     /// </summary>
     [DataContract(Name = "JourneyDefinition")]
     public partial class JourneyDefinition : IEquatable<JourneyDefinition>, IValidatableObject

@@ -27,35 +27,45 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Output from create event-triggered journey.
+    /// Summary of a created event-triggered journey draft.
     /// </summary>
-    [DataContract(Name = "CreateJourneyAlphaOutput")]
-    public partial class CreateJourneyAlphaOutput : IEquatable<CreateJourneyAlphaOutput>, IValidatableObject
+    [DataContract(Name = "EventTriggeredJourneySummary")]
+    public partial class EventTriggeredJourneySummary : IEquatable<EventTriggeredJourneySummary>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateJourneyAlphaOutput" /> class.
+        /// Initializes a new instance of the <see cref="EventTriggeredJourneySummary" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CreateJourneyAlphaOutput() { }
+        protected EventTriggeredJourneySummary() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateJourneyAlphaOutput" /> class.
+        /// Initializes a new instance of the <see cref="EventTriggeredJourneySummary" /> class.
         /// </summary>
-        /// <param name="journey">journey (required).</param>
-        public CreateJourneyAlphaOutput(EventTriggeredJourneySummary journey = default(EventTriggeredJourneySummary))
+        /// <param name="containerId">Container id of the created journey draft. (required).</param>
+        /// <param name="versionNumber">Version number of the created draft. (required).</param>
+        public EventTriggeredJourneySummary(string containerId = default(string), decimal versionNumber = default(decimal))
         {
-            // to ensure "journey" is required (not null)
-            if (journey == null)
+            // to ensure "containerId" is required (not null)
+            if (containerId == null)
             {
-                throw new ArgumentNullException("journey is a required property for CreateJourneyAlphaOutput and cannot be null");
+                throw new ArgumentNullException("containerId is a required property for EventTriggeredJourneySummary and cannot be null");
             }
-            this.Journey = journey;
+            this.ContainerId = containerId;
+            this.VersionNumber = versionNumber;
         }
 
         /// <summary>
-        /// Gets or Sets Journey
+        /// Container id of the created journey draft.
         /// </summary>
-        [DataMember(Name = "journey", IsRequired = true, EmitDefaultValue = true)]
-        public EventTriggeredJourneySummary Journey { get; set; }
+        /// <value>Container id of the created journey draft.</value>
+        [DataMember(Name = "containerId", IsRequired = true, EmitDefaultValue = true)]
+        public string ContainerId { get; set; }
+
+        /// <summary>
+        /// Version number of the created draft.
+        /// </summary>
+        /// <value>Version number of the created draft.</value>
+        [DataMember(Name = "versionNumber", IsRequired = true, EmitDefaultValue = true)]
+        public decimal VersionNumber { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +74,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateJourneyAlphaOutput {\n");
-            sb.Append("  Journey: ").Append(Journey).Append("\n");
+            sb.Append("class EventTriggeredJourneySummary {\n");
+            sb.Append("  ContainerId: ").Append(ContainerId).Append("\n");
+            sb.Append("  VersionNumber: ").Append(VersionNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,15 +97,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateJourneyAlphaOutput);
+            return this.Equals(input as EventTriggeredJourneySummary);
         }
 
         /// <summary>
-        /// Returns true if CreateJourneyAlphaOutput instances are equal
+        /// Returns true if EventTriggeredJourneySummary instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateJourneyAlphaOutput to be compared</param>
+        /// <param name="input">Instance of EventTriggeredJourneySummary to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateJourneyAlphaOutput input)
+        public bool Equals(EventTriggeredJourneySummary input)
         {
             if (input == null)
             {
@@ -102,9 +113,13 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Journey == input.Journey ||
-                    (this.Journey != null &&
-                    this.Journey.Equals(input.Journey))
+                    this.ContainerId == input.ContainerId ||
+                    (this.ContainerId != null &&
+                    this.ContainerId.Equals(input.ContainerId))
+                ) && 
+                (
+                    this.VersionNumber == input.VersionNumber ||
+                    this.VersionNumber.Equals(input.VersionNumber)
                 );
         }
 
@@ -117,10 +132,11 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Journey != null)
+                if (this.ContainerId != null)
                 {
-                    hashCode = (hashCode * 59) + this.Journey.GetHashCode();
+                    hashCode = (hashCode * 59) + this.ContainerId.GetHashCode();
                 }
+                hashCode = (hashCode * 59) + this.VersionNumber.GetHashCode();
                 return hashCode;
             }
         }

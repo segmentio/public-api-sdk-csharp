@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Input to create a journey.
+    /// Input to create an event-triggered journey.
     /// </summary>
     [DataContract(Name = "CreateJourneyAlphaInput")]
     public partial class CreateJourneyAlphaInput : IEquatable<CreateJourneyAlphaInput>, IValidatableObject
