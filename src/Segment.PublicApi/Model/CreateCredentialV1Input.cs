@@ -41,7 +41,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="CreateCredentialV1Input" /> class.
         /// </summary>
         /// <param name="name">A human-readable name for this Credential. (required).</param>
-        /// <param name="settings">A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (e.g. &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected. (required).</param>
+        /// <param name="settings">A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (for example &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected. (required).</param>
         public CreateCredentialV1Input(string name = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>))
         {
             // to ensure "name" is required (not null)
@@ -66,9 +66,9 @@ namespace Segment.PublicApi.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (e.g. &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected.
+        /// A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (for example &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected.
         /// </summary>
-        /// <value>A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (e.g. &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected.</value>
+        /// <value>A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (for example &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected.</value>
         [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Settings { get; set; }
 

@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Defines a reusable Credential that can be used to connect one or more Warehouses to a data warehouse.
+    /// Defines a reusable Credential that can be used to connect one or more Warehouses to a data Warehouse.
     /// </summary>
     [DataContract(Name = "CredentialV1")]
     public partial class CredentialV1 : IEquatable<CredentialV1>, IValidatableObject
@@ -43,7 +43,7 @@ namespace Segment.PublicApi.Model
         /// <param name="id">The id of the Credential. (required).</param>
         /// <param name="workspaceId">The id of the Workspace that owns this Credential. (required).</param>
         /// <param name="name">An optional human-readable name for this Credential. (required).</param>
-        /// <param name="settings">A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (e.g. &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected. (required).</param>
+        /// <param name="settings">A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (for example &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected. (required).</param>
         /// <param name="createdAt">The time this Credential was created. (required).</param>
         /// <param name="updatedAt">The time this Credential was last updated. (required).</param>
         public CredentialV1(string id = default(string), string workspaceId = default(string), string name = default(string), Dictionary<string, Object> settings = default(Dictionary<string, Object>), string createdAt = default(string), string updatedAt = default(string))
@@ -108,9 +108,9 @@ namespace Segment.PublicApi.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (e.g. &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected.
+        /// A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (for example &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected.
         /// </summary>
-        /// <value>A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (e.g. &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected.</value>
+        /// <value>A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (for example &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected.</value>
         [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
         public Dictionary<string, Object> Settings { get; set; }
 
