@@ -42,7 +42,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="id">The id of the Credential. (required).</param>
         /// <param name="workspaceId">The id of the Workspace that owns this Credential. (required).</param>
-        /// <param name="name">An optional human-readable name for this Credential. (required).</param>
+        /// <param name="name">A human-readable name for this Credential. (required).</param>
         /// <param name="settings">A key-value object that contains type-specific settings for a Credential, plus a required &#x60;type&#x60; discriminator (for example &#x60;Snowflake&#x60;, &#x60;Redshift&#x60;) that determines which fields are expected. (required).</param>
         /// <param name="createdAt">The time this Credential was created. (required).</param>
         /// <param name="updatedAt">The time this Credential was last updated. (required).</param>
@@ -101,9 +101,9 @@ namespace Segment.PublicApi.Model
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// An optional human-readable name for this Credential.
+        /// A human-readable name for this Credential.
         /// </summary>
-        /// <value>An optional human-readable name for this Credential.</value>
+        /// <value>A human-readable name for this Credential.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
