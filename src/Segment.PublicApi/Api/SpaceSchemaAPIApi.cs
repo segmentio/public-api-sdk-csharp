@@ -24,7 +24,7 @@ namespace Segment.PublicApi.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ISpaceSchemaApiSync : IApiAccessor
+    public interface ISpaceSchemaAPIApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
@@ -279,7 +279,7 @@ namespace Segment.PublicApi.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ISpaceSchemaApiAsync : IApiAccessor
+    public interface ISpaceSchemaAPIApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
@@ -550,7 +550,7 @@ namespace Segment.PublicApi.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface ISpaceSchemaApi : ISpaceSchemaApiSync, ISpaceSchemaApiAsync
+    public interface ISpaceSchemaAPIApi : ISpaceSchemaAPIApiSync, ISpaceSchemaAPIApiAsync
     {
 
     }
@@ -558,23 +558,23 @@ namespace Segment.PublicApi.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class SpaceSchemaApi : ISpaceSchemaApi
+    public partial class SpaceSchemaAPIApi : ISpaceSchemaAPIApi
     {
         private Segment.PublicApi.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpaceSchemaApi"/> class.
+        /// Initializes a new instance of the <see cref="SpaceSchemaAPIApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public SpaceSchemaApi() : this((string)null)
+        public SpaceSchemaAPIApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpaceSchemaApi"/> class.
+        /// Initializes a new instance of the <see cref="SpaceSchemaAPIApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public SpaceSchemaApi(string basePath)
+        public SpaceSchemaAPIApi(string basePath)
         {
             this.Configuration = Segment.PublicApi.Client.Configuration.MergeConfigurations(
                 Segment.PublicApi.Client.GlobalConfiguration.Instance,
@@ -586,12 +586,12 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpaceSchemaApi"/> class
+        /// Initializes a new instance of the <see cref="SpaceSchemaAPIApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public SpaceSchemaApi(Segment.PublicApi.Client.Configuration configuration)
+        public SpaceSchemaAPIApi(Segment.PublicApi.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -605,13 +605,13 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SpaceSchemaApi"/> class
+        /// Initializes a new instance of the <see cref="SpaceSchemaAPIApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public SpaceSchemaApi(Segment.PublicApi.Client.ISynchronousClient client, Segment.PublicApi.Client.IAsynchronousClient asyncClient, Segment.PublicApi.Client.IReadableConfiguration configuration)
+        public SpaceSchemaAPIApi(Segment.PublicApi.Client.ISynchronousClient client, Segment.PublicApi.Client.IAsynchronousClient asyncClient, Segment.PublicApi.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -693,7 +693,7 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListEntityPaths");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListEntityPaths");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -729,7 +729,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "search", search));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListEntityPaths";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListEntityPaths";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -784,7 +784,7 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListEntityPaths");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListEntityPaths");
             }
 
 
@@ -821,7 +821,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "search", search));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListEntityPaths";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListEntityPaths";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -879,7 +879,7 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListEvents");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListEvents");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -923,7 +923,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "search", search));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListEvents";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListEvents";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -982,7 +982,7 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListEvents");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListEvents");
             }
 
 
@@ -1027,7 +1027,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "search", search));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListEvents";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListEvents";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1085,13 +1085,13 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListPropertiesFromEntity");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListPropertiesFromEntity");
             }
 
             // verify the required parameter 'entitySlug' is set
             if (entitySlug == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'entitySlug' when calling SpaceSchemaApi->ListPropertiesFromEntity");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'entitySlug' when calling SpaceSchemaAPIApi->ListPropertiesFromEntity");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -1132,7 +1132,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "samplesCount", samplesCount));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListPropertiesFromEntity";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListPropertiesFromEntity";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1191,13 +1191,13 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListPropertiesFromEntity");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListPropertiesFromEntity");
             }
 
             // verify the required parameter 'entitySlug' is set
             if (entitySlug == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'entitySlug' when calling SpaceSchemaApi->ListPropertiesFromEntity");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'entitySlug' when calling SpaceSchemaAPIApi->ListPropertiesFromEntity");
             }
 
 
@@ -1239,7 +1239,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "samplesCount", samplesCount));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListPropertiesFromEntity";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListPropertiesFromEntity";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1303,13 +1303,13 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListPropertiesFromEvent");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListPropertiesFromEvent");
             }
 
             // verify the required parameter 'eventName' is set
             if (eventName == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'eventName' when calling SpaceSchemaApi->ListPropertiesFromEvent");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'eventName' when calling SpaceSchemaAPIApi->ListPropertiesFromEvent");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -1362,7 +1362,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "samplesCount", samplesCount));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListPropertiesFromEvent";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListPropertiesFromEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1427,13 +1427,13 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListPropertiesFromEvent");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListPropertiesFromEvent");
             }
 
             // verify the required parameter 'eventName' is set
             if (eventName == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'eventName' when calling SpaceSchemaApi->ListPropertiesFromEvent");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'eventName' when calling SpaceSchemaAPIApi->ListPropertiesFromEvent");
             }
 
 
@@ -1487,7 +1487,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "samplesCount", samplesCount));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListPropertiesFromEvent";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListPropertiesFromEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1541,19 +1541,19 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListSampleValuesFromEntityProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListSampleValuesFromEntityProperty");
             }
 
             // verify the required parameter 'entitySlug' is set
             if (entitySlug == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'entitySlug' when calling SpaceSchemaApi->ListSampleValuesFromEntityProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'entitySlug' when calling SpaceSchemaAPIApi->ListSampleValuesFromEntityProperty");
             }
 
             // verify the required parameter 'propertyName' is set
             if (propertyName == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyName' when calling SpaceSchemaApi->ListSampleValuesFromEntityProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyName' when calling SpaceSchemaAPIApi->ListSampleValuesFromEntityProperty");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -1583,7 +1583,7 @@ namespace Segment.PublicApi.Api
             localVarRequestOptions.PathParameters.Add("entitySlug", Segment.PublicApi.Client.ClientUtils.ParameterToString(entitySlug)); // path parameter
             localVarRequestOptions.PathParameters.Add("propertyName", Segment.PublicApi.Client.ClientUtils.ParameterToString(propertyName)); // path parameter
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListSampleValuesFromEntityProperty";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListSampleValuesFromEntityProperty";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1638,19 +1638,19 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListSampleValuesFromEntityProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListSampleValuesFromEntityProperty");
             }
 
             // verify the required parameter 'entitySlug' is set
             if (entitySlug == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'entitySlug' when calling SpaceSchemaApi->ListSampleValuesFromEntityProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'entitySlug' when calling SpaceSchemaAPIApi->ListSampleValuesFromEntityProperty");
             }
 
             // verify the required parameter 'propertyName' is set
             if (propertyName == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyName' when calling SpaceSchemaApi->ListSampleValuesFromEntityProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyName' when calling SpaceSchemaAPIApi->ListSampleValuesFromEntityProperty");
             }
 
 
@@ -1681,7 +1681,7 @@ namespace Segment.PublicApi.Api
             localVarRequestOptions.PathParameters.Add("entitySlug", Segment.PublicApi.Client.ClientUtils.ParameterToString(entitySlug)); // path parameter
             localVarRequestOptions.PathParameters.Add("propertyName", Segment.PublicApi.Client.ClientUtils.ParameterToString(propertyName)); // path parameter
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListSampleValuesFromEntityProperty";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListSampleValuesFromEntityProperty";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1737,25 +1737,25 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListSampleValuesFromEventProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListSampleValuesFromEventProperty");
             }
 
             // verify the required parameter 'eventName' is set
             if (eventName == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'eventName' when calling SpaceSchemaApi->ListSampleValuesFromEventProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'eventName' when calling SpaceSchemaAPIApi->ListSampleValuesFromEventProperty");
             }
 
             // verify the required parameter 'propertyName' is set
             if (propertyName == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyName' when calling SpaceSchemaApi->ListSampleValuesFromEventProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyName' when calling SpaceSchemaAPIApi->ListSampleValuesFromEventProperty");
             }
 
             // verify the required parameter 'propertyType' is set
             if (propertyType == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyType' when calling SpaceSchemaApi->ListSampleValuesFromEventProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyType' when calling SpaceSchemaAPIApi->ListSampleValuesFromEventProperty");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -1786,7 +1786,7 @@ namespace Segment.PublicApi.Api
             localVarRequestOptions.PathParameters.Add("propertyName", Segment.PublicApi.Client.ClientUtils.ParameterToString(propertyName)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "propertyType", propertyType));
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListSampleValuesFromEventProperty";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListSampleValuesFromEventProperty";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1843,25 +1843,25 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListSampleValuesFromEventProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListSampleValuesFromEventProperty");
             }
 
             // verify the required parameter 'eventName' is set
             if (eventName == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'eventName' when calling SpaceSchemaApi->ListSampleValuesFromEventProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'eventName' when calling SpaceSchemaAPIApi->ListSampleValuesFromEventProperty");
             }
 
             // verify the required parameter 'propertyName' is set
             if (propertyName == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyName' when calling SpaceSchemaApi->ListSampleValuesFromEventProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyName' when calling SpaceSchemaAPIApi->ListSampleValuesFromEventProperty");
             }
 
             // verify the required parameter 'propertyType' is set
             if (propertyType == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyType' when calling SpaceSchemaApi->ListSampleValuesFromEventProperty");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'propertyType' when calling SpaceSchemaAPIApi->ListSampleValuesFromEventProperty");
             }
 
 
@@ -1893,7 +1893,7 @@ namespace Segment.PublicApi.Api
             localVarRequestOptions.PathParameters.Add("propertyName", Segment.PublicApi.Client.ClientUtils.ParameterToString(propertyName)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "propertyType", propertyType));
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListSampleValuesFromEventProperty";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListSampleValuesFromEventProperty";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -1947,13 +1947,13 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListSampleValuesFromTrait");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListSampleValuesFromTrait");
             }
 
             // verify the required parameter 'traitKey' is set
             if (traitKey == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'traitKey' when calling SpaceSchemaApi->ListSampleValuesFromTrait");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'traitKey' when calling SpaceSchemaAPIApi->ListSampleValuesFromTrait");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -1986,7 +1986,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "collection", collection));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListSampleValuesFromTrait";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListSampleValuesFromTrait";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -2041,13 +2041,13 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListSampleValuesFromTrait");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListSampleValuesFromTrait");
             }
 
             // verify the required parameter 'traitKey' is set
             if (traitKey == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'traitKey' when calling SpaceSchemaApi->ListSampleValuesFromTrait");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'traitKey' when calling SpaceSchemaAPIApi->ListSampleValuesFromTrait");
             }
 
 
@@ -2081,7 +2081,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "collection", collection));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListSampleValuesFromTrait";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListSampleValuesFromTrait";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -2145,7 +2145,7 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListTraits");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListTraits");
             }
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
@@ -2201,7 +2201,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "samplesCount", samplesCount));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListTraits";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListTraits";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
@@ -2266,7 +2266,7 @@ namespace Segment.PublicApi.Api
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
             {
-                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaApi->ListTraits");
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling SpaceSchemaAPIApi->ListTraits");
             }
 
 
@@ -2323,7 +2323,7 @@ namespace Segment.PublicApi.Api
                 localVarRequestOptions.QueryParameters.Add(Segment.PublicApi.Client.ClientUtils.ParameterToMultiMap("", "samplesCount", samplesCount));
             }
 
-            localVarRequestOptions.Operation = "SpaceSchemaApi.ListTraits";
+            localVarRequestOptions.Operation = "SpaceSchemaAPIApi.ListTraits";
             localVarRequestOptions.OperationIndex = operationIndex;
 
             // authentication (token) required
