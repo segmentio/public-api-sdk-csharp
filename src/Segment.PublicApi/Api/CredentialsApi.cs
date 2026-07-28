@@ -31,7 +31,7 @@ namespace Segment.PublicApi.Api
         /// Create Credential
         /// </summary>
         /// <remarks>
-        /// Creates a new Credential.
+        /// Creates a new Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCredentialV1Input"></param>
@@ -43,7 +43,7 @@ namespace Segment.PublicApi.Api
         /// Create Credential
         /// </summary>
         /// <remarks>
-        /// Creates a new Credential.
+        /// Creates a new Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCredentialV1Input"></param>
@@ -54,7 +54,7 @@ namespace Segment.PublicApi.Api
         /// Delete Credential
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.
+        /// Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -66,7 +66,7 @@ namespace Segment.PublicApi.Api
         /// Delete Credential
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.
+        /// Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -77,7 +77,7 @@ namespace Segment.PublicApi.Api
         /// Get Credential
         /// </summary>
         /// <remarks>
-        /// Returns a Credential by its id.
+        /// Returns a Credential by its id.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -89,7 +89,7 @@ namespace Segment.PublicApi.Api
         /// Get Credential
         /// </summary>
         /// <remarks>
-        /// Returns a Credential by its id.
+        /// Returns a Credential by its id.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -100,7 +100,7 @@ namespace Segment.PublicApi.Api
         /// List Credential Consumers
         /// </summary>
         /// <remarks>
-        /// Returns the Warehouses and Sources that use a Credential.
+        /// Returns the Warehouses and Sources that use a Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -114,7 +114,7 @@ namespace Segment.PublicApi.Api
         /// List Credential Consumers
         /// </summary>
         /// <remarks>
-        /// Returns the Warehouses and Sources that use a Credential.
+        /// Returns the Warehouses and Sources that use a Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -127,7 +127,7 @@ namespace Segment.PublicApi.Api
         /// List Credentials
         /// </summary>
         /// <remarks>
-        /// Returns a list of Credentials.
+        /// Returns a list of Credentials.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pagination">Defines the pagination parameters.  This parameter exists in v1. (optional)</param>
@@ -139,7 +139,7 @@ namespace Segment.PublicApi.Api
         /// List Credentials
         /// </summary>
         /// <remarks>
-        /// Returns a list of Credentials.
+        /// Returns a list of Credentials.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pagination">Defines the pagination parameters.  This parameter exists in v1. (optional)</param>
@@ -150,7 +150,7 @@ namespace Segment.PublicApi.Api
         /// Update Credential
         /// </summary>
         /// <remarks>
-        /// Updates an existing Credential. All Warehouses using this Credential are affected immediately.
+        /// Updates an existing Credential. All Warehouses using this Credential are affected immediately.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -163,7 +163,7 @@ namespace Segment.PublicApi.Api
         /// Update Credential
         /// </summary>
         /// <remarks>
-        /// Updates an existing Credential. All Warehouses using this Credential are affected immediately.
+        /// Updates an existing Credential. All Warehouses using this Credential are affected immediately.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -184,7 +184,7 @@ namespace Segment.PublicApi.Api
         /// Create Credential
         /// </summary>
         /// <remarks>
-        /// Creates a new Credential.
+        /// Creates a new Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCredentialV1Input"></param>
@@ -197,7 +197,7 @@ namespace Segment.PublicApi.Api
         /// Create Credential
         /// </summary>
         /// <remarks>
-        /// Creates a new Credential.
+        /// Creates a new Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCredentialV1Input"></param>
@@ -209,7 +209,7 @@ namespace Segment.PublicApi.Api
         /// Delete Credential
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.
+        /// Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -222,7 +222,7 @@ namespace Segment.PublicApi.Api
         /// Delete Credential
         /// </summary>
         /// <remarks>
-        /// Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.
+        /// Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -234,7 +234,7 @@ namespace Segment.PublicApi.Api
         /// Get Credential
         /// </summary>
         /// <remarks>
-        /// Returns a Credential by its id.
+        /// Returns a Credential by its id.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -247,7 +247,7 @@ namespace Segment.PublicApi.Api
         /// Get Credential
         /// </summary>
         /// <remarks>
-        /// Returns a Credential by its id.
+        /// Returns a Credential by its id.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -259,7 +259,7 @@ namespace Segment.PublicApi.Api
         /// List Credential Consumers
         /// </summary>
         /// <remarks>
-        /// Returns the Warehouses and Sources that use a Credential.
+        /// Returns the Warehouses and Sources that use a Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -274,7 +274,7 @@ namespace Segment.PublicApi.Api
         /// List Credential Consumers
         /// </summary>
         /// <remarks>
-        /// Returns the Warehouses and Sources that use a Credential.
+        /// Returns the Warehouses and Sources that use a Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -288,7 +288,7 @@ namespace Segment.PublicApi.Api
         /// List Credentials
         /// </summary>
         /// <remarks>
-        /// Returns a list of Credentials.
+        /// Returns a list of Credentials.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pagination">Defines the pagination parameters.  This parameter exists in v1. (optional)</param>
@@ -301,7 +301,7 @@ namespace Segment.PublicApi.Api
         /// List Credentials
         /// </summary>
         /// <remarks>
-        /// Returns a list of Credentials.
+        /// Returns a list of Credentials.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pagination">Defines the pagination parameters.  This parameter exists in v1. (optional)</param>
@@ -313,7 +313,7 @@ namespace Segment.PublicApi.Api
         /// Update Credential
         /// </summary>
         /// <remarks>
-        /// Updates an existing Credential. All Warehouses using this Credential are affected immediately.
+        /// Updates an existing Credential. All Warehouses using this Credential are affected immediately.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -327,7 +327,7 @@ namespace Segment.PublicApi.Api
         /// Update Credential
         /// </summary>
         /// <remarks>
-        /// Updates an existing Credential. All Warehouses using this Credential are affected immediately.
+        /// Updates an existing Credential. All Warehouses using this Credential are affected immediately.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -457,7 +457,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Credential Creates a new Credential.
+        /// Create Credential Creates a new Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCredentialV1Input"></param>
@@ -470,7 +470,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Credential Creates a new Credential.
+        /// Create Credential Creates a new Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCredentialV1Input"></param>
@@ -536,7 +536,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Credential Creates a new Credential.
+        /// Create Credential Creates a new Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCredentialV1Input"></param>
@@ -550,7 +550,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Create Credential Creates a new Credential.
+        /// Create Credential Creates a new Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCredentialV1Input"></param>
@@ -619,7 +619,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Delete Credential Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.
+        /// Delete Credential Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -632,7 +632,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Delete Credential Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.
+        /// Delete Credential Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -696,7 +696,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Delete Credential Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.
+        /// Delete Credential Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -710,7 +710,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Delete Credential Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.
+        /// Delete Credential Deletes an existing Credential. Fails if the Credential is still in use by a Warehouse or Source.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -777,7 +777,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Credential Returns a Credential by its id.
+        /// Get Credential Returns a Credential by its id.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -790,7 +790,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Credential Returns a Credential by its id.
+        /// Get Credential Returns a Credential by its id.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -854,7 +854,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Credential Returns a Credential by its id.
+        /// Get Credential Returns a Credential by its id.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -868,7 +868,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Get Credential Returns a Credential by its id.
+        /// Get Credential Returns a Credential by its id.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -935,7 +935,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Credential Consumers Returns the Warehouses and Sources that use a Credential.
+        /// List Credential Consumers Returns the Warehouses and Sources that use a Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -950,7 +950,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Credential Consumers Returns the Warehouses and Sources that use a Credential.
+        /// List Credential Consumers Returns the Warehouses and Sources that use a Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -1024,7 +1024,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Credential Consumers Returns the Warehouses and Sources that use a Credential.
+        /// List Credential Consumers Returns the Warehouses and Sources that use a Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -1040,7 +1040,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Credential Consumers Returns the Warehouses and Sources that use a Credential.
+        /// List Credential Consumers Returns the Warehouses and Sources that use a Credential.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -1117,7 +1117,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Credentials Returns a list of Credentials.
+        /// List Credentials Returns a list of Credentials.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pagination">Defines the pagination parameters.  This parameter exists in v1. (optional)</param>
@@ -1130,7 +1130,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Credentials Returns a list of Credentials.
+        /// List Credentials Returns a list of Credentials.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pagination">Defines the pagination parameters.  This parameter exists in v1. (optional)</param>
@@ -1191,7 +1191,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Credentials Returns a list of Credentials.
+        /// List Credentials Returns a list of Credentials.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pagination">Defines the pagination parameters.  This parameter exists in v1. (optional)</param>
@@ -1205,7 +1205,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// List Credentials Returns a list of Credentials.
+        /// List Credentials Returns a list of Credentials.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner  * Warehouse Admin  * Source Admin  * Entities Admin  * Unify and Engage Admin
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="pagination">Defines the pagination parameters.  This parameter exists in v1. (optional)</param>
@@ -1269,7 +1269,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Update Credential Updates an existing Credential. All Warehouses using this Credential are affected immediately.
+        /// Update Credential Updates an existing Credential. All Warehouses using this Credential are affected immediately.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -1283,7 +1283,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Update Credential Updates an existing Credential. All Warehouses using this Credential are affected immediately.
+        /// Update Credential Updates an existing Credential. All Warehouses using this Credential are affected immediately.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -1357,7 +1357,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Update Credential Updates an existing Credential. All Warehouses using this Credential are affected immediately.
+        /// Update Credential Updates an existing Credential. All Warehouses using this Credential are affected immediately.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
@@ -1372,7 +1372,7 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Update Credential Updates an existing Credential. All Warehouses using this Credential are affected immediately.
+        /// Update Credential Updates an existing Credential. All Warehouses using this Credential are affected immediately.    This endpoint requires the user to have at least the following permission(s):   * Workspace Owner
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="credentialId"></param>
