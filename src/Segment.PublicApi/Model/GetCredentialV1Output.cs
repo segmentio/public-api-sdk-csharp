@@ -41,8 +41,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="GetCredentialV1Output" /> class.
         /// </summary>
         /// <param name="credential">credential (required).</param>
-        /// <param name="disabledFields">The list of setting names (in this Credential&#39;s public &#x60;settings&#x60; shape) that cannot be changed after creation, if any..</param>
-        public GetCredentialV1Output(CredentialV1 credential = default(CredentialV1), List<string> disabledFields = default(List<string>))
+        public GetCredentialV1Output(CredentialV1 credential = default(CredentialV1))
         {
             // to ensure "credential" is required (not null)
             if (credential == null)
@@ -50,7 +49,6 @@ namespace Segment.PublicApi.Model
                 throw new ArgumentNullException("credential is a required property for GetCredentialV1Output and cannot be null");
             }
             this.Credential = credential;
-            this.DisabledFields = disabledFields;
         }
 
         /// <summary>
@@ -58,13 +56,6 @@ namespace Segment.PublicApi.Model
         /// </summary>
         [DataMember(Name = "credential", IsRequired = true, EmitDefaultValue = true)]
         public CredentialV1 Credential { get; set; }
-
-        /// <summary>
-        /// The list of setting names (in this Credential&#39;s public &#x60;settings&#x60; shape) that cannot be changed after creation, if any.
-        /// </summary>
-        /// <value>The list of setting names (in this Credential&#39;s public &#x60;settings&#x60; shape) that cannot be changed after creation, if any.</value>
-        [DataMember(Name = "disabledFields", EmitDefaultValue = false)]
-        public List<string> DisabledFields { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,7 +66,6 @@ namespace Segment.PublicApi.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetCredentialV1Output {\n");
             sb.Append("  Credential: ").Append(Credential).Append("\n");
-            sb.Append("  DisabledFields: ").Append(DisabledFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,12 +105,6 @@ namespace Segment.PublicApi.Model
                     this.Credential == input.Credential ||
                     (this.Credential != null &&
                     this.Credential.Equals(input.Credential))
-                ) && 
-                (
-                    this.DisabledFields == input.DisabledFields ||
-                    this.DisabledFields != null &&
-                    input.DisabledFields != null &&
-                    this.DisabledFields.SequenceEqual(input.DisabledFields)
                 );
         }
 
@@ -136,10 +120,6 @@ namespace Segment.PublicApi.Model
                 if (this.Credential != null)
                 {
                     hashCode = (hashCode * 59) + this.Credential.GetHashCode();
-                }
-                if (this.DisabledFields != null)
-                {
-                    hashCode = (hashCode * 59) + this.DisabledFields.GetHashCode();
                 }
                 return hashCode;
             }
