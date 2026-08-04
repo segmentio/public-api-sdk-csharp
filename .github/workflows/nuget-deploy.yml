@@ -20,6 +20,10 @@ jobs:
         curl -v --max-time 30 https://api.nuget.org/v3/index.json || true
     - name: Restore
       working-directory: ./src/Segment.PublicApi
+      # Signature verification stays on; only the online cert revocation check
+      # is skipped because it was hanging on the runner's egress path.
+      env:
+        NUGET_CERT_REVOCATION_MODE: offline
       run: dotnet restore --verbosity diagnostic
     - name: Pack nuget package
       working-directory: ./src/Segment.PublicApi
