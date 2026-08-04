@@ -8,7 +8,7 @@ jobs:
     timeout-minutes: 10
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
     - name: Pack nuget package
       working-directory: ./src/Segment.PublicApi
       run: dotnet pack -c Release
