@@ -9,9 +9,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25 # v4.1.0
+      with:
+        dotnet-version: '8.0.x'
+    - name: Restore
+      working-directory: ./src/Segment.PublicApi
+      run: dotnet restore --verbosity normal
     - name: Pack nuget package
       working-directory: ./src/Segment.PublicApi
-      run: dotnet pack -c Release
+      run: dotnet pack -c Release --no-restore
     - name: Push nuget package
       working-directory: ./src/Segment.PublicApi
       run: dotnet nuget push bin/Release/Segment.PublicApi.*.nupkg -k ${NUGET_API_KEY} --source https://api.nuget.org/v3/index.json --skip-duplicate 
