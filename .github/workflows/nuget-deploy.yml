@@ -1,7 +1,8 @@
 name: Public package to NuGet
 on:
   push:
-    branches: [main]
+    branches: [main, SEGPDS-5347-4] # TODO: remove SEGPDS-5347-4 before merging
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest-large
@@ -13,14 +14,19 @@ jobs:
       uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25 # v4.1.0
       with:
         dotnet-version: '8.0.x'
+    - name: Probe nuget.org egress
+      run: |
+        set -x
+        curl -v --max-time 30 https://api.nuget.org/v3/index.json || true
     - name: Restore
       working-directory: ./src/Segment.PublicApi
-      run: dotnet restore --verbosity normal
+      run: dotnet restore --verbosity diagnostic
     - name: Pack nuget package
       working-directory: ./src/Segment.PublicApi
       run: dotnet pack -c Release --no-restore
     - name: Push nuget package
+      if: github.ref == 'refs/heads/main'
       working-directory: ./src/Segment.PublicApi
-      run: dotnet nuget push bin/Release/Segment.PublicApi.*.nupkg -k ${NUGET_API_KEY} --source https://api.nuget.org/v3/index.json --skip-duplicate 
+      run: dotnet nuget push bin/Release/Segment.PublicApi.*.nupkg -k ${NUGET_API_KEY} --source https://api.nuget.org/v3/index.json --skip-duplicate
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
