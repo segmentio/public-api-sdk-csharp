@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Returns the Warehouses and Sources that consume a Credential, each paginated independently.
+    /// Returns the Warehouses and Sources that consume a Credential. The two lists are paginated independently, so a caller can page through one without affecting the other.
     /// </summary>
     [DataContract(Name = "ListCredentialConsumersV1Output")]
     public partial class ListCredentialConsumersV1Output : IEquatable<ListCredentialConsumersV1Output>, IValidatableObject
