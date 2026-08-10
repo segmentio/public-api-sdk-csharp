@@ -41,7 +41,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="PersonalizationInput" /> class.
         /// </summary>
         /// <param name="profile">profile (required).</param>
-        /// <param name="entities">Entities V2 Object..</param>
+        /// <param name="entities">The entities, and the properties of each entity, to include in the event sent to the Destination. Only applicable to Linked Audiences. Providing entities for a Classic audience returns a 400 error, as Classic audiences support profile properties only..</param>
         /// <param name="syncEntityPropertyChanges">Sync entity property changes to the Destination. Only applicable if activationType is \&quot;Audience Membership Changed\&quot;..</param>
         public PersonalizationInput(Profile profile = default(Profile), List<PersonalizationInputEntity> entities = default(List<PersonalizationInputEntity>), bool syncEntityPropertyChanges = default(bool))
         {
@@ -62,9 +62,9 @@ namespace Segment.PublicApi.Model
         public Profile Profile { get; set; }
 
         /// <summary>
-        /// Entities V2 Object.
+        /// The entities, and the properties of each entity, to include in the event sent to the Destination. Only applicable to Linked Audiences. Providing entities for a Classic audience returns a 400 error, as Classic audiences support profile properties only.
         /// </summary>
-        /// <value>Entities V2 Object.</value>
+        /// <value>The entities, and the properties of each entity, to include in the event sent to the Destination. Only applicable to Linked Audiences. Providing entities for a Classic audience returns a 400 error, as Classic audiences support profile properties only.</value>
         [DataMember(Name = "entities", EmitDefaultValue = false)]
         public List<PersonalizationInputEntity> Entities { get; set; }
 

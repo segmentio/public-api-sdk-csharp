@@ -36,7 +36,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="UpdateActivationForAudienceAlphaInput" /> class.
         /// </summary>
         /// <param name="enabled">Determines whether an activation is enabled..</param>
-        /// <param name="activationName">Activation name. For Warehouse Destinations, this is used as the table name..</param>
+        /// <param name="activationName">Activation name. For Warehouse Destinations, this is used as the table name. Omit this field to leave the name unchanged. An empty string is ignored rather than applied..</param>
         /// <param name="displayName">Optional human-readable label for the activation. Only supported for Warehouse Destinations. Send null to clear. When omitted, the activationName is used as the label..</param>
         /// <param name="personalization">personalization.</param>
         /// <param name="destinationMapping">destinationMapping.</param>
@@ -59,9 +59,9 @@ namespace Segment.PublicApi.Model
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// Activation name. For Warehouse Destinations, this is used as the table name.
+        /// Activation name. For Warehouse Destinations, this is used as the table name. Omit this field to leave the name unchanged. An empty string is ignored rather than applied.
         /// </summary>
-        /// <value>Activation name. For Warehouse Destinations, this is used as the table name.</value>
+        /// <value>Activation name. For Warehouse Destinations, this is used as the table name. Omit this field to leave the name unchanged. An empty string is ignored rather than applied.</value>
         [DataMember(Name = "activationName", EmitDefaultValue = false)]
         public string ActivationName { get; set; }
 

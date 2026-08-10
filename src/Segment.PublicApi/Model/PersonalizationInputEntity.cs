@@ -40,7 +40,7 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PersonalizationInputEntity" /> class.
         /// </summary>
-        /// <param name="properties">properties (required).</param>
+        /// <param name="properties">The entity properties to include in the event sent to the Destination. (required).</param>
         /// <param name="relationshipSlug">The relationship slug for the entity. (required).</param>
         public PersonalizationInputEntity(List<string> properties = default(List<string>), string relationshipSlug = default(string))
         {
@@ -59,8 +59,9 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets Properties
+        /// The entity properties to include in the event sent to the Destination.
         /// </summary>
+        /// <value>The entity properties to include in the event sent to the Destination.</value>
         [DataMember(Name = "properties", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Properties { get; set; }
 

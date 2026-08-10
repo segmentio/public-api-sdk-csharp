@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Profile Object.
+    /// The profile traits included in the event sent to the Destination. Applies to both Classic and Linked Audiences. For a Classic audience this is the only form of personalization available, whereas a Linked Audience can also personalize on entities.
     /// </summary>
     [DataContract(Name = "profile")]
     public partial class Profile : IEquatable<Profile>, IValidatableObject
@@ -40,8 +40,8 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Profile" /> class.
         /// </summary>
-        /// <param name="properties">properties (required).</param>
-        /// <param name="mapping">mapping.</param>
+        /// <param name="properties">The profile traits to include in the event sent to the Destination. (required).</param>
+        /// <param name="mapping">Maps a profile trait to the name it should be sent under. Each key is a trait, and each value is the name used in the event..</param>
         public Profile(List<string> properties = default(List<string>), Dictionary<string, string> mapping = default(Dictionary<string, string>))
         {
             // to ensure "properties" is required (not null)
@@ -54,14 +54,16 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Gets or Sets Properties
+        /// The profile traits to include in the event sent to the Destination.
         /// </summary>
+        /// <value>The profile traits to include in the event sent to the Destination.</value>
         [DataMember(Name = "properties", IsRequired = true, EmitDefaultValue = true)]
         public List<string> Properties { get; set; }
 
         /// <summary>
-        /// Gets or Sets Mapping
+        /// Maps a profile trait to the name it should be sent under. Each key is a trait, and each value is the name used in the event.
         /// </summary>
+        /// <value>Maps a profile trait to the name it should be sent under. Each key is a trait, and each value is the name used in the event.</value>
         [DataMember(Name = "mapping", EmitDefaultValue = false)]
         public Dictionary<string, string> Mapping { get; set; }
 

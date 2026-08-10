@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Input to Update a Destination for an Audience.
+    /// Input to Update a Destination for an Audience. At least one of idSyncConfiguration or connectionSettings must be supplied, otherwise the request returns a 400 error.
     /// </summary>
     [DataContract(Name = "UpdateDestinationForAudienceAlphaInput")]
     public partial class UpdateDestinationForAudienceAlphaInput : IEquatable<UpdateDestinationForAudienceAlphaInput>, IValidatableObject
@@ -35,8 +35,8 @@ namespace Segment.PublicApi.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateDestinationForAudienceAlphaInput" /> class.
         /// </summary>
-        /// <param name="idSyncConfiguration">Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed..</param>
-        /// <param name="connectionSettings">The settings that a Destination requires to create audiences on a third-party platform..</param>
+        /// <param name="idSyncConfiguration">Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed. The supplied array replaces the entire stored configuration, so include every external id that should remain. Omitting mapTo on an entry clears any value stored for it. An empty array is treated the same as omitting the field and leaves the stored configuration unchanged..</param>
+        /// <param name="connectionSettings">The settings that a Destination requires to create audiences on a third-party platform. The supplied object replaces the stored settings outright, so include every setting that should remain. Settings that are omitted are removed. An empty object is treated the same as omitting the field and leaves the stored settings unchanged..</param>
         public UpdateDestinationForAudienceAlphaInput(List<IDSyncConfigurationInput> idSyncConfiguration = default(List<IDSyncConfigurationInput>), Object connectionSettings = default(Object))
         {
             this.IdSyncConfiguration = idSyncConfiguration;
@@ -44,16 +44,16 @@ namespace Segment.PublicApi.Model
         }
 
         /// <summary>
-        /// Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed.
+        /// Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed. The supplied array replaces the entire stored configuration, so include every external id that should remain. Omitting mapTo on an entry clears any value stored for it. An empty array is treated the same as omitting the field and leaves the stored configuration unchanged.
         /// </summary>
-        /// <value>Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed.</value>
+        /// <value>Identifier sync configuration - array of external IDs to sync with their strategies. Maximum 5 items allowed. The supplied array replaces the entire stored configuration, so include every external id that should remain. Omitting mapTo on an entry clears any value stored for it. An empty array is treated the same as omitting the field and leaves the stored configuration unchanged.</value>
         [DataMember(Name = "idSyncConfiguration", EmitDefaultValue = false)]
         public List<IDSyncConfigurationInput> IdSyncConfiguration { get; set; }
 
         /// <summary>
-        /// The settings that a Destination requires to create audiences on a third-party platform.
+        /// The settings that a Destination requires to create audiences on a third-party platform. The supplied object replaces the stored settings outright, so include every setting that should remain. Settings that are omitted are removed. An empty object is treated the same as omitting the field and leaves the stored settings unchanged.
         /// </summary>
-        /// <value>The settings that a Destination requires to create audiences on a third-party platform.</value>
+        /// <value>The settings that a Destination requires to create audiences on a third-party platform. The supplied object replaces the stored settings outright, so include every setting that should remain. Settings that are omitted are removed. An empty object is treated the same as omitting the field and leaves the stored settings unchanged.</value>
         [DataMember(Name = "connectionSettings", EmitDefaultValue = true)]
         public Object ConnectionSettings { get; set; }
 
