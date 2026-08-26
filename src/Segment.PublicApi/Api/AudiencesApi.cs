@@ -80,6 +80,31 @@ namespace Segment.PublicApi.Api
         /// <returns>ApiResponse of CreateAudience200Response</returns>
         ApiResponse<CreateAudience200Response> CreateAudienceWithHttpInfo(string spaceId, CreateAudienceInput createAudienceInput, int operationIndex = 0);
         /// <summary>
+        /// Create Audience Csv Export for Audience
+        /// </summary>
+        /// <remarks>
+        /// Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CreateAudienceCsvExportForAudience200Response</returns>
+        CreateAudienceCsvExportForAudience200Response CreateAudienceCsvExportForAudience(string spaceId, string id, int operationIndex = 0);
+
+        /// <summary>
+        /// Create Audience Csv Export for Audience
+        /// </summary>
+        /// <remarks>
+        /// Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CreateAudienceCsvExportForAudience200Response</returns>
+        ApiResponse<CreateAudienceCsvExportForAudience200Response> CreateAudienceCsvExportForAudienceWithHttpInfo(string spaceId, string id, int operationIndex = 0);
+        /// <summary>
         /// Create Audience Preview
         /// </summary>
         /// <remarks>
@@ -156,6 +181,33 @@ namespace Segment.PublicApi.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of GetAudience200Response</returns>
         ApiResponse<GetAudience200Response> GetAudienceWithHttpInfo(string spaceId, string id, string? include = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// Get Audience Csv Export from Space And Audience
+        /// </summary>
+        /// <remarks>
+        /// Returns the status of an Audience CSV export. While the export is running, &#x60;status&#x60; is IN_PROGRESS and no URLs are returned. Once &#x60;status&#x60; is SUCCESS, &#x60;urls&#x60; contains presigned download links created when the export completed. Repeated polling returns the same links.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="exportId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetAudienceCsvExportFromSpaceAndAudience200Response</returns>
+        GetAudienceCsvExportFromSpaceAndAudience200Response GetAudienceCsvExportFromSpaceAndAudience(string spaceId, string id, string exportId, int operationIndex = 0);
+
+        /// <summary>
+        /// Get Audience Csv Export from Space And Audience
+        /// </summary>
+        /// <remarks>
+        /// Returns the status of an Audience CSV export. While the export is running, &#x60;status&#x60; is IN_PROGRESS and no URLs are returned. Once &#x60;status&#x60; is SUCCESS, &#x60;urls&#x60; contains presigned download links created when the export completed. Repeated polling returns the same links.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="exportId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetAudienceCsvExportFromSpaceAndAudience200Response</returns>
+        ApiResponse<GetAudienceCsvExportFromSpaceAndAudience200Response> GetAudienceCsvExportFromSpaceAndAudienceWithHttpInfo(string spaceId, string id, string exportId, int operationIndex = 0);
         /// <summary>
         /// Get Audience Preview
         /// </summary>
@@ -467,6 +519,33 @@ namespace Segment.PublicApi.Api
         /// <returns>Task of ApiResponse (CreateAudience200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateAudience200Response>> CreateAudienceWithHttpInfoAsync(string spaceId, CreateAudienceInput createAudienceInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
+        /// Create Audience Csv Export for Audience
+        /// </summary>
+        /// <remarks>
+        /// Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CreateAudienceCsvExportForAudience200Response</returns>
+        System.Threading.Tasks.Task<CreateAudienceCsvExportForAudience200Response> CreateAudienceCsvExportForAudienceAsync(string spaceId, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Create Audience Csv Export for Audience
+        /// </summary>
+        /// <remarks>
+        /// Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CreateAudienceCsvExportForAudience200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateAudienceCsvExportForAudience200Response>> CreateAudienceCsvExportForAudienceWithHttpInfoAsync(string spaceId, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
         /// Create Audience Preview
         /// </summary>
         /// <remarks>
@@ -549,6 +628,35 @@ namespace Segment.PublicApi.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetAudience200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetAudience200Response>> GetAudienceWithHttpInfoAsync(string spaceId, string id, string? include = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Get Audience Csv Export from Space And Audience
+        /// </summary>
+        /// <remarks>
+        /// Returns the status of an Audience CSV export. While the export is running, &#x60;status&#x60; is IN_PROGRESS and no URLs are returned. Once &#x60;status&#x60; is SUCCESS, &#x60;urls&#x60; contains presigned download links created when the export completed. Repeated polling returns the same links.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="exportId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetAudienceCsvExportFromSpaceAndAudience200Response</returns>
+        System.Threading.Tasks.Task<GetAudienceCsvExportFromSpaceAndAudience200Response> GetAudienceCsvExportFromSpaceAndAudienceAsync(string spaceId, string id, string exportId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Get Audience Csv Export from Space And Audience
+        /// </summary>
+        /// <remarks>
+        /// Returns the status of an Audience CSV export. While the export is running, &#x60;status&#x60; is IN_PROGRESS and no URLs are returned. Once &#x60;status&#x60; is SUCCESS, &#x60;urls&#x60; contains presigned download links created when the export completed. Repeated polling returns the same links.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </remarks>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="exportId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetAudienceCsvExportFromSpaceAndAudience200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetAudienceCsvExportFromSpaceAndAudience200Response>> GetAudienceCsvExportFromSpaceAndAudienceWithHttpInfoAsync(string spaceId, string id, string exportId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Get Audience Preview
         /// </summary>
@@ -1323,6 +1431,182 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
+        /// Create Audience Csv Export for Audience Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>CreateAudienceCsvExportForAudience200Response</returns>
+        public CreateAudienceCsvExportForAudience200Response CreateAudienceCsvExportForAudience(string spaceId, string id, int operationIndex = 0)
+        {
+            Segment.PublicApi.Client.ApiResponse<CreateAudienceCsvExportForAudience200Response> localVarResponse = CreateAudienceCsvExportForAudienceWithHttpInfo(spaceId, id);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Audience Csv Export for Audience Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of CreateAudienceCsvExportForAudience200Response</returns>
+        public Segment.PublicApi.Client.ApiResponse<CreateAudienceCsvExportForAudience200Response> CreateAudienceCsvExportForAudienceWithHttpInfo(string spaceId, string id, int operationIndex = 0)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->CreateAudienceCsvExportForAudience");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->CreateAudienceCsvExportForAudience");
+            }
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "AudiencesApi.CreateAudienceCsvExportForAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CreateAudienceCsvExportForAudience200Response>("/spaces/{spaceId}/audiences/{id}/csv-exports", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateAudienceCsvExportForAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create Audience Csv Export for Audience Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CreateAudienceCsvExportForAudience200Response</returns>
+        public async System.Threading.Tasks.Task<CreateAudienceCsvExportForAudience200Response> CreateAudienceCsvExportForAudienceAsync(string spaceId, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Segment.PublicApi.Client.ApiResponse<CreateAudienceCsvExportForAudience200Response> localVarResponse = await CreateAudienceCsvExportForAudienceWithHttpInfoAsync(spaceId, id, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create Audience Csv Export for Audience Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CreateAudienceCsvExportForAudience200Response)</returns>
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<CreateAudienceCsvExportForAudience200Response>> CreateAudienceCsvExportForAudienceWithHttpInfoAsync(string spaceId, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->CreateAudienceCsvExportForAudience");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->CreateAudienceCsvExportForAudience");
+            }
+
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            localVarRequestOptions.Operation = "AudiencesApi.CreateAudienceCsvExportForAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateAudienceCsvExportForAudience200Response>("/spaces/{spaceId}/audiences/{id}/csv-exports", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateAudienceCsvExportForAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Create Audience Preview Previews Audience.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.  • When called, this endpoint may generate the &#x60;Audience Preview Created&#x60; event in the [audit trail](/tag/Audit-Trail).   The rate limit for this endpoint is 5 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information. This endpoint also has a rate limit of 700 requests per month per spaceId, which is lower than the default due to access pattern restrictions.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
@@ -1871,6 +2155,200 @@ namespace Segment.PublicApi.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Audience Csv Export from Space And Audience Returns the status of an Audience CSV export. While the export is running, &#x60;status&#x60; is IN_PROGRESS and no URLs are returned. Once &#x60;status&#x60; is SUCCESS, &#x60;urls&#x60; contains presigned download links created when the export completed. Repeated polling returns the same links.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="exportId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>GetAudienceCsvExportFromSpaceAndAudience200Response</returns>
+        public GetAudienceCsvExportFromSpaceAndAudience200Response GetAudienceCsvExportFromSpaceAndAudience(string spaceId, string id, string exportId, int operationIndex = 0)
+        {
+            Segment.PublicApi.Client.ApiResponse<GetAudienceCsvExportFromSpaceAndAudience200Response> localVarResponse = GetAudienceCsvExportFromSpaceAndAudienceWithHttpInfo(spaceId, id, exportId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Audience Csv Export from Space And Audience Returns the status of an Audience CSV export. While the export is running, &#x60;status&#x60; is IN_PROGRESS and no URLs are returned. Once &#x60;status&#x60; is SUCCESS, &#x60;urls&#x60; contains presigned download links created when the export completed. Repeated polling returns the same links.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="exportId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of GetAudienceCsvExportFromSpaceAndAudience200Response</returns>
+        public Segment.PublicApi.Client.ApiResponse<GetAudienceCsvExportFromSpaceAndAudience200Response> GetAudienceCsvExportFromSpaceAndAudienceWithHttpInfo(string spaceId, string id, string exportId, int operationIndex = 0)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->GetAudienceCsvExportFromSpaceAndAudience");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->GetAudienceCsvExportFromSpaceAndAudience");
+            }
+
+            // verify the required parameter 'exportId' is set
+            if (exportId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'exportId' when calling AudiencesApi->GetAudienceCsvExportFromSpaceAndAudience");
+            }
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("exportId", Segment.PublicApi.Client.ClientUtils.ParameterToString(exportId)); // path parameter
+
+            localVarRequestOptions.Operation = "AudiencesApi.GetAudienceCsvExportFromSpaceAndAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetAudienceCsvExportFromSpaceAndAudience200Response>("/spaces/{spaceId}/audiences/{id}/csv-exports/{exportId}", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAudienceCsvExportFromSpaceAndAudience", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Audience Csv Export from Space And Audience Returns the status of an Audience CSV export. While the export is running, &#x60;status&#x60; is IN_PROGRESS and no URLs are returned. Once &#x60;status&#x60; is SUCCESS, &#x60;urls&#x60; contains presigned download links created when the export completed. Repeated polling returns the same links.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="exportId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetAudienceCsvExportFromSpaceAndAudience200Response</returns>
+        public async System.Threading.Tasks.Task<GetAudienceCsvExportFromSpaceAndAudience200Response> GetAudienceCsvExportFromSpaceAndAudienceAsync(string spaceId, string id, string exportId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            Segment.PublicApi.Client.ApiResponse<GetAudienceCsvExportFromSpaceAndAudience200Response> localVarResponse = await GetAudienceCsvExportFromSpaceAndAudienceWithHttpInfoAsync(spaceId, id, exportId, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Audience Csv Export from Space And Audience Returns the status of an Audience CSV export. While the export is running, &#x60;status&#x60; is IN_PROGRESS and no URLs are returned. Once &#x60;status&#x60; is SUCCESS, &#x60;urls&#x60; contains presigned download links created when the export completed. Repeated polling returns the same links.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// </summary>
+        /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId"></param>
+        /// <param name="id"></param>
+        /// <param name="exportId"></param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetAudienceCsvExportFromSpaceAndAudience200Response)</returns>
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<GetAudienceCsvExportFromSpaceAndAudience200Response>> GetAudienceCsvExportFromSpaceAndAudienceWithHttpInfoAsync(string spaceId, string id, string exportId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'spaceId' when calling AudiencesApi->GetAudienceCsvExportFromSpaceAndAudience");
+            }
+
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->GetAudienceCsvExportFromSpaceAndAudience");
+            }
+
+            // verify the required parameter 'exportId' is set
+            if (exportId == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'exportId' when calling AudiencesApi->GetAudienceCsvExportFromSpaceAndAudience");
+            }
+
+
+            Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/vnd.segment.v1alpha+json",
+                "application/json"
+            };
+
+            var localVarContentType = Segment.PublicApi.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Segment.PublicApi.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("exportId", Segment.PublicApi.Client.ClientUtils.ParameterToString(exportId)); // path parameter
+
+            localVarRequestOptions.Operation = "AudiencesApi.GetAudienceCsvExportFromSpaceAndAudience";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (token) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetAudienceCsvExportFromSpaceAndAudience200Response>("/spaces/{spaceId}/audiences/{id}/csv-exports/{exportId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAudienceCsvExportFromSpaceAndAudience", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
