@@ -27,25 +27,35 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// CreateAudienceCsvExportForAudience200Response
+    /// Output of creating a CSV export of an audience.
     /// </summary>
-    [DataContract(Name = "createAudienceCsvExportForAudience_200_response")]
-    public partial class CreateAudienceCsvExportForAudience200Response : IEquatable<CreateAudienceCsvExportForAudience200Response>, IValidatableObject
+    [DataContract(Name = "AddAudienceCsvExportToAudienceAlphaOutput")]
+    public partial class AddAudienceCsvExportToAudienceAlphaOutput : IEquatable<AddAudienceCsvExportToAudienceAlphaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateAudienceCsvExportForAudience200Response" /> class.
+        /// Initializes a new instance of the <see cref="AddAudienceCsvExportToAudienceAlphaOutput" /> class.
         /// </summary>
-        /// <param name="data">data.</param>
-        public CreateAudienceCsvExportForAudience200Response(CreateAudienceCsvExportForAudienceAlphaOutput data = default(CreateAudienceCsvExportForAudienceAlphaOutput))
+        [JsonConstructorAttribute]
+        protected AddAudienceCsvExportToAudienceAlphaOutput() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddAudienceCsvExportToAudienceAlphaOutput" /> class.
+        /// </summary>
+        /// <param name="audienceCsvExport">audienceCsvExport (required).</param>
+        public AddAudienceCsvExportToAudienceAlphaOutput(AudienceCsvExport audienceCsvExport = default(AudienceCsvExport))
         {
-            this.Data = data;
+            // to ensure "audienceCsvExport" is required (not null)
+            if (audienceCsvExport == null)
+            {
+                throw new ArgumentNullException("audienceCsvExport is a required property for AddAudienceCsvExportToAudienceAlphaOutput and cannot be null");
+            }
+            this.AudienceCsvExport = audienceCsvExport;
         }
 
         /// <summary>
-        /// Gets or Sets Data
+        /// Gets or Sets AudienceCsvExport
         /// </summary>
-        [DataMember(Name = "data", EmitDefaultValue = false)]
-        public CreateAudienceCsvExportForAudienceAlphaOutput Data { get; set; }
+        [DataMember(Name = "audienceCsvExport", IsRequired = true, EmitDefaultValue = true)]
+        public AudienceCsvExport AudienceCsvExport { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,8 +64,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateAudienceCsvExportForAudience200Response {\n");
-            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("class AddAudienceCsvExportToAudienceAlphaOutput {\n");
+            sb.Append("  AudienceCsvExport: ").Append(AudienceCsvExport).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +86,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateAudienceCsvExportForAudience200Response);
+            return this.Equals(input as AddAudienceCsvExportToAudienceAlphaOutput);
         }
 
         /// <summary>
-        /// Returns true if CreateAudienceCsvExportForAudience200Response instances are equal
+        /// Returns true if AddAudienceCsvExportToAudienceAlphaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateAudienceCsvExportForAudience200Response to be compared</param>
+        /// <param name="input">Instance of AddAudienceCsvExportToAudienceAlphaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateAudienceCsvExportForAudience200Response input)
+        public bool Equals(AddAudienceCsvExportToAudienceAlphaOutput input)
         {
             if (input == null)
             {
@@ -92,9 +102,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Data == input.Data ||
-                    (this.Data != null &&
-                    this.Data.Equals(input.Data))
+                    this.AudienceCsvExport == input.AudienceCsvExport ||
+                    (this.AudienceCsvExport != null &&
+                    this.AudienceCsvExport.Equals(input.AudienceCsvExport))
                 );
         }
 
@@ -107,9 +117,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Data != null)
+                if (this.AudienceCsvExport != null)
                 {
-                    hashCode = (hashCode * 59) + this.Data.GetHashCode();
+                    hashCode = (hashCode * 59) + this.AudienceCsvExport.GetHashCode();
                 }
                 return hashCode;
             }
