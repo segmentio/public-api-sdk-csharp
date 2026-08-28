@@ -27,35 +27,25 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// The profile traits included in the event sent to the Destination. Applies to both Classic and Linked Audiences. For a Classic audience this is the only form of personalization available, whereas a Linked Audience can also personalize on entities.
+    /// Input to create a CSV export of an audience.
     /// </summary>
-    [DataContract(Name = "profile")]
-    public partial class Profile : IEquatable<Profile>, IValidatableObject
+    [DataContract(Name = "AddAudienceCsvExportToAudienceAlphaInput")]
+    public partial class AddAudienceCsvExportToAudienceAlphaInput : IEquatable<AddAudienceCsvExportToAudienceAlphaInput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Profile" /> class.
+        /// Initializes a new instance of the <see cref="AddAudienceCsvExportToAudienceAlphaInput" /> class.
         /// </summary>
-        /// <param name="properties">The profile traits to include in the event sent to the Destination..</param>
-        /// <param name="mapping">Maps destination fields to profile traits. Each key is the destination field, and each value is the source trait: &#x60;{ destinationField: sourceTrait }&#x60;..</param>
-        public Profile(List<string> properties = default(List<string>), Dictionary<string, string> mapping = default(Dictionary<string, string>))
+        /// <param name="personalization">personalization.</param>
+        public AddAudienceCsvExportToAudienceAlphaInput(PersonalizationInput personalization = default(PersonalizationInput))
         {
-            this.Properties = properties;
-            this.Mapping = mapping;
+            this.Personalization = personalization;
         }
 
         /// <summary>
-        /// The profile traits to include in the event sent to the Destination.
+        /// Gets or Sets Personalization
         /// </summary>
-        /// <value>The profile traits to include in the event sent to the Destination.</value>
-        [DataMember(Name = "properties", EmitDefaultValue = false)]
-        public List<string> Properties { get; set; }
-
-        /// <summary>
-        /// Maps destination fields to profile traits. Each key is the destination field, and each value is the source trait: &#x60;{ destinationField: sourceTrait }&#x60;.
-        /// </summary>
-        /// <value>Maps destination fields to profile traits. Each key is the destination field, and each value is the source trait: &#x60;{ destinationField: sourceTrait }&#x60;.</value>
-        [DataMember(Name = "mapping", EmitDefaultValue = false)]
-        public Dictionary<string, string> Mapping { get; set; }
+        [DataMember(Name = "personalization", EmitDefaultValue = false)]
+        public PersonalizationInput Personalization { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,9 +54,8 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Profile {\n");
-            sb.Append("  Properties: ").Append(Properties).Append("\n");
-            sb.Append("  Mapping: ").Append(Mapping).Append("\n");
+            sb.Append("class AddAudienceCsvExportToAudienceAlphaInput {\n");
+            sb.Append("  Personalization: ").Append(Personalization).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,15 +76,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Profile);
+            return this.Equals(input as AddAudienceCsvExportToAudienceAlphaInput);
         }
 
         /// <summary>
-        /// Returns true if Profile instances are equal
+        /// Returns true if AddAudienceCsvExportToAudienceAlphaInput instances are equal
         /// </summary>
-        /// <param name="input">Instance of Profile to be compared</param>
+        /// <param name="input">Instance of AddAudienceCsvExportToAudienceAlphaInput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Profile input)
+        public bool Equals(AddAudienceCsvExportToAudienceAlphaInput input)
         {
             if (input == null)
             {
@@ -103,16 +92,9 @@ namespace Segment.PublicApi.Model
             }
             return 
                 (
-                    this.Properties == input.Properties ||
-                    this.Properties != null &&
-                    input.Properties != null &&
-                    this.Properties.SequenceEqual(input.Properties)
-                ) && 
-                (
-                    this.Mapping == input.Mapping ||
-                    this.Mapping != null &&
-                    input.Mapping != null &&
-                    this.Mapping.SequenceEqual(input.Mapping)
+                    this.Personalization == input.Personalization ||
+                    (this.Personalization != null &&
+                    this.Personalization.Equals(input.Personalization))
                 );
         }
 
@@ -125,13 +107,9 @@ namespace Segment.PublicApi.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Properties != null)
+                if (this.Personalization != null)
                 {
-                    hashCode = (hashCode * 59) + this.Properties.GetHashCode();
-                }
-                if (this.Mapping != null)
-                {
-                    hashCode = (hashCode * 59) + this.Mapping.GetHashCode();
+                    hashCode = (hashCode * 59) + this.Personalization.GetHashCode();
                 }
                 return hashCode;
             }

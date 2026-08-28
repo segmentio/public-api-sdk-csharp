@@ -31,27 +31,29 @@ namespace Segment.PublicApi.Api
         /// Add Audience Csv Export to Audience
         /// </summary>
         /// <remarks>
-        /// Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Starts a CSV export of an Audience&#39;s membership. Optional personalization selections add profile traits and Linked Audience entity properties to the export; this endpoint accepts property selections, not raw Liquid or another template language. Entity selections are initially supported only for Linked Audiences. Omitting personalization preserves the default export behavior. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
+        /// <param name="addAudienceCsvExportToAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddAudienceCsvExportToAudience200Response</returns>
-        AddAudienceCsvExportToAudience200Response AddAudienceCsvExportToAudience(string spaceId, string id, int operationIndex = 0);
+        AddAudienceCsvExportToAudience200Response AddAudienceCsvExportToAudience(string spaceId, string id, AddAudienceCsvExportToAudienceAlphaInput addAudienceCsvExportToAudienceAlphaInput, int operationIndex = 0);
 
         /// <summary>
         /// Add Audience Csv Export to Audience
         /// </summary>
         /// <remarks>
-        /// Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Starts a CSV export of an Audience&#39;s membership. Optional personalization selections add profile traits and Linked Audience entity properties to the export; this endpoint accepts property selections, not raw Liquid or another template language. Entity selections are initially supported only for Linked Audiences. Omitting personalization preserves the default export behavior. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
+        /// <param name="addAudienceCsvExportToAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddAudienceCsvExportToAudience200Response</returns>
-        ApiResponse<AddAudienceCsvExportToAudience200Response> AddAudienceCsvExportToAudienceWithHttpInfo(string spaceId, string id, int operationIndex = 0);
+        ApiResponse<AddAudienceCsvExportToAudience200Response> AddAudienceCsvExportToAudienceWithHttpInfo(string spaceId, string id, AddAudienceCsvExportToAudienceAlphaInput addAudienceCsvExportToAudienceAlphaInput, int operationIndex = 0);
         /// <summary>
         /// Add Audience Schedule to Audience
         /// </summary>
@@ -466,29 +468,31 @@ namespace Segment.PublicApi.Api
         /// Add Audience Csv Export to Audience
         /// </summary>
         /// <remarks>
-        /// Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Starts a CSV export of an Audience&#39;s membership. Optional personalization selections add profile traits and Linked Audience entity properties to the export; this endpoint accepts property selections, not raw Liquid or another template language. Entity selections are initially supported only for Linked Audiences. Omitting personalization preserves the default export behavior. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
+        /// <param name="addAudienceCsvExportToAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddAudienceCsvExportToAudience200Response</returns>
-        System.Threading.Tasks.Task<AddAudienceCsvExportToAudience200Response> AddAudienceCsvExportToAudienceAsync(string spaceId, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AddAudienceCsvExportToAudience200Response> AddAudienceCsvExportToAudienceAsync(string spaceId, string id, AddAudienceCsvExportToAudienceAlphaInput addAudienceCsvExportToAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
         /// Add Audience Csv Export to Audience
         /// </summary>
         /// <remarks>
-        /// Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Starts a CSV export of an Audience&#39;s membership. Optional personalization selections add profile traits and Linked Audience entity properties to the export; this endpoint accepts property selections, not raw Liquid or another template language. Entity selections are initially supported only for Linked Audiences. Omitting personalization preserves the default export behavior. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </remarks>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
+        /// <param name="addAudienceCsvExportToAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddAudienceCsvExportToAudience200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AddAudienceCsvExportToAudience200Response>> AddAudienceCsvExportToAudienceWithHttpInfoAsync(string spaceId, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AddAudienceCsvExportToAudience200Response>> AddAudienceCsvExportToAudienceWithHttpInfoAsync(string spaceId, string id, AddAudienceCsvExportToAudienceAlphaInput addAudienceCsvExportToAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Add Audience Schedule to Audience
         /// </summary>
@@ -1041,28 +1045,30 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Add Audience Csv Export to Audience Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Add Audience Csv Export to Audience Starts a CSV export of an Audience&#39;s membership. Optional personalization selections add profile traits and Linked Audience entity properties to the export; this endpoint accepts property selections, not raw Liquid or another template language. Entity selections are initially supported only for Linked Audiences. Omitting personalization preserves the default export behavior. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
+        /// <param name="addAudienceCsvExportToAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AddAudienceCsvExportToAudience200Response</returns>
-        public AddAudienceCsvExportToAudience200Response AddAudienceCsvExportToAudience(string spaceId, string id, int operationIndex = 0)
+        public AddAudienceCsvExportToAudience200Response AddAudienceCsvExportToAudience(string spaceId, string id, AddAudienceCsvExportToAudienceAlphaInput addAudienceCsvExportToAudienceAlphaInput, int operationIndex = 0)
         {
-            Segment.PublicApi.Client.ApiResponse<AddAudienceCsvExportToAudience200Response> localVarResponse = AddAudienceCsvExportToAudienceWithHttpInfo(spaceId, id);
+            Segment.PublicApi.Client.ApiResponse<AddAudienceCsvExportToAudience200Response> localVarResponse = AddAudienceCsvExportToAudienceWithHttpInfo(spaceId, id, addAudienceCsvExportToAudienceAlphaInput);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Add Audience Csv Export to Audience Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Add Audience Csv Export to Audience Starts a CSV export of an Audience&#39;s membership. Optional personalization selections add profile traits and Linked Audience entity properties to the export; this endpoint accepts property selections, not raw Liquid or another template language. Entity selections are initially supported only for Linked Audiences. Omitting personalization preserves the default export behavior. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
+        /// <param name="addAudienceCsvExportToAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AddAudienceCsvExportToAudience200Response</returns>
-        public Segment.PublicApi.Client.ApiResponse<AddAudienceCsvExportToAudience200Response> AddAudienceCsvExportToAudienceWithHttpInfo(string spaceId, string id, int operationIndex = 0)
+        public Segment.PublicApi.Client.ApiResponse<AddAudienceCsvExportToAudience200Response> AddAudienceCsvExportToAudienceWithHttpInfo(string spaceId, string id, AddAudienceCsvExportToAudienceAlphaInput addAudienceCsvExportToAudienceAlphaInput, int operationIndex = 0)
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -1076,9 +1082,16 @@ namespace Segment.PublicApi.Api
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->AddAudienceCsvExportToAudience");
             }
 
+            // verify the required parameter 'addAudienceCsvExportToAudienceAlphaInput' is set
+            if (addAudienceCsvExportToAudienceAlphaInput == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'addAudienceCsvExportToAudienceAlphaInput' when calling AudiencesApi->AddAudienceCsvExportToAudience");
+            }
+
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1alpha+json"
             };
 
             // to determine the Accept header
@@ -1101,6 +1114,7 @@ namespace Segment.PublicApi.Api
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = addAudienceCsvExportToAudienceAlphaInput;
 
             localVarRequestOptions.Operation = "AudiencesApi.AddAudienceCsvExportToAudience";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1127,30 +1141,32 @@ namespace Segment.PublicApi.Api
         }
 
         /// <summary>
-        /// Add Audience Csv Export to Audience Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Add Audience Csv Export to Audience Starts a CSV export of an Audience&#39;s membership. Optional personalization selections add profile traits and Linked Audience entity properties to the export; this endpoint accepts property selections, not raw Liquid or another template language. Entity selections are initially supported only for Linked Audiences. Omitting personalization preserves the default export behavior. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
+        /// <param name="addAudienceCsvExportToAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AddAudienceCsvExportToAudience200Response</returns>
-        public async System.Threading.Tasks.Task<AddAudienceCsvExportToAudience200Response> AddAudienceCsvExportToAudienceAsync(string spaceId, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AddAudienceCsvExportToAudience200Response> AddAudienceCsvExportToAudienceAsync(string spaceId, string id, AddAudienceCsvExportToAudienceAlphaInput addAudienceCsvExportToAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Segment.PublicApi.Client.ApiResponse<AddAudienceCsvExportToAudience200Response> localVarResponse = await AddAudienceCsvExportToAudienceWithHttpInfoAsync(spaceId, id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Segment.PublicApi.Client.ApiResponse<AddAudienceCsvExportToAudience200Response> localVarResponse = await AddAudienceCsvExportToAudienceWithHttpInfoAsync(spaceId, id, addAudienceCsvExportToAudienceAlphaInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Add Audience Csv Export to Audience Starts a CSV export of an Audience&#39;s membership. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
+        /// Add Audience Csv Export to Audience Starts a CSV export of an Audience&#39;s membership. Optional personalization selections add profile traits and Linked Audience entity properties to the export; this endpoint accepts property selections, not raw Liquid or another template language. Entity selections are initially supported only for Linked Audiences. Omitting personalization preserves the default export behavior. The export runs asynchronously: this returns immediately with an export id, and does not return the CSV itself. Poll &#x60;getAudienceCsvExportFromSpaceAndAudience&#x60; with that id for status and download URLs.  • In order to successfully call this endpoint, the specified Workspace needs to have the Audience feature enabled. Please reach out to your customer success manager for more information.
         /// </summary>
         /// <exception cref="Segment.PublicApi.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId"></param>
         /// <param name="id"></param>
+        /// <param name="addAudienceCsvExportToAudienceAlphaInput"></param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AddAudienceCsvExportToAudience200Response)</returns>
-        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<AddAudienceCsvExportToAudience200Response>> AddAudienceCsvExportToAudienceWithHttpInfoAsync(string spaceId, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Segment.PublicApi.Client.ApiResponse<AddAudienceCsvExportToAudience200Response>> AddAudienceCsvExportToAudienceWithHttpInfoAsync(string spaceId, string id, AddAudienceCsvExportToAudienceAlphaInput addAudienceCsvExportToAudienceAlphaInput, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'spaceId' is set
             if (spaceId == null)
@@ -1164,10 +1180,17 @@ namespace Segment.PublicApi.Api
                 throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'id' when calling AudiencesApi->AddAudienceCsvExportToAudience");
             }
 
+            // verify the required parameter 'addAudienceCsvExportToAudienceAlphaInput' is set
+            if (addAudienceCsvExportToAudienceAlphaInput == null)
+            {
+                throw new Segment.PublicApi.Client.ApiException(400, "Missing required parameter 'addAudienceCsvExportToAudienceAlphaInput' when calling AudiencesApi->AddAudienceCsvExportToAudience");
+            }
+
 
             Segment.PublicApi.Client.RequestOptions localVarRequestOptions = new Segment.PublicApi.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/vnd.segment.v1alpha+json"
             };
 
             // to determine the Accept header
@@ -1190,6 +1213,7 @@ namespace Segment.PublicApi.Api
 
             localVarRequestOptions.PathParameters.Add("spaceId", Segment.PublicApi.Client.ClientUtils.ParameterToString(spaceId)); // path parameter
             localVarRequestOptions.PathParameters.Add("id", Segment.PublicApi.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = addAudienceCsvExportToAudienceAlphaInput;
 
             localVarRequestOptions.Operation = "AudiencesApi.AddAudienceCsvExportToAudience";
             localVarRequestOptions.OperationIndex = operationIndex;

@@ -41,7 +41,7 @@ namespace Segment.PublicApi.Model
         /// Initializes a new instance of the <see cref="Profile1" /> class.
         /// </summary>
         /// <param name="properties">The profile traits included in the event sent to the Destination. (required).</param>
-        /// <param name="mapping">Maps a profile trait to the name it should be sent under. Each key is a trait, and each value is the name used in the event..</param>
+        /// <param name="mapping">Maps destination fields to profile traits. Each key is the destination field, and each value is the source trait: &#x60;{ destinationField: sourceTrait }&#x60;..</param>
         public Profile1(List<string> properties = default(List<string>), Dictionary<string, string> mapping = default(Dictionary<string, string>))
         {
             // to ensure "properties" is required (not null)
@@ -61,9 +61,9 @@ namespace Segment.PublicApi.Model
         public List<string> Properties { get; set; }
 
         /// <summary>
-        /// Maps a profile trait to the name it should be sent under. Each key is a trait, and each value is the name used in the event.
+        /// Maps destination fields to profile traits. Each key is the destination field, and each value is the source trait: &#x60;{ destinationField: sourceTrait }&#x60;.
         /// </summary>
-        /// <value>Maps a profile trait to the name it should be sent under. Each key is a trait, and each value is the name used in the event.</value>
+        /// <value>Maps destination fields to profile traits. Each key is the destination field, and each value is the source trait: &#x60;{ destinationField: sourceTrait }&#x60;.</value>
         [DataMember(Name = "mapping", EmitDefaultValue = false)]
         public Dictionary<string, string> Mapping { get; set; }
 
