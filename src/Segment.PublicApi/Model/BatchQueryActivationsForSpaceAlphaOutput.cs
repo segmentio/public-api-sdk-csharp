@@ -27,38 +27,52 @@ using OpenAPIDateConverter = Segment.PublicApi.Client.OpenAPIDateConverter;
 namespace Segment.PublicApi.Model
 {
     /// <summary>
-    /// Output for listing activations from space and audience.
+    /// Output for listing activations in bulk across many audiences.
     /// </summary>
-    [DataContract(Name = "ListActivationsFromAudienceOutput")]
-    public partial class ListActivationsFromAudienceOutput : IEquatable<ListActivationsFromAudienceOutput>, IValidatableObject
+    [DataContract(Name = "BatchQueryActivationsForSpaceAlphaOutput")]
+    public partial class BatchQueryActivationsForSpaceAlphaOutput : IEquatable<BatchQueryActivationsForSpaceAlphaOutput>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListActivationsFromAudienceOutput" /> class.
+        /// Initializes a new instance of the <see cref="BatchQueryActivationsForSpaceAlphaOutput" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ListActivationsFromAudienceOutput() { }
+        protected BatchQueryActivationsForSpaceAlphaOutput() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListActivationsFromAudienceOutput" /> class.
+        /// Initializes a new instance of the <see cref="BatchQueryActivationsForSpaceAlphaOutput" /> class.
         /// </summary>
-        /// <param name="activations">A list of activation results. (required).</param>
+        /// <param name="activations">Activation results across all valid requested audiences. (required).</param>
+        /// <param name="errors">Audience IDs from the request that could not be resolved, with why - for example not found, or wrong space. When &#x60;audienceIds&#x60; was omitted from the request (space-scan mode), this never contains a caller-supplied bad id - there isn&#39;t one to be wrong - but it can still contain per-activation hydration failures, same as the &#x60;audienceIds&#x60;-provided path. (required).</param>
         /// <param name="pagination">pagination.</param>
-        public ListActivationsFromAudienceOutput(List<ActivationOutput> activations = default(List<ActivationOutput>), PaginationOutput pagination = default(PaginationOutput))
+        public BatchQueryActivationsForSpaceAlphaOutput(List<ActivationOutput> activations = default(List<ActivationOutput>), List<ErrorsInner> errors = default(List<ErrorsInner>), PaginationOutput pagination = default(PaginationOutput))
         {
             // to ensure "activations" is required (not null)
             if (activations == null)
             {
-                throw new ArgumentNullException("activations is a required property for ListActivationsFromAudienceOutput and cannot be null");
+                throw new ArgumentNullException("activations is a required property for BatchQueryActivationsForSpaceAlphaOutput and cannot be null");
             }
             this.Activations = activations;
+            // to ensure "errors" is required (not null)
+            if (errors == null)
+            {
+                throw new ArgumentNullException("errors is a required property for BatchQueryActivationsForSpaceAlphaOutput and cannot be null");
+            }
+            this.Errors = errors;
             this.Pagination = pagination;
         }
 
         /// <summary>
-        /// A list of activation results.
+        /// Activation results across all valid requested audiences.
         /// </summary>
-        /// <value>A list of activation results.</value>
+        /// <value>Activation results across all valid requested audiences.</value>
         [DataMember(Name = "activations", IsRequired = true, EmitDefaultValue = true)]
         public List<ActivationOutput> Activations { get; set; }
+
+        /// <summary>
+        /// Audience IDs from the request that could not be resolved, with why - for example not found, or wrong space. When &#x60;audienceIds&#x60; was omitted from the request (space-scan mode), this never contains a caller-supplied bad id - there isn&#39;t one to be wrong - but it can still contain per-activation hydration failures, same as the &#x60;audienceIds&#x60;-provided path.
+        /// </summary>
+        /// <value>Audience IDs from the request that could not be resolved, with why - for example not found, or wrong space. When &#x60;audienceIds&#x60; was omitted from the request (space-scan mode), this never contains a caller-supplied bad id - there isn&#39;t one to be wrong - but it can still contain per-activation hydration failures, same as the &#x60;audienceIds&#x60;-provided path.</value>
+        [DataMember(Name = "errors", IsRequired = true, EmitDefaultValue = true)]
+        public List<ErrorsInner> Errors { get; set; }
 
         /// <summary>
         /// Gets or Sets Pagination
@@ -73,8 +87,9 @@ namespace Segment.PublicApi.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListActivationsFromAudienceOutput {\n");
+            sb.Append("class BatchQueryActivationsForSpaceAlphaOutput {\n");
             sb.Append("  Activations: ").Append(Activations).Append("\n");
+            sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -96,15 +111,15 @@ namespace Segment.PublicApi.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ListActivationsFromAudienceOutput);
+            return this.Equals(input as BatchQueryActivationsForSpaceAlphaOutput);
         }
 
         /// <summary>
-        /// Returns true if ListActivationsFromAudienceOutput instances are equal
+        /// Returns true if BatchQueryActivationsForSpaceAlphaOutput instances are equal
         /// </summary>
-        /// <param name="input">Instance of ListActivationsFromAudienceOutput to be compared</param>
+        /// <param name="input">Instance of BatchQueryActivationsForSpaceAlphaOutput to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ListActivationsFromAudienceOutput input)
+        public bool Equals(BatchQueryActivationsForSpaceAlphaOutput input)
         {
             if (input == null)
             {
@@ -116,6 +131,12 @@ namespace Segment.PublicApi.Model
                     this.Activations != null &&
                     input.Activations != null &&
                     this.Activations.SequenceEqual(input.Activations)
+                ) && 
+                (
+                    this.Errors == input.Errors ||
+                    this.Errors != null &&
+                    input.Errors != null &&
+                    this.Errors.SequenceEqual(input.Errors)
                 ) && 
                 (
                     this.Pagination == input.Pagination ||
@@ -136,6 +157,10 @@ namespace Segment.PublicApi.Model
                 if (this.Activations != null)
                 {
                     hashCode = (hashCode * 59) + this.Activations.GetHashCode();
+                }
+                if (this.Errors != null)
+                {
+                    hashCode = (hashCode * 59) + this.Errors.GetHashCode();
                 }
                 if (this.Pagination != null)
                 {
