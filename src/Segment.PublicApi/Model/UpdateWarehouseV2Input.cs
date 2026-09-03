@@ -37,7 +37,7 @@ namespace Segment.PublicApi.Model
         /// </summary>
         /// <param name="name">An optional human-readable name to associate with this Warehouse..</param>
         /// <param name="enabled">Enable to allow this Warehouse to receive data..</param>
-        /// <param name="credentialId">The id of a Credential to connect this Warehouse to. Swapping the Credential re-derives this Warehouse&#39;s connection settings and re-validates the connection..</param>
+        /// <param name="credentialId">The id of a Credential to connect this Warehouse to. Swapping the Credential re-derives this Warehouse&#39;s connection settings and re-validates the connection. The Credential must be the same type as the Warehouse&#39;s existing type — a Warehouse&#39;s type cannot be changed after creation, so a mismatched Credential is rejected rather than silently ignored..</param>
         public UpdateWarehouseV2Input(string name = default(string), bool enabled = default(bool), string credentialId = default(string))
         {
             this.Name = name;
@@ -60,9 +60,9 @@ namespace Segment.PublicApi.Model
         public bool Enabled { get; set; }
 
         /// <summary>
-        /// The id of a Credential to connect this Warehouse to. Swapping the Credential re-derives this Warehouse&#39;s connection settings and re-validates the connection.
+        /// The id of a Credential to connect this Warehouse to. Swapping the Credential re-derives this Warehouse&#39;s connection settings and re-validates the connection. The Credential must be the same type as the Warehouse&#39;s existing type — a Warehouse&#39;s type cannot be changed after creation, so a mismatched Credential is rejected rather than silently ignored.
         /// </summary>
-        /// <value>The id of a Credential to connect this Warehouse to. Swapping the Credential re-derives this Warehouse&#39;s connection settings and re-validates the connection.</value>
+        /// <value>The id of a Credential to connect this Warehouse to. Swapping the Credential re-derives this Warehouse&#39;s connection settings and re-validates the connection. The Credential must be the same type as the Warehouse&#39;s existing type — a Warehouse&#39;s type cannot be changed after creation, so a mismatched Credential is rejected rather than silently ignored.</value>
         [DataMember(Name = "credentialId", EmitDefaultValue = false)]
         public string CredentialId { get; set; }
 
