@@ -1,0 +1,11 @@
+# Segment.PublicApi.Model.UpdateAudienceForSpaceAlphaOutput
+Audience output for update.
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Audience** | [**AudienceSummary**](AudienceSummary.md) |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
